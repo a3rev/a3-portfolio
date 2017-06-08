@@ -1,0 +1,120 @@
+/*-------------------------------------------------------------------------------------------*/
+/* WP Admin */
+/*-------------------------------------------------------------------------------------------*/
+@charset "UTF-8";
+
+@font-face {
+  font-family: "a3-portfolio-dashboard";
+  src:url("../fonts/a3-portfolio-dashboard.eot");
+  src:url("../fonts/a3-portfolio-dashboard.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/a3-portfolio-dashboard.woff") format("woff"),
+    url("../fonts/a3-portfolio-dashboard.ttf") format("truetype"),
+    url("../fonts/a3-portfolio-dashboard.svg#a3-portfolio-dashboard") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+#menu-posts-a3-portfolio .wp-menu-image:before {
+  font-family: "a3-sidebar-menu" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  	display:inline-block;
+  	font-size:17px !important;
+  	font-weight:400;
+  	height: 36px;
+	padding: 8px 0;
+	transition: all 0.1s ease-in-out 0s;
+	width: 20px;
+  
+  content: "\a3" !important;
+}
+#menu-posts-a3-portfolio .wp-menu-image {
+	text-align:center;
+	background:none;	
+}
+
+.a3-portfolio-add-shortcode_icon:before {
+  font-family: "a3-sidebar-menu" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  content: "\a3" !important;
+}
+.a3-portfolio-add-shortcode_icon {
+  display: inline-block;
+  height: 18px;
+  margin: 0 2px 0 0;
+  position: relative;
+  vertical-align: middle;
+  width: 18px;
+  font-size:16px;
+  line-height:18px;
+}
+.a3-portfolio-shortcode-container label {
+  width:150px;
+  display:inline-block; 
+}
+
+/* CSS for Custom Column */
+.a3-portfolio-thumbnail {
+	max-width: 125px;
+	max-height:125px;
+}
+.a3-portfolio-no-thumbnail:before {
+  font-family: "a3-portfolio-dashboard" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e001" !important;
+}
+.icon-portfolio-delete:before {
+  content: "a";
+}
+.icon-portfolio-img:before {
+  content: "b";
+}
+.a3-portfolio-no-thumbnail {
+  	display: inline-block;
+	height: 40px;
+	margin: 0 2px 0 0;
+	position: relative;
+	vertical-align: middle;
+	font-size:40px;
+	line-height:40px;
+}
+
+
+.wrap.portfolio .a3-portfolio-no-thumbnail {
+  	top:-4px;
+}
+.sorttable.portfolio-table tr{ cursor:move;}
+
+@media screen and ( max-width: 782px ) {
+	.auto-fold #adminmenu #menu-posts-a3-portfolio a.menu-top {
+		height:auto;	
+	}
+}
+@media only screen and (max-width: 479px){
+	.a3-portfolio-thumbnail {
+		max-width: 45px;
+		max-height:45px;
+	}
+}

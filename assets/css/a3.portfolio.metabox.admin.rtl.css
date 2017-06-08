@@ -1,0 +1,68 @@
+.clear {
+  clear: both;
+}
+.nobr {
+  white-space: nowrap;
+}
+#a3_portfolio_data_meta_box .a3rev_panel_container ul.a3-metabox-data-tabs li.portfolio_gallery_options a:after {
+  content: "\e001";
+}
+#a3_portfolio_data_meta_box .a3rev_panel_container ul.a3-metabox-data-tabs li.card_description_options a:after {
+  font-family: dashicons !important;
+  content: "\f123";
+}
+#a3_portfolio_data_meta_box .a3rev_panel_container ul.a3-metabox-data-tabs li.portfolio_sticky_options a:after {
+  font-family: dashicons !important;
+  content: "\f481";
+}
+#a3_portfolio_data_meta_box .a3rev_panel_container ul.a3-metabox-data-tabs li.single_layout_options a:after {
+  content: "\e004";
+}
+#a3_portfolio_data_meta_box .a3rev_panel_container ul.a3-metabox-data-tabs li.portfolio_attributes_options a:after {
+  content: "\e003";
+}
+#a3_portfolio_data_meta_box .a3rev_panel_container ul.a3-metabox-data-tabs li.portfolio_button_options a:after {
+  content: "\e002";
+}
+#a3_portfolio_data_meta_box .a3rev_panel_container ul.a3-metabox-data-tabs li a:before {
+  display: none;
+}
+#a3_portfolio_data_meta_box .a3rev_panel_container ul.a3-metabox-data-tabs li a:after {
+  margin-left: 7px;
+  font-size: 16px;
+  margin-top: 10px;
+  content: "\e004";
+}
+#a3_portfolio_data_meta_box .a3rev_panel_container #portfolio_images_container ul li.metabox-sortable-placeholder:after {
+  left: auto;
+  right: 0;
+}
+#a3_portfolio_data_meta_box .a3rev_panel_container #portfolio_images_container ul ul.actions {
+  left: -8px;
+  right: auto;
+}
+#a3_portfolio_data_meta_box .a3rev_panel_container #portfolio_images_container ul ul.actions li {
+  float: left;
+  margin: 0 2px 0 0;
+}
+#a3_portfolio_data_meta_box .a3rev_panel_container #portfolio_images_container ul ul.actions li a.delete:before {
+  left: auto;
+  right: 0;
+}
+#a3_portfolio_data_meta_box .a3rev_panel_container #portfolio_images_container ul li.add,
+#a3_portfolio_data_meta_box .a3rev_panel_container #portfolio_images_container ul li.image,
+#a3_portfolio_data_meta_box .a3rev_panel_container #portfolio_images_container ul li.metabox-sortable-placeholder {
+  float: right;
+  margin: 9px 0 0 9px;
+}
+#a3_portfolio_data_meta_box .a3-portfolio-metabox-icon:after {
+  font-family: "a3-portfolio-dashboard" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

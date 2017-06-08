@@ -1,0 +1,38 @@
+@import "mixins.less";
+
+.portfolio_recently_viewed_container {
+
+    ul.portfolio_recently_viewed {
+
+        .portfolio_recently_item {
+            float: right;
+
+            img.thumbnail {
+                float: right;
+            }
+
+            .portfolio_name {
+                margin-left: 14px;
+                margin-right: 80px;
+                text-align: right;
+            }
+
+            .remove_portfolio_item {
+                left: 0;
+                right: auto;
+
+                i {
+                    &:after {
+                        color: #FF0000;
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .portfolio_recently_button_container {
+        text-align: left;
+    }
+}

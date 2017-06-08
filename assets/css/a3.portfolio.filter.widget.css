@@ -1,0 +1,68 @@
+.clear {
+  clear: both;
+}
+.nobr {
+  white-space: nowrap;
+}
+.a3-portfolio-attribute-filter-container {
+  position: relative;
+}
+.a3-portfolio-attribute-filter-container ul.attribute-filter {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.a3-portfolio-attribute-filter-container ul.attribute-filter li {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.a3-portfolio-attribute-filter-container ul.attribute-filter li a {
+  position: relative;
+}
+.a3-portfolio-attribute-filter-container ul.attribute-filter li.active a:after {
+  display: inline-block;
+  font: normal normal normal 16px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: '\f046';
+  color: #10E600;
+  margin-left: 5px;
+  text-decoration: none !important;
+}
+.a3-portfolio-attribute-filter-container ul.attribute-filter li.active a:hover:after {
+  text-decoration: none !important;
+}
+.a3-portfolio-attribute-filter-container ul.attribute-filter li.remove-filter {
+  display: none;
+}
+.a3-portfolio-attribute-filter-container ul.attribute-filter li.remove-filter .remove-filter-button {
+  margin: 10px auto;
+  padding-top: 6px;
+  padding-right: 10px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  background-color: #10E600;
+  border: 0px solid #FFFFFF;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF !important;
+  text-decoration: none;
+  cursor: pointer;
+  display: table;
+  letter-spacing: 1px;
+  transition: all 200ms ease-in 0s;
+}
+.a3-portfolio-attribute-filter-container ul.attribute-filter li.remove-filter .remove-filter-button.active,
+.a3-portfolio-attribute-filter-container ul.attribute-filter li.remove-filter .remove-filter-button:hover {
+  background-color: #2A2A2A;
+  color: #FFFFFF !important;
+}

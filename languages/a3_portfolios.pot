@@ -1,0 +1,1622 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: a3 Portfolio\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-19 13:35+0700\n"
+"PO-Revision-Date: 2016-05-19 13:35+0700\n"
+"Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
+"Language-Team: a3rev\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.6.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/admin-interface.php:177
+msgid "Great! You have the latest version installed."
+msgstr ""
+
+#: admin/admin-interface.php:242
+#: admin/settings/template-settings/global-settings.php:81
+#: admin/settings/template-settings/item-expander-settings.php:81
+#: admin/settings/template-settings/item-posts-style.php:81
+msgid "Settings successfully saved."
+msgstr ""
+
+#: admin/admin-interface.php:250
+#: admin/settings/template-settings/global-settings.php:82
+#: admin/settings/template-settings/item-expander-settings.php:82
+#: admin/settings/template-settings/item-posts-style.php:82
+msgid "Error: Settings can not save."
+msgstr ""
+
+#: admin/admin-interface.php:258
+#: admin/settings/template-settings/global-settings.php:83
+#: admin/settings/template-settings/item-expander-settings.php:83
+#: admin/settings/template-settings/item-posts-style.php:83
+msgid "Settings successfully reseted."
+msgstr ""
+
+#: admin/admin-interface.php:279
+msgid "Thin"
+msgstr ""
+
+#: admin/admin-interface.php:280
+msgid "Thin/Italic"
+msgstr ""
+
+#: admin/admin-interface.php:281
+msgid "Normal"
+msgstr ""
+
+#: admin/admin-interface.php:282
+msgid "Italic"
+msgstr ""
+
+#: admin/admin-interface.php:283
+msgid "Bold"
+msgstr ""
+
+#: admin/admin-interface.php:284
+msgid "Bold/Italic"
+msgstr ""
+
+#: admin/admin-interface.php:294
+msgid "Solid"
+msgstr ""
+
+#: admin/admin-interface.php:295
+msgid "Double"
+msgstr ""
+
+#: admin/admin-interface.php:296
+msgid "Dashed"
+msgstr ""
+
+#: admin/admin-interface.php:297
+msgid "Dotted"
+msgstr ""
+
+#: admin/admin-interface.php:298
+msgid "Groove"
+msgstr ""
+
+#: admin/admin-interface.php:299
+msgid "Ridge"
+msgstr ""
+
+#: admin/admin-interface.php:300
+msgid "Inset"
+msgstr ""
+
+#: admin/admin-interface.php:301
+msgid "Outset"
+msgstr ""
+
+#: admin/admin-interface.php:1558 admin/admin-interface.php:1644
+#: admin/admin-interface.php:1744 admin/admin-interface.php:1892
+#: admin/admin-interface.php:1982 admin/admin-interface.php:2011
+#: admin/settings/template-settings/global-settings.php:234
+#: admin/settings/template-settings/global-settings.php:276
+#: admin/settings/template-settings/global-settings.php:310
+#: admin/settings/template-settings/global-settings.php:344
+#: admin/settings/template-settings/global-settings.php:360
+#: admin/settings/template-settings/item-cards-settings.php:300
+#: admin/settings/template-settings/item-cards-settings.php:339
+#: admin/settings/template-settings/item-expander-settings.php:197
+#: admin/settings/template-settings/item-expander-settings.php:208
+#: admin/settings/template-settings/item-expander-settings.php:219
+#: admin/settings/template-settings/item-expander-settings.php:230
+#: admin/settings/template-settings/item-expander-settings.php:248
+#: admin/settings/template-settings/item-expander-settings.php:275
+#: admin/settings/template-settings/item-expander-settings.php:307
+#: admin/settings/template-settings/item-expander-settings.php:313
+#: admin/settings/template-settings/item-expander-settings.php:334
+#: admin/settings/template-settings/item-expander-settings.php:340
+#: admin/settings/template-settings/item-posts-style.php:258
+#: admin/settings/template-settings/item-posts-style.php:264
+#: admin/settings/template-settings/item-posts-style.php:270
+#: admin/settings/template-settings/item-posts-style.php:293
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:433
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:459
+msgid "ON"
+msgstr ""
+
+#: admin/admin-interface.php:1559 admin/admin-interface.php:1645
+#: admin/admin-interface.php:1745 admin/admin-interface.php:1893
+#: admin/admin-interface.php:1983 admin/admin-interface.php:2012
+#: admin/settings/template-settings/global-settings.php:235
+#: admin/settings/template-settings/global-settings.php:277
+#: admin/settings/template-settings/global-settings.php:311
+#: admin/settings/template-settings/global-settings.php:345
+#: admin/settings/template-settings/global-settings.php:361
+#: admin/settings/template-settings/item-cards-settings.php:301
+#: admin/settings/template-settings/item-cards-settings.php:340
+#: admin/settings/template-settings/item-expander-settings.php:198
+#: admin/settings/template-settings/item-expander-settings.php:209
+#: admin/settings/template-settings/item-expander-settings.php:220
+#: admin/settings/template-settings/item-expander-settings.php:231
+#: admin/settings/template-settings/item-expander-settings.php:249
+#: admin/settings/template-settings/item-expander-settings.php:276
+#: admin/settings/template-settings/item-expander-settings.php:308
+#: admin/settings/template-settings/item-expander-settings.php:314
+#: admin/settings/template-settings/item-expander-settings.php:335
+#: admin/settings/template-settings/item-expander-settings.php:341
+#: admin/settings/template-settings/item-posts-style.php:259
+#: admin/settings/template-settings/item-posts-style.php:265
+#: admin/settings/template-settings/item-posts-style.php:271
+#: admin/settings/template-settings/item-posts-style.php:294
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:434
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:460
+msgid "OFF"
+msgstr ""
+
+#: admin/admin-interface.php:1564
+msgid "Google Fonts API"
+msgstr ""
+
+#: admin/admin-interface.php:1576
+msgid ""
+"ON to connect to Google Fonts API and have auto font updates direct from "
+"Google."
+msgstr ""
+
+#: admin/admin-interface.php:1580
+#, php-format
+msgid ""
+"Enter your existing Google Fonts API Key below. Don't have a key? Visit <a "
+"href='%s' target='_blank'>Google Developer API</a> to create a key"
+msgstr ""
+
+#: admin/admin-interface.php:1597
+msgid "Google Fonts API Key"
+msgstr ""
+
+#: admin/admin-interface.php:1600
+msgid "Your Google API Key is valid and automatic font updates are enabled."
+msgstr ""
+
+#: admin/admin-interface.php:1601
+msgid "Please enter a valid Google API Key."
+msgstr ""
+
+#: admin/admin-interface.php:1620
+msgid "Check New Version"
+msgstr ""
+
+#: admin/admin-interface.php:1631
+msgid "Check Now"
+msgstr ""
+
+#: admin/admin-interface.php:1650
+msgid "Open Box Display"
+msgstr ""
+
+#: admin/admin-interface.php:1663
+msgid ""
+"ON and each admin panel setting box OPEN | CLOSED position are saved each "
+"time changes are SAVED."
+msgstr ""
+
+#: admin/admin-interface.php:2047
+msgid "Width"
+msgstr ""
+
+#: admin/admin-interface.php:2049
+msgid "Height"
+msgstr ""
+
+#: admin/admin-interface.php:2051
+msgid "Hard Crop"
+msgstr ""
+
+#: admin/admin-interface.php:2124
+msgid "-- Default Fonts --"
+msgstr ""
+
+#: admin/admin-interface.php:2135
+msgid "-- Google Fonts --"
+msgstr ""
+
+#: admin/admin-interface.php:2176
+msgid "Preview your customized typography settings"
+msgstr ""
+
+#: admin/admin-interface.php:2285 admin/admin-interface.php:2519
+msgid "Preview your customized border settings"
+msgstr ""
+
+#: admin/admin-interface.php:2294 admin/admin-interface.php:2510
+msgid "Rounded"
+msgstr ""
+
+#: admin/admin-interface.php:2295 admin/admin-interface.php:2511
+msgid "Square"
+msgstr ""
+
+#: admin/admin-interface.php:2305 admin/admin-interface.php:2524
+msgid "Top Left Corner"
+msgstr ""
+
+#: admin/admin-interface.php:2325 admin/admin-interface.php:2544
+msgid "Top Right Corner"
+msgstr ""
+
+#: admin/admin-interface.php:2345 admin/admin-interface.php:2564
+msgid "Bottom Right Corner"
+msgstr ""
+
+#: admin/admin-interface.php:2365 admin/admin-interface.php:2584
+msgid "Bottom Left Corner"
+msgstr ""
+
+#: admin/admin-interface.php:2452
+msgid "Preview your customized border styles settings"
+msgstr ""
+
+#: admin/admin-interface.php:2635
+msgid "YES"
+msgstr ""
+
+#: admin/admin-interface.php:2636
+msgid "NO"
+msgstr ""
+
+#: admin/admin-interface.php:2650
+msgid "Horizontal Shadow"
+msgstr ""
+
+#: admin/admin-interface.php:2668
+msgid "Vertical Shadow"
+msgstr ""
+
+#: admin/admin-interface.php:2686
+msgid "Blur Distance"
+msgstr ""
+
+#: admin/admin-interface.php:2704
+msgid "Spread Size"
+msgstr ""
+
+#: admin/admin-interface.php:2722
+msgid "INNER"
+msgstr ""
+
+#: admin/admin-interface.php:2723
+msgid "OUTER"
+msgstr ""
+
+#: admin/admin-interface.php:2741
+msgid "Preview your customized box shadow settings"
+msgstr ""
+
+#: admin/admin-interface.php:3009
+msgid "Save changes"
+msgstr ""
+
+#: admin/admin-interface.php:3010
+msgid "Reset Settings"
+msgstr ""
+
+#: admin/admin-pages/admin-settings-page.php:63
+#: admin/admin-pages/admin-settings-page.php:64
+msgid "General Settings"
+msgstr ""
+
+#: admin/admin-ui.php:109 admin/admin-ui.php:112
+msgid "Premium Version Enhanced Features"
+msgstr ""
+
+#: admin/admin-ui.php:113
+msgid "WooCommerce Dynamic Gallery Premium"
+msgstr ""
+
+#: admin/admin-ui.php:114
+msgid ""
+"Quick Video showing the main (not all) enhanced features that are built into "
+"the WooCommerce Dynamic Gallery Premium version"
+msgstr ""
+
+#: admin/admin-ui.php:115
+msgid "Developer Support and Premium Features"
+msgstr ""
+
+#: admin/admin-ui.php:116
+msgid ""
+"Limited Time Offer. Purchase the Premium Version Lifetime License. That is a "
+"Lifetime of maintenance updates, feature upgrades and developer support for "
+"a once only fee. Offer ending soon."
+msgstr ""
+
+#: admin/admin-ui.php:117
+msgid "Get Premium Features and Support"
+msgstr ""
+
+#: admin/admin-ui.php:265
+#, php-format
+msgid ""
+"Advanced Settings - Upgrade to the <a href=\"%s\" target=\"_blank\">%s "
+"License</a> to activate these settings."
+msgstr ""
+
+#: admin/admin-ui.php:268
+msgid "Pro Version"
+msgstr ""
+
+#: admin/admin-ui.php:318 admin/admin-ui.php:337
+msgid "You should check now to see if have any new version is available"
+msgstr ""
+
+#: admin/admin-ui.php:320
+#, php-format
+msgid ""
+"Connection Failure! Please try again. If this issue persists please create a "
+"support request on the plugin <a href=\"%s\" target=\"_blank\">a3rev support "
+"forum</a>."
+msgstr ""
+
+#: admin/admin-ui.php:328
+#, php-format
+msgid ""
+"There is a new version <span class=\"a3rev-ui-new-plugin-version\">%s</span> "
+"available, <a href=\"%s\" target=\"_blank\">update now</a> or download "
+"direct from <a href=\"%s\" target=\"_blank\">My Account</a> on a3rev.com"
+msgstr ""
+
+#: admin/includes/uploader/class-uploader.php:101
+msgid "Upload"
+msgstr ""
+
+#: admin/includes/uploader/class-uploader.php:121
+msgid "View File"
+msgstr ""
+
+#: admin/plugin-init.php:89 admin/plugin-init.php:93
+#: includes/a3-portfolio-core-functions.php:110
+msgid "Portfolios"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:153
+msgid "Global Settings"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:197
+msgid "Plugin Framework Global Settings"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:205
+msgid "Customize Admin Setting Box Display"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:206
+msgid ""
+"By default each admin panel will open with all Setting Boxes in the CLOSED "
+"position."
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:213
+msgid "Google Fonts"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:214
+msgid ""
+"By Default Google Fonts are pulled from a static JSON file in this plugin. "
+"This file is updated but does not have the latest font releases from Google."
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:221
+msgid "House Keeping"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:225
+msgid "Clean up on Deletion"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:226
+msgid ""
+"On deletion (not deactivate) the plugin will completely remove all tables "
+"and data it created, leaving no trace it was ever here."
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:238
+msgid "Image Watermarks"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:240
+#, php-format
+msgid ""
+"To add Watermarks to the Portfolio item images, please use the free <a "
+"target=\"_blank\" href=\"https://wordpress.org/plugins/easy-watermark/"
+"\">Easy Watermark plugin</a>. It is tested 100% compatible with a3 "
+"Portfolios."
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:244
+msgid "Portfolio Item Images"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:245
+msgid ""
+"These settings affect the display and dimensions of images in your portfolio "
+"- the display on the front-end will still be affected by CSS styles. After "
+"changing these settings you may need to regenerate your thumbnails."
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:251
+msgid "Item Card Images"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:270
+#: admin/settings/template-settings/global-settings.php:304
+#: admin/settings/template-settings/global-settings.php:338
+msgid "Hard Crop?"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:285
+msgid "Gallery Images"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:319
+msgid "Gallery Thumbnails"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:353
+msgid "Item Post Gallery"
+msgstr ""
+
+#: admin/settings/template-settings/global-settings.php:354
+msgid "Enable Lightbox for Item Post Gallery Images"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:81
+msgid "Item Cards Settings successfully saved."
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:82
+msgid "Error: Item Cards Settings can not save."
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:83
+msgid "Item Cards Settings successfully reseted."
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:139
+#: admin/tabs/template-settings/item-cards-tab.php:78
+msgid "Item Cards"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:183
+msgid "Item Cards Per Row"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:189
+msgid "Maximum Items Per Row"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:190
+msgid "Maximum Items to show per row in larger screens."
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:200
+msgid "Item Card Image"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:206
+msgid "Image Display Height"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:213
+msgid "FIXED"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:214
+msgid "DYNAMIC"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:222
+#, php-format
+msgid "Image Height as a % of Width"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:236
+msgid "Image Link Opens"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:243
+#: admin/settings/template-settings/item-cards-settings.php:281
+#: admin/settings/template-settings/item-cards-settings.php:355
+msgid "Item Post"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:244
+#: admin/settings/template-settings/item-cards-settings.php:282
+#: admin/settings/template-settings/item-cards-settings.php:356
+#: admin/settings/template-settings/item-expander-settings.php:139
+#: admin/tabs/template-settings/item-expander-tab.php:78
+msgid "Item Expander"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:248
+msgid "Item Card Title"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:260
+msgid "Item Title Position"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:267
+msgid "On Hover"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:268
+msgid "Under Image"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:274
+msgid "Title Link Opens"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:286
+#: admin/settings/template-settings/item-cards-settings.php:292
+msgid "Item Card Description"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:293
+msgid "ON to show the description on the Item Card under the image"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:309
+msgid "Description Height"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:314
+msgid "1 Row"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:315
+msgid "2 Rows"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:316
+msgid "3 Rows"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:317
+msgid "4 Rows"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:318
+msgid "5 Rows"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:319
+msgid "6 Rows"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:325
+msgid "View More Feature"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:331
+msgid "Item Card View More"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:332
+msgid "ON to show the view more button on the Item Card under the description"
+msgstr ""
+
+#: admin/settings/template-settings/item-cards-settings.php:348
+msgid "View More Link Opens"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:183
+msgid "Item Expander Post Meta"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:184
+msgid "Post meta shows under the post name on the expander"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:190
+msgid "Post Author"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:191
+msgid "ON to show the Author inside Expander"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:201
+msgid "Post Date"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:202
+msgid "ON to show the Date inside Expander"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:212
+msgid "Post Meta Cats"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:213
+msgid "ON to show the Meta Cats inside Expander"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:223
+msgid "Post Meta Tags"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:224
+msgid "ON to show the Meta Tags inside Expander"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:235
+msgid "Item Expander Social Share"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:241
+msgid "Social Share"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:242
+msgid "ON to show the Social Share inside Expander"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:253
+#: admin/settings/template-settings/item-expander-settings.php:260
+#: admin/settings/template-settings/item-expander-settings.php:284
+msgid "Expander Top Alignment"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:254
+msgid ""
+"By default, the item expander will open at the top if the screen or 0px from "
+"top. Use the setting below to adjust the distance that the expander opens "
+"from the top of the screen to match your requirements in PC's and Laptops"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:261
+#: admin/settings/template-settings/item-expander-settings.php:285
+msgid "from the top of the screen"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:268
+msgid "Apply to Mobile"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:293
+msgid "Expander Attribute Table"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:299
+#: admin/settings/template-settings/item-posts-style.php:250
+msgid "Attribute Position"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:306
+#: admin/settings/template-settings/item-posts-style.php:263
+msgid "Above Description"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:312
+msgid "Bottom of Expander Content"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:320
+msgid "Expander Image Gallery"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:326
+msgid "Thumbnail Position"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:333
+msgid "Right of the main gallery image (below item title)"
+msgstr ""
+
+#: admin/settings/template-settings/item-expander-settings.php:339
+msgid "Below main gallery image"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:154
+#: admin/tabs/template-settings/item-posts-tab.php:78
+msgid "Item Posts"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:198
+msgid "Item Posts Layout"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:199
+msgid ""
+"Settings here apply to all Portfolio Item posts. These can be over-ridden "
+"from Portfolio Item Meta on each Items edit page."
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:205
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:225
+msgid "Post Display"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:212
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:232
+msgid "1 Column"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:213
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:233
+msgid "2 Columns"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:222
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:242
+msgid "Main Image Width"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:223
+msgid ""
+"The Gallery main image container width as a percentage of the full content "
+"width"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:232
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:264
+msgid "Gallery Thumbnail Position"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:233
+msgid "Gallery Thumbnails position in relation to the Gallery main image"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:239
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:273
+msgid "Right"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:240
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:276
+msgid "Below"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:244
+msgid "Item Post Attributes Table"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:257
+msgid "Under Gallery"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:269
+msgid "Bottom of Post"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:277
+msgid "Item Post Template Reset"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:283
+msgid "Global Reset"
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:284
+msgid ""
+"Switch this ON and Save Changes if you want all Item Posts to have the same "
+"Layout that you have set above in the + Item Post Layout options."
+msgstr ""
+
+#: admin/settings/template-settings/item-posts-style.php:285
+msgid ""
+"<strong>Important!</strong> Clear your cache after so that you and visitors "
+"see changes."
+msgstr ""
+
+#: admin/tabs/template-settings/global-settings-tab.php:78
+#: includes/backend/class-a3-portfolio-backend-scripts.php:88
+msgid "Settings"
+msgstr ""
+
+#: includes/addons/class-a3-portfolio-addons-page.php:109
+msgid "Activated"
+msgstr ""
+
+#: includes/addons/class-a3-portfolio-addons-page.php:111
+msgid "Activate"
+msgstr ""
+
+#: includes/addons/class-a3-portfolio-addons-page.php:114
+msgid "Get this extension"
+msgstr ""
+
+#: includes/addons/class-a3-portfolio-addons-page.php:120
+msgid "Free"
+msgstr ""
+
+#: includes/attributes/a3-portfolio-attribute-functions.php:101
+msgid "Select"
+msgstr ""
+
+#: includes/attributes/a3-portfolio-attribute-functions.php:102
+msgid "Text"
+msgstr ""
+
+#: includes/attributes/a3-portfolio-attribute-functions.php:145
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+#: includes/attributes/a3-portfolio-attribute-functions.php:146
+#, php-format
+msgid "All %s"
+msgstr ""
+
+#: includes/attributes/a3-portfolio-attribute-functions.php:147
+#, php-format
+msgid "Parent %s"
+msgstr ""
+
+#: includes/attributes/a3-portfolio-attribute-functions.php:148
+#, php-format
+msgid "Parent %s:"
+msgstr ""
+
+#: includes/attributes/a3-portfolio-attribute-functions.php:149
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: includes/attributes/a3-portfolio-attribute-functions.php:150
+#, php-format
+msgid "Update %s"
+msgstr ""
+
+#: includes/attributes/a3-portfolio-attribute-functions.php:151
+#, php-format
+msgid "Add New %s"
+msgstr ""
+
+#: includes/attributes/a3-portfolio-attribute-functions.php:152
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:23
+#: includes/attributes/class-a3-portfolio-attributes-page.php:326
+msgid "Portfolio Attributes"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:23
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:137
+msgid "Attributes"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:95
+#, php-format
+msgid "Slug \"%s\" is too long (28 characters max). Shorten it, please."
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:99
+#, php-format
+msgid ""
+"Slug \"%s\" is not allowed because it is a reserved term. Change it, please."
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:116
+#: includes/attributes/class-a3-portfolio-attributes-page.php:144
+msgid "Please, provide an attribute name and slug."
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:120
+#: includes/attributes/class-a3-portfolio-attributes-page.php:152
+#, php-format
+msgid "Slug \"%s\" is already in use. Change it, please."
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:168
+msgid "Attribute updated successfully"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:220
+msgid "Edit Portfolio Attribute"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:225
+msgid "Error: non-existing attribute ID."
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:239
+#: includes/attributes/class-a3-portfolio-attributes-page.php:285
+#: includes/attributes/class-a3-portfolio-attributes-page.php:334
+#: includes/attributes/class-a3-portfolio-attributes-page.php:357
+#: includes/attributes/class-a3-portfolio-attributes-page.php:406
+#: includes/attributes/class-a3-portfolio-attributes-page.php:441
+#: includes/meta-boxes/views/html-portfolio-attribute.php:18
+#: includes/post-types/a3-portfolio-post-types.php:272
+msgid "Name"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:243
+#: includes/attributes/class-a3-portfolio-attributes-page.php:408
+msgid "Name for the attribute (shown on the front-end)."
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:248
+#: includes/attributes/class-a3-portfolio-attributes-page.php:335
+#: includes/attributes/class-a3-portfolio-attributes-page.php:412
+msgid "Slug"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:252
+#: includes/attributes/class-a3-portfolio-attributes-page.php:414
+msgid ""
+"Unique slug/reference for the attribute; must be shorter than 28 characters."
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:257
+#: includes/attributes/class-a3-portfolio-attributes-page.php:336
+#: includes/attributes/class-a3-portfolio-attributes-page.php:418
+msgid "Type"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:275
+#: includes/attributes/class-a3-portfolio-attributes-page.php:434
+msgid ""
+"Determines how you select attributes for Portfolio. Under Admin Panel -> "
+"Portfolio -> Portfolio Item Data -> Attributes -> Values, <strong>Text</"
+"strong> allows manual entry whereas <strong>select</strong> allows pre-"
+"configured terms in a drop-down list."
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:280
+#: includes/attributes/class-a3-portfolio-attributes-page.php:438
+msgid "Default sort order"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:284
+#: includes/attributes/class-a3-portfolio-attributes-page.php:363
+#: includes/attributes/class-a3-portfolio-attributes-page.php:440
+msgid "Custom ordering"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:286
+#: includes/attributes/class-a3-portfolio-attributes-page.php:360
+#: includes/attributes/class-a3-portfolio-attributes-page.php:442
+msgid "Term ID"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:288
+#: includes/attributes/class-a3-portfolio-attributes-page.php:444
+msgid ""
+"Determines the sort order of the terms on the frontend Portfolio pages. If "
+"using custom ordering, you can drag and drop the terms in this attribute."
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:337
+msgid "Order by"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:338
+#: includes/attributes/class-a3-portfolio-attributes-page.php:386
+msgid "Terms"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:350
+#: includes/post-types/a3-portfolio-post-types.php:105
+msgid "Edit"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:350
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:196
+msgid "Delete"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:392
+msgid "No attributes currently exist."
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:402
+msgid "Add New Attribute"
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:403
+msgid ""
+"Attributes let you define extra Portfolio data, such as size or colour. You "
+"can use these attributes in the Portfolio Attribute Filter Widget. Please "
+"note: you cannot rename an attribute later on."
+msgstr ""
+
+#: includes/attributes/class-a3-portfolio-attributes-page.php:458
+msgid "Are you sure you want to delete this attribute?"
+msgstr ""
+
+#: includes/backend/class-a3-portfolio-backend-scripts.php:44
+msgid "Go to Support Forum"
+msgstr ""
+
+#: includes/backend/class-a3-portfolio-backend-scripts.php:89
+msgid "Support"
+msgstr ""
+
+#: includes/backend/class-a3-portfolio-permalink-settings.php:21
+msgid "a3 Portfolio Permalinks"
+msgstr ""
+
+#: includes/backend/class-a3-portfolio-permalink-settings.php:26
+msgid "a3 Portfolio category base"
+msgstr ""
+
+#: includes/backend/class-a3-portfolio-permalink-settings.php:34
+msgid "a3 Portfolio tag base"
+msgstr ""
+
+#: includes/backend/class-a3-portfolio-permalink-settings.php:59
+msgid ""
+"These settings control the permalinks used for a3 Portfolios. These settings "
+"only apply when <strong>not using \"default\" permalinks above</strong>."
+msgstr ""
+
+#: includes/backend/class-a3-portfolio-permalink-settings.php:78
+msgid "Default"
+msgstr ""
+
+#: includes/backend/class-a3-portfolio-permalink-settings.php:83
+msgid "Main page base"
+msgstr ""
+
+#: includes/backend/class-a3-portfolio-permalink-settings.php:87
+msgid "Main page base with category"
+msgstr ""
+
+#: includes/backend/class-a3-portfolio-permalink-settings.php:93
+msgid "Custom Base"
+msgstr ""
+
+#: includes/backend/class-a3-portfolio-permalink-settings.php:95
+msgid ""
+"Enter a custom base to use. A base <strong>must</strong> be set or WordPress "
+"will use default instead."
+msgstr ""
+
+#: includes/frontend/a3-portfolio-template-functions.php:627
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:110
+#: includes/wpml-support/class-portfolio-wpml.php:56
+msgid "View More"
+msgstr ""
+
+#: includes/frontend/a3-portfolio-template-functions.php:973
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:101
+#: includes/wpml-support/class-portfolio-wpml.php:53
+msgid "LAUNCH SITE"
+msgstr ""
+
+#: includes/frontend/class-a3-portfolio-frontend-scripts.php:169
+#: includes/widgets/class-portfolio-recently-viewed-widget.php:91
+#: includes/wpml-support/class-portfolio-wpml.php:65
+msgid "No Portfolio Recently Viewed !"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:25
+msgid "Portfolio Item Meta"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:53
+msgid "Please select an attribute for add"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:54
+msgid "Remove this attribute?"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:55
+msgid "Enter a name for the new attribute term:"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:122
+msgid "Portfolio Gallery"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:127
+msgid "Card Description"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:132
+msgid "Layout"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:142
+msgid "Button"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:147
+msgid "Sticky"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:182
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:196
+msgid "Delete image"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:196
+msgid "Add Images to Portfolio Gallery"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:196
+msgid "Add to gallery"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:196
+msgid "Add portfolio gallery images"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:209
+msgid ""
+"Leave this empty and the card description will be pulled from the first "
+"lines of the item description"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:211
+msgid ""
+"Note! The number of rows set for Item Card Description text Height on "
+"General Settings still applies to custom description entered here"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:293
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:351
+msgid "Close all"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:293
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:351
+msgid "Expand all"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:295
+msgid "Select portfolio attribute"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:309
+msgid "Add"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:352
+msgid "Save Attributes"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:357
+#, php-format
+msgid "Please create <a href=\"%s\">Portfolio Attribute</a>"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:369
+msgid "View More Button"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:374
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:412
+msgid "Button Text"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:392
+msgid "Launch Button"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:397
+msgid "Link URL"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:426
+msgid "Open Type"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:438
+msgid "ON for Open in new window"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:452
+msgid "Make Item Sticky"
+msgstr ""
+
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:464
+#, php-format
+msgid ""
+"For theme with Sticky post functionality and for Sticky feature in <a href="
+"\"%s\" target=\"_blank\" >a3 Portfolio Shortcodes</a> plugin"
+msgstr ""
+
+#: includes/meta-boxes/views/html-portfolio-attribute.php:9
+msgid "Remove"
+msgstr ""
+
+#: includes/meta-boxes/views/html-portfolio-attribute.php:10
+msgid "Click to toggle"
+msgstr ""
+
+#: includes/meta-boxes/views/html-portfolio-attribute.php:25
+msgid "Value(s)"
+msgstr ""
+
+#: includes/meta-boxes/views/html-portfolio-attribute.php:38
+msgid "Select all"
+msgstr ""
+
+#: includes/meta-boxes/views/html-portfolio-attribute.php:39
+msgid "Select none"
+msgstr ""
+
+#: includes/meta-boxes/views/html-portfolio-attribute.php:40
+msgid "Add new"
+msgstr ""
+
+#: includes/meta-boxes/views/html-portfolio-attribute.php:43
+msgid "Value"
+msgstr ""
+
+#: includes/meta-boxes/views/html-portfolio-attribute.php:47
+msgid "Enter the value here"
+msgstr ""
+
+#: includes/meta-boxes/views/html-portfolio-attribute.php:57
+msgid "Visible on Item expander"
+msgstr ""
+
+#: includes/meta-boxes/views/html-portfolio-attribute.php:58
+msgid "Visible on Item Post"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-duplicate.php:35
+msgid "Make a duplicate from this Portfolio"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-duplicate.php:36
+#: includes/post-types/a3-portfolio-duplicate.php:52
+msgid "Duplicate"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-duplicate.php:59
+msgid "No Portfolio to duplicate has been supplied!"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-duplicate.php:79
+msgid "Portfolio creation failed, could not find original Portfolio:"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-duplicate.php:113
+msgid "(Copy)"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:37
+#: includes/post-types/a3-portfolio-post-types.php:42
+#: includes/post-types/a3-portfolio-post-types.php:273
+#: includes/wpml-support/class-portfolio-wpml.php:54
+#: templates/expander/categories-meta.php:25
+msgid "Categories"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:39
+#: includes/post-types/a3-portfolio-post-types.php:40
+msgid "Portfolio Categories"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:41
+msgid "Search Portfolio Categories"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:44
+msgid "Parent Portfolio Categories"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:45
+msgid "Parent Portfolio Categories:"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:46
+msgid "All Portfolio Categories"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:47
+msgid "Edit Portfolio Categories"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:48
+msgid "Update Portfolio Categories"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:49
+msgid "Add New Portfolio Category"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:50
+msgid "New Portfolio Categories Name"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:68
+#: includes/wpml-support/class-portfolio-wpml.php:55
+#: templates/expander/tags-meta.php:25
+msgid "Tags"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:70
+msgid "Portfolio Tags"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:71
+msgid "Portfolio Tag"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:73
+msgid "Search Portfolio Tags"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:74
+msgid "All Portfolio Tags"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:75
+msgid "Parent Portfolio Tag"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:76
+msgid "Parent TPortfolio ag:"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:77
+msgid "Edit Portfolio Tag"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:78
+msgid "Update Portfolio Tag"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:79
+msgid "Add New Portfolio Tag"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:80
+msgid "New Portfolio Tag Name"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:99
+#: includes/post-types/a3-portfolio-post-types.php:102
+msgid "Portfolio Items"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:100
+msgid "Portfolio Item"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:101
+msgid "Portfolio"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:103
+msgid "Add Item"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:104
+msgid "Add New Portfolio"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:106
+msgid "Edit Item"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:107
+msgid "New Portfolio"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:108
+msgid "View"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:109
+msgid "View Item"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:110
+msgid "Search Portfolios"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:111
+msgid "No Portfolio Found"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:112
+msgid "No Portfolio found in Trash"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:113
+msgid "Parent"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:131
+msgid "Portfolios Custom Post Type"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:221
+msgid "Show all categories"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:238
+#: includes/post-types/a3-portfolio-post-types.php:240
+#: templates/navbar/main-navbar.php:49 templates/navbar/tag-navbar.php:49
+msgid "Uncategorized"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:271
+msgid "Thumbnail"
+msgstr ""
+
+#: includes/post-types/a3-portfolio-post-types.php:274
+msgid "Date"
+msgstr ""
+
+#: includes/taxonomies/a3-portfolio-cat.php:83
+#, php-format
+msgid ""
+"Create and manage Portfolio Categories here. Category names are used to "
+"create the main Portfolio Nav Bar. Turn the Nav Bar feature ON for each "
+"category that you want to show on the Portfolio Main Nav Bar. Use drag and "
+"drop in categories list to set category position on the Portfolio Nav Bar. "
+"Child categories auto show on their Parent Category page Nav Bar. There is "
+"an a3 Portfolio Categories <a href=\"%s\">widget</a> for navigation."
+msgstr ""
+
+#: includes/taxonomies/a3-portfolio-cat.php:152
+#: includes/taxonomies/a3-portfolio-cat.php:187
+msgid "ON to show this category on the Portfolio main Nav Bar."
+msgstr ""
+
+#: includes/taxonomies/a3-portfolio-cat.php:158
+#: includes/taxonomies/a3-portfolio-cat.php:184
+#: includes/taxonomies/a3-portfolio-cat.php:194
+msgid "Portfolio Nav Bar Item"
+msgstr ""
+
+#: includes/taxonomies/a3-portfolio-cat.php:235
+#: includes/taxonomies/a3-portfolio-cat.php:239
+msgid "Main Nav Bar"
+msgstr ""
+
+#: includes/taxonomies/a3-portfolio-tag.php:14
+#, php-format
+msgid ""
+"Use the a3 Portfolios Tag Cloud <a href=\"%s\">widget</a> for navigation."
+msgstr ""
+
+#: includes/widgets/class-portfolio-attribute-filter-widget.php:18
+msgid "Use this widget to filter the portfolios from attribute is selected."
+msgstr ""
+
+#: includes/widgets/class-portfolio-attribute-filter-widget.php:20
+msgid "a3 Portfolios Attribute Filter"
+msgstr ""
+
+#: includes/widgets/class-portfolio-attribute-filter-widget.php:75
+#: includes/widgets/class-portfolio-categories-widget.php:207
+#: includes/widgets/class-portfolio-recently-viewed-widget.php:110
+#: includes/widgets/class-portfolio-tags-widget.php:66
+msgid "Title:"
+msgstr ""
+
+#: includes/widgets/class-portfolio-attribute-filter-widget.php:79
+msgid "Attribute Filter:"
+msgstr ""
+
+#: includes/widgets/class-portfolio-attribute-filter-widget.php:81
+msgid "Select attribute to filter"
+msgstr ""
+
+#: includes/widgets/class-portfolio-categories-widget.php:21
+msgid ""
+"A list or dropdown of Portfolio Categories, Sub Categories and Portfolio "
+"items in each."
+msgstr ""
+
+#: includes/widgets/class-portfolio-categories-widget.php:23
+msgid "a3 Portfolios Categories"
+msgstr ""
+
+#: includes/widgets/class-portfolio-categories-widget.php:82
+msgid "Select a category"
+msgstr ""
+
+#: includes/widgets/class-portfolio-categories-widget.php:137
+#: includes/widgets/class-portfolio-categories-widget.php:153
+msgid "No portfolio categories exist."
+msgstr ""
+
+#: includes/widgets/class-portfolio-categories-widget.php:211
+msgid "Category Order by:"
+msgstr ""
+
+#: includes/widgets/class-portfolio-categories-widget.php:213
+msgid "Category Order"
+msgstr ""
+
+#: includes/widgets/class-portfolio-categories-widget.php:214
+msgid "Category Name"
+msgstr ""
+
+#: includes/widgets/class-portfolio-categories-widget.php:218
+msgid "Portfolio Order by:"
+msgstr ""
+
+#: includes/widgets/class-portfolio-categories-widget.php:220
+msgid "Menu Order"
+msgstr ""
+
+#: includes/widgets/class-portfolio-categories-widget.php:221
+msgid "Portfolio Name"
+msgstr ""
+
+#: includes/widgets/class-portfolio-categories-widget.php:226
+msgid "Show as dropdown"
+msgstr ""
+
+#: includes/widgets/class-portfolio-categories-widget.php:230
+msgid "Show hierarchy"
+msgstr ""
+
+#: includes/widgets/class-portfolio-categories-widget.php:234
+msgid "Show Portfolio"
+msgstr ""
+
+#: includes/widgets/class-portfolio-recently-viewed-widget.php:18
+msgid "Display a list of recently viewed portfolio items."
+msgstr ""
+
+#: includes/widgets/class-portfolio-recently-viewed-widget.php:20
+msgid "a3 Portfolios Recently Viewed"
+msgstr ""
+
+#: includes/widgets/class-portfolio-recently-viewed-widget.php:87
+#: includes/wpml-support/class-portfolio-wpml.php:66
+msgid "Clear All"
+msgstr ""
+
+#: includes/widgets/class-portfolio-tags-widget.php:19
+msgid "Your most used Portfolio tags in cloud format."
+msgstr ""
+
+#: includes/widgets/class-portfolio-tags-widget.php:21
+msgid "a3 Portfolios Tags"
+msgstr ""
+
+#: includes/wpml-support/class-portfolio-wpml.php:51
+#: templates/navbar/category-navbar.php:22 templates/navbar/main-navbar.php:19
+#: templates/navbar/tag-navbar.php:19
+msgid "Navigation"
+msgstr ""
+
+#: includes/wpml-support/class-portfolio-wpml.php:52
+#: templates/navbar/category-navbar.php:34 templates/navbar/main-navbar.php:31
+#: templates/navbar/tag-navbar.php:31
+msgid "All"
+msgstr ""
+
+#: includes/wpml-support/class-portfolio-wpml.php:59
+#: templates/expander/social-icons.php:46
+msgid "Twitter"
+msgstr ""
+
+#: includes/wpml-support/class-portfolio-wpml.php:60
+#: templates/expander/social-icons.php:54
+msgid "Facebook"
+msgstr ""
+
+#: includes/wpml-support/class-portfolio-wpml.php:61
+#: templates/expander/social-icons.php:61
+msgid "Google+"
+msgstr ""
+
+#: includes/wpml-support/class-portfolio-wpml.php:62
+#: templates/expander/social-icons.php:68
+msgid "Pinterest"
+msgstr ""
+
+#: includes/wpml-support/class-portfolio-wpml.php:68
+#: templates/widgets/attribute-filter-widget.php:59
+msgid "Clear This Filter"
+msgstr ""

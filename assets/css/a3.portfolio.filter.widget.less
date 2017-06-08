@@ -1,0 +1,74 @@
+@import "mixins.less";
+@import "a3.portfolio.base.less"; /* Contains base colours */
+
+.a3-portfolio-attribute-filter-container {
+    position: relative;
+
+    ul.attribute-filter {
+        clear: both;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            clear: both;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            a {
+                position: relative;
+            }
+
+            &.active {
+
+                a {
+
+                    &:after {
+                        display: inline-block;
+                        font: normal normal normal 16px/1 FontAwesome;
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        content: '\f046';
+                        color: @primary_color;
+                        margin-left: 5px;
+                        text-decoration: none !important;
+                    }
+
+                    &:hover:after {
+                        text-decoration: none !important;
+                    }
+                }
+            }
+
+            &.remove-filter {
+                display: none;
+
+                .remove-filter-button {
+                    margin: 10px auto;
+                    .padding(6px, 10px, 6px, 10px);
+                    background-color: @primary_color;
+                    border: 0px solid #FFFFFF;
+                    .border_radius(5px);
+                    box-shadow: none;
+                    -moz-box-shadow: none;
+                    -webkit-box-shadow: none ;
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #FFFFFF !important;
+                    text-decoration: none;
+                    cursor: pointer;
+                    display: table;
+                    letter-spacing: 1px;
+                    transition: all 200ms ease-in 0s;
+
+                    &.active, &:hover {
+                        background-color: @background_color;
+                        color: #FFFFFF !important;
+                    }
+                }
+            }
+        }
+    }
+}

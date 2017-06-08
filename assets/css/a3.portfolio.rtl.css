@@ -1,0 +1,102 @@
+@charset "UTF-8";
+.clear {
+  clear: both;
+}
+.nobr {
+  white-space: nowrap;
+}
+.a3-portfolio-navigation-mobile {
+  float: right;
+}
+.a3-portfolio-navigation-mobile .a3-portfolio-navigation-mobile-icon {
+  float: right;
+  box-shadow: -1px 0 0 0 #ccc;
+  -webkit-box-shadow: -1px 0 0 0 #ccc;
+  font-size: 24px;
+  margin-right: 0px;
+  margin-left: 8px;
+  padding-left: 6px;
+  padding-right: 2px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.a3-portfolio-item-container .a3-portfolio-card-overlay {
+  text-align: right;
+  left: auto;
+  right: 0;
+}
+.a3-portfolio-item-container .a3-portfolio-item-block .a3-portfolio-card-description div {
+  text-align: right;
+}
+.a3-portfolio-expander-popup .closebutton {
+  left: 15px;
+  right: auto;
+  float: right;
+  margin-left: 0px;
+  margin-right: 4px;
+}
+.a3-portfolio-item-image-container .a3-portfolio-gallery-thumbs-below-container {
+  text-align: right;
+}
+.a3-portfolio-item-content-container .portfolio-entry-meta {
+  float: right;
+}
+.a3-portfolio-item-content-container .portfolio-entry-meta .a3-portfolio-icon-user {
+  float: right;
+  margin-left: 10px;
+  margin-right: 0px;
+}
+.a3-portfolio-item-content-container .portfolio-entry-meta .a3-portfolio-icon-talk-chat {
+  float: right;
+  margin-left: 10px;
+  margin-right: 0px;
+}
+.a3-portfolio-item-content-container .portfolio-entry-meta .a3-portfolio-icon-calendar {
+  float: right;
+  margin-left: 10px;
+  margin-right: 0px;
+}
+.a3-portfolio-item-content-container ul.item-info li > span {
+  display: inline-block;
+}
+.a3-portfolio-item-content-container ul.item-info li .meta-title {
+  margin-left: 3px;
+  margin-right: 0px;
+  float: right;
+}
+.a3-portfolio-item-content-container .portfolio_item_categories span.label,
+.a3-portfolio-item-content-container .portfolio_item_tags span.label {
+  margin-left: 3px;
+  margin-right: 0px;
+}
+.a3-portfolio-gallery-thumbs-container .pg_grid {
+  margin-left: 5px !important;
+  margin-right: 0px !important;
+}
+.a3-portfolio-gallery-thumbs-container .pg_grid.first,
+.a3-portfolio-gallery-thumbs-container .pg_grid.last {
+  margin-right: 0px !important;
+  margin-left: 5px !important;
+}
+@media only screen and (min-width: 768px) {
+  .a3-portfolio-expander-popup .a3-portfolio-item-image-container,
+  div.single-a3-portfolio .a3-portfolio-item-image-container {
+    float: right;
+    margin-left: 2%;
+    margin-right: 0px;
+  }
+  .a3-portfolio-expander-popup .a3-portfolio-item-content-container,
+  div.single-a3-portfolio .a3-portfolio-item-content-container {
+    float: right;
+  }
+}
+@media only screen and (max-width: 736px) {
+  .a3-portfolio-controller {
+    float: right;
+  }
+  .a3-portfolio-controller .closebutton {
+    float: left;
+    left: 0;
+    right: auto;
+  }
+}

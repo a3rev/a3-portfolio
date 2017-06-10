@@ -75,7 +75,7 @@ class A3_Portfolio_Item_Posts_Tab extends A3_Portfolio_Admin_UI
 
 		$tab_data = array(
 			'name'				=> 'item-posts',
-			'label'				=> __( 'Item Posts', 'a3_portfolios' ),
+			'label'				=> __( 'Item Posts', 'a3-portfolio' ),
 			'callback_function'	=> 'a3_portfolio_item_posts_title_tab_manager',
 		);
 

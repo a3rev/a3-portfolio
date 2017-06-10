@@ -79,18 +79,18 @@ class A3_Portfolio {
 	}
 
 	public function plugin_activated(){
-		update_option('a3_portfolio_version', '2.4.6');
+		update_option('a3_portfolio_version', '2.5.0');
 
 		// Install Database
 		include ( A3_PORTFOLIO_DIR . '/includes/class-a3-portfolio-data.php' );
 		global $a3_portfolio_data;
 		$a3_portfolio_data->install_database();
 
-		$portfolio_page_id_created = a3_portfolio_create_page( _x('portfolios', 'page_slug', 'a3_portfolios'), '', __('Portfolios', 'a3_portfolios'), '[portfoliopage]' );
+		$portfolio_page_id_created = a3_portfolio_create_page( _x('portfolios', 'page_slug', 'a3-portfolio' ), '', __('Portfolios', 'a3-portfolio' ), '[portfoliopage]' );
 		update_option( 'portfolio_page_id', $portfolio_page_id_created );
 
 		// Create Portfolio page for languages support by WPML
-		a3_portfolio_auto_create_page_for_wpml( $portfolio_page_id_created, _x('portfolios', 'page_slug', 'a3_portfolios'), __('Portfolios', 'a3_portfolios'), '[portfoliopage]' );
+		a3_portfolio_auto_create_page_for_wpml( $portfolio_page_id_created, _x('portfolios', 'page_slug', 'a3-portfolio' ), __('Portfolios', 'a3-portfolio' ), '[portfoliopage]' );
 
 		update_option('a3_portfolio_just_installed', 'yes' );
 
@@ -115,7 +115,7 @@ class A3_Portfolio {
 			delete_option( 'a3_portfolio_just_installed' );
 		}
 
-		load_plugin_textdomain( 'a3_portfolios', false, A3_PORTFOLIO_FOLDER.'/languages' );
+		a3_portfolio_plugin_textdomain();
 
 		// Upgrade Plugin
 		$this->upgrade_plugin();
@@ -161,7 +161,7 @@ class A3_Portfolio {
 			include( A3_PORTFOLIO_DIR. '/includes/updates/update-2.4.0.php' );
 		}
 
-		update_option( 'a3_portfolio_version', '2.4.6' );
+		update_option( 'a3_portfolio_version', '2.5.0' );
 	}
 }
 

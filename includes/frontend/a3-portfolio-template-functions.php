@@ -628,7 +628,7 @@ function a3_portfolio_card_item_viewmore( $portfolio_id = 0, $echo = true ) {
 		$button_class  = apply_filters( 'a3_portfolio_viewmore_button_class', 'portfolio_viewmore_button', $portfolio_id );
 		$button_text   = trim( get_post_meta( $portfolio_id, '_a3_portfolio_viewmore_button_text', true ) );
 		if ( '' == $button_text ) {
-			$button_text   = apply_filters( 'a3_portfolio_viewmore_button_text', a3_portfolio_ei_ict_t__( 'View More Button Text', __( 'View More', 'a3_portfolios' ) ), $portfolio_id );
+			$button_text   = apply_filters( 'a3_portfolio_viewmore_button_text', a3_portfolio_ei_ict_t__( 'View More Button Text', __( 'View More', 'a3-portfolio' ) ), $portfolio_id );
 		}
 
 		if ( 'item_expander' == $a3_portfolio_item_cards_settings['cards_viewmore_opens'] ) {
@@ -974,7 +974,7 @@ function a3_portfolio_get_launch_button( $portfolio_id = 0 ) {
 	$open_type    = get_post_meta( $portfolio_id, '_a3_portfolio_launch_open_type', true );
 
 	if ( empty( $button_text ) || $button_text == '' ) {
-		$button_text = a3_portfolio_ei_ict_t__( 'Launch Site Button Text', __( 'LAUNCH SITE', 'a3_portfolios' ) );
+		$button_text = a3_portfolio_ei_ict_t__( 'Launch Site Button Text', __( 'LAUNCH SITE', 'a3-portfolio' ) );
 	}
 
 	$button_class = apply_filters( 'a3_portfolio_launch_button_class', $button_class, $portfolio_id );

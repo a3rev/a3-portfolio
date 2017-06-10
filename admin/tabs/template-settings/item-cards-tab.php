@@ -75,7 +75,7 @@ class A3_Portfolio_Item_Cards_Tab extends A3_Portfolio_Admin_UI
 
 		$tab_data = array(
 			'name'				=> 'item-cards',
-			'label'				=> __( 'Item Cards', 'a3_portfolios' ),
+			'label'				=> __( 'Item Cards', 'a3-portfolio' ),
 			'callback_function'	=> 'a3_portfolio_item_cards_tab_manager',
 		);
 

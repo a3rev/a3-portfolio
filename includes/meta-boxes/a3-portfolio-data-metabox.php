@@ -22,7 +22,7 @@ class A3_Portfolio_Data_Metabox
         if ( in_array( $post_type, $post_types )) {
 			add_meta_box(
 				'a3_portfolio_data_meta_box'
-				,__( 'Portfolio Item Meta', 'a3_portfolios' )
+				,__( 'Portfolio Item Meta', 'a3-portfolio' )
 				,array( $this, 'output' )
 				,$post_type
 				,'normal'
@@ -50,9 +50,9 @@ class A3_Portfolio_Data_Metabox
 		}
 
 		$params = array(
-			'select_attribute_message' => __( 'Please select an attribute for add', 'a3_portfolios' ),
-			'remove_attribute'         => __( 'Remove this attribute?', 'a3_portfolios' ),
-			'new_attribute_prompt'     => __( 'Enter a name for the new attribute term:', 'a3_portfolios' ),
+			'select_attribute_message' => __( 'Please select an attribute for add', 'a3-portfolio' ),
+			'remove_attribute'         => __( 'Remove this attribute?', 'a3-portfolio' ),
+			'new_attribute_prompt'     => __( 'Enter a name for the new attribute term:', 'a3-portfolio' ),
 			'ajax_url'                 => admin_url( 'admin-ajax.php' ),
 			'add_attribute_nonce'      => wp_create_nonce( 'add-attribute' ),
 			'save_attributes_nonce'    => wp_create_nonce( 'save-attributes' ),
@@ -98,7 +98,7 @@ class A3_Portfolio_Data_Metabox
 		$button_text = apply_filters( 'a3_portfolio_backend_launch_button_text', $button_text, $thepostid );
 
 		if ( '' == $button_text ) {
-			$button_text = a3_portfolio_ei_ict_t__( 'Launch Site Button Text', __( 'LAUNCH SITE', 'a3_portfolios' ) );
+			$button_text = a3_portfolio_ei_ict_t__( 'Launch Site Button Text', __( 'LAUNCH SITE', 'a3-portfolio' ) );
 		}
 		$launch_open_type = trim( esc_attr(  get_post_meta( $thepostid, '_a3_portfolio_launch_open_type', true ) ) );
 
@@ -107,7 +107,7 @@ class A3_Portfolio_Data_Metabox
 		$viewmore_button_text = apply_filters( 'a3_portfolio_backend_viewmore_button_text', $viewmore_button_text, $thepostid );
 
 		if ( '' == $viewmore_button_text ) {
-			$viewmore_button_text = apply_filters( 'a3_portfolio_viewmore_button_text', a3_portfolio_ei_ict_t__( 'View More Button Text', __( 'View More', 'a3_portfolios' ) ), $thepostid );
+			$viewmore_button_text = apply_filters( 'a3_portfolio_viewmore_button_text', a3_portfolio_ei_ict_t__( 'View More Button Text', __( 'View More', 'a3-portfolio' ) ), $thepostid );
 		}
 
 		?>
@@ -119,32 +119,32 @@ class A3_Portfolio_Data_Metabox
 				<?php
 					$portfolio_data_tabs = apply_filters( 'a3_portfolio_metabox_data_tabs', array(
 						'portfolio_gallery' => array(
-							'label'  => __( 'Portfolio Gallery', 'a3_portfolios' ),
+							'label'  => __( 'Portfolio Gallery', 'a3-portfolio' ),
 							'target' => 'portfolio_gallery_panel',
 							'class'  => array(),
 						),
 						'card_description' => array(
-							'label'  => __( 'Card Description', 'a3_portfolios' ),
+							'label'  => __( 'Card Description', 'a3-portfolio' ),
 							'target' => 'portfolio_card_description_panel',
 							'class'  => array(),
 						),
 						'single_layout' => array(
-							'label'  => __( 'Layout', 'a3_portfolios' ),
+							'label'  => __( 'Layout', 'a3-portfolio' ),
 							'target' => 'portfolio_single_layout_panel',
 							'class'  => array(),
 						),
 						'portfolio_attributes' => array(
-							'label'  => __( 'Attributes', 'a3_portfolios' ),
+							'label'  => __( 'Attributes', 'a3-portfolio' ),
 							'target' => 'portfolio_attributes_panel',
 							'class'  => array(),
 						),
 						'portfolio_button' => array(
-							'label'  => __( 'Button', 'a3_portfolios' ),
+							'label'  => __( 'Button', 'a3-portfolio' ),
 							'target' => 'portfolio_button_panel',
 							'class'  => array(),
 						),
 						'portfolio_sticky' => array(
-							'label'  => __( 'Sticky', 'a3_portfolios' ),
+							'label'  => __( 'Sticky', 'a3-portfolio' ),
 							'target' => 'portfolio_sticky_panel',
 							'class'  => array(),
 						),
@@ -179,7 +179,7 @@ class A3_Portfolio_Data_Metabox
 						<li class="image" data-attachment_id="<?php echo $attachment_id ; ?> ">
 							<?php echo wp_get_attachment_image( $attachment_id, 'thumbnail' ); ?>
 							<ul class="actions">
-								<li><a href="#" class="delete tips" data-tip="<?php echo __( 'Delete image', 'a3_portfolios' ); ?>"><?php echo __( 'Delete image', 'a3_portfolios' ); ?></a></li>
+								<li><a href="#" class="delete tips" data-tip="<?php echo __( 'Delete image', 'a3-portfolio' ); ?>"><?php echo __( 'Delete image', 'a3-portfolio' ); ?></a></li>
 							</ul>
 						</li>
 						<?php
@@ -192,7 +192,7 @@ class A3_Portfolio_Data_Metabox
 
 				</div>
 				<p class="add_portfolio_images hide-if-no-js">
-					<a href="#" data-choose="<?php _e( 'Add Images to Portfolio Gallery', 'a3_portfolios' ); ?>" data-update="<?php _e( 'Add to gallery', 'a3_portfolios' ); ?>" data-delete="<?php _e( 'Delete image', 'a3_portfolios' ); ?>" data-text="<?php _e( 'Delete', 'a3_portfolios' ); ?>"><?php _e( 'Add portfolio gallery images', 'a3_portfolios' ); ?></a>
+					<a href="#" data-choose="<?php _e( 'Add Images to Portfolio Gallery', 'a3-portfolio' ); ?>" data-update="<?php _e( 'Add to gallery', 'a3-portfolio' ); ?>" data-delete="<?php _e( 'Delete image', 'a3-portfolio' ); ?>" data-text="<?php _e( 'Delete', 'a3-portfolio' ); ?>"><?php _e( 'Add portfolio gallery images', 'a3-portfolio' ); ?></a>
 				</p>
 				<?php do_action( 'a3_portfolio_metabox_portfolio_gallery_panel', $post ); ?>
 			</div>
@@ -206,9 +206,9 @@ class A3_Portfolio_Data_Metabox
 									name="_a3_portfolio_card_desc"
 									id="_a3_portfolio_card_desc"
 									class="a3rev-ui-textarea"
-	                                placeholder="<?php _e( 'Leave this empty and the card description will be pulled from the first lines of the item description', 'a3_portfolios' ); ?>"
+	                                placeholder="<?php _e( 'Leave this empty and the card description will be pulled from the first lines of the item description', 'a3-portfolio' ); ?>"
 								><?php echo $card_desc; ?></textarea>
-								<div><span class="description"><?php _e( 'Note! The number of rows set for Item Card Description text Height on General Settings still applies to custom description entered here', 'a3_portfolios' ); ?></span></div>
+								<div><span class="description"><?php _e( 'Note! The number of rows set for Item Card Description text Height on General Settings still applies to custom description entered here', 'a3-portfolio' ); ?></span></div>
 	                        </td>
 						</tr>
 						<?php do_action( 'a3_portfolio_metabox_portfolio_card_description_options' ); ?>
@@ -222,15 +222,15 @@ class A3_Portfolio_Data_Metabox
 					<table class="form-table">
 						<tr>
 							<td>
-								<label for="_a3_portfolio_meta_layout_column"><?php echo __( 'Post Display', 'a3_portfolios' ); ?></label>
+								<label for="_a3_portfolio_meta_layout_column"><?php echo __( 'Post Display', 'a3-portfolio' ); ?></label>
 							</td>
 							<td class="forminp forminp-switcher_checkbox">
 		                        <input
 									name="_a3_portfolio_meta_layout_column"
 	                                id="_a3_portfolio_meta_layout_column"
 									class="a3rev-ui-onoff_checkbox a3_portfolio_meta_layout_column"
-	                                checked_label="<?php echo __( '1 Column', 'a3_portfolios' ); ?>"
-	                                unchecked_label="<?php echo __( '2 Columns', 'a3_portfolios' ); ?>"
+	                                checked_label="<?php echo __( '1 Column', 'a3-portfolio' ); ?>"
+	                                unchecked_label="<?php echo __( '2 Columns', 'a3-portfolio' ); ?>"
 	                                type="checkbox"
 									value="1"
 									<?php checked( $layout_column, 1 ); ?>
@@ -239,7 +239,7 @@ class A3_Portfolio_Data_Metabox
 						</tr>
 						<tr class="portfolio_single_2_column_container">
 							<td>
-								<label for="_a3_portfolio_meta_gallery_wide"><?php echo __( 'Main Image Width', 'a3_portfolios' ); ?></label>
+								<label for="_a3_portfolio_meta_gallery_wide"><?php echo __( 'Main Image Width', 'a3-portfolio' ); ?></label>
 							</td>
 							<td class="forminp forminp-slider">
 	                        <div class="a3rev-ui-slide-container">
@@ -261,7 +261,7 @@ class A3_Portfolio_Data_Metabox
 						</tr>
 						<tr valign="top" class="portfolio_single_2_column_container">
 							<td>
-								<label for="_a3_portfolio_meta_thumb_position"><?php echo __( 'Gallery Thumbnail Position', 'a3_portfolios' ); ?></label>
+								<label for="_a3_portfolio_meta_thumb_position"><?php echo __( 'Gallery Thumbnail Position', 'a3-portfolio' ); ?></label>
 							</td>
 							<td class="forminp forminp-select">
 								<select
@@ -270,10 +270,10 @@ class A3_Portfolio_Data_Metabox
 									style="width: 100px;"
 									class="a3rev-ui-select chzn-select"
 									>
-									<option value="right" selected="selected"><?php echo __( 'Right', 'a3_portfolios' ); ?></option>
+									<option value="right" selected="selected"><?php echo __( 'Right', 'a3-portfolio' ); ?></option>
 									<option value="below" <?php
 											selected( $thumb_pos, 'below' );
-									?>><?php echo __( 'Below', 'a3_portfolios' ); ?></option>
+									?>><?php echo __( 'Below', 'a3-portfolio' ); ?></option>
 							   </select>
 							</td>
 						</tr>
@@ -290,9 +290,9 @@ class A3_Portfolio_Data_Metabox
 					if ( $a3_portfolio_attributes && is_array( $a3_portfolio_attributes ) && count( $a3_portfolio_attributes ) > 0 ) {
 				?>
 				<p class="toolbar toolbar-top">
-					<a href="#" class="a3-metabox-icon close_all"><?php _e( 'Close all', 'a3_portfolios' ); ?></a><a href="#" class="a3-metabox-icon expand_all"><?php _e( 'Expand all', 'a3_portfolios' ); ?></a>
+					<a href="#" class="a3-metabox-icon close_all"><?php _e( 'Close all', 'a3-portfolio' ); ?></a><a href="#" class="a3-metabox-icon expand_all"><?php _e( 'Expand all', 'a3-portfolio' ); ?></a>
 					<select name="attribute_taxonomy" class="attribute_taxonomy">
-						<option value=""><?php _e( 'Select portfolio attribute', 'a3_portfolios' ); ?></option>
+						<option value=""><?php _e( 'Select portfolio attribute', 'a3-portfolio' ); ?></option>
 						<?php
 							// Array of defined attribute taxonomies
 							$attribute_taxonomies = a3_portfolio_get_attribute_taxonomies();
@@ -306,7 +306,7 @@ class A3_Portfolio_Data_Metabox
 							}
 						?>
 					</select>
-					<button type="button" class="button add_attribute"><?php _e( 'Add', 'a3_portfolios' ); ?></button>
+					<button type="button" class="button add_attribute"><?php _e( 'Add', 'a3-portfolio' ); ?></button>
 				</p>
 				<div class="portfolio_attributes a3-metabox-items">
 					<?php
@@ -348,13 +348,13 @@ class A3_Portfolio_Data_Metabox
 					?>
 				</div>
 				<p class="toolbar">
-					<a href="#" class="a3-metabox-icon close_all"><?php _e( 'Close all', 'a3_portfolios' ); ?></a><a href="#" class="a3-metabox-icon expand_all"><?php _e( 'Expand all', 'a3_portfolios' ); ?></a>
-					<button type="button" class="button save_attributes button-primary"><?php _e( 'Save Attributes', 'a3_portfolios' ); ?></button>
+					<a href="#" class="a3-metabox-icon close_all"><?php _e( 'Close all', 'a3-portfolio' ); ?></a><a href="#" class="a3-metabox-icon expand_all"><?php _e( 'Expand all', 'a3-portfolio' ); ?></a>
+					<button type="button" class="button save_attributes button-primary"><?php _e( 'Save Attributes', 'a3-portfolio' ); ?></button>
 				</p>
 				<?php
 				} else {
 				?>
-				<div class="a3-metabox-items"><p class=""><?php echo sprintf( __( 'Please create <a href="%s">Portfolio Attribute</a>', 'a3_portfolios' ), admin_url('edit.php?post_type=a3-portfolio&page=portfolio-attributes') ); ?></p></div>
+				<div class="a3-metabox-items"><p class=""><?php echo sprintf( __( 'Please create <a href="%s">Portfolio Attribute</a>', 'a3-portfolio' ), admin_url('edit.php?post_type=a3-portfolio&page=portfolio-attributes') ); ?></p></div>
 				<?php
 				}
 				?>
@@ -366,12 +366,12 @@ class A3_Portfolio_Data_Metabox
 					<table class="form-table">
 						<tr>
 							<td colspan="2">
-								<strong><?php echo __( 'View More Button', 'a3_portfolios' ); ?></strong>
+								<strong><?php echo __( 'View More Button', 'a3-portfolio' ); ?></strong>
 							</td>
 						</tr>
 						<tr valign="top">
 							<td>
-								<label for="_a3_portfolio_viewmore_button_text"><?php echo __( 'Button Text', 'a3_portfolios' ); ?></label>
+								<label for="_a3_portfolio_viewmore_button_text"><?php echo __( 'Button Text', 'a3-portfolio' ); ?></label>
 							</td>
 							<td class="forminp forminp-text">
 		                        <input
@@ -389,12 +389,12 @@ class A3_Portfolio_Data_Metabox
 					<table class="form-table">
 						<tr>
 							<td colspan="2">
-								<strong><?php echo __( 'Launch Button', 'a3_portfolios' ); ?></strong>
+								<strong><?php echo __( 'Launch Button', 'a3-portfolio' ); ?></strong>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<label for="_a3_portfolio_launch_site_url"><?php echo __( 'Link URL', 'a3_portfolios' ); ?></label>
+								<label for="_a3_portfolio_launch_site_url"><?php echo __( 'Link URL', 'a3-portfolio' ); ?></label>
 							</td>
 							<td class="forminp forminp-text">
 		                        <input
@@ -409,7 +409,7 @@ class A3_Portfolio_Data_Metabox
 						</tr>
 						<tr valign="top">
 							<td>
-								<label for="_a3_portfolio_launch_button_text"><?php echo __( 'Button Text', 'a3_portfolios' ); ?></label>
+								<label for="_a3_portfolio_launch_button_text"><?php echo __( 'Button Text', 'a3-portfolio' ); ?></label>
 							</td>
 							<td class="forminp forminp-text">
 		                        <input
@@ -423,19 +423,19 @@ class A3_Portfolio_Data_Metabox
 						</tr>
 						<tr valign="top">
 							<td>
-								<label for="_a3_portfolio_launch_open_type"><?php echo __( 'Open Type', 'a3_portfolios' ); ?></label>
+								<label for="_a3_portfolio_launch_open_type"><?php echo __( 'Open Type', 'a3-portfolio' ); ?></label>
 							</td>
 							<td class="forminp forminp-onoff_checkbox">
 								<input
 									name="_a3_portfolio_launch_open_type"
 	                                id="_a3_portfolio_launch_open_type"
 	                                class="a3rev-ui-onoff_checkbox"
-	                                checked_label="<?php echo __( 'ON', 'a3_portfolios' ); ?>"
-	                                unchecked_label="<?php echo __( 'OFF', 'a3_portfolios' ); ?>"
+	                                checked_label="<?php echo __( 'ON', 'a3-portfolio' ); ?>"
+	                                unchecked_label="<?php echo __( 'OFF', 'a3-portfolio' ); ?>"
 	                                type="checkbox"
 									value="_blank"
 									<?php checked( $launch_open_type, '_blank' ); ?>
-									/> <label for="_a3_portfolio_launch_open_type"><span class="description" style="margin-left:5px;"><?php echo __( 'ON for Open in new window', 'a3_portfolios' ); ?></span></label>
+									/> <label for="_a3_portfolio_launch_open_type"><span class="description" style="margin-left:5px;"><?php echo __( 'ON for Open in new window', 'a3-portfolio' ); ?></span></label>
 	                        </td>
 						</tr>
 					</table>
@@ -449,19 +449,19 @@ class A3_Portfolio_Data_Metabox
 					<table class="form-table">
 						<tr valign="top">
 							<td>
-								<label for="_a3_portfolio_sticky"><?php echo __( 'Make Item Sticky', 'a3_portfolios' ); ?></label>
+								<label for="_a3_portfolio_sticky"><?php echo __( 'Make Item Sticky', 'a3-portfolio' ); ?></label>
 							</td>
 							<td class="forminp forminp-onoff_checkbox">
 								<input
 									name="sticky"
 	                                id="_a3_portfolio_sticky"
 	                                class="a3rev-ui-onoff_checkbox"
-	                                checked_label="<?php echo __( 'ON', 'a3_portfolios' ); ?>"
-	                                unchecked_label="<?php echo __( 'OFF', 'a3_portfolios' ); ?>"
+	                                checked_label="<?php echo __( 'ON', 'a3-portfolio' ); ?>"
+	                                unchecked_label="<?php echo __( 'OFF', 'a3-portfolio' ); ?>"
 	                                type="checkbox"
 									value="sticky"
 									<?php checked( is_sticky( $thepostid ) ); ?>
-									/> <label for="_a3_portfolio_sticky"><span class="description" style="margin-left:5px;"><?php echo sprintf( __( 'For theme with Sticky post functionality and for Sticky feature in <a href="%s" target="_blank" >a3 Portfolio Shortcodes</a> plugin', 'a3_portfolios' ), 'http://a3rev.com/shop/a3-portfolio-shortcodes/' ); ?></span></label>
+									/> <label for="_a3_portfolio_sticky"><span class="description" style="margin-left:5px;"><?php echo sprintf( __( 'For theme with Sticky post functionality and for Sticky feature in <a href="%s" target="_blank" >a3 Portfolio Shortcodes</a> plugin', 'a3-portfolio' ), 'http://a3rev.com/shop/a3-portfolio-shortcodes/' ); ?></span></label>
 	                        </td>
 						</tr>
 					</table>

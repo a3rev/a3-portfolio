@@ -16,7 +16,7 @@ class A3_Portfolio_Tags_Widget extends WP_Widget {
 	public function __construct() {
 		$widget_ops = array(
 			'classname'   => 'widget_portfolio_categories',
-			'description' => __( 'Your most used Portfolio tags in cloud format.', 'a3_portfolios')
+			'description' => __( 'Your most used Portfolio tags in cloud format.', 'a3-portfolio' )
 		);
 		parent::__construct('widget_a3_portfolio_tags', __('a3 Portfolios Tags'), $widget_ops);
 	}

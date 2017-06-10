@@ -96,7 +96,7 @@ class A3_Portfolio_Permalinks_Structure {
 
 		if ( empty( $terms ) ) {
 			// If no terms are assigned to this post, use a string instead (can't leave the placeholder there)
-			$portfolio_category = _x( 'uncategorized', 'slug', 'a3_portfolios' );
+			$portfolio_category = _x( 'uncategorized', 'slug', 'a3-portfolio' );
 		} else {
 			// Replace the placeholder rewrite tag with the first term's slug
 			$first_term = array_shift( $terms );

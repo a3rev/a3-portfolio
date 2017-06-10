@@ -48,24 +48,24 @@ class A3_Portfolio_WPML
 		if ( function_exists('icl_register_string') ) {
 
 			// Portfolio Global
-			icl_register_string( $this->plugin_wpml_name, 'Mobile Navigation', __( 'Navigation', 'a3_portfolios' ) );
-			icl_register_string( $this->plugin_wpml_name, 'All Filter', __( 'All', 'a3_portfolios' ) );
-			icl_register_string( $this->plugin_wpml_name, 'Launch Site Button Text', __( 'LAUNCH SITE', 'a3_portfolios' ) );
-			icl_register_string( $this->plugin_wpml_name, 'Categories field', __( 'Categories', 'a3_portfolios' ) );
-			icl_register_string( $this->plugin_wpml_name, 'Tags field', __( 'Tags', 'a3_portfolios' ) );
-			icl_register_string( $this->plugin_wpml_name, 'View More Button Text', __( 'View More', 'a3_portfolios' ) );
+			icl_register_string( $this->plugin_wpml_name, 'Mobile Navigation', __( 'Navigation', 'a3-portfolio' ) );
+			icl_register_string( $this->plugin_wpml_name, 'All Filter', __( 'All', 'a3-portfolio' ) );
+			icl_register_string( $this->plugin_wpml_name, 'Launch Site Button Text', __( 'LAUNCH SITE', 'a3-portfolio' ) );
+			icl_register_string( $this->plugin_wpml_name, 'Categories field', __( 'Categories', 'a3-portfolio' ) );
+			icl_register_string( $this->plugin_wpml_name, 'Tags field', __( 'Tags', 'a3-portfolio' ) );
+			icl_register_string( $this->plugin_wpml_name, 'View More Button Text', __( 'View More', 'a3-portfolio' ) );
 
 			// Portfolio Social
-			icl_register_string( $this->plugin_wpml_name, 'Social - Twitter', __( 'Twitter', 'a3_portfolios' ) );
-			icl_register_string( $this->plugin_wpml_name, 'Social - Facebook', __( 'Facebook', 'a3_portfolios' ) );
-			icl_register_string( $this->plugin_wpml_name, 'Social - Google Plus', __( 'Google+', 'a3_portfolios' ) );
-			icl_register_string( $this->plugin_wpml_name, 'Social - Pinterest', __( 'Pinterest', 'a3_portfolios' ) );
+			icl_register_string( $this->plugin_wpml_name, 'Social - Twitter', __( 'Twitter', 'a3-portfolio' ) );
+			icl_register_string( $this->plugin_wpml_name, 'Social - Facebook', __( 'Facebook', 'a3-portfolio' ) );
+			icl_register_string( $this->plugin_wpml_name, 'Social - Google Plus', __( 'Google+', 'a3-portfolio' ) );
+			icl_register_string( $this->plugin_wpml_name, 'Social - Pinterest', __( 'Pinterest', 'a3-portfolio' ) );
 
 			// Widget
-			icl_register_string( $this->plugin_wpml_name, 'Recently Widget - No Portfolio', __( 'No Portfolio Recently Viewed !', 'a3_portfolios' ) );
-			icl_register_string( $this->plugin_wpml_name, 'Recently Widget - Clear All', __( 'Clear All', 'a3_portfolios' ) );
+			icl_register_string( $this->plugin_wpml_name, 'Recently Widget - No Portfolio', __( 'No Portfolio Recently Viewed !', 'a3-portfolio' ) );
+			icl_register_string( $this->plugin_wpml_name, 'Recently Widget - Clear All', __( 'Clear All', 'a3-portfolio' ) );
 
-			icl_register_string( $this->plugin_wpml_name, 'Attribute Filter Widget - Clear This Filter', __( 'Clear This Filter', 'a3_portfolios' ) );
+			icl_register_string( $this->plugin_wpml_name, 'Attribute Filter Widget - Clear This Filter', __( 'Clear This Filter', 'a3-portfolio' ) );
 		}
 	}
 

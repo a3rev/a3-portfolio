@@ -15,9 +15,9 @@ class A3_Portfolio_Attribute_Filter_Widget extends WP_Widget {
 	function __construct() {
 		$widget_ops = array(
 			'classname'   => 'widget_portfolio_attribute_filter',
-			'description' => __( 'Use this widget to filter the portfolios from attribute is selected.', 'a3_portfolios')
+			'description' => __( 'Use this widget to filter the portfolios from attribute is selected.', 'a3-portfolio' )
 		);
-		parent::__construct('widget_a3_portfolio_attribute_filter', __('a3 Portfolios Attribute Filter', 'a3_portfolios'), $widget_ops);
+		parent::__construct('widget_a3_portfolio_attribute_filter', __('a3 Portfolios Attribute Filter', 'a3-portfolio' ), $widget_ops);
 	}
 
 	function widget( $args, $instance ) {
@@ -72,13 +72,13 @@ class A3_Portfolio_Attribute_Filter_Widget extends WP_Widget {
 		$attribute_taxonomies = a3_portfolio_get_attribute_taxonomies();
 ?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'a3_portfolios'); ?></label>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'a3-portfolio' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 		</p>
         <p>
-        	<label for="<?php echo $this->get_field_id('attribute_id'); ?>"><?php _e('Attribute Filter:', 'a3_portfolios'); ?></label>
+        	<label for="<?php echo $this->get_field_id('attribute_id'); ?>"><?php _e('Attribute Filter:', 'a3-portfolio' ); ?></label>
         	<select name="<?php echo $this->get_field_name('attribute_id'); ?>" id="<?php echo $this->get_field_id('attribute_id'); ?>">
-            	<option value="0" selected="selected"><?php _e('Select attribute to filter', 'a3_portfolios'); ?></option>
+            	<option value="0" selected="selected"><?php _e('Select attribute to filter', 'a3-portfolio' ); ?></option>
          	<?php
          		if ( $attribute_taxonomies && is_array( $attribute_taxonomies ) && count( $attribute_taxonomies ) > 0 ) {
          			foreach ( $attribute_taxonomies as $tax ) {

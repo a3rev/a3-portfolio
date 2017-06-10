@@ -80,7 +80,7 @@ class A3_Portfolio_Category_Taxonomy
 	}
 
 	public function portfolio_cat_description() {
-		echo wpautop( sprintf( __( 'Create and manage Portfolio Categories here. Category names are used to create the main Portfolio Nav Bar. Turn the Nav Bar feature ON for each category that you want to show on the Portfolio Main Nav Bar. Use drag and drop in categories list to set category position on the Portfolio Nav Bar. Child categories auto show on their Parent Category page Nav Bar. There is an a3 Portfolio Categories <a href="%s">widget</a> for navigation.', 'a3_portfolios' ), 'widgets.php' ) );
+		echo wpautop( sprintf( __( 'Create and manage Portfolio Categories here. Category names are used to create the main Portfolio Nav Bar. Turn the Nav Bar feature ON for each category that you want to show on the Portfolio Main Nav Bar. Use drag and drop in categories list to set category position on the Portfolio Nav Bar. Child categories auto show on their Parent Category page Nav Bar. There is an a3 Portfolio Categories <a href="%s">widget</a> for navigation.', 'a3-portfolio' ), 'widgets.php' ) );
 	}
 
 	public function set_metadata_wpdbfix() {
@@ -149,13 +149,13 @@ class A3_Portfolio_Category_Taxonomy
 			<?php ob_start(); ?>
 			<div class="form-field">
 				<input type="hidden" name="have_portfolio_category_field" value="yes"  />
-				<input class="a3rev-ui-onoff_checkbox" type="checkbox" checked="checked" name="active_portfolio_taxonomy" id="active_portfolio_taxonomy" value="1" /> <label for="active_portfolio_taxonomy"><?php _e( 'ON to show this category on the Portfolio main Nav Bar.', 'a3_portfolios' ); ?></label>
+				<input class="a3rev-ui-onoff_checkbox" type="checkbox" checked="checked" name="active_portfolio_taxonomy" id="active_portfolio_taxonomy" value="1" /> <label for="active_portfolio_taxonomy"><?php _e( 'ON to show this category on the Portfolio main Nav Bar.', 'a3-portfolio' ); ?></label>
 			</div>
 
 			<?php
 			$settings_html = ob_get_clean();
 			$a3_portfolio_admin_interface->panel_box( $settings_html, array(
-				'name' 		=> __( 'Portfolio Nav Bar Item', 'a3_portfolios' ),
+				'name' 		=> __( 'Portfolio Nav Bar Item', 'a3-portfolio' ),
 				'id'		=> 'portfolio_navbar_item',
 				'is_box'	=> true,
 			) );
@@ -181,17 +181,17 @@ class A3_Portfolio_Category_Taxonomy
 	    <?php ob_start(); ?>
 	    <table class="form-table">
 		    <tr class="form-field a3rev_panel_container a3rev_portfolio_panel_container">
-		    <th scope="row" valign="top"><label for="active_portfolio_taxonomy"><?php _e( 'Portfolio Nav Bar Item', 'a3_portfolios' ); ?></label></th>
+		    <th scope="row" valign="top"><label for="active_portfolio_taxonomy"><?php _e( 'Portfolio Nav Bar Item', 'a3-portfolio' ); ?></label></th>
 		        <td>
 				<input type="hidden" name="have_portfolio_category_field" value="yes"  />
-		        <input class="a3rev-ui-onoff_checkbox" <?php echo $checked ;?> type="checkbox" name="active_portfolio_taxonomy" id="active_portfolio_taxonomy" value="1" /> <label for="active_portfolio_taxonomy"><?php _e( 'ON to show this category on the Portfolio main Nav Bar.', 'a3_portfolios' ); ?></label>
+		        <input class="a3rev-ui-onoff_checkbox" <?php echo $checked ;?> type="checkbox" name="active_portfolio_taxonomy" id="active_portfolio_taxonomy" value="1" /> <label for="active_portfolio_taxonomy"><?php _e( 'ON to show this category on the Portfolio main Nav Bar.', 'a3-portfolio' ); ?></label>
 		        </td>
 		    </tr>
 	    </table>
 	    <?php
 		$settings_html = ob_get_clean();
 		$a3_portfolio_admin_interface->panel_box( $settings_html, array(
-			'name' 		=> __( 'Portfolio Nav Bar Item', 'a3_portfolios' ),
+			'name' 		=> __( 'Portfolio Nav Bar Item', 'a3-portfolio' ),
 			'id'		=> 'portfolio_navbar_item',
 			'is_box'	=> true,
 		) );
@@ -232,11 +232,11 @@ class A3_Portfolio_Category_Taxonomy
 				$new_columns[$column_key] = $column_name;
 				if ( $column_key == 'description' ) {
 					$have_description_column = true;
-					$new_columns['primary_nav_bar'] = __( 'Main Nav Bar', 'a3_portfolios' );
+					$new_columns['primary_nav_bar'] = __( 'Main Nav Bar', 'a3-portfolio' );
 				}
 			}
 			if ( ! $have_description_column ) {
-				$new_columns['primary_nav_bar'] = __( 'Main Nav Bar', 'a3_portfolios' );
+				$new_columns['primary_nav_bar'] = __( 'Main Nav Bar', 'a3-portfolio' );
 			} else {
 				unset( $new_columns['description'] );
 			}

@@ -60,8 +60,8 @@ class A3_Portfolio_Settings_Page extends A3_Portfolio_Admin_UI
 		$page_data = array(
 			'type'				=> 'submenu',
 			'parent_slug'		=> 'edit.php?post_type=a3-portfolio',
-			'page_title'		=> __('General Settings','a3_portfolios'),
-			'menu_title'		=> __('General Settings','a3_portfolios'),
+			'page_title'		=> __('General Settings', 'a3-portfolio' ),
+			'menu_title'		=> __('General Settings', 'a3-portfolio' ),
 			'capability'		=> 'manage_options',
 			'menu_slug'			=> $this->menu_slug,
 			'function'			=> 'a3_portfolio_settings_page_show',

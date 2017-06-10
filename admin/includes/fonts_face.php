@@ -574,10 +574,15 @@ class A3_Portfolio_Fonts_Face extends A3_Portfolio_Admin_UI
 			$option['face'] = "'" . $option['face'] . "', arial, sans-serif";
 		}
 
+		$line_height = '1.4em';
+        if( isset( $option['line_height'] ) ){
+            $line_height = $option['line_height'];
+        }
+
 		if ( !@$option['style'] && !@$option['size'] && !@$option['color'] )
 			return 'font-family: '.stripslashes($option["face"]).' !important;';
 		else
-			return 'font:'.$option['style'].' '.$option['size'].' '.stripslashes($option['face']).' !important; color:'.$option['color'].' !important;';
+			return 'font:'.$option['style'].' '.$option['size'].'/' . $line_height . ' ' .stripslashes($option['face']).' !important; color:'.$option['color'].' !important;';
 	}
 
 

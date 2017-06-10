@@ -22,7 +22,7 @@ $comma = '';
 
 	<div class="portfolio_item_categories">
 
-		<span class="label"><?php echo a3_portfolio_ei_ict_t__( 'Categories field', __( 'Categories', 'a3_portfolios' ) ); ?> : </span>
+		<span class="label"><?php echo a3_portfolio_ei_ict_t__( 'Categories field', __( 'Categories', 'a3-portfolio' ) ); ?> : </span>
 
 		<?php foreach ( $portfolio_categories as $term ) : ?>
 

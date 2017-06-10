@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="a3-portfolio-navigation-mobile">
 	<i class="fa fa-bars a3-portfolio-navigation-mobile-icon a3-portfolio-icon-list"></i>
-	<span><?php echo a3_portfolio_ei_ict_t__( 'Mobile Navigation', __( 'Navigation', 'a3_portfolios' ) ); ?></span>
+	<span><?php echo a3_portfolio_ei_ict_t__( 'Mobile Navigation', __( 'Navigation', 'a3-portfolio' ) ); ?></span>
 </div>
 
 <div style="clear:both"></div>
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<ul class="filter">
 
 		<li>
-			<a data-filter=".a3-portfolio-item" href="#" class="active"><?php echo a3_portfolio_ei_ict_t__( 'All Filter', __( 'All', 'a3_portfolios' ) ); ?></a>
+			<a data-filter=".a3-portfolio-item" href="#" class="active"><?php echo a3_portfolio_ei_ict_t__( 'All Filter', __( 'All', 'a3-portfolio' ) ); ?></a>
 		</li>
 
 	<?php
@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	?>
 
 		<li style="display: none" class="_uncategorized">
-			<a data-filter=".uncategorized" href="#"><?php echo __( 'Uncategorized', 'a3_portfolios'); ?></a>
+			<a data-filter=".uncategorized" href="#"><?php echo __( 'Uncategorized', 'a3-portfolio' ); ?></a>
 		</li>
 
 	</ul>

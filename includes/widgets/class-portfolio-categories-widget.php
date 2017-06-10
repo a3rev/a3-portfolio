@@ -18,9 +18,9 @@ class A3_Portfolio_Categories_Widget extends WP_Widget {
 	function __construct() {
 		$widget_ops = array(
 			'classname'   => 'widget_portfolio_categories',
-			'description' => __( 'A list or dropdown of Portfolio Categories, Sub Categories and Portfolio items in each.', 'a3_portfolios')
+			'description' => __( 'A list or dropdown of Portfolio Categories, Sub Categories and Portfolio items in each.', 'a3-portfolio' )
 		);
-		parent::__construct('widget_a3_portfolio_categories', __('a3 Portfolios Categories', 'a3_portfolios'), $widget_ops);
+		parent::__construct('widget_a3_portfolio_categories', __('a3 Portfolios Categories', 'a3-portfolio' ), $widget_ops);
 	}
 
 	function widget( $args, $instance ) {
@@ -79,7 +79,7 @@ class A3_Portfolio_Categories_Widget extends WP_Widget {
 		}
 
 		$output  = "<select name='portfolio_cat' class='dropdown_portfolio_cat'>";
-		$output .= '<option value="" ' .  selected( $current_portfolio_cat, '', false ) . '>' . __( 'Select a category', 'a3_portfolios' ) . '</option>';
+		$output .= '<option value="" ' .  selected( $current_portfolio_cat, '', false ) . '>' . __( 'Select a category', 'a3-portfolio' ) . '</option>';
 		$output .= $this->portfolio_walk_category_dropdown_tree( $terms, 0, $args );
 		$output .= "</select>";
 
@@ -134,7 +134,7 @@ class A3_Portfolio_Categories_Widget extends WP_Widget {
 			$cat_args['show_portfolio']			= $show_portfolio;
 			$cat_args['portfolio_orderby']		= $portfolio_orderby;
 			$cat_args['pad_counts'] 		= 1;
-			$cat_args['show_option_none'] 	= __('No portfolio categories exist.', 'a3_portfolios');
+			$cat_args['show_option_none'] 	= __('No portfolio categories exist.', 'a3-portfolio' );
 			$cat_args['current_category']	= ( $this->current_cat ) ? $this->current_cat->term_id : '';
 			$cat_args['current_category_ancestors']	= $this->cat_ancestors;
 			ob_start();
@@ -150,7 +150,7 @@ class A3_Portfolio_Categories_Widget extends WP_Widget {
 			$cat_args['show_portfolio']			= $show_portfolio;
 			$cat_args['portfolio_orderby']		= $portfolio_orderby;
 			$cat_args['pad_counts'] 		= 1;
-			$cat_args['show_option_none'] 	= __('No portfolio categories exist.', 'a3_portfolios');
+			$cat_args['show_option_none'] 	= __('No portfolio categories exist.', 'a3-portfolio' );
 			$cat_args['current_category']	= ( $this->current_cat ) ? $this->current_cat->term_id : '';
 			$cat_args['current_category_ancestors']	= $this->cat_ancestors;
 
@@ -204,34 +204,34 @@ class A3_Portfolio_Categories_Widget extends WP_Widget {
 		$show_portfolio    = $instance['show_portfolio'];
 ?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'a3_portfolios'); ?></label>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'a3-portfolio' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 		</p>
         <p>
-        	<label for="<?php echo $this->get_field_id('category_orderby'); ?>"><?php _e('Category Order by:', 'a3_portfolios'); ?></label>
+        	<label for="<?php echo $this->get_field_id('category_orderby'); ?>"><?php _e('Category Order by:', 'a3-portfolio' ); ?></label>
         	<select name="<?php echo $this->get_field_name('category_orderby'); ?>" id="<?php echo $this->get_field_id('category_orderby'); ?>">
-            	<option value="order" selected="selected"><?php _e('Category Order', 'a3_portfolios'); ?></option>
-                <option value="title" <?php selected( $category_orderby, 'title' ); ?>><?php _e('Category Name', 'a3_portfolios'); ?></option>
+            	<option value="order" selected="selected"><?php _e('Category Order', 'a3-portfolio' ); ?></option>
+                <option value="title" <?php selected( $category_orderby, 'title' ); ?>><?php _e('Category Name', 'a3-portfolio' ); ?></option>
             </select>
         </p>
         <p>
-        	<label for="<?php echo $this->get_field_id('portfolio_orderby'); ?>"><?php _e('Portfolio Order by:', 'a3_portfolios'); ?></label>
+        	<label for="<?php echo $this->get_field_id('portfolio_orderby'); ?>"><?php _e('Portfolio Order by:', 'a3-portfolio' ); ?></label>
         	<select name="<?php echo $this->get_field_name('portfolio_orderby'); ?>" id="<?php echo $this->get_field_id('portfolio_orderby'); ?>">
-            	<option value="menu_order" selected="selected"><?php _e('Menu Order', 'a3_portfolios'); ?></option>
-                <option value="title" <?php selected( $portfolio_orderby, 'title'); ?>><?php _e('Portfolio Name', 'a3_portfolios'); ?></option>
+            	<option value="menu_order" selected="selected"><?php _e('Menu Order', 'a3-portfolio' ); ?></option>
+                <option value="title" <?php selected( $portfolio_orderby, 'title'); ?>><?php _e('Portfolio Name', 'a3-portfolio' ); ?></option>
             </select>
         </p>
         <p>
         	<input type="checkbox" <?php checked( $dropdown, 'yes' ); ?> id="<?php echo $this->get_field_id('dropdown'); ?>" name="<?php echo $this->get_field_name('dropdown'); ?>" value="yes" />
-        	<label for="<?php echo $this->get_field_id('dropdown'); ?>"><?php _e( 'Show as dropdown', 'a3_portfolios' ); ?></label>
+        	<label for="<?php echo $this->get_field_id('dropdown'); ?>"><?php _e( 'Show as dropdown', 'a3-portfolio' ); ?></label>
         </p>
         <p>
         	<input type="checkbox" <?php checked( $hierarchy, 'yes' ); ?> id="<?php echo $this->get_field_id('hierarchy'); ?>" name="<?php echo $this->get_field_name('hierarchy'); ?>" value="yes" />
-        	<label for="<?php echo $this->get_field_id('hierarchy'); ?>"><?php _e('Show hierarchy', 'a3_portfolios'); ?></label>
+        	<label for="<?php echo $this->get_field_id('hierarchy'); ?>"><?php _e('Show hierarchy', 'a3-portfolio' ); ?></label>
         </p>
         <p>
         	<input type="checkbox" <?php checked( $show_portfolio, 'yes' ); ?> id="<?php echo $this->get_field_id('show_portfolio'); ?>" name="<?php echo $this->get_field_name('show_portfolio'); ?>" value="yes" />
-        	<label for="<?php echo $this->get_field_id('show_portfolio'); ?>"><?php _e('Show Portfolio', 'a3_portfolios'); ?></label>
+        	<label for="<?php echo $this->get_field_id('show_portfolio'); ?>"><?php _e('Show Portfolio', 'a3-portfolio' ); ?></label>
         </p>
 <?php
 	}

@@ -78,9 +78,9 @@ class A3_Portfolio_Item_Cards_Settings extends A3_Portfolio_Admin_UI
 		$this->subtab_init();
 		
 		$this->form_messages = array(
-				'success_message'	=> __( 'Item Cards Settings successfully saved.', 'a3_portfolios' ),
-				'error_message'		=> __( 'Error: Item Cards Settings can not save.', 'a3_portfolios' ),
-				'reset_message'		=> __( 'Item Cards Settings successfully reseted.', 'a3_portfolios' ),
+				'success_message'	=> __( 'Item Cards Settings successfully saved.', 'a3-portfolio' ),
+				'error_message'		=> __( 'Error: Item Cards Settings can not save.', 'a3-portfolio' ),
+				'reset_message'		=> __( 'Item Cards Settings successfully reseted.', 'a3-portfolio' ),
 			);
 					
 		add_action( $this->plugin_name . '-' . $this->form_key . '_settings_end', array( $this, 'include_script' ) );
@@ -136,7 +136,7 @@ class A3_Portfolio_Item_Cards_Settings extends A3_Portfolio_Admin_UI
 		
 		$subtab_data = array( 
 			'name'				=> 'item-cards',
-			'label'				=> __( 'Item Cards', 'a3_portfolios' ),
+			'label'				=> __( 'Item Cards', 'a3-portfolio' ),
 			'callback_function'	=> 'a3_portfolio_item_cards_settings_form',
 		);
 		
@@ -180,14 +180,14 @@ class A3_Portfolio_Item_Cards_Settings extends A3_Portfolio_Admin_UI
      	$this->form_fields = apply_filters( $this->option_name . '_settings_fields', array(
 
 			array(
-				'name' 		=> __( 'Item Cards Per Row', 'a3_portfolios' ),
+				'name' 		=> __( 'Item Cards Per Row', 'a3-portfolio' ),
                 'type' 		=> 'heading',
                 'id'		=> 'item_cards_per_row_box',
                 'is_box'	=> true,
            	),
 			array(  
-				'name' 		=> __( 'Maximum Items Per Row', 'a3_portfolios' ),
-				'desc' 		=> __( 'Maximum Items to show per row in larger screens.', 'a3_portfolios' ),
+				'name' 		=> __( 'Maximum Items Per Row', 'a3-portfolio' ),
+				'desc' 		=> __( 'Maximum Items to show per row in larger screens.', 'a3-portfolio' ),
 				'id' 		=> 'portfolio_items_per_row',
 				'type' 		=> 'slider',
 				'default'	=> 4,
@@ -197,21 +197,21 @@ class A3_Portfolio_Item_Cards_Settings extends A3_Portfolio_Admin_UI
 			),
 
 			array(
-				'name' 		=> __( 'Item Card Image', 'a3_portfolios' ),
+				'name' 		=> __( 'Item Card Image', 'a3-portfolio' ),
 				'type' 		=> 'heading',
 				'id'		=> 'item_card_image_box',
                 'is_box'	=> true,
            	),
            	array(
-				'name' 		=> __( 'Image Display Height', 'a3_portfolios' ),
+				'name' 		=> __( 'Image Display Height', 'a3-portfolio' ),
 				'id' 		=> 'portfolio_card_image_height',
 				'class'		=> 'portfolio_card_image_height',
 				'type' 		=> 'switcher_checkbox',
 				'default'	=> 'dynamic',
 				'checked_value'		=> 'fixed',
 				'unchecked_value'	=> 'dynamic',
-				'checked_label'		=> __( 'FIXED', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'DYNAMIC', 'a3_portfolios' ),
+				'checked_label'		=> __( 'FIXED', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'DYNAMIC', 'a3-portfolio' ),
 			),
 			array(
 				'name'		=> '',
@@ -219,7 +219,7 @@ class A3_Portfolio_Item_Cards_Settings extends A3_Portfolio_Admin_UI
                 'class'		=> 'portfolio_card_image_height_fixed_container',
            	),
            	array(
-				'name' 		=> __( 'Image Height as a % of Width', 'a3_portfolios' ),
+				'name' 		=> __( 'Image Height as a % of Width', 'a3-portfolio' ),
 				'id' 		=> 'portfolio_card_image_height_fixed',
 				'type' 		=> 'slider',
 				'default'	=> 80,
@@ -233,19 +233,19 @@ class A3_Portfolio_Item_Cards_Settings extends A3_Portfolio_Admin_UI
                 'class'		=> 'portfolio_card_image_link_opens_container',
            	),
            	array(
-				'name' 		=> __( 'Image Link Opens', 'a3_portfolios' ),
+				'name' 		=> __( 'Image Link Opens', 'a3-portfolio' ),
 				'id' 		=> 'cards_image_opens',
 				'class'		=> 'cards_image_opens',
 				'type' 		=> 'switcher_checkbox',
 				'default'	=> 'item_expander',
 				'checked_value'		=> 'item_post',
 				'unchecked_value'	=> 'item_expander',
-				'checked_label'		=> __( 'Item Post', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'Item Expander', 'a3_portfolios' ),
+				'checked_label'		=> __( 'Item Post', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'Item Expander', 'a3-portfolio' ),
 			),
 
 			array(
-				'name'		=> __( 'Item Card Title', 'a3_portfolios' ),
+				'name'		=> __( 'Item Card Title', 'a3-portfolio' ),
 				'desc' 		=> '',
 				'id'		=> 'cards_title_type_heading',
                 'type' 		=> 'heading',
@@ -257,48 +257,48 @@ class A3_Portfolio_Item_Cards_Settings extends A3_Portfolio_Admin_UI
                 'type' 		=> 'heading',
            	),
      		array(
-				'name' 		=> __( 'Item Title Position', 'a3_portfolios' ),
+				'name' 		=> __( 'Item Title Position', 'a3-portfolio' ),
 				'id' 		=> 'cards_title_type',
 				'class'		=> 'cards_title_type',
 				'type' 		=> 'switcher_checkbox',
 				'default'	=> 'hover',
 				'checked_value'		=> 'hover',
 				'unchecked_value'	=> 'under',
-				'checked_label'		=> __( 'On Hover', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'Under Image', 'a3_portfolios' ),
+				'checked_label'		=> __( 'On Hover', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'Under Image', 'a3-portfolio' ),
 			),
 			array(
                 'type' 		=> 'heading',
            	),
 			array(
-				'name' 		=> __( 'Title Link Opens', 'a3_portfolios' ),
+				'name' 		=> __( 'Title Link Opens', 'a3-portfolio' ),
 				'id' 		=> 'cards_title_opens',
 				'class'		=> 'cards_title_opens',
 				'type' 		=> 'switcher_checkbox',
 				'default'	=> 'item_post',
 				'checked_value'		=> 'item_post',
 				'unchecked_value'	=> 'item_expander',
-				'checked_label'		=> __( 'Item Post', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'Item Expander', 'a3_portfolios' ),
+				'checked_label'		=> __( 'Item Post', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'Item Expander', 'a3-portfolio' ),
 			),
 
      		array(
-				'name'		=> __( 'Item Card Description', 'a3_portfolios' ),
+				'name'		=> __( 'Item Card Description', 'a3-portfolio' ),
                 'type' 		=> 'heading',
                 'id'		=> 'item_card_description_box',
                 'is_box'	=> true,
            	),
      		array(
-				'name' 		=> __( 'Item Card Description', 'a3_portfolios' ),
-				'desc'		=> __( 'ON to show the description on the Item Card under the image', 'a3_portfolios' ),
+				'name' 		=> __( 'Item Card Description', 'a3-portfolio' ),
+				'desc'		=> __( 'ON to show the description on the Item Card under the image', 'a3-portfolio' ),
 				'id' 		=> 'enable_cards_description',
 				'type' 		=> 'onoff_checkbox',
 				'class'		=> 'enable_cards_description',
 				'default'	=> false,
 				'checked_value'		=> true,
 				'unchecked_value'	=> false,
-				'checked_label'		=> __( 'ON', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'OFF', 'a3_portfolios' ),
+				'checked_label'		=> __( 'ON', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'OFF', 'a3-portfolio' ),
 			),
 			array(
 				'name'		=> '',
@@ -306,38 +306,38 @@ class A3_Portfolio_Item_Cards_Settings extends A3_Portfolio_Admin_UI
                 'class'		=> 'cards_description_container',
            	),
      		array(
-				'name' 		=> __( 'Description Height', 'a3_portfolios' ),
+				'name' 		=> __( 'Description Height', 'a3-portfolio' ),
 				'id' 		=> 'cards_description_line_height',
 				'type' 		=> 'select',
 				'default'	=> '2',
 				'options'	=> array(
-					'1'		=> __( '1 Row', 'a3_portfolios' ),
-					'2'		=> __( '2 Rows', 'a3_portfolios' ),
-					'3'		=> __( '3 Rows', 'a3_portfolios' ),
-					'4'		=> __( '4 Rows', 'a3_portfolios' ),
-					'5'		=> __( '5 Rows', 'a3_portfolios' ),
-					'6'		=> __( '6 Rows', 'a3_portfolios' ),
+					'1'		=> __( '1 Row', 'a3-portfolio' ),
+					'2'		=> __( '2 Rows', 'a3-portfolio' ),
+					'3'		=> __( '3 Rows', 'a3-portfolio' ),
+					'4'		=> __( '4 Rows', 'a3-portfolio' ),
+					'5'		=> __( '5 Rows', 'a3-portfolio' ),
+					'6'		=> __( '6 Rows', 'a3-portfolio' ),
 				),
 				'css' 		=> 'width:160px;',
 			),
 
 			array(
-				'name'		=> __( 'View More Feature', 'a3_portfolios' ),
+				'name'		=> __( 'View More Feature', 'a3-portfolio' ),
                 'type' 		=> 'heading',
                 'id'		=> 'item_card_view_more_feature_box',
                 'is_box'	=> true,
            	),
      		array(
-				'name' 		=> __( 'Item Card View More', 'a3_portfolios' ),
-				'desc'		=> __( 'ON to show the view more button on the Item Card under the description', 'a3_portfolios' ),
+				'name' 		=> __( 'Item Card View More', 'a3-portfolio' ),
+				'desc'		=> __( 'ON to show the view more button on the Item Card under the description', 'a3-portfolio' ),
 				'id' 		=> 'enable_cards_viewmore',
 				'class'		=> 'enable_cards_viewmore',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> false,
 				'checked_value'		=> true,
 				'unchecked_value'	=> false,
-				'checked_label'		=> __( 'ON', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'OFF', 'a3_portfolios' ),
+				'checked_label'		=> __( 'ON', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'OFF', 'a3-portfolio' ),
 			),
 			array(
 				'name'		=> '',
@@ -345,15 +345,15 @@ class A3_Portfolio_Item_Cards_Settings extends A3_Portfolio_Admin_UI
                 'class'		=> 'item_card_view_more_link_opens_container',
            	),
            	array(
-				'name' 		=> __( 'View More Link Opens', 'a3_portfolios' ),
+				'name' 		=> __( 'View More Link Opens', 'a3-portfolio' ),
 				'id' 		=> 'cards_viewmore_opens',
 				'class'		=> 'cards_viewmore_opens',
 				'type' 		=> 'switcher_checkbox',
 				'default'	=> 'item_expander',
 				'checked_value'		=> 'item_post',
 				'unchecked_value'	=> 'item_expander',
-				'checked_label'		=> __( 'Item Post', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'Item Expander', 'a3_portfolios' ),
+				'checked_label'		=> __( 'Item Post', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'Item Expander', 'a3-portfolio' ),
 			),
 
         ));

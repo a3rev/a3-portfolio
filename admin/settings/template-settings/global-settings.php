@@ -78,9 +78,9 @@ class A3_Portfolio_Global_Settings extends A3_Portfolio_Admin_UI
 		$this->subtab_init();
 		
 		$this->form_messages = array(
-				'success_message'	=> __( 'Settings successfully saved.', 'a3_portfolios' ),
-				'error_message'		=> __( 'Error: Settings can not save.', 'a3_portfolios' ),
-				'reset_message'		=> __( 'Settings successfully reseted.', 'a3_portfolios' ),
+				'success_message'	=> __( 'Settings successfully saved.', 'a3-portfolio' ),
+				'error_message'		=> __( 'Error: Settings can not save.', 'a3-portfolio' ),
+				'reset_message'		=> __( 'Settings successfully reseted.', 'a3-portfolio' ),
 			);
 					
 		add_action( $this->plugin_name . '-' . $this->form_key . '_settings_end', array( $this, 'include_script' ) );
@@ -150,7 +150,7 @@ class A3_Portfolio_Global_Settings extends A3_Portfolio_Admin_UI
 		
 		$subtab_data = array( 
 			'name'				=> 'global-settings',
-			'label'				=> __( 'Global Settings', 'a3_portfolios' ),
+			'label'				=> __( 'Global Settings', 'a3-portfolio' ),
 			'callback_function'	=> 'a3_portfolio_global_settings_form',
 		);
 		
@@ -194,7 +194,7 @@ class A3_Portfolio_Global_Settings extends A3_Portfolio_Admin_UI
      	$this->form_fields = apply_filters( $this->option_name . '_settings_fields', array(
 
 			array(
-            	'name' 		=> __( 'Plugin Framework Global Settings', 'a3_portfolios' ),
+            	'name' 		=> __( 'Plugin Framework Global Settings', 'a3-portfolio' ),
             	'id'		=> 'plugin_framework_global_box',
                 'type' 		=> 'heading',
                 'first_open'=> true,
@@ -202,28 +202,28 @@ class A3_Portfolio_Global_Settings extends A3_Portfolio_Admin_UI
            	),
 
            	array(
-           		'name'		=> __( 'Customize Admin Setting Box Display', 'a3_portfolios' ),
-           		'desc'		=> __( 'By default each admin panel will open with all Setting Boxes in the CLOSED position.', 'a3_portfolios' ),
+           		'name'		=> __( 'Customize Admin Setting Box Display', 'a3-portfolio' ),
+           		'desc'		=> __( 'By default each admin panel will open with all Setting Boxes in the CLOSED position.', 'a3-portfolio' ),
                 'type' 		=> 'heading',
            	),
            	array(
 				'type' 		=> 'onoff_toggle_box',
 			),
 			array(
-           		'name'		=> __( 'Google Fonts', 'a3_portfolios' ),
-           		'desc'		=> __( 'By Default Google Fonts are pulled from a static JSON file in this plugin. This file is updated but does not have the latest font releases from Google.', 'a3_portfolios' ),
+           		'name'		=> __( 'Google Fonts', 'a3-portfolio' ),
+           		'desc'		=> __( 'By Default Google Fonts are pulled from a static JSON file in this plugin. This file is updated but does not have the latest font releases from Google.', 'a3-portfolio' ),
                 'type' 		=> 'heading',
            	),
            	array(
                 'type' 		=> 'google_api_key',
            	),
            	array(
-            	'name' 		=> __( 'House Keeping', 'a3_portfolios' ),
+            	'name' 		=> __( 'House Keeping', 'a3-portfolio' ),
                 'type' 		=> 'heading',
             ),
 			array(
-				'name' 		=> __( 'Clean up on Deletion', 'a3_portfolios' ),
-				'desc' 		=> __( 'On deletion (not deactivate) the plugin will completely remove all tables and data it created, leaving no trace it was ever here.', 'a3_portfolios'),
+				'name' 		=> __( 'Clean up on Deletion', 'a3-portfolio' ),
+				'desc' 		=> __( 'On deletion (not deactivate) the plugin will completely remove all tables and data it created, leaving no trace it was ever here.', 'a3-portfolio' ),
 				'id' 		=> 'a3_portfolios_clean_on_deletion',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> '0',
@@ -231,24 +231,24 @@ class A3_Portfolio_Global_Settings extends A3_Portfolio_Admin_UI
 				'free_version'		=> true,
 				'checked_value'		=> '1',
 				'unchecked_value'	=> '0',
-				'checked_label'		=> __( 'ON', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'OFF', 'a3_portfolios' ),
+				'checked_label'		=> __( 'ON', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'OFF', 'a3-portfolio' ),
 			),
 			array(
-				'name' 		=> __( 'Image Watermarks', 'a3_portfolios' ),
+				'name' 		=> __( 'Image Watermarks', 'a3-portfolio' ),
                 'type' 		=> 'heading',
-                'desc' 		=> __( 'To add Watermarks to the Portfolio item images, please use the free <a target="_blank" href="https://wordpress.org/plugins/easy-watermark/">Easy Watermark plugin</a>. It is tested 100% compatible with a3 Portfolios.', 'a3_portfolios' ),
+                'desc' 		=> __( 'To add Watermarks to the Portfolio item images, please use the free <a target="_blank" href="https://wordpress.org/plugins/easy-watermark/">Easy Watermark plugin</a>. It is tested 100% compatible with a3 Portfolios.', 'a3-portfolio' ),
            	),
 
 			array(
-				'name'		=> __( 'Portfolio Item Images', 'a3_portfolios' ),
-				'desc' 		=> __( 'These settings affect the display and dimensions of images in your portfolio - the display on the front-end will still be affected by CSS styles. After changing these settings you may need to regenerate your thumbnails.', 'a3_portfolios' ),
+				'name'		=> __( 'Portfolio Item Images', 'a3-portfolio' ),
+				'desc' 		=> __( 'These settings affect the display and dimensions of images in your portfolio - the display on the front-end will still be affected by CSS styles. After changing these settings you may need to regenerate your thumbnails.', 'a3-portfolio' ),
                 'type' 		=> 'heading',
                 'id'		=> 'portfolio_item_images_box',
                 'is_box'	=> true,
            	),
            	array(
-				'name' 		=> __( 'Item Card Images', 'a3_portfolios' ),
+				'name' 		=> __( 'Item Card Images', 'a3-portfolio' ),
                 'id' 		=> 'item_card_image_size',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array(
@@ -267,14 +267,14 @@ class A3_Portfolio_Global_Settings extends A3_Portfolio_Admin_UI
 			),
 			array(
 				'name' 		=> '',
-				'desc'		=> __( 'Hard Crop?', 'a3_portfolios' ),
+				'desc'		=> __( 'Hard Crop?', 'a3-portfolio' ),
 				'id' 		=> 'item_card_image_crop',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> 'yes',
 				'checked_value'		=> 'yes',
 				'unchecked_value'	=> 'no',
-				'checked_label'		=> __( 'ON', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'OFF', 'a3_portfolios' ),
+				'checked_label'		=> __( 'ON', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'OFF', 'a3-portfolio' ),
 			),
 
 			array(
@@ -282,7 +282,7 @@ class A3_Portfolio_Global_Settings extends A3_Portfolio_Admin_UI
                 'type' 		=> 'heading',
            	),
 			array(
-				'name' 		=> __( 'Gallery Images', 'a3_portfolios' ),
+				'name' 		=> __( 'Gallery Images', 'a3-portfolio' ),
                 'id' 		=> 'gallery_image_size',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array(
@@ -301,14 +301,14 @@ class A3_Portfolio_Global_Settings extends A3_Portfolio_Admin_UI
 			),
 			array(
 				'name' 		=> '',
-				'desc'		=> __( 'Hard Crop?', 'a3_portfolios' ),
+				'desc'		=> __( 'Hard Crop?', 'a3-portfolio' ),
 				'id' 		=> 'gallery_image_crop',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> 'no',
 				'checked_value'		=> 'yes',
 				'unchecked_value'	=> 'no',
-				'checked_label'		=> __( 'ON', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'OFF', 'a3_portfolios' ),
+				'checked_label'		=> __( 'ON', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'OFF', 'a3-portfolio' ),
 			),
 
 			array(
@@ -316,7 +316,7 @@ class A3_Portfolio_Global_Settings extends A3_Portfolio_Admin_UI
                 'type' 		=> 'heading',
            	),
 			array(
-				'name' 		=> __( 'Gallery Thumbnails', 'a3_portfolios' ),
+				'name' 		=> __( 'Gallery Thumbnails', 'a3-portfolio' ),
                 'id' 		=> 'gallery_thumbnail_size',
 				'type' 		=> 'array_textfields',
 				'ids'		=> array(
@@ -335,14 +335,14 @@ class A3_Portfolio_Global_Settings extends A3_Portfolio_Admin_UI
 			),
 			array(
 				'name' 		=> '',
-				'desc'		=> __( 'Hard Crop?', 'a3_portfolios' ),
+				'desc'		=> __( 'Hard Crop?', 'a3-portfolio' ),
 				'id' 		=> 'gallery_thumbnail_crop',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> 'yes',
 				'checked_value'		=> 'yes',
 				'unchecked_value'	=> 'no',
-				'checked_label'		=> __( 'ON', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'OFF', 'a3_portfolios' ),
+				'checked_label'		=> __( 'ON', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'OFF', 'a3-portfolio' ),
 			),
 
 			array(
@@ -350,15 +350,15 @@ class A3_Portfolio_Global_Settings extends A3_Portfolio_Admin_UI
                 'type' 		=> 'heading',
            	),
 			array(
-				'name' 		=> __('Item Post Gallery', 'a3_portfolios' ),
-				'desc'		=> __( 'Enable Lightbox for Item Post Gallery Images', 'a3_portfolios' ),
+				'name' 		=> __('Item Post Gallery', 'a3-portfolio' ),
+				'desc'		=> __( 'Enable Lightbox for Item Post Gallery Images', 'a3-portfolio' ),
 				'id' 		=> 'item_post_gallery_lightbox',
 				'type' 		=> 'onoff_checkbox',
 				'default'	=> 'yes',
 				'checked_value'		=> 'yes',
 				'unchecked_value'	=> 'no',
-				'checked_label'		=> __( 'ON', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'OFF', 'a3_portfolios' ),
+				'checked_label'		=> __( 'ON', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'OFF', 'a3-portfolio' ),
 			),
 
         ));

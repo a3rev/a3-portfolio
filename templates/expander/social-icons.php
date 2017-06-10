@@ -43,7 +43,7 @@ $desc              = preg_replace( '#' . $pattern . '#s', '', $desc );
 	<span class="social-action social-action-twitter">
 
 		<a onclick="window.open(this.href, 'popupwindow', 'width=550,height=420,scrollbars,resizable'); return false;"
-			href="https://twitter.com/share?url=<?php echo $postlink; ?>&counturl=<?php echo $postlink; ?>&text=<?php echo get_the_title( $portfolio_id ); ?>"><?php echo a3_portfolio_ei_ict_t__( 'Social - Twitter', __( 'Twitter', 'a3_portfolios' ) ); ?></a>
+			href="https://twitter.com/share?url=<?php echo $postlink; ?>&counturl=<?php echo $postlink; ?>&text=<?php echo get_the_title( $portfolio_id ); ?>"><?php echo a3_portfolio_ei_ict_t__( 'Social - Twitter', __( 'Twitter', 'a3-portfolio' ) ); ?></a>
 
 	</span>
 
@@ -52,21 +52,21 @@ $desc              = preg_replace( '#' . $pattern . '#s', '', $desc );
 		<a onclick="window.open(this.href, 'popupwindow', 'width=655,height=380,scrollbars,resizable'); return false;"
 			data-url="<?php echo $postlink; ?>"
 			href="https://www.facebook.com/sharer.php?u=<?php echo urlencode( $postlink ); ?>&picture=<?php echo urlencode( $postimage ); ?>&description=<?php echo $desc; ?>"
-		><?php echo a3_portfolio_ei_ict_t__( 'Social - Facebook', __( 'Facebook', 'a3_portfolios' ) ); ?></a>
+		><?php echo a3_portfolio_ei_ict_t__( 'Social - Facebook', __( 'Facebook', 'a3-portfolio' ) ); ?></a>
 
 	</span>
 
 	<span class="social-action social-action-gplus">
 
 		<a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
-			href="https://plus.google.com/share?url=<?php echo $postlink; ?>" ><?php echo a3_portfolio_ei_ict_t__( 'Social - Google Plus', __( 'Google+', 'a3_portfolios' ) ); ?></a>
+			href="https://plus.google.com/share?url=<?php echo $postlink; ?>" ><?php echo a3_portfolio_ei_ict_t__( 'Social - Google Plus', __( 'Google+', 'a3-portfolio' ) ); ?></a>
 
 	</span>
 
 	<span class="social-action social-action-pinterest_mod">
 
 		<a onclick="window.open('http://pinterest.com/pin/create/button/?url=<?php echo $postlink; ?>&media=<?php echo urlencode( $postimage ); ?>&description=<?php echo get_the_title( $portfolio_id ); ?>', 'popupwindow', 'width=670,height=300,scrollbars,resizable'); return false;"
-			href="#"><?php echo a3_portfolio_ei_ict_t__( 'Social - Pinterest', __( 'Pinterest', 'a3_portfolios' ) ); ?></a>
+			href="#"><?php echo a3_portfolio_ei_ict_t__( 'Social - Pinterest', __( 'Pinterest', 'a3-portfolio' ) ); ?></a>
 
 	</span>
 

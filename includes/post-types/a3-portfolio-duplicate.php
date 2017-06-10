@@ -32,8 +32,8 @@ class A3_Portfolio_Duplicate
 
 		if ( $post->post_type != 'a3-portfolio' ) return $actions;
 
-		$actions['duplicate'] = apply_filters( 'a3_portfolio_manager_duplicate_link', '<a href="' . wp_nonce_url( admin_url( 'admin.php?action=duplicate_a3-portfolio&amp;post=' . $post->ID ), 'a3-duplicate-portfolio_' . $post->ID ) . '" title="' . __( "Make a duplicate from this Portfolio", 'a3_portfolios' )
-			. '" rel="permalink">' .  __( "Duplicate", 'a3_portfolios' ) . '</a>', $post, $actions );
+		$actions['duplicate'] = apply_filters( 'a3_portfolio_manager_duplicate_link', '<a href="' . wp_nonce_url( admin_url( 'admin.php?action=duplicate_a3-portfolio&amp;post=' . $post->ID ), 'a3-duplicate-portfolio_' . $post->ID ) . '" title="' . __( "Make a duplicate from this Portfolio", 'a3-portfolio' )
+			. '" rel="permalink">' .  __( "Duplicate", 'a3-portfolio' ) . '</a>', $post, $actions );
 
 		return $actions;
 	}
@@ -49,14 +49,14 @@ class A3_Portfolio_Duplicate
 
 		if ( isset( $_GET['post'] ) ) :
 			$notifyUrl = wp_nonce_url( admin_url( "admin.php?action=duplicate_a3-portfolio&post=" . $_GET['post'] ), 'a3-duplicate-portfolio_' . $_GET['post'] );
-			$duplicate_link = apply_filters( 'a3_portfolio_edit_post_duplicate_link', '<div id="duplicate-action"><a class="submitduplicate duplication" href="'.esc_url( $notifyUrl ).'">'.__( 'Duplicate', 'a3_portfolios' ).'</a></div>', $post );
+			$duplicate_link = apply_filters( 'a3_portfolio_edit_post_duplicate_link', '<div id="duplicate-action"><a class="submitduplicate duplication" href="'.esc_url( $notifyUrl ).'">'.__( 'Duplicate', 'a3-portfolio' ).'</a></div>', $post );
 			echo $duplicate_link;
 		endif;
 	}
 
 	public function duplicate_item() {
 		if ( ! ( isset( $_GET['post']) || isset( $_POST['post'])  || ( isset($_REQUEST['action']) && 'duplicate_post_save_as_new_page' == $_REQUEST['action'] ) ) ) {
-			wp_die( __( 'No Portfolio to duplicate has been supplied!', 'a3_portfolios' ) );
+			wp_die( __( 'No Portfolio to duplicate has been supplied!', 'a3-portfolio' ) );
 		}
 
 		// Get the original page
@@ -76,7 +76,7 @@ class A3_Portfolio_Duplicate
 			wp_redirect( admin_url( 'post.php?action=edit&post=' . $new_id ) );
 			exit;
 		} else {
-			wp_die( __( 'Portfolio creation failed, could not find original Portfolio:', 'a3_portfolios' ) . ' ' . $id);
+			wp_die( __( 'Portfolio creation failed, could not find original Portfolio:', 'a3-portfolio' ) . ' ' . $id);
 		}
 	}
 
@@ -110,7 +110,7 @@ class A3_Portfolio_Duplicate
 		} else {
 			$post_parent		= $post->post_parent;
 			$post_status 		= $post_status ? $post_status : 'publish';
-			$suffix 			= ' ' . __("(Copy)", 'a3_portfolios');
+			$suffix 			= ' ' . __("(Copy)", 'a3-portfolio' );
 		}
 
 		$new_post_type 			= $post->post_type;

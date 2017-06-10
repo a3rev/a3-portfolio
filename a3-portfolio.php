@@ -2,11 +2,13 @@
 /*
 Plugin Name: a3 Portfolio
 Description: Creates a beautiful fully mobile responsive, fully customizable, Google images style portfolio to showcase your work.
-Version: 2.4.6
+Version: 2.5.0
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Requires at least: 4.1
-Tested up to: 4.7.4
+Tested up to: 4.8.0
+Text Domain: a3-portfolio
+Domain Path: /languages
 License: GPLv2 or later
 	Copyright © 2011 a3 Revolution Software Development team
 	a3 Revolution Software Development team
@@ -30,7 +32,24 @@ define('A3_PORTFOLIO_TEMPLATE_PATH', A3_PORTFOLIO_FILE_PATH . '/templates');
 define('A3_PORTFOLIO_TEMPLATE_CSS_URL', A3_PORTFOLIO_URL . '/templates/css');
 define('A3_PORTFOLIO_TEMPLATE_IMAGES_URL', A3_PORTFOLIO_URL . '/templates/images');
 
-define('A3_PORTFOLIO_VERSION', '2.4.6');
+define('A3_PORTFOLIO_VERSION', '2.5.0');
+
+/**
+ * Load Localisation files.
+ *
+ * Note: the first-loaded translation file overrides any following ones if the same translation is present.
+ *
+ * Locales found in:
+ * 		- WP_LANG_DIR/a3-portfolio/a3-portfolio-LOCALE.mo
+ * 	 	- WP_LANG_DIR/plugins/a3-portfolio-LOCALE.mo
+ * 	 	- /wp-content/plugins/a3-portfolio/languages/a3-portfolio-LOCALE.mo (which if not found falls back to)
+ */
+function a3_portfolio_plugin_textdomain() {
+	$locale = apply_filters( 'plugin_locale', get_locale(), 'a3-portfolio' );
+
+	load_textdomain( 'a3-portfolio', WP_LANG_DIR . '/a3-portfolio/a3-portfolio-' . $locale . '.mo' );
+	load_plugin_textdomain( 'a3-portfolio', false, A3_PORTFOLIO_FOLDER.'/languages' );
+}
 
 include ( 'admin/plugin-init.php' );
 

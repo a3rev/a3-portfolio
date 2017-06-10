@@ -11,7 +11,7 @@ class A3_Portfolio_Tag_Taxonomy
 	}
 
 	public function portfolio_tag_description() {
-		echo wpautop( sprintf( __( 'Use the a3 Portfolios Tag Cloud <a href="%s">widget</a> for navigation.', 'a3_portfolios' ), 'widgets.php' ) );
+		echo wpautop( sprintf( __( 'Use the a3 Portfolios Tag Cloud <a href="%s">widget</a> for navigation.', 'a3-portfolio' ), 'widgets.php' ) );
 	}
 
 }

@@ -15,9 +15,9 @@ class A3_Portfolio_Recently_Viewed_Widget extends WP_Widget {
 	function __construct() {
 		$widget_ops = array(
 			'classname'   => 'widget_portfolio_recently_viewed',
-			'description' => __( 'Display a list of recently viewed portfolio items.', 'a3_portfolios')
+			'description' => __( 'Display a list of recently viewed portfolio items.', 'a3-portfolio' )
 		);
-		parent::__construct('widget_a3_portfolio_recently_viewed', __('a3 Portfolios Recently Viewed','a3_portfolios'), $widget_ops);
+		parent::__construct('widget_a3_portfolio_recently_viewed', __('a3 Portfolios Recently Viewed', 'a3-portfolio' ), $widget_ops);
 	}
 
 	function widget( $args, $instance ) {
@@ -84,11 +84,11 @@ class A3_Portfolio_Recently_Viewed_Widget extends WP_Widget {
 			}
 
 			$result_html .= '</ul>';
-			$result_html .= '<div style="clear:both"></div><div class="portfolio_recently_button_container"><a href="#" class="clear_all_portfolio_recently">' . a3_portfolio_ei_ict_t__( 'Recently Widget - Clear All', __( 'Clear All', 'a3_portfolios' ) ). '</a></div><div style="clear:both"></div>';
+			$result_html .= '<div style="clear:both"></div><div class="portfolio_recently_button_container"><a href="#" class="clear_all_portfolio_recently">' . a3_portfolio_ei_ict_t__( 'Recently Widget - Clear All', __( 'Clear All', 'a3-portfolio' ) ). '</a></div><div style="clear:both"></div>';
 			$result_html .= '</div>';
 
 		} else {
-			$result_html = '<div class="portfolio_recently_viewed_container">' . a3_portfolio_ei_ict_t__( 'Recently Widget - No Portfolio', __( 'No Portfolio Recently Viewed !', 'a3_portfolios' ) ). '</div>';
+			$result_html = '<div class="portfolio_recently_viewed_container">' . a3_portfolio_ei_ict_t__( 'Recently Widget - No Portfolio', __( 'No Portfolio Recently Viewed !', 'a3-portfolio' ) ). '</div>';
 		}
 
 		do_action( 'a3_portfolio_after_recently_widget' );
@@ -107,7 +107,7 @@ class A3_Portfolio_Recently_Viewed_Widget extends WP_Widget {
 		$title    = esc_attr($instance['title']);
 ?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'a3_portfolios'); ?></label>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'a3-portfolio' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 		</p>
 <?php

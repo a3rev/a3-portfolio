@@ -75,7 +75,7 @@ class A3_Portfolio_Global_Settings_Tab extends A3_Portfolio_Admin_UI
 
 		$tab_data = array(
 			'name'				=> 'global-settings',
-			'label'				=> __( 'Settings', 'a3_portfolios' ),
+			'label'				=> __( 'Settings', 'a3-portfolio' ),
 			'callback_function'	=> 'a3_portfolio_global_settings_tab_manager',
 		);
 

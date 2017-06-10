@@ -39,12 +39,12 @@ class A3_Portfolio_Addons_Page
 		 *
 		 * $addon = array(
 		 *		'url'             => 'http://a3rev.com/shop/a3-portfolios-dynamic-styling/',
-		 * 		'title'           => __( 'Portfolio Dynamic Styling', 'a3_portfolios' ),
+		 * 		'title'           => __( 'Portfolio Dynamic Styling', 'a3-portfolio' ),
 		 * 		'header_bg'		  => '#9378d9',
 		 * 		'title_color'	  => '#fff',
 		 * 		'title_bg'		  => '#000',
 		 * 		'image'           => 'https://s3.amazonaws.com/a3_plugins/a3+Portfolios+Dynamic+Styling/plugin.png',
-		 * 		'desc'            => __( 'Support for change the styling from Admin Panel and apply for Portfolio front end.', 'a3_portfolios' ),
+		 * 		'desc'            => __( 'Support for change the styling from Admin Panel and apply for Portfolio front end.', 'a3-portfolio' ),
 		 * 		'php_class_check' => 'A3_Portfolio_Dynamic_Styling',
 		 * 		'folder_name'     => 'a3-portfolio-isotope-addon',
 		 * 		'is_free'         => true
@@ -106,18 +106,18 @@ class A3_Portfolio_Addons_Page
 
 					<span class="extension-control">
 						<?php if ( $is_installed ) { ?>
-							<button class="button-primary installed"><?php echo __( 'Activated', 'a3_portfolios' ); ?></button>
+							<button class="button-primary installed"><?php echo __( 'Activated', 'a3-portfolio' ); ?></button>
 						<?php } elseif ( $had_plugin ) { ?>
-							<a href="<?php echo esc_url( wp_nonce_url( $activate_url, 'activate-plugin_' . $plugin_slug ) ); ?>" class="button-primary"><?php echo __( 'Activate', 'a3_portfolios' ); ?></a>
+							<a href="<?php echo esc_url( wp_nonce_url( $activate_url, 'activate-plugin_' . $plugin_slug ) ); ?>" class="button-primary"><?php echo __( 'Activate', 'a3-portfolio' ); ?></a>
 						<?php } else { ?>
 							<a target="_blank" href="<?php echo esc_url( $addon->url ); ?>" class="button-primary">
-								<?php echo __( 'Get this extension', 'a3_portfolios' ); ?>
+								<?php echo __( 'Get this extension', 'a3-portfolio' ); ?>
 							</a>
 						<?php } ?>
 					</span>
 
 					<?php if ( $addon->is_free ) { ?>
-					<span class="free-extension"><?php echo __( 'Free', 'a3_portfolios' ); ?></span>
+					<span class="free-extension"><?php echo __( 'Free', 'a3-portfolio' ); ?></span>
 					<?php } ?>
 				</div>
 

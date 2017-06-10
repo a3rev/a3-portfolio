@@ -98,8 +98,8 @@ function a3_portfolio_get_attribute_taxonomy_names() {
  */
 function a3_portfolio_get_attribute_types() {
 	return (array) apply_filters( 'a3_portfolio_attributes_type_selector', array(
-		'select' => __( 'Select', 'a3_portfolios' ),
-		'text'   => __( 'Text', 'a3_portfolios' )
+		'select' => __( 'Select', 'a3-portfolio' ),
+		'text'   => __( 'Text', 'a3-portfolio' )
 	) );
 }
 
@@ -142,14 +142,14 @@ function a3_portfolio_register_attribute_taxonomies() {
 					'labels'                => array(
 							'name'              => $label,
 							'singular_name'     => $label,
-							'search_items'      => sprintf( __( 'Search %s', 'a3_portfolios' ), $label ),
-							'all_items'         => sprintf( __( 'All %s', 'a3_portfolios' ), $label ),
-							'parent_item'       => sprintf( __( 'Parent %s', 'a3_portfolios' ), $label ),
-							'parent_item_colon' => sprintf( __( 'Parent %s:', 'a3_portfolios' ), $label ),
-							'edit_item'         => sprintf( __( 'Edit %s', 'a3_portfolios' ), $label ),
-							'update_item'       => sprintf( __( 'Update %s', 'a3_portfolios' ), $label ),
-							'add_new_item'      => sprintf( __( 'Add New %s', 'a3_portfolios' ), $label ),
-							'new_item_name'     => sprintf( __( 'New %s', 'a3_portfolios' ), $label )
+							'search_items'      => sprintf( __( 'Search %s', 'a3-portfolio' ), $label ),
+							'all_items'         => sprintf( __( 'All %s', 'a3-portfolio' ), $label ),
+							'parent_item'       => sprintf( __( 'Parent %s', 'a3-portfolio' ), $label ),
+							'parent_item_colon' => sprintf( __( 'Parent %s:', 'a3-portfolio' ), $label ),
+							'edit_item'         => sprintf( __( 'Edit %s', 'a3-portfolio' ), $label ),
+							'update_item'       => sprintf( __( 'Update %s', 'a3-portfolio' ), $label ),
+							'add_new_item'      => sprintf( __( 'Add New %s', 'a3-portfolio' ), $label ),
+							'new_item_name'     => sprintf( __( 'New %s', 'a3-portfolio' ), $label )
 						),
 					'show_ui'            => true,
 					'show_in_quick_edit' => false,

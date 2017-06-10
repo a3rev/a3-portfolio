@@ -78,9 +78,9 @@ class A3_Portfolio_Item_Posts_Settings extends A3_Portfolio_Admin_UI
 		$this->subtab_init();
 
 		$this->form_messages = array(
-				'success_message'	=> __( 'Settings successfully saved.', 'a3_portfolios' ),
-				'error_message'		=> __( 'Error: Settings can not save.', 'a3_portfolios' ),
-				'reset_message'		=> __( 'Settings successfully reseted.', 'a3_portfolios' ),
+				'success_message'	=> __( 'Settings successfully saved.', 'a3-portfolio' ),
+				'error_message'		=> __( 'Error: Settings can not save.', 'a3-portfolio' ),
+				'reset_message'		=> __( 'Settings successfully reseted.', 'a3-portfolio' ),
 			);
 
 		add_action( $this->plugin_name . '-' . $this->form_key . '_settings_end', array( $this, 'include_script' ) );
@@ -151,7 +151,7 @@ class A3_Portfolio_Item_Posts_Settings extends A3_Portfolio_Admin_UI
 
 		$subtab_data = array(
 			'name'				=> 'item-posts',
-			'label'				=> __( 'Item Posts', 'a3_portfolios' ),
+			'label'				=> __( 'Item Posts', 'a3-portfolio' ),
 			'callback_function'	=> 'a3_portfolio_item_posts_settings_form',
 		);
 
@@ -195,22 +195,22 @@ class A3_Portfolio_Item_Posts_Settings extends A3_Portfolio_Admin_UI
      	$this->form_fields = apply_filters( $this->option_name . '_settings_fields', array(
 
      		array(
-				'name'		=> __( 'Item Posts Layout', 'a3_portfolios' ),
-				'desc' 		=> __( 'Settings here apply to all Portfolio Item posts. These can be over-ridden from Portfolio Item Meta on each Items edit page.', 'a3_portfolios' ),
+				'name'		=> __( 'Item Posts Layout', 'a3-portfolio' ),
+				'desc' 		=> __( 'Settings here apply to all Portfolio Item posts. These can be over-ridden from Portfolio Item Meta on each Items edit page.', 'a3-portfolio' ),
                 'type' 		=> 'heading',
                 'id'		=> 'item_posts_layout_box',
                 'is_box'	=> true,
            	),
      		array(
-				'name' 		=> __( 'Post Display', 'a3_portfolios' ),
+				'name' 		=> __( 'Post Display', 'a3-portfolio' ),
 				'id' 		=> 'portfolio_single_layout_column',
 				'class'		=> 'portfolio_single_layout_column',
 				'type' 		=> 'switcher_checkbox',
 				'default'	=> '2',
 				'checked_value'		=> '1',
 				'unchecked_value'	=> '2',
-				'checked_label'		=> __( '1 Column', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( '2 Columns', 'a3_portfolios' ),
+				'checked_label'		=> __( '1 Column', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( '2 Columns', 'a3-portfolio' ),
 			),
 
 			array(
@@ -219,8 +219,8 @@ class A3_Portfolio_Item_Posts_Settings extends A3_Portfolio_Admin_UI
                 'class'		=> 'portfolio_single_2_column_container',
            	),
            	array(
-				'name' => __( 'Main Image Width', 'a3_portfolios' ),
-				'desc' 		=> '% ' . __( 'The Gallery main image container width as a percentage of the full content width', 'a3_portfolios' ),
+				'name' => __( 'Main Image Width', 'a3-portfolio' ),
+				'desc' 		=> '% ' . __( 'The Gallery main image container width as a percentage of the full content width', 'a3-portfolio' ),
 				'id' 		=> 'portfolio_inner_container_single_main_image_width',
 				'type' 		=> 'slider',
 				'default'	=> 70,
@@ -229,60 +229,60 @@ class A3_Portfolio_Item_Posts_Settings extends A3_Portfolio_Admin_UI
 				'increment'	=> 1,
 			),
 			array(
-				'name' 		=> __( 'Gallery Thumbnail Position', 'a3_portfolios' ),
-				'desc'		=> __( 'Gallery Thumbnails position in relation to the Gallery main image', 'a3_portfolios' ),
+				'name' 		=> __( 'Gallery Thumbnail Position', 'a3-portfolio' ),
+				'desc'		=> __( 'Gallery Thumbnails position in relation to the Gallery main image', 'a3-portfolio' ),
 				'id' 		=> 'portfolio_inner_container_single_thumb_position',
 				'type' 		=> 'switcher_checkbox',
 				'default'	=> 'right',
 				'checked_value'		=> 'right',
 				'unchecked_value'	=> 'below',
-				'checked_label'		=> __( 'Right', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'Below', 'a3_portfolios' ),
+				'checked_label'		=> __( 'Right', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'Below', 'a3-portfolio' ),
 			),
 
 			array(
-				'name'		=> __( 'Item Post Attributes Table', 'a3_portfolios' ),
+				'name'		=> __( 'Item Post Attributes Table', 'a3-portfolio' ),
 				'type' 		=> 'heading',
 				'id'		=> 'item_post_attribute_table_position_box',
 				'is_box'	=> true,
 			),
 			array(
-				'name' => __( 'Attribute Position', 'a3_portfolios' ),
+				'name' => __( 'Attribute Position', 'a3-portfolio' ),
 				'id' 		=> 'single_attribute_position',
 				'default'	=> 'under_gallery',
 				'type' 		=> 'onoff_radio',
 				'onoff_options' => array(
 					array(
 						'val' => 'under_gallery',
-						'text' => __( 'Under Gallery', 'a3_portfolios' ),
-						'checked_label'	=> __( 'ON', 'a3_portfolios' ),
-						'unchecked_label' => __( 'OFF', 'a3_portfolios' ),
+						'text' => __( 'Under Gallery', 'a3-portfolio' ),
+						'checked_label'	=> __( 'ON', 'a3-portfolio' ),
+						'unchecked_label' => __( 'OFF', 'a3-portfolio' ),
 					),
 					array(
 						'val' => 'above_description',
-						'text' => __( 'Above Description', 'a3_portfolios' ),
-						'checked_label'	=> __( 'ON', 'a3_portfolios' ),
-						'unchecked_label' => __( 'OFF', 'a3_portfolios' ),
+						'text' => __( 'Above Description', 'a3-portfolio' ),
+						'checked_label'	=> __( 'ON', 'a3-portfolio' ),
+						'unchecked_label' => __( 'OFF', 'a3-portfolio' ),
 					),
 					array(
 						'val' => 'bottom_content',
-						'text' => __( 'Bottom of Post', 'a3_portfolios' ),
-						'checked_label'	=> __( 'ON', 'a3_portfolios' ),
-						'unchecked_label' => __( 'OFF', 'a3_portfolios' ),
+						'text' => __( 'Bottom of Post', 'a3-portfolio' ),
+						'checked_label'	=> __( 'ON', 'a3-portfolio' ),
+						'unchecked_label' => __( 'OFF', 'a3-portfolio' ),
 					),
 				),
 			),
 
 			array(
-				'name'		=> __( 'Item Post Template Reset', 'a3_portfolios' ),
+				'name'		=> __( 'Item Post Template Reset', 'a3-portfolio' ),
                 'type' 		=> 'heading',
                 'id'		=> 'item_posts_reset_box',
                 'is_box'	=> true,
            	),
 			array(
-				'name' 		=> __( "Global Reset", 'a3_portfolios' ),
-				'desc'		=> '</span><div style="clear: both; margin-top: 10px;">' . __( 'Switch this ON and Save Changes if you want all Item Posts to have the same Layout that you have set above in the + Item Post Layout options.', 'a3_portfolios' )
-				. '<br />' . __( '<strong>Important!</strong> Clear your cache after so that you and visitors see changes.', 'a3_portfolios' )
+				'name' 		=> __( "Global Reset", 'a3-portfolio' ),
+				'desc'		=> '</span><div style="clear: both; margin-top: 10px;">' . __( 'Switch this ON and Save Changes if you want all Item Posts to have the same Layout that you have set above in the + Item Post Layout options.', 'a3-portfolio' )
+				. '<br />' . __( '<strong>Important!</strong> Clear your cache after so that you and visitors see changes.', 'a3-portfolio' )
 				. '</div><span>',
                 'id' 		=> 'portfolio_inner_container_single_main_image_width_reset',
 				'type' 		=> 'onoff_checkbox',
@@ -290,8 +290,8 @@ class A3_Portfolio_Item_Posts_Settings extends A3_Portfolio_Admin_UI
 				'separate_option'	=> true,
 				'checked_value'		=> true,
 				'unchecked_value'	=> false,
-				'checked_label'		=> __( 'ON', 'a3_portfolios' ),
-				'unchecked_label' 	=> __( 'OFF', 'a3_portfolios' ),
+				'checked_label'		=> __( 'ON', 'a3-portfolio' ),
+				'unchecked_label' 	=> __( 'OFF', 'a3-portfolio' ),
 			),
 
         ));

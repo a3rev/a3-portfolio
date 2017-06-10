@@ -107,7 +107,7 @@ function a3_portfolio_set_global_page() {
 	}
 
 	if ( $page_data == null ) {
-		$portfolio_page_id_created = a3_portfolio_create_page( esc_sql( 'portfolios' ), '', __('Portfolios', 'a3_portfolios'), '[portfoliopage]' );
+		$portfolio_page_id_created = a3_portfolio_create_page( esc_sql( 'portfolios' ), '', __('Portfolios', 'a3-portfolio' ), '[portfoliopage]' );
 		update_option( 'portfolio_page_id', $portfolio_page_id_created );
 		$page_data = $wpdb->get_row( $wpdb->prepare( "SELECT ID, post_name FROM `" . $wpdb->posts . "` WHERE `ID` = %d LIMIT 1", $portfolio_page_id_created ) );
 	}
@@ -145,9 +145,9 @@ function a3_portfolio_get_permalink_structure() {
 	) );
 
 	// Ensure rewrite slugs are set.
-	$permalinks['portfolio_rewrite_slug'] = untrailingslashit( empty( $permalinks['portfolio_base'] ) ? _x( 'a3-portfolio', 'slug', 'a3_portfolios' )        : $permalinks['portfolio_base'] );
-	$permalinks['category_rewrite_slug']  = untrailingslashit( empty( $permalinks['category_base'] ) ? _x( 'portfolio-category', 'slug', 'a3_portfolios' )   : $permalinks['category_base'] );
-	$permalinks['tag_rewrite_slug']       = untrailingslashit( empty( $permalinks['tag_base'] ) ? _x( 'portfolio-tag', 'slug', 'a3_portfolios' )             : $permalinks['tag_base'] );
+	$permalinks['portfolio_rewrite_slug'] = untrailingslashit( empty( $permalinks['portfolio_base'] ) ? _x( 'a3-portfolio', 'slug', 'a3-portfolio' )        : $permalinks['portfolio_base'] );
+	$permalinks['category_rewrite_slug']  = untrailingslashit( empty( $permalinks['category_base'] ) ? _x( 'portfolio-category', 'slug', 'a3-portfolio' )   : $permalinks['category_base'] );
+	$permalinks['tag_rewrite_slug']       = untrailingslashit( empty( $permalinks['tag_base'] ) ? _x( 'portfolio-tag', 'slug', 'a3-portfolio' )             : $permalinks['tag_base'] );
 
 	if ( function_exists( 'restore_current_locale' ) && did_action( 'admin_init' ) ) {
 		restore_current_locale();

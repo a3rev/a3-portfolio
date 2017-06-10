@@ -2,9 +2,9 @@
 
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
-Requires at least: 4.1
-Tested up to: 4.7.4
-Stable tag: 2.4.6
+Requires at least: 4.5
+Tested up to: 4.8.0
+Stable tag: 2.5.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,7 +14,9 @@ a3 Portfolio is an extendable post based plugin that makes creating beautiful co
 
 Inspired by Google Images UI a3 Portfolio is an image based creation and management extension for every blogger, artist, photographer, and web developer to showcase their own and clients work.
 
-= Simple to use =
+
+= SIMPLE TO USE =
+
 * If you know how to use WordPress posts, categories and tags then you know how to use a3 Portfolios.
 * Portfolio Items are custom post types.
 * Portfolio Categories (custom WordPress taxonomy)
@@ -22,7 +24,9 @@ Inspired by Google Images UI a3 Portfolio is an image based creation and managem
 * Portfolio Custom feature data
 * Each Portfolio item has its own image gallery (add multiple images to each item).
 
-= Item Features Cards with Expander =
+
+= ITEM CARDS WITH BEAUTIFUL EXPANDER =
+
 * Portfolio page, category Pages and Tag pages show Portfolio items as Cards.
 * Item details show on click in Google Images inspired Expander item.
 * Each Item has its own image Gallery
@@ -31,7 +35,9 @@ Inspired by Google Images UI a3 Portfolio is an image based creation and managem
 * Option to show first part of description on Item cards
 * Option to set the number of lines of description text to show on the cards
 
-= Item Posts =
+
+= ITEM POSTS =
+
 * Each Item is created as a post
 * WordPress Sticky post feature
 * Set default posts to show as 1 column or 2 columns (Gallery to left and content to the right)
@@ -40,7 +46,8 @@ Inspired by Google Images UI a3 Portfolio is an image based creation and managem
 * Option to set width of the Gallery main image on item post.
 * Option to show thumbnails beside main image or under it on item post
 
-= Portfolio Attributes =
+
+= PORTFOLIO ATTRIBUTES =
 
 a3 Portfolio Attributes allows admins to create Attribute Name example 'Colours' and then create terms for it - example Blue, Black, Green. These terms are assigned to the item post and are used as additional data on the post and to Filter and Sort the Portfolio items from a widget.
 
@@ -48,16 +55,17 @@ a3 Portfolio Attributes allows admins to create Attribute Name example 'Colours'
 * Option to show the Attributes and terms in a table on the Item Expander and the Item Post
 * Portfolio Attributes Widget enables admin to set widget as additional Filters for users to view Portfolio Items
 
-= Demo Site =
-Visiting the [demo site](http://woo.a3de.info/portfolios/) is the quickest way to see the frontend features of the a3 Portfolio. Note Demo site has the Free a3 Portfolio Isotope Add-On plugin installed plus Add-on plugins for showing available add-on features.
 
-= Widgets =
+= PORTFOLIO WIDGETS =
+
 * a3 Portfolio Attribute widget for advanced portfolio filter and sort
 * a3 Portfolio Category widget for easy navigation
 * a3 Portfolio Tag Cloud widget
 * a3 Portfolio Recently viewed items widget.
 
-= FREE a3 Portfolio Isotope Add-On plugin =
+
+= FREE ISOTOPE PLUGIN =
+
 After installing a3 Portfolio please install and activate the a3 Portfolio Isotope Add-On. It is a FREE Add-On plugin that greatly enhances the Portfolio, Category and Tags page Items main images sort and filtering. It creates a real wow factor with the Portfolios for your site visitors.
 
 * Isotope is a js. that is subject to a Commercial License which we have purchased.
@@ -76,15 +84,19 @@ After installing a3 Portfolio please install and activate the a3 Portfolio Isoto
 * Notice that when you click on an item the expander now opens over the rows below and does not push them down below the expander window.
 * Note the Isotope Add-On Key is a lifetime key for an unlimited number of site activations.
 
-= Extend your Portfolio =
+
+= EXTEND YOUR PORTFOLIO =
 
 There is an emerging ecosystem of Premium plugins that extend the Portfolio - you will see these on the plugins admin panel
 
 * a3 Portfolio Dynamic Style Sheets - Customize the style and layout of your portfolio item cards and item expander without touching the code with this plugin.
+* a3 Dynamic Gallery - Converts the Item page and Item Expander static galleries into dynamic scrolling galleries with transition effects
 * a3 Portfolio Item Switcher - Enables visitors to scroll through the entire portfolio without closing the item expander.
 * a3 Portfolio Shortcodes - Add Portfolio items either individually, by recent, Sticky, Categories or Tags
 
-= More Features =
+
+= MORE FEATURES =
+
 * HTML5 card Architecture - responsive mobile and tablet display.
 * Fast loading with built in Lazy Load for all images.
 * Lightweight - Portfolio resources only load on Portfolio Post items, Portfolio page, Category and Tags pages.
@@ -93,24 +105,32 @@ There is an emerging ecosystem of Premium plugins that extend the Portfolio - yo
 * Backend and frontend support for RTL display.
 * Translation ready
 
-= Strength & flexibility =
-a3 Portfolio is built using WordPress best practices both on the front and the back end. Clean code, all classes commented. An efficient, robust and intuitive plugin.
 
-= Customizable =
+= DEVELOPERS =
+
 a3 Portfolio works with any theme, including the default WordPress themes. Built in hooks and filters allow developers to create extensions with a robust template structure for easy customization.
+
+
+= CONTRIBUTE =
+
+When you download a3 Portfolio, you join our the a3rev Software community. Regardless of if you are a WordPress beginner or experienced developer if you are interested in contributing to the future development of this plugin head over to the a3 Portfolio [GitHub Repository](https://github.com/a3rev/a3-portfolio) to find out how you can contribute.
+
+Want to add a new language to a3 Portfolio! You can contribute via [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/a3-portfolio)
 
 
 == Installation ==
 
 = Minimum Requirements =
 
-* WordPress 4.1
-* PHP version 5.4.0 or greater
-* MySQL version 5.4.0 or greater
+* WordPress 4.5
+* PHP version 5.5 or greater
+* MySQL version 5.5 or greater
+
 
 = Automatic installation =
 
 Automatic installation is the easiest option as WordPress handles the file transfers itself and you don't even need to leave your web browser. To do an automatic install of a3 Portfolio, log in to your WordPress admin panel, navigate to the Plugins menu and click Add New. Search a3 Portfolio, select and install.
+
 
 == Screenshots ==
 
@@ -119,22 +139,25 @@ Automatic installation is the easiest option as WordPress handles the file trans
 3. Screenshot Portfolio-items-post
 4. Portfolio-item
 
+
 == Usage ==
 
 1. Install and activate the plugin
-
 2. On wp-admin click on a3 Portfolio
-
 3. Click Add New and create items.
-
 4. Go to WordPress menu Appearance > Menus
-
 5. From Pages select the Portfolio page and add to main menu. Save menu
-
 6. Enjoy
 
 
 == Changelog ==
+
+= 2.5.0 - 2017/06/10 =
+* Feature - Launched a3 Portfolio public Github Repository
+* Feature - WordPress Translation activation. Add text domain declaration in file header.
+* Tweak - Tested for compatibility with WordPress major version 4.8.0
+* Tweak - Include bootstrap modal script into plugin framework
+* Tweak - Update a3rev plugin framework to latest version
 
 = 2.4.6 - 2017/05/03 =
 * Tweak - Tested for full compatibility with WordPress version 4.7.4
@@ -446,6 +469,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.5.0 =
+Feature Upgrade. 2 code tweaks for compatibility with WordPress 4.8 plus launch of plugins public Github Repo
 
 = 2.4.6 =
 Maintenance Update. 1 bug fix and major permalink tweak for compatibility with WordPress 4.7.4

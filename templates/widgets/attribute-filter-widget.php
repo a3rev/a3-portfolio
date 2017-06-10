@@ -56,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		?>
 
 		<li class="remove-filter">
-			<a class="<?php echo apply_filters( 'a3_portfolio_clear_filter_button_class', 'remove-filter-button' ); ?>" data-filter="" href="#"><?php echo apply_filters( 'a3_portfolio_clear_filter_button_text', a3_portfolio_ei_ict_t__( 'Attribute Filter Widget - Clear This Filter', __( 'Clear This Filter', 'a3_portfolios' ) ) ); ?></a>
+			<a class="<?php echo apply_filters( 'a3_portfolio_clear_filter_button_class', 'remove-filter-button' ); ?>" data-filter="" href="#"><?php echo apply_filters( 'a3_portfolio_clear_filter_button_text', a3_portfolio_ei_ict_t__( 'Attribute Filter Widget - Clear This Filter', __( 'Clear This Filter', 'a3-portfolio' ) ) ); ?></a>
 		</li>
 
 	</ul>

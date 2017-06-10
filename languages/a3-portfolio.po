@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: a3 Portfolio\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-19 13:35+0700\n"
-"PO-Revision-Date: 2016-05-19 13:35+0700\n"
+"POT-Creation-Date: 2017-06-10 12:08+0700\n"
+"PO-Revision-Date: 2017-06-10 12:08+0700\n"
 "Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
 "Language-Team: a3rev\n"
 "Language: en\n"
@@ -16,90 +16,91 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/admin-interface.php:177
+#: admin/admin-interface.php:186
 msgid "Great! You have the latest version installed."
 msgstr ""
 
-#: admin/admin-interface.php:242
+#: admin/admin-interface.php:251
 #: admin/settings/template-settings/global-settings.php:81
 #: admin/settings/template-settings/item-expander-settings.php:81
 #: admin/settings/template-settings/item-posts-style.php:81
 msgid "Settings successfully saved."
 msgstr ""
 
-#: admin/admin-interface.php:250
+#: admin/admin-interface.php:259
 #: admin/settings/template-settings/global-settings.php:82
 #: admin/settings/template-settings/item-expander-settings.php:82
 #: admin/settings/template-settings/item-posts-style.php:82
 msgid "Error: Settings can not save."
 msgstr ""
 
-#: admin/admin-interface.php:258
+#: admin/admin-interface.php:267
 #: admin/settings/template-settings/global-settings.php:83
 #: admin/settings/template-settings/item-expander-settings.php:83
 #: admin/settings/template-settings/item-posts-style.php:83
 msgid "Settings successfully reseted."
 msgstr ""
 
-#: admin/admin-interface.php:279
+#: admin/admin-interface.php:288
 msgid "Thin"
 msgstr ""
 
-#: admin/admin-interface.php:280
+#: admin/admin-interface.php:289
 msgid "Thin/Italic"
 msgstr ""
 
-#: admin/admin-interface.php:281
+#: admin/admin-interface.php:290
 msgid "Normal"
 msgstr ""
 
-#: admin/admin-interface.php:282
+#: admin/admin-interface.php:291
 msgid "Italic"
 msgstr ""
 
-#: admin/admin-interface.php:283
+#: admin/admin-interface.php:292
 msgid "Bold"
 msgstr ""
 
-#: admin/admin-interface.php:284
+#: admin/admin-interface.php:293
 msgid "Bold/Italic"
 msgstr ""
 
-#: admin/admin-interface.php:294
+#: admin/admin-interface.php:303
 msgid "Solid"
 msgstr ""
 
-#: admin/admin-interface.php:295
+#: admin/admin-interface.php:304
 msgid "Double"
 msgstr ""
 
-#: admin/admin-interface.php:296
+#: admin/admin-interface.php:305
 msgid "Dashed"
 msgstr ""
 
-#: admin/admin-interface.php:297
+#: admin/admin-interface.php:306
 msgid "Dotted"
 msgstr ""
 
-#: admin/admin-interface.php:298
+#: admin/admin-interface.php:307
 msgid "Groove"
 msgstr ""
 
-#: admin/admin-interface.php:299
+#: admin/admin-interface.php:308
 msgid "Ridge"
 msgstr ""
 
-#: admin/admin-interface.php:300
+#: admin/admin-interface.php:309
 msgid "Inset"
 msgstr ""
 
-#: admin/admin-interface.php:301
+#: admin/admin-interface.php:310
 msgid "Outset"
 msgstr ""
 
-#: admin/admin-interface.php:1558 admin/admin-interface.php:1644
-#: admin/admin-interface.php:1744 admin/admin-interface.php:1892
-#: admin/admin-interface.php:1982 admin/admin-interface.php:2011
+#: admin/admin-interface.php:1743 admin/admin-interface.php:1987
+#: admin/admin-interface.php:2087 admin/admin-interface.php:2256
+#: admin/admin-interface.php:2346 admin/admin-interface.php:2375
+#: admin/admin-interface.php:3018
 #: admin/settings/template-settings/global-settings.php:234
 #: admin/settings/template-settings/global-settings.php:276
 #: admin/settings/template-settings/global-settings.php:310
@@ -126,9 +127,10 @@ msgstr ""
 msgid "ON"
 msgstr ""
 
-#: admin/admin-interface.php:1559 admin/admin-interface.php:1645
-#: admin/admin-interface.php:1745 admin/admin-interface.php:1893
-#: admin/admin-interface.php:1983 admin/admin-interface.php:2012
+#: admin/admin-interface.php:1744 admin/admin-interface.php:1988
+#: admin/admin-interface.php:2088 admin/admin-interface.php:2257
+#: admin/admin-interface.php:2347 admin/admin-interface.php:2376
+#: admin/admin-interface.php:3019
 #: admin/settings/template-settings/global-settings.php:235
 #: admin/settings/template-settings/global-settings.php:277
 #: admin/settings/template-settings/global-settings.php:311
@@ -155,150 +157,146 @@ msgstr ""
 msgid "OFF"
 msgstr ""
 
-#: admin/admin-interface.php:1564
+#: admin/admin-interface.php:1749
 msgid "Google Fonts API"
 msgstr ""
 
-#: admin/admin-interface.php:1576
+#: admin/admin-interface.php:1761
 msgid ""
 "ON to connect to Google Fonts API and have auto font updates direct from "
 "Google."
 msgstr ""
 
-#: admin/admin-interface.php:1580
+#: admin/admin-interface.php:1765
 #, php-format
 msgid ""
 "Enter your existing Google Fonts API Key below. Don't have a key? Visit <a "
 "href='%s' target='_blank'>Google Developer API</a> to create a key"
 msgstr ""
 
-#: admin/admin-interface.php:1597
+#: admin/admin-interface.php:1782
 msgid "Google Fonts API Key"
 msgstr ""
 
-#: admin/admin-interface.php:1600
+#: admin/admin-interface.php:1785
 msgid "Your Google API Key is valid and automatic font updates are enabled."
 msgstr ""
 
-#: admin/admin-interface.php:1601
+#: admin/admin-interface.php:1786
 msgid "Please enter a valid Google API Key."
 msgstr ""
 
-#: admin/admin-interface.php:1620
+#: admin/admin-interface.php:1805
 msgid "Check New Version"
 msgstr ""
 
-#: admin/admin-interface.php:1631
+#: admin/admin-interface.php:1816
 msgid "Check Now"
 msgstr ""
 
-#: admin/admin-interface.php:1650
+#: admin/admin-interface.php:1993
 msgid "Open Box Display"
 msgstr ""
 
-#: admin/admin-interface.php:1663
+#: admin/admin-interface.php:2006
 msgid ""
 "ON and each admin panel setting box OPEN | CLOSED position are saved each "
 "time changes are SAVED."
 msgstr ""
 
-#: admin/admin-interface.php:2047
+#: admin/admin-interface.php:2411
 msgid "Width"
 msgstr ""
 
-#: admin/admin-interface.php:2049
+#: admin/admin-interface.php:2413
 msgid "Height"
 msgstr ""
 
-#: admin/admin-interface.php:2051
+#: admin/admin-interface.php:2415
 msgid "Hard Crop"
 msgstr ""
 
-#: admin/admin-interface.php:2124
+#: admin/admin-interface.php:2508
 msgid "-- Default Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:2135
+#: admin/admin-interface.php:2519
 msgid "-- Google Fonts --"
 msgstr ""
 
-#: admin/admin-interface.php:2176
+#: admin/admin-interface.php:2560
 msgid "Preview your customized typography settings"
 msgstr ""
 
-#: admin/admin-interface.php:2285 admin/admin-interface.php:2519
+#: admin/admin-interface.php:2669 admin/admin-interface.php:2903
 msgid "Preview your customized border settings"
 msgstr ""
 
-#: admin/admin-interface.php:2294 admin/admin-interface.php:2510
+#: admin/admin-interface.php:2670 admin/admin-interface.php:2837
+msgid "0px = No Border"
+msgstr ""
+
+#: admin/admin-interface.php:2678 admin/admin-interface.php:2894
 msgid "Rounded"
 msgstr ""
 
-#: admin/admin-interface.php:2295 admin/admin-interface.php:2511
+#: admin/admin-interface.php:2679 admin/admin-interface.php:2895
 msgid "Square"
 msgstr ""
 
-#: admin/admin-interface.php:2305 admin/admin-interface.php:2524
+#: admin/admin-interface.php:2689 admin/admin-interface.php:2908
 msgid "Top Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:2325 admin/admin-interface.php:2544
+#: admin/admin-interface.php:2709 admin/admin-interface.php:2928
 msgid "Top Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:2345 admin/admin-interface.php:2564
+#: admin/admin-interface.php:2729 admin/admin-interface.php:2948
 msgid "Bottom Right Corner"
 msgstr ""
 
-#: admin/admin-interface.php:2365 admin/admin-interface.php:2584
+#: admin/admin-interface.php:2749 admin/admin-interface.php:2968
 msgid "Bottom Left Corner"
 msgstr ""
 
-#: admin/admin-interface.php:2452
+#: admin/admin-interface.php:2836
 msgid "Preview your customized border styles settings"
 msgstr ""
 
-#: admin/admin-interface.php:2635
-msgid "YES"
-msgstr ""
-
-#: admin/admin-interface.php:2636
-msgid "NO"
-msgstr ""
-
-#: admin/admin-interface.php:2650
+#: admin/admin-interface.php:3034
 msgid "Horizontal Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2668
+#: admin/admin-interface.php:3052
 msgid "Vertical Shadow"
 msgstr ""
 
-#: admin/admin-interface.php:2686
+#: admin/admin-interface.php:3070
 msgid "Blur Distance"
 msgstr ""
 
-#: admin/admin-interface.php:2704
+#: admin/admin-interface.php:3088
 msgid "Spread Size"
 msgstr ""
 
-#: admin/admin-interface.php:2722
+#: admin/admin-interface.php:3106
 msgid "INNER"
 msgstr ""
 
-#: admin/admin-interface.php:2723
+#: admin/admin-interface.php:3107
 msgid "OUTER"
 msgstr ""
 
-#: admin/admin-interface.php:2741
+#: admin/admin-interface.php:3125
 msgid "Preview your customized box shadow settings"
 msgstr ""
 
-#: admin/admin-interface.php:3009
+#: admin/admin-interface.php:3399
 msgid "Save changes"
 msgstr ""
 
-#: admin/admin-interface.php:3010
+#: admin/admin-interface.php:3400
 msgid "Reset Settings"
 msgstr ""
 
@@ -814,7 +812,7 @@ msgid ""
 msgstr ""
 
 #: admin/tabs/template-settings/global-settings-tab.php:78
-#: includes/backend/class-a3-portfolio-backend-scripts.php:88
+#: includes/backend/class-a3-portfolio-backend-scripts.php:96
 msgid "Settings"
 msgstr ""
 
@@ -933,7 +931,7 @@ msgstr ""
 #: includes/attributes/class-a3-portfolio-attributes-page.php:406
 #: includes/attributes/class-a3-portfolio-attributes-page.php:441
 #: includes/meta-boxes/views/html-portfolio-attribute.php:18
-#: includes/post-types/a3-portfolio-post-types.php:272
+#: includes/post-types/a3-portfolio-post-types.php:271
 msgid "Name"
 msgstr ""
 
@@ -1003,12 +1001,12 @@ msgid "Terms"
 msgstr ""
 
 #: includes/attributes/class-a3-portfolio-attributes-page.php:350
-#: includes/post-types/a3-portfolio-post-types.php:105
+#: includes/post-types/a3-portfolio-post-types.php:104
 msgid "Edit"
 msgstr ""
 
 #: includes/attributes/class-a3-portfolio-attributes-page.php:350
-#: includes/meta-boxes/a3-portfolio-data-metabox.php:196
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:195
 msgid "Delete"
 msgstr ""
 
@@ -1031,61 +1029,61 @@ msgstr ""
 msgid "Are you sure you want to delete this attribute?"
 msgstr ""
 
-#: includes/backend/class-a3-portfolio-backend-scripts.php:44
+#: includes/backend/class-a3-portfolio-backend-scripts.php:47
 msgid "Go to Support Forum"
 msgstr ""
 
-#: includes/backend/class-a3-portfolio-backend-scripts.php:89
+#: includes/backend/class-a3-portfolio-backend-scripts.php:91
 msgid "Support"
 msgstr ""
 
-#: includes/backend/class-a3-portfolio-permalink-settings.php:21
+#: includes/backend/class-a3-portfolio-permalink-settings.php:23
 msgid "a3 Portfolio Permalinks"
 msgstr ""
 
-#: includes/backend/class-a3-portfolio-permalink-settings.php:26
+#: includes/backend/class-a3-portfolio-permalink-settings.php:28
 msgid "a3 Portfolio category base"
 msgstr ""
 
-#: includes/backend/class-a3-portfolio-permalink-settings.php:34
+#: includes/backend/class-a3-portfolio-permalink-settings.php:36
 msgid "a3 Portfolio tag base"
 msgstr ""
 
-#: includes/backend/class-a3-portfolio-permalink-settings.php:59
+#: includes/backend/class-a3-portfolio-permalink-settings.php:61
 msgid ""
 "These settings control the permalinks used for a3 Portfolios. These settings "
 "only apply when <strong>not using \"default\" permalinks above</strong>."
 msgstr ""
 
-#: includes/backend/class-a3-portfolio-permalink-settings.php:78
+#: includes/backend/class-a3-portfolio-permalink-settings.php:79
 msgid "Default"
 msgstr ""
 
-#: includes/backend/class-a3-portfolio-permalink-settings.php:83
+#: includes/backend/class-a3-portfolio-permalink-settings.php:84
 msgid "Main page base"
 msgstr ""
 
-#: includes/backend/class-a3-portfolio-permalink-settings.php:87
+#: includes/backend/class-a3-portfolio-permalink-settings.php:88
 msgid "Main page base with category"
 msgstr ""
 
-#: includes/backend/class-a3-portfolio-permalink-settings.php:93
+#: includes/backend/class-a3-portfolio-permalink-settings.php:94
 msgid "Custom Base"
 msgstr ""
 
-#: includes/backend/class-a3-portfolio-permalink-settings.php:95
+#: includes/backend/class-a3-portfolio-permalink-settings.php:96
 msgid ""
 "Enter a custom base to use. A base <strong>must</strong> be set or WordPress "
 "will use default instead."
 msgstr ""
 
-#: includes/frontend/a3-portfolio-template-functions.php:627
+#: includes/frontend/a3-portfolio-template-functions.php:631
 #: includes/meta-boxes/a3-portfolio-data-metabox.php:110
 #: includes/wpml-support/class-portfolio-wpml.php:56
 msgid "View More"
 msgstr ""
 
-#: includes/frontend/a3-portfolio-template-functions.php:973
+#: includes/frontend/a3-portfolio-template-functions.php:977
 #: includes/meta-boxes/a3-portfolio-data-metabox.php:101
 #: includes/wpml-support/class-portfolio-wpml.php:53
 msgid "LAUNCH SITE"
@@ -1134,19 +1132,19 @@ msgid "Sticky"
 msgstr ""
 
 #: includes/meta-boxes/a3-portfolio-data-metabox.php:182
-#: includes/meta-boxes/a3-portfolio-data-metabox.php:196
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:195
 msgid "Delete image"
 msgstr ""
 
-#: includes/meta-boxes/a3-portfolio-data-metabox.php:196
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:195
 msgid "Add Images to Portfolio Gallery"
 msgstr ""
 
-#: includes/meta-boxes/a3-portfolio-data-metabox.php:196
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:195
 msgid "Add to gallery"
 msgstr ""
 
-#: includes/meta-boxes/a3-portfolio-data-metabox.php:196
+#: includes/meta-boxes/a3-portfolio-data-metabox.php:195
 msgid "Add portfolio gallery images"
 msgstr ""
 
@@ -1286,169 +1284,169 @@ msgstr ""
 msgid "(Copy)"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:37
-#: includes/post-types/a3-portfolio-post-types.php:42
-#: includes/post-types/a3-portfolio-post-types.php:273
+#: includes/post-types/a3-portfolio-post-types.php:36
+#: includes/post-types/a3-portfolio-post-types.php:41
+#: includes/post-types/a3-portfolio-post-types.php:272
 #: includes/wpml-support/class-portfolio-wpml.php:54
 #: templates/expander/categories-meta.php:25
 msgid "Categories"
 msgstr ""
 
+#: includes/post-types/a3-portfolio-post-types.php:38
 #: includes/post-types/a3-portfolio-post-types.php:39
-#: includes/post-types/a3-portfolio-post-types.php:40
 msgid "Portfolio Categories"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:41
+#: includes/post-types/a3-portfolio-post-types.php:40
 msgid "Search Portfolio Categories"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:44
+#: includes/post-types/a3-portfolio-post-types.php:43
 msgid "Parent Portfolio Categories"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:45
+#: includes/post-types/a3-portfolio-post-types.php:44
 msgid "Parent Portfolio Categories:"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:46
+#: includes/post-types/a3-portfolio-post-types.php:45
 msgid "All Portfolio Categories"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:47
+#: includes/post-types/a3-portfolio-post-types.php:46
 msgid "Edit Portfolio Categories"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:48
+#: includes/post-types/a3-portfolio-post-types.php:47
 msgid "Update Portfolio Categories"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:49
+#: includes/post-types/a3-portfolio-post-types.php:48
 msgid "Add New Portfolio Category"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:50
+#: includes/post-types/a3-portfolio-post-types.php:49
 msgid "New Portfolio Categories Name"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:68
+#: includes/post-types/a3-portfolio-post-types.php:67
 #: includes/wpml-support/class-portfolio-wpml.php:55
 #: templates/expander/tags-meta.php:25
 msgid "Tags"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:70
+#: includes/post-types/a3-portfolio-post-types.php:69
 msgid "Portfolio Tags"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:71
+#: includes/post-types/a3-portfolio-post-types.php:70
 msgid "Portfolio Tag"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:73
+#: includes/post-types/a3-portfolio-post-types.php:72
 msgid "Search Portfolio Tags"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:74
+#: includes/post-types/a3-portfolio-post-types.php:73
 msgid "All Portfolio Tags"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:75
+#: includes/post-types/a3-portfolio-post-types.php:74
 msgid "Parent Portfolio Tag"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:76
+#: includes/post-types/a3-portfolio-post-types.php:75
 msgid "Parent TPortfolio ag:"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:77
+#: includes/post-types/a3-portfolio-post-types.php:76
 msgid "Edit Portfolio Tag"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:78
+#: includes/post-types/a3-portfolio-post-types.php:77
 msgid "Update Portfolio Tag"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:79
+#: includes/post-types/a3-portfolio-post-types.php:78
 msgid "Add New Portfolio Tag"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:80
+#: includes/post-types/a3-portfolio-post-types.php:79
 msgid "New Portfolio Tag Name"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:99
-#: includes/post-types/a3-portfolio-post-types.php:102
+#: includes/post-types/a3-portfolio-post-types.php:98
+#: includes/post-types/a3-portfolio-post-types.php:101
 msgid "Portfolio Items"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:100
+#: includes/post-types/a3-portfolio-post-types.php:99
 msgid "Portfolio Item"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:101
+#: includes/post-types/a3-portfolio-post-types.php:100
 msgid "Portfolio"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:103
+#: includes/post-types/a3-portfolio-post-types.php:102
 msgid "Add Item"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:104
+#: includes/post-types/a3-portfolio-post-types.php:103
 msgid "Add New Portfolio"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:106
+#: includes/post-types/a3-portfolio-post-types.php:105
 msgid "Edit Item"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:107
+#: includes/post-types/a3-portfolio-post-types.php:106
 msgid "New Portfolio"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:108
+#: includes/post-types/a3-portfolio-post-types.php:107
 msgid "View"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:109
+#: includes/post-types/a3-portfolio-post-types.php:108
 msgid "View Item"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:110
+#: includes/post-types/a3-portfolio-post-types.php:109
 msgid "Search Portfolios"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:111
+#: includes/post-types/a3-portfolio-post-types.php:110
 msgid "No Portfolio Found"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:112
+#: includes/post-types/a3-portfolio-post-types.php:111
 msgid "No Portfolio found in Trash"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:113
+#: includes/post-types/a3-portfolio-post-types.php:112
 msgid "Parent"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:131
+#: includes/post-types/a3-portfolio-post-types.php:130
 msgid "Portfolios Custom Post Type"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:221
+#: includes/post-types/a3-portfolio-post-types.php:220
 msgid "Show all categories"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:238
-#: includes/post-types/a3-portfolio-post-types.php:240
+#: includes/post-types/a3-portfolio-post-types.php:237
+#: includes/post-types/a3-portfolio-post-types.php:239
 #: templates/navbar/main-navbar.php:49 templates/navbar/tag-navbar.php:49
 msgid "Uncategorized"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:271
+#: includes/post-types/a3-portfolio-post-types.php:270
 msgid "Thumbnail"
 msgstr ""
 
-#: includes/post-types/a3-portfolio-post-types.php:274
+#: includes/post-types/a3-portfolio-post-types.php:273
 msgid "Date"
 msgstr ""
 
@@ -1602,17 +1600,17 @@ msgid "Twitter"
 msgstr ""
 
 #: includes/wpml-support/class-portfolio-wpml.php:60
-#: templates/expander/social-icons.php:54
+#: templates/expander/social-icons.php:55
 msgid "Facebook"
 msgstr ""
 
 #: includes/wpml-support/class-portfolio-wpml.php:61
-#: templates/expander/social-icons.php:61
+#: templates/expander/social-icons.php:62
 msgid "Google+"
 msgstr ""
 
 #: includes/wpml-support/class-portfolio-wpml.php:62
-#: templates/expander/social-icons.php:68
+#: templates/expander/social-icons.php:69
 msgid "Pinterest"
 msgstr ""
 

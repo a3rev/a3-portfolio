@@ -166,7 +166,7 @@ class A3_Portfolio_Frontend_Scripts
 		if ( wp_script_is( 'a3-portfolio-widgets-script' ) ) {
 			wp_localize_script( 'a3-portfolio-widgets-script', 'a3_portfolio_widgets_script_params', apply_filters( 'a3_portfolio_widgets_script_params', array(
 				'ajax_url'         => admin_url( 'admin-ajax.php', 'relative' ),
-				'no_porfolio_text' => a3_portfolio_ei_ict_t__( 'Recently Widget - No Portfolio', __( 'No Portfolio Recently Viewed !', 'a3_portfolios' ) ),
+				'no_porfolio_text' => a3_portfolio_ei_ict_t__( 'Recently Widget - No Portfolio', __( 'No Portfolio Recently Viewed !', 'a3-portfolio' ) ),
 				'lang'             => $current_lang
 			) ) );
 		}

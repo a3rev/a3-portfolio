@@ -6,7 +6,7 @@ Version: 2.5.0
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Requires at least: 4.1
-Tested up to: 4.8.0
+Tested up to: 4.9.0
 Text Domain: a3-portfolio
 Domain Path: /languages
 License: GPLv2 or later

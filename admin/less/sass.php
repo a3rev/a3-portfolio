@@ -5,11 +5,11 @@ if (!defined('ABSPATH'))
 
 class A3_Portfolio_Less
 {
-	public $plugin_name = 'a3_portfolios';
-	public $css_file_name = 'a3_portfolios';
-	public $plugin_folder = A3_PORTFOLIO_FOLDER;
-	public $plugin_dir = A3_PORTFOLIO_DIR;
-
+    public $plugin_name   = A3_PORTFOLIO_KEY;
+    public $css_file_name = 'a3_portfolios';
+    public $plugin_folder = A3_PORTFOLIO_FOLDER;
+    public $plugin_dir    = A3_PORTFOLIO_DIR;
+    
     /*-----------------------------------------------------------------------------------*/
     /* Constructor */
     /*-----------------------------------------------------------------------------------*/

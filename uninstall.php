@@ -8,17 +8,19 @@
 if( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) 
 	exit();
 
+$plugin_key = 'a3_portfolios';
+
 // Delete Google Font
-delete_option('a3_portfolios_google_api_key' . '_enable');
-delete_transient('a3_portfolios_google_api_key' . '_status');
-delete_option('a3_portfolios' . '_google_font_list');
+delete_option( $plugin_key . '_google_api_key' . '_enable' );
+delete_transient( $plugin_key . '_google_api_key' . '_status' );
+delete_option( $plugin_key . '_google_font_list' );
 
-if ( get_option('a3_portfolios_clean_on_deletion') == '1' ) {
-	delete_option('a3_portfolios_google_api_key');
-    delete_option('a3_portfolios_toggle_box_open');
-    delete_option('a3_portfolios' . '-custom-boxes');
+if ( get_option( $plugin_key . '_clean_on_deletion' ) == 1 ) {
+	delete_option( $plugin_key . '_google_api_key' );
+	delete_option( $plugin_key . '_toggle_box_open' );
+	delete_option( $plugin_key . '-custom-boxes' );
 
-    delete_metadata( 'user', 0, 'a3_portfolios' . '-' . 'plugin_framework_global_box' . '-' . 'opened', '', true );
+	delete_metadata( 'user', 0,  $plugin_key . '-' . 'plugin_framework_global_box' . '-' . 'opened', '', true );
 
 	global $wpdb;
 
@@ -31,7 +33,7 @@ if ( get_option('a3_portfolios_clean_on_deletion') == '1' ) {
 	delete_option( 'a3_portfolio_global_item_expander_settings' );
 	delete_option( 'a3_portfolio_item_posts_settings' );
 
-	delete_option( 'a3_portfolios_clean_on_deletion' );
+	delete_option( $plugin_key . '_clean_on_deletion' );
 
 	// Delete Tables
 	$wpdb->query( "DROP TABLE IF EXISTS " . $wpdb->prefix . "a3_portfolio_feature" );

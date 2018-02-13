@@ -32,7 +32,7 @@ class A3_Portfolio_WPML
 	 */
 	public function wpml_ict_t() {
 
-		$plugin_name = 'a3_portfolios';
+		$plugin_name = A3_PORTFOLIO_KEY;
 
 	}
 

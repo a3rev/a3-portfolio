@@ -30,19 +30,16 @@ class A3_Portfolio_Admin_UI
 	 * @var string
 	 * You must change to correct plugin name that you are working
 	 */
-	public $plugin_name = 'a3_portfolios';
 
-	public $google_api_key_option = 'a3_portfolios_google_api_key';
-
-	public $toggle_box_open_option = 'a3_portfolios_toggle_box_open';
-
-	public $is_free_plugin = true;
-
-	public $version_transient = 'a3_portfolios_update_info';
-
-	public $plugin_option_key = 'a3_portfolio_plugin';
-
-	public $support_url = 'https://wordpress.org/support/plugin/a3-portfolio/';
+	public $framework_version      = '2.0.2';
+	public $plugin_name            = A3_PORTFOLIO_KEY;
+	public $plugin_path            = A3_PORTFOLIO_NAME;
+	public $google_api_key_option  = A3_PORTFOLIO_KEY . '_google_api_key';
+	public $toggle_box_open_option = A3_PORTFOLIO_KEY . '_toggle_box_open';
+	public $version_transient      = A3_PORTFOLIO_KEY . '_licinfo';
+	public $is_free_plugin         = true;
+	
+	public $support_url            = 'https://wordpress.org/support/plugin/a3-portfolio/';
 
 
 	/**
@@ -55,7 +52,7 @@ class A3_Portfolio_Admin_UI
 	 * @var string
 	 * You must change to correct pro plugin page url on a3rev site
 	 */
-	public $pro_plugin_page_url = 'http://a3rev.com/shop/a3-portfolios/';
+	public $pro_plugin_page_url = 'https://a3rev.com/shop/a3-portfolios/';
 
 	/**
 	 * @var string
@@ -323,11 +320,11 @@ class A3_Portfolio_Admin_UI
 				if ( FALSE !== stristr( $version_transient, '||' )
 					&& is_array( $version_info )
 					&& isset( $version_info[1] ) && $version_info[1] == 'valid'
-					&& version_compare( get_option('a3_portfolio_version') , $version_info[0], '<' ) ) {
+					&& version_compare( A3_PORTFOLIO_VERSION , $version_info[0], '<' ) ) {
 
 						$version_message = sprintf( __( 'There is a new version <span class="a3rev-ui-new-plugin-version">%s</span> available, <a href="%s" target="_blank">update now</a> or download direct from <a href="%s" target="_blank">My Account</a> on a3rev.com', 'a3-portfolio' ),
 							$version_info[0],
-							wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' . A3_PORTFOLIO_NAME ), 'upgrade-plugin_' . A3_PORTFOLIO_NAME ),
+							wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' . $this->plugin_path ), 'upgrade-plugin_' . $this->plugin_path ),
 							'https://a3rev.com/my-account/downloads/'
 						);
 				}

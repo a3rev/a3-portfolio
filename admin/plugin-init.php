@@ -78,7 +78,7 @@ class A3_Portfolio {
 	}
 
 	public function plugin_activated(){
-		update_option( 'a3_portfolio_version', A3_PORTFOLIO_KEY );
+		update_option( 'a3_portfolio_version', A3_PORTFOLIO_VERSION );
 
 		// Install Database
 		include ( A3_PORTFOLIO_DIR . '/includes/class-a3-portfolio-data.php' );
@@ -160,7 +160,7 @@ class A3_Portfolio {
 			include( A3_PORTFOLIO_DIR. '/includes/updates/update-2.4.0.php' );
 		}
 
-		update_option( 'a3_portfolio_version', A3_PORTFOLIO_KEY );
+		update_option( 'a3_portfolio_version', A3_PORTFOLIO_VERSION );
 	}
 }
 

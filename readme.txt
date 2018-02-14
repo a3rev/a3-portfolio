@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.5
 Tested up to: 4.9.4
-Stable tag: 2.5.1
+Stable tag: 2.5.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.5.2 - 2018/02/14 =
+* Fix - Set correct name A3_PORTFOLIO_VERSION for update version
 
 = 2.5.1 - 2018/02/13 =
 * Maintenance Update. Under the bonnet tweaks to keep your plugin running smoothly and is the foundation for new features to be developed this year 
@@ -476,6 +479,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.5.2 =
+Maintenance Update. 1 bug fix appear on a3 Portfolio 2.5.1
 
 = 2.5.1 =
 Maintenance Update. This version updates the Plugin Framework to v 2.0.2, adds full compatibility with a3rev dashboard and WordPress v 4.9.4

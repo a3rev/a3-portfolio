@@ -19,23 +19,6 @@ class A3_Portfolio_Template_Loader
 		add_filter( 'a3_lazy_load_run_filter', array( $this, 'stop_a3_lazyload_plugin' ) );
 
 		add_action( 'wp_head', array( $this, 'a3_portfolio_filter_template' ), 1000 );
-
-		add_filter( 'template_include', array($this, 'template_include_divi_themes' ), 101, 3 );
-	}
-
-	public function template_include_divi_themes( $template ) {
-
-		if( 'Divi' === get_option( 'template' ) && ( is_tax( 'portfolio_cat' ) || is_tax( 'portfolio_tag' ) ) ) {
-			if( is_archive() && is_viewing_portfolio_taxonomy() ){
-				if ( file_exists( get_stylesheet_directory() . '/taxonomy-portfolio_cat.php' ) ) {
-					$template = get_stylesheet_directory() . '/taxonomy-portfolio_cat.php';
-				} elseif( file_exists( A3_PORTFOLIO_TEMPLATE_PATH . "/taxonomy-portfolio_cat_divi.php" )){
-					$template = A3_PORTFOLIO_TEMPLATE_PATH . "/taxonomy-portfolio_cat_divi.php";
-				}
-			}
-		}
-
-		return $template;
 	}
 
 	public function stop_a3_lazyload_plugin( $run_filter ) {

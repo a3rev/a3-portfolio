@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.5
 Tested up to: 4.9.4
-Stable tag: 2.5.2
+Stable tag: 2.6.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,10 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.6.0 - 2018/03/05 =
+* Feature Upgrade. This version adds full compatibility with the popular Divi premium theme by adding Category and Tags templates when that theme is used. 
+* Feature -  Added taxonomy templates that are used when the Divi theme is activated.
 
 = 2.5.2 - 2018/02/14 =
 * Fix - Set correct name A3_PORTFOLIO_VERSION for update version
@@ -479,6 +483,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.6.0 =
+Feature Upgrade. This version adds full compatibility with the popular Divi premium theme by adding Category and Tags templates when that theme is used.
 
 = 2.5.2 =
 Maintenance Update. 1 bug fix appear on a3 Portfolio 2.5.1

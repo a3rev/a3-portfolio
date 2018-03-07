@@ -375,8 +375,14 @@ class A3_Portfolio_Template_Loader
 	}
 
 	public function a3_portfolio_filter_template() {
+		add_filter( 'the_title', array( $this, 'a3_portfolio_filter_content_template' ), 1000 );
+	}
+
+	public function a3_portfolio_filter_content_template( $title ) {
 		add_filter( 'the_content', array( $this, 'portfolio_category_template' ), 1 );
 		add_filter( 'the_content', array( $this, 'single_template' ), 12 );
+
+		return $title;
 	}
 }
 

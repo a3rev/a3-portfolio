@@ -600,9 +600,7 @@ function a3_portfolio_card_item_description( $portfolio_id = 0, $echo = true ) {
 			$card_desc = strip_shortcodes( strip_tags( trim( $porfolio_data->post_content ) ) );
 		}
 
-		if ( '' != $card_desc ) {
-			$item_description = '<div class="a3-portfolio-card-description"><div>' . $card_desc . '</div></div>';
-		}
+		$item_description = '<div class="a3-portfolio-card-description"><div>' . $card_desc . '</div></div>';
 
 		$item_description = apply_filters( 'a3_portfolio_card_get_item_description', $item_description, $portfolio_id );
 

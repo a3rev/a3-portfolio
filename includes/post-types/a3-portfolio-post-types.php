@@ -152,7 +152,7 @@ class A3_Portfolio_Post_Types
 
 		$item_card_image_width = 400;
 		$item_card_image_height = 400;
-		$item_card_image_crop = true;
+		$item_card_image_crop = false;
 
 		if ( (int) trim( $a3_portfolio_global_settings['item_card_image_width'] ) > 0 ) {
 			$item_card_image_width = (int) $a3_portfolio_global_settings['item_card_image_width'];

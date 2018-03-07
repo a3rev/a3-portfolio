@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.5
 Tested up to: 4.9.4
-Stable tag: 2.6.0
+Stable tag: 2.6.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,14 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.6.1 - 2018/03/07 =
+* This is a big Maintenance Update. IMPORTANT clear all caches after this update. 3 Bug Fixes plus 2 Mobile UI and UX tweaks. Big fix for conflict with themes that filter Content in wp head.  
+* Tweak - Mobile break point to display items one column in portrait on new Apple and Android wider screen phones.
+* Tweak - Update script to remove auto close expander when scroll on mobile for improved UX
+* Fix - Changed from filtering the content at wp head to filter the title and call wp content from there to resolve issues with themes that filter the content at wp head. 
+* Fix - Item Cards alignment in PC and tablet for portfolio items without description. 
+* Fix - Image Scale and Crop options which had stopped working
 
 = 2.6.0 - 2018/03/05 =
 * Feature Upgrade. This version adds full compatibility with the popular Divi premium theme by adding Category and Tags templates when that theme is used. 
@@ -483,6 +491,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.6.1 =
+Big Maintenance Update. Important! - Clear all caches after this update, including your browser cache. 3 Bug Fixes plus 2 Mobile UI and UX tweaks. Big fix for conflict with themes that filter Content in wp head.
 
 = 2.6.0 =
 Feature Upgrade. This version adds full compatibility with the popular Divi premium theme by adding Category and Tags templates when that theme is used.

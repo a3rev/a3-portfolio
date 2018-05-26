@@ -3,8 +3,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.5
-Tested up to: 4.9.4
-Stable tag: 2.6.1
+Tested up to: 4.9.6
+Stable tag: 2.6.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,12 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.6.2 - 2018/05/26 =
+* This maintenance update is for compatibility with WordPress 4.9.6 and the new GDPR compliance requirements for users in the EU 
+* Tweak - Test for compatibility with WordPress 4.9.6
+* Tweak - Check for any issues with GDPR compliance. None Found
+* Framework - Update a3rev Plugin Framework to version 2.0.3
 
 = 2.6.1 - 2018/03/07 =
 * This is a big Maintenance Update. IMPORTANT clear all caches after this update. 3 Bug Fixes plus 2 Mobile UI and UX tweaks. Big fix for conflict with themes that filter Content in wp head.  
@@ -491,6 +497,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.6.2 =
+Maintenance Update. Compatibility WordPress 4.9.6 and the new GDPR compliance requirements for users in the EU
 
 = 2.6.1 =
 Big Maintenance Update. Important! - Clear all caches after this update, including your browser cache. 3 Bug Fixes plus 2 Mobile UI and UX tweaks. Big fix for conflict with themes that filter Content in wp head.

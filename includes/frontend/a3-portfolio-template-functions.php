@@ -686,7 +686,7 @@ function a3_portfolio_get_first_large_image( $gallery = array(), $echo = true ) 
 			$large_sizes = 'sizes="' . esc_attr( $large_sizes ) . '"';
 		}
 
-		$large_image_class = 'a3-portfolio-large-lazy portfolio_image';
+		$large_image_class = 'a3-notlazy a3-portfolio-large-lazy portfolio_image';
 		global $a3_portfolio_global_settings;
 		if ( 'yes' == $a3_portfolio_global_settings['item_post_gallery_lightbox'] ) {
 			$large_image_class .= ' a3-portfolio-image-gallery';
@@ -708,7 +708,7 @@ function a3_portfolio_get_first_large_image( $gallery = array(), $echo = true ) 
 
 	if ( trim( $main_large_image ) == '' ) {
 		$main_large_image = '<img
-			class="a3-portfolio-large-lazy
+			class="a3-notlazy a3-portfolio-large-lazy
 			no-thumb"
 			src="'.$_blank.'"
 			data-original="' . a3_portfolio_no_image('no-image-large.png') . '"

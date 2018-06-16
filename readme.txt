@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.5
 Tested up to: 4.9.6
-Stable tag: 2.6.2
+Stable tag: 2.6.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,10 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.6.3 - 2018/06/16 =
+* Tweak - Test for compatibility with WordPress 4.9.6
+* Fix - Add a3-notlazy class to Expander main gallery image to resolve conflict with a3 Lazy Load plugin
 
 = 2.6.2 - 2018/05/26 =
 * This maintenance update is for compatibility with WordPress 4.9.6 and the new GDPR compliance requirements for users in the EU 
@@ -497,6 +501,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.6.3 =
+Maintenance Update. Resolves a conflict with a3 Lazy Load and compatibility with WordPress v 4.9.6
 
 = 2.6.2 =
 Maintenance Update. Compatibility WordPress 4.9.6 and the new GDPR compliance requirements for users in the EU

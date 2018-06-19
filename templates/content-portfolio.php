@@ -104,7 +104,7 @@ $portfolio_gallery = a3_portfolio_get_gallery( $portfolio_id );
 			?>
 
 			<div class="a3-portfolio-item-content-text">
-				<?php echo wpautop( do_shortcode( get_the_content() ) ); ?>
+				<?php echo do_shortcode( wpautop( get_the_content() ) ); ?>
 			</div>
 
 			<?php

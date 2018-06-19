@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.5
 Tested up to: 4.9.6
-Stable tag: 2.6.3
+Stable tag: 2.6.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,13 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.6.4 - 2018/06/19 =
+* Maintenance update has 1 bug fix and 1 tweak when adding shortcodes to posts to show in item expander.
+* Tweak - Change priority value from 12 to 2 for apply single Portfolio template so that shortcode content can work correctly 
+* Framework - Fix for Framework Global Box open and close settings options
+* Framework - Update a3rev Plugin Framework to version 2.0.5
+* Fix - Called wpautop before do_shortcode for the content show on Expander so that it does not add more space to content loaded by shortcode
 
 = 2.6.3 - 2018/06/16 =
 * Tweak - Test for compatibility with WordPress 4.9.6
@@ -501,6 +508,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.6.4 =
+Maintenance update has 1 bug fix and 1 tweak when adding shortcodes to posts to show in item expander.
 
 = 2.6.3 =
 Maintenance Update. Resolves a conflict with a3 Lazy Load and compatibility with WordPress v 4.9.6

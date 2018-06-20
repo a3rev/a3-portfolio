@@ -242,15 +242,7 @@ jQuery(document).ready(function () {
 				}
 			});
 
-			portfolio_boxes.masonry({
-				isRTL: isRTL,
-				itemSelector: '.a3-portfolio-item',
-				columnWidth: portfolio_boxes.parent().width()/number_columns,
-				gutterWidth: (portfolio_boxes.width()-portfolio_boxes.parent().width())/number_columns,
-				transitionDuration: 0
-			});
-
-			portfolio_boxes.masonry( 'on', 'layoutComplete', function( msrInstance, laidOutItems ){
+			portfolio_boxes.on( 'layoutComplete', function( msrInstance, laidOutItems ){
 				console.log('[a3 Portfolio] - Start load the layout');
 
 				var selector = portfolio_container.find('.a3-portfolio-menus-container li a.active').attr('data-filter');
@@ -272,12 +264,14 @@ jQuery(document).ready(function () {
 						load_deeplink = true;
 						var current_item = parseInt(deeplink[0].split('item-')[1],0);
 						var active_larg_img = null;
-						var active_thumb = null;
+						var card_overlay = null;
+						var view_more_bt = null;
 
 						jQuery('body').find('.a3-portfolio-item').each( function( index, value ){
 							if ( index == current_item ) {
 								active_larg_img = jQuery(this).find('.active.item img');
-								active_thumb = jQuery(this).find('.a3-portfolio-card-image-container img');
+								card_overlay = jQuery(this).find('.a3-portfolio-card-image-container .a3-portfolio-card-opens-expander');
+								view_more_bt = jQuery(this).find('.a3-portfolio-card-viewmore .a3-portfolio-card-opens-expander');
 							}
 						});
 
@@ -296,13 +290,26 @@ jQuery(document).ready(function () {
 							//console.log('Deep Link Image is loaded');
 							intervalOpenExpander = setInterval( function() {
 								clearInterval(intervalOpenExpander);
-								active_thumb.trigger("click");
+								if ( card_overlay.length > 0 ) {
+									card_overlay.trigger("click");
+								} else if ( view_more_bt.length > 0 ) {
+									view_more_bt.trigger("click");
+								}
 							}, 3000 );
 
 					    });
 					}
 				}
 			});
+
+			portfolio_boxes.masonry({
+				isRTL: isRTL,
+				itemSelector: '.a3-portfolio-item',
+				columnWidth: portfolio_boxes.parent().width()/number_columns,
+				gutterWidth: (portfolio_boxes.width()-portfolio_boxes.parent().width())/number_columns,
+				transitionDuration: 0
+			});
+
 		});
 	}
 

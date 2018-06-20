@@ -1,4 +1,84 @@
-=== Changelog ===
+== Changelog ==
+
+= 2.6.5 - 2018/06/20 =
+* Maintenance update to fix a display issue in Chrome and Categories display issue on item posts plus a fix for Item Extender URL
+* Tweak - Change priority value from 2 to 9 for apply single Portfolio template so that content shows correct
+* Fix - Update JavaScript for trigger correct so that it opens popup from the item extender URL
+
+= 2.6.4 - 2018/06/19 =
+* Maintenance update has 1 bug fix and 1 tweak when adding shortcodes to posts to show in item expander.
+* Tweak - Change priority value from 12 to 2 for apply single Portfolio template so that shortcode content can work correctly 
+* Framework - Fix for Framework Global Box open and close settings options
+* Framework - Update a3rev Plugin Framework to version 2.0.5
+* Fix - Called wpautop before do_shortcode for the content show on Expander so that it does not add more space to content loaded by shortcode
+
+= 2.6.3 - 2018/06/16 =
+* Tweak - Test for compatibility with WordPress 4.9.6
+* Fix - Add a3-notlazy class to Expander main gallery image to resolve conflict with a3 Lazy Load plugin
+
+= 2.6.2 - 2018/05/26 =
+* This maintenance update is for compatibility with WordPress 4.9.6 and the new GDPR compliance requirements for users in the EU 
+* Tweak - Test for compatibility with WordPress 4.9.6
+* Tweak - Check for any issues with GDPR compliance. None Found
+* Framework - Update a3rev Plugin Framework to version 2.0.3
+
+= 2.6.1 - 2018/03/07 =
+* This is a big Maintenance Update. IMPORTANT clear all caches after this update. 3 Bug Fixes plus 2 Mobile UI and UX tweaks. Big fix for conflict with themes that filter Content in wp head.  
+* Tweak - Mobile break point to display items one column in portrait on new Apple and Android wider screen phones.
+* Tweak - Update script to remove auto close expander when scroll on mobile for improved UX
+* Fix - Changed from filtering the content at wp head to filter the title and call wp content from there to resolve issues with themes that filter the content at wp head. 
+* Fix - Item Cards alignment in PC and tablet for portfolio items without description. 
+* Fix - Image Scale and Crop options which had stopped working
+
+= 2.6.0 - 2018/03/05 =
+* Feature Upgrade. This version adds full compatibility with the popular Divi premium theme by adding Category and Tags templates when that theme is used. 
+* Feature -  Added taxonomy templates that are used when the Divi theme is activated.
+
+= 2.5.2 - 2018/02/14 =
+* Fix - Set correct name A3_PORTFOLIO_VERSION for update version
+
+= 2.5.1 - 2018/02/13 =
+* Maintenance Update. Under the bonnet tweaks to keep your plugin running smoothly and is the foundation for new features to be developed this year 
+* Framework - Update a3rev Plugin Framework to version 2.0.2
+* Framework - Add Framework version for all style and script files
+* Tweak - Update for full compatibility with a3rev Dashboard plugin
+* Tweak - Test for compatibility with WordPress 4.9.4
+
+= 2.5.0 - 2017/06/10 =
+* Feature - Launched a3 Portfolio public Github Repository
+* Feature - WordPress Translation activation. Add text domain declaration in file header.
+* Tweak - Tested for compatibility with WordPress major version 4.8.0
+* Tweak - Include bootstrap modal script into plugin framework
+* Tweak - Update a3rev plugin framework to latest version
+
+= 2.4.6 - 2017/05/03 =
+* Tweak - Tested for full compatibility with WordPress version 4.7.4
+* Dev - Define new a3_portfolio_get_permalink_structure function to get new permalink structure of Portfolio on WP 4.7.4
+* Fix - Set rewrite rules just for sub pages of main Portfolio pages to resolve conflicts with other plugins that have custom rewrite rules
+
+= 2.4.5 - 2017/03/31 =
+* Tweak - Changed facebook social share image size from thumbnail to medium size for better display when share from the Item Expander
+* Tweak - Tested for full compatibility with WordPress version 4.7.3
+* Fix - Update facebook social share parameters to rectify not being able to get the featured image in the facebook share pop up 
+
+= 2.4.4 - 2017/02/09 =
+* Tweak - Change global $$variable to global ${$variable} for compatibility with PHP 7.0
+* Tweak - Removed auto redirect to plugins admin panel on activation
+* Tweak - Update a3 Revolution to a3rev Software on plugins description
+* Tweak - Added Settings link to plugins description on plugins menu
+* Tweak - Tested for full compatibility with WordPress version 4.7.2
+* Fix - Show $number as string with use str_replace instead of preg_replace. $ value amounts not showing in item expander description
+* Fix - Update Portfolio script so that portfolio item cards display correctly without overlapping in mobile.
+
+= 2.4.3 - 2017/01/03 =
+* Tweak - Remove auto redirect to settings page when first install and activate the plugin
+* Tweak - Add Settings link to the plugins place maker on Plugins menu
+* Tweak - Update By A3 Revolution to a3rev Software on plugins place marker
+* Fix - Remove space from gallery image ids value when add or remove images
+
+= 2.4.2 - 2016/12/12 =
+* Tweak - Tested for full compatibility with WordPress version 4.7
+* Fix - Validate empty file that are parsed to a3_portfolio_get_template
 
 = 2.4.1 - 2016/06/24 =
 * Tweak - Update Portfolio Gallery box to enable a3 Portfolio Dynamic Gallery plugin to hook to it
@@ -50,12 +130,12 @@
 * Feature - Build new Portfolio Attribute feature as an upgrade of Feature Data
 * Feature - Create Portfolio Attribute page and Terms page as custom taxonomy
 * Feature - Portfolio Attribute with 2 types Select | Text .
-* Feature - Attribute with 'Select' type support terms and for using to make filter from widget.
+* Feature - Attribute with 'Select' type support terms and for using to make filter from widget. 
 * Feature - Attribute with 'Text' type to give the same feature as old Feature Data option
 * Feature - Create new Attribute menu on the Portfolio Item Data box on Portfolio Edit page.
-* Feature - Attribute meta box with select attributes and terms to apply to this item.
+* Feature - Attribute meta box with select attributes and terms to apply to this item. 
 * Feature - Attribute meta box with expand attribute and sort by drag and drop.
-* Feature - Define Portfolio Attribute Filter Widget. This new widget is used to filter multiple Attribute based terms.
+* Feature - Define Portfolio Attribute Filter Widget. This new widget is used to filter multiple Attribute based terms.  
 * Feature - Portfolio Attribute Filter Widget can add to Sidebar but just show on main Portfolio page or Portfolio Category page or Portfolio Tag page, don't show on another page.
 * Feature - Define new settings for select position to show Attribute Table on Expander and Item Post.
 * Feature - Upgrade all current icons to fontawesome icons
@@ -91,7 +171,7 @@
 * Tweak - Remove Add-on page, put available Add-ons on right sidebar
 * Tweak - Move Watermark help text onto the a3 Plugin Framework settings box
 * Tweak - Change Title switch name from ON MOUSE OVER to SHOW ON HOVER for better clarity
-* Tweak - Upgraded various setting box titles, option names and help text 
+* Tweak - Upgraded various setting box titles, option names and help text
 * Tweak - Make upgrade function for auto convert old structure to new structure of settings
 
 = 1.9.0 - 2016/03/18 =
@@ -260,21 +340,21 @@
 
 = 1.0.1 - 2015/01/05 =
 * Feature - Add a3 Portfolio Isotope Add-On Free plugin download from the Add-On's menu
-* Tweak - Updated the plugins description with details about the Isotope Add-On plugin.
+* Tweak - Updated the plugins description with details about the Isotope Add-On plugin
 * Tweak - Link from the Isotope Add-On plugin to http://a3rev.com/my-account/free-downloads/
 * Tweak - Add Registration and Login features to the /free-downloads/ page
 * Tweak - Add License agreement for first download of a3 Portfolio Isotope plugin
 * Tweak - Added effect mouse over on the card for Add-On page
-* Tweak - Remove custom colour for Add-On submenu title.
+* Tweak - Remove custom colour for Add-On submenu title
 * Dev - Hooked framework code into 'plugins_loaded' action. Allows developers to add their child plugin admin menu as a a3 Portfolio sub menu
-* Dev - Defined 'a3_portfolio_before_portfolio_enqueue_styles' action tag.
-* Dev - Defined 'a3_portfolio_after_portfolio_enqueue_styles' action tag.
-* Dev - Defined 'a3_portfolio_before_portfolio_enqueue_styles_rtl' action tag.
-* Dev - Defined 'a3_portfolio_after_portfolio_enqueue_styles_rtl' action tag.
-* Dev - Defined 'a3_portfolio_before_single_enqueue_styles' action tag.
-* Dev - Defined 'a3_portfolio_after_single_enqueue_styles' action tag.
-* Dev - Defined 'a3_portfolio_before_single_enqueue_styles_rtl' action tag.
-* Dev - Defined 'a3_portfolio_after_single_enqueue_styles_rtl' action tag.
+* Dev - Defined 'a3_portfolio_before_portfolio_enqueue_styles' action tag
+* Dev - Defined 'a3_portfolio_after_portfolio_enqueue_styles' action tag
+* Dev - Defined 'a3_portfolio_before_portfolio_enqueue_styles_rtl' action tag
+* Dev - Defined 'a3_portfolio_after_portfolio_enqueue_styles_rtl' action tag
+* Dev - Defined 'a3_portfolio_before_single_enqueue_styles' action tag
+* Dev - Defined 'a3_portfolio_after_single_enqueue_styles' action tag
+* Dev - Defined 'a3_portfolio_before_single_enqueue_styles_rtl' action tag
+* Dev - Defined 'a3_portfolio_after_single_enqueue_styles_rtl' action tag
 
 = 1.0.0 - 2014/12/16 =
-* First release.
+* First working release

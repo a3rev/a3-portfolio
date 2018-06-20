@@ -301,7 +301,7 @@ class A3_Portfolio_Template_Loader
 		// If we are a single products page
 		if ( $wp_query->post->post_type == 'a3-portfolio' && ! is_archive() && $wp_query->post_count <= 1 ) {
 
-			remove_filter( 'the_content', array( $this, 'single_template'), 2 );
+			remove_filter( 'the_content', array( $this, 'single_template'), 9 );
 			if ( isset( $wp_query->query_vars['preview'] ) && $wp_query->query_vars['preview'] )
 				$is_preview = 'true';
 			else
@@ -380,7 +380,7 @@ class A3_Portfolio_Template_Loader
 
 	public function a3_portfolio_filter_content_template( $title ) {
 		add_filter( 'the_content', array( $this, 'portfolio_category_template' ), 1 );
-		add_filter( 'the_content', array( $this, 'single_template' ), 2 );
+		add_filter( 'the_content', array( $this, 'single_template' ), 9 );
 
 		return $title;
 	}

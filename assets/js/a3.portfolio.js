@@ -28,7 +28,7 @@ function a3_portfolio_updateURLParameter(paramVal){
     var url = baseurl.split("#")[0];
     if ( typeof paramVal === 'undefined' ) paramVal="";
 	if (paramVal.length==0)
-	    par="#"
+	    par="#";
    	else
 		par='#'+paramVal;
 	if(history.pushState) {
@@ -569,7 +569,7 @@ jQuery(document).ready(function () {
 			console.log('[a3 Portfolio] - Loading all thumb images inside expander of Portfolio Index - ' + thumb.data('index') );
 			thumb.find("div.a3-portfolio-gallery-thumb-lazy").each(function(){
 				if ( typeof jQuery(this).attr('data-bg') !== 'undefined' ) {
-					jQuery(this).css('background-image', 'url('+jQuery(this).attr('data-bg')+')')
+					jQuery(this).css('background-image', 'url('+jQuery(this).attr('data-bg')+')');
 					jQuery(this).removeClass('a3-portfolio-gallery-thumb-lazy');
 				}
 			});
@@ -659,7 +659,7 @@ jQuery(document).ready(function () {
 			//});
 		}
 		return false;
-	}) // END OF CLICK ON PORTFOLIO ITEM
+	}); // END OF CLICK ON PORTFOLIO ITEM
 
 	jQuery( window ).on( "orientationchange", function( event ) {
 		jQuery('.a3-portfolio-container').each(function() {

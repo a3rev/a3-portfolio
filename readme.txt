@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.5
 Tested up to: 4.9.6
-Stable tag: 2.6.5
+Stable tag: 2.6.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.6.6 - 2018/06/21 =
+* Fix - An issue with compress JS script file with yesterdays 2.6.5 upgrade
 
 = 2.6.5 - 2018/06/20 =
 * Maintenance update to fix a display issue in Chrome and Categories display issue on item posts plus a fix for Item Extender URL
@@ -513,6 +516,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.6.6 =
+Maintenance update to fix a JS bug in yesterdays 2.6.5 upgrade
 
 = 2.6.5 =
 Maintenance update to fix a display issue in Chrome and Categories display issue on item posts plus a fix for Item Extender URL

@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.6.6 - 2018/06/21 =
+* Fix - An issue with compress JS script file with yesterdays 2.6.5 upgrade
+
 = 2.6.5 - 2018/06/20 =
 * Maintenance update to fix a display issue in Chrome and Categories display issue on item posts plus a fix for Item Extender URL
 * Tweak - Change priority value from 2 to 9 for apply single Portfolio template so that content shows correct

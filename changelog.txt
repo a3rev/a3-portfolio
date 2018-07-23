@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 2.6.7  2018/07/23 =
+* This maintenance upgrade has code tweaks for compatibility with Responsi Header Extender add-on and a3 Lazy Load plugin plus WordPress 4.9.7
+* Tweak - Open the expander at correct position for compatibility with Responsi Header Extender addon
+* Tweak - Called masonry for calculate height of card item after image is loaded by Lazy script for compatibility with a3 Lazy Load plugin
+* Tweak - Test for compatibility with WordPress 4.9.7
+
 = 2.6.6 - 2018/06/21 =
 * Fix - An issue with compress JS script file with yesterdays 2.6.5 upgrade
 

@@ -174,6 +174,9 @@ jQuery(document).ready(function () {
 	//Wordepress Adminbar
 	var wpadminbar_height = 0;
 
+	//Header Extender
+	var headersticky_height = 0;
+
 	var speed = 600;
 	var scrollspeed = 600;
 	var force_scrolltotop = true;
@@ -609,12 +612,15 @@ jQuery(document).ready(function () {
 						var wpadminbar = jQuery('#wpadminbar');
 						if( wpadminbar.length > 0) wpadminbar_height = wpadminbar.outerHeight();
 
+						var headersticky = jQuery('#wrapper-top-fixed');
+						if( headersticky.length > 0) headersticky_height = headersticky.outerHeight();
+
 						var card_height = thumb.outerHeight();
 
 						if ( jQuery('html').width() <= 600 ) {
-							var pdvScrollTop = thumb.offset().top + card_height - mobile_expander_top_alignment;
+							var pdvScrollTop = thumb.offset().top - headersticky_height + card_height - mobile_expander_top_alignment;
 						} else {
-							var pdvScrollTop = thumb.offset().top - wpadminbar_height + card_height - desktop_expander_top_alignment;
+							var pdvScrollTop = thumb.offset().top - wpadminbar_height - headersticky_height + card_height - desktop_expander_top_alignment;
 						}
 					 	jQuery('body,html').animate({
 	                    	scrollTop: pdvScrollTop
@@ -635,12 +641,15 @@ jQuery(document).ready(function () {
 					var wpadminbar = jQuery('#wpadminbar');
 					if( wpadminbar.length > 0) wpadminbar_height = wpadminbar.outerHeight();
 
+					var headersticky = jQuery('#wrapper-top-fixed');
+					if( headersticky.length > 0) headersticky_height = headersticky.outerHeight();
+
 					var card_height = thumb.outerHeight();
 
 					if ( jQuery('html').width() <= 600 ) {
-						var pdvScrollTop = thumb.offset().top + card_height - mobile_expander_top_alignment;
+						var pdvScrollTop = thumb.offset().top - headersticky_height + card_height - mobile_expander_top_alignment;
 					} else {
-						var pdvScrollTop = thumb.offset().top - wpadminbar_height + card_height - desktop_expander_top_alignment;
+						var pdvScrollTop = thumb.offset().top - wpadminbar_height - headersticky_height + card_height - desktop_expander_top_alignment;
 					}
 					jQuery('body,html').animate({
 						scrollTop: pdvScrollTop
@@ -689,6 +698,12 @@ jQuery(document).ready(function () {
 				},500);
 			}
 		});
+	});
+
+	jQuery(document).on( 'lazyload', '.a3-portfolio-thumb-lazy', function(e) {
+		var portfolio_container = jQuery(this).parents('.a3-portfolio-container');
+		var portfolio_boxes = portfolio_container.find('.a3-portfolio-box-content');
+		portfolio_boxes.masonry();
 	});
 
 	// ON RESIZE REMOVE THE DETAIL VIEW CONTAINER
@@ -757,12 +772,16 @@ jQuery(document).ready(function () {
 		var desktop_expander_top_alignment = a3_portfolio_script_params.desktop_expander_top_alignment;
 		var mobile_expander_top_alignment = a3_portfolio_script_params.mobile_expander_top_alignment;
 
+		var headersticky_height = 0;
+		var headersticky = jQuery('#wrapper-top-fixed');
+		if( headersticky.length > 0) headersticky_height = headersticky.outerHeight();
+
 		var current_card_activated = portfolio_boxes.find('.a3-portfolio-item.active');
 
 		if ( jQuery('html').width() <= 600 ) {
-			var pdvScrollTop = current_card_activated.offset().top - 20 - mobile_expander_top_alignment;
+			var pdvScrollTop = current_card_activated.offset().top - headersticky_height - 20 - mobile_expander_top_alignment;
 		} else {
-			var pdvScrollTop = current_card_activated.offset().top - wpadminbar_height - 20 - desktop_expander_top_alignment;
+			var pdvScrollTop = current_card_activated.offset().top - wpadminbar_height - headersticky_height - 20 - desktop_expander_top_alignment;
 		}
 	 	jQuery('body,html').animate({
         	scrollTop: pdvScrollTop

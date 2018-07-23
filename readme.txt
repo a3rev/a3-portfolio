@@ -3,8 +3,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.5
-Tested up to: 4.9.6
-Stable tag: 2.6.6
+Tested up to: 4.9.7
+Stable tag: 2.6.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,12 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.6.7  2018/07/23 =
+* This maintenance upgrade has code tweaks for compatibility with Responsi Header Extender add-on and a3 Lazy Load plugin plus WordPress 4.9.7
+* Tweak - Open the expander at correct position for compatibility with Responsi Header Extender addon
+* Tweak - Called masonry for calculate height of card item after image is loaded by Lazy script for compatibility with a3 Lazy Load plugin
+* Tweak - Test for compatibility with WordPress 4.9.7
 
 = 2.6.6 - 2018/06/21 =
 * Fix - An issue with compress JS script file with yesterdays 2.6.5 upgrade
@@ -516,6 +522,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.6.7 =
+This maintenance upgrade has code tweaks for compatibility with Responsi Header Extender add-on and a3 Lazy Load plugin plus WordPress 4.9.7
 
 = 2.6.6 =
 Maintenance update to fix a JS bug in yesterdays 2.6.5 upgrade

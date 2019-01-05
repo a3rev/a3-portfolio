@@ -25,8 +25,12 @@ class A3_Portfolio_Data_Metabox
 				,__( 'Portfolio Item Meta', 'a3-portfolio' )
 				,array( $this, 'output' )
 				,$post_type
-				,'normal'
+				,'side'
 				,'high'
+				, array( 
+					'__block_editor_compatible_meta_box' => true,
+					'__back_compat_meta_box' => false,
+				)
 			);
 		}
 	}

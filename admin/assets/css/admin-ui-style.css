@@ -248,7 +248,8 @@
 .a3rev_panel_container .a3rev-ui-password { width:300px; max-width:70%; }
 
 /* Google API KEY Control */
-.a3rev_panel_container .a3rev-ui-google_api_key { width:350px; max-width: 100%; }
+.a3rev_panel_container .a3rev-ui-google_api_key,
+.a3rev_panel_container .a3rev-ui-google_map_api_key { width:350px; max-width: 100%; }
 .a3rev_panel_container .a3rev-ui-google-api-key-inside { margin-top: 10px; }
 .a3rev_panel_container .a3rev-ui-google-valid-key-message,
 .a3rev_panel_container .a3rev-ui-google-unvalid-key-message { display: none; }
@@ -271,6 +272,7 @@
 .a3rev_panel_container .a3rev-ui-ajax_submit-control,
 .a3rev_panel_container .a3rev-ui-ajax_multi_submit-control {
 	margin-bottom: 6px;
+	position: relative;
 }
 .a3rev_panel_container .a3rev-ui-ajax_submit-control .a3rev-ui-ajax_submit-button,
 .a3rev_panel_container .a3rev-ui-ajax_multi_submit-control .a3rev-ui-ajax_multi_submit-button {
@@ -320,6 +322,14 @@
     width: 100%;
     max-width: 600px;
     position: relative;
+}
+.a3rev_panel_container .a3rev-ui-progress-notice {
+	display: none;
+	position: absolute;
+	text-align: center;
+	top: -25px;
+	width: 100%;
+	color: #f00;
 }
 .a3rev_panel_container .a3rev-ui-progress-inner {
 	animation: progress-bar 1s infinite linear;
@@ -876,6 +886,9 @@
 .a3rev_panel_container .chosen-container {
 	margin-bottom:5px;
 	margin-right:2px;	
+}
+.chzn-select-ajaxify ~ .chosen-container .no-results span {
+	display: none;
 }
 
 /* Custom for each element web icons font */

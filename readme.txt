@@ -2,9 +2,9 @@
 
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
-Requires at least: 4.5
-Tested up to: 4.9.8
-Stable tag: 2.6.8
+Requires at least: 4.6
+Tested up to: 5.0.2
+Stable tag: 2.6.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,18 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.6.9 - 2019/01/05 =
+* This maintenance update is for compatibility with WordPress 5.0.2 and PHP 7.3. It also includes performance updates to the plugin framework.
+* Tweak - Test for compatibility with WordPress 5.0.2 and WordPress 4.9.9
+* Tweak - Create new structure for future development of Gutenberg Blocks
+* Framework - Performance improvement.  Replace wp_remote_fopen  with file_get_contents for get web fonts
+* Framework - Performance improvement. Define new variable `is_load_google_fonts` if admin does not require to load google fonts
+* Credit - Props to Derek for alerting us to the framework google fonts performance issue
+* Framework - Register style name for dynamic style of plugin for use with Gutenberg block
+* Framework - Update Modal script and style to version 4.1.1
+* Framework - Update a3rev Plugin Framework to version 2.1.0
+* Framework - Test and update for compatibility with PHP 7.3
 
 = 2.6.8 - 2018/09/18 =
 * This maintenance update fixes an item card layout bug when 1 card is added to show full width in a single column when inserted by shortcode.

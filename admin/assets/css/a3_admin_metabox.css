@@ -105,16 +105,6 @@ ul.a3-metabox-data-tabs li.active a {
     padding: 0;
     color: #555
 }
-.a3-metabox-panel .options_group {
-    border-bottom: 1px solid #dfdfdf;
-    border-top: 1px solid #fff;
-}
-.a3-metabox-panel .options_group:first-child {
-    border-top: none;
-}
-.a3-metabox-panel .options_group:last-child {
-    border-bottom: none;
-}
 .a3-metabox-panel table.form-table td label,
 .a3-metabox-panel table.form-table td span,
 .a3-metabox-panel table.form-table td a,

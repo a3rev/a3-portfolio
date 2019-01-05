@@ -102,12 +102,18 @@
 
 											/* Apply for Google API Key */
 											elem.parents('.forminp-google_api_key').find('.a3rev-ui-google-api-key-container').slideDown();
+
+											/* Apply for Google Map API Key */
+											elem.parents('.forminp-google_map_api_key').find('.a3rev-ui-google-api-key-container').slideDown();
 										} else {
 											/* Apply for Border Corner */
 											elem.parents('.a3rev-ui-settings-control').find('.a3rev-ui-border-corner-value-container').slideUp();
 
 											/* Apply for Google API Key */
 											elem.parents('.forminp-google_api_key').find('.a3rev-ui-google-api-key-container').slideUp();
+
+											/* Apply for Google Map API Key */
+											elem.parents('.forminp-google_map_api_key').find('.a3rev-ui-google-api-key-container').slideUp();
 										}
 
 										$('input[name="' + input_name + '"]').trigger("a3rev-ui-onoff_checkbox-switch", [elem.val(), status]);
@@ -186,14 +192,13 @@
 
 		/* Apply chosen script for dropdown */
 		$(".a3rev_panel_container .chzn-select").chosen();
-		$(".a3rev_panel_container .chzn-select-deselect").chosen({ allow_single_deselect:true });
+		$(".a3rev_panel_container .chzn-select-deselect").chosen({ allow_single_deselect:true, search_contains: true });
+		$(".chzn-select-ajaxify").each( function(){
+			chosen_ajaxify($(this).attr('id'), $(this).attr('options_url'));
+		});
 
 		/* Apply help tip script */
-		$(".a3rev_panel_container .help_tip").tipTip({
-			"attribute" : "data-tip",
-			"fadeIn" : 50,
-			"fadeOut" : 50
-		});
+		$('.a3rev_panel_container .help_tip').popover({ html: true, placement: 'bottom' });
 
 		/* Apply Time Picker */
 		$('.a3rev_panel_container input.a3rev-ui-time_picker').each(function(i){
@@ -465,6 +470,7 @@
 			var submit_successsed = bt_ajax_submit.siblings('.a3rev-ui-ajax_multi_submit-successed');
 			var submit_errors     = bt_ajax_submit.siblings('.a3rev-ui-ajax_multi_submit-errors');
 			var progress_bar_wrap = bt_ajax_submit.siblings('.a3rev-ui-progress-bar-wrap');
+			var progress_notice   = bt_ajax_submit.siblings('.a3rev-ui-progress-notice');
 			var progress_inner    = progress_bar_wrap.find('.a3rev-ui-progress-inner');
 			var progressing_text  = progress_bar_wrap.find('.a3rev-ui-progressing-text');
 			var completed_text    = progress_bar_wrap.find('.a3rev-ui-completed-text');
@@ -559,6 +565,11 @@
 						progress_bar_wrap.hide();
 						progressing_text.show();
 						completed_text.hide();
+
+						if ( typeof progress_notice !== undefined ) {
+							progress_notice.hide();
+						}
+
 					}, 2000 );
 				}
 			});
@@ -653,6 +664,7 @@
 				var submit_successsed = bt_ajax_submit.siblings('.a3rev-ui-ajax_multi_submit-successed');
 				var submit_errors     = bt_ajax_submit.siblings('.a3rev-ui-ajax_multi_submit-errors');
 				var progress_bar_wrap = bt_ajax_submit.siblings('.a3rev-ui-progress-bar-wrap');
+				var progress_notice   = bt_ajax_submit.siblings('.a3rev-ui-progress-notice');
 				var progress_inner    = progress_bar_wrap.find('.a3rev-ui-progress-inner');
 				var progressing_text  = progress_bar_wrap.find('.a3rev-ui-progressing-text');
 				var completed_text    = progress_bar_wrap.find('.a3rev-ui-completed-text');
@@ -674,12 +686,24 @@
 					progressing_text.show();
 					completed_text.hide();
 					progress_inner.css({width: '0%'});
+					if ( typeof progress_notice !== undefined ) {
+						progress_notice.hide();
+					}
 				}, 3000 );
 			});
 		});
 
 		$(document).on( 'click', '.a3rev-ui-ajax_multi_submit-button', function(){
 			var bt_ajax_submit = $(this);
+
+			var confirm_message = $(this).data('confirm_message');
+			if ( typeof confirm_message !== 'undefined' && '' != confirm_message ) {
+				var confirm_submit = confirm( confirm_message );
+				if ( ! confirm_submit ) {
+					return false;
+				}
+			}
+
 			var resubmit = bt_ajax_submit.data('resubmit');
 			bt_ajax_submit.data('resubmit', 0);
 
@@ -688,6 +712,7 @@
 			var submit_successsed = bt_ajax_submit.siblings('.a3rev-ui-ajax_multi_submit-successed');
 			var submit_errors     = bt_ajax_submit.siblings('.a3rev-ui-ajax_multi_submit-errors');
 			var progress_bar_wrap = bt_ajax_submit.siblings('.a3rev-ui-progress-bar-wrap');
+			var progress_notice   = bt_ajax_submit.siblings('.a3rev-ui-progress-notice');
 			var progress_inner    = progress_bar_wrap.find('.a3rev-ui-progress-inner');
 			var progressing_text  = progress_bar_wrap.find('.a3rev-ui-progressing-text');
 			var completed_text    = progress_bar_wrap.find('.a3rev-ui-completed-text');
@@ -696,6 +721,9 @@
 			submit_successsed.hide();
 			submit_errors.hide();
 			progress_bar_wrap.show();
+			if ( typeof progress_notice !== undefined ) {
+				progress_notice.show();
+			}
 
 			// Reset progressing start point to 0 for resubmit
 			if ( resubmit == 1 ) {

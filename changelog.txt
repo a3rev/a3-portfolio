@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 2.7.0 - 2019/01/12 =
+* This upgrade includes 2 new sort features on the Portfolio Category Widget plus 1 bug fix on it.
+* Feature - Portfolio Categories widget - Add option to exclude Categories from showing on the frontend
+* Feature - Portfolio Categories widget - Add sort option for category items with show Newest first or show Oldest first
+* Fix – Category Order option, show by the order set on the Categories menu was not working
+
 = 2.6.9 - 2019/01/05 =
 * This maintenance update is for compatibility with WordPress 5.0.2 and PHP 7.3. It also includes performance updates to the plugin framework.
 * Tweak - Test for compatibility with WordPress 5.0.2 and WordPress 4.9.9

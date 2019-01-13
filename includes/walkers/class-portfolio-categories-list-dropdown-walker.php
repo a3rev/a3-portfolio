@@ -148,7 +148,7 @@ class A3_Portfolio_Cat_List_Dropdown_Walker extends Walker {
 		return $output;
 	}
 
-	function get_portfolios($catid = 0, $orderby='title menu_order', $number = -1, $offset = 0) {
+	function get_portfolios($catid = 0, $orderby='title date', $number = -1, $offset = 0) {
 		$args = array(
 			'numberposts'	=> $number,
 			'offset'		=> $offset,
@@ -157,6 +157,14 @@ class A3_Portfolio_Cat_List_Dropdown_Walker extends Walker {
 			'post_type'		=> 'a3-portfolio',
 			'post_status'	=> 'publish'
 		);
+
+		if ( 'date_asc' === $orderby ) {
+			$args['orderby'] = 'date';
+		} elseif ( 'date_desc' === $orderby ) {
+			$args['orderby'] = 'date';
+			$args['order'] = 'DESC';
+		}
+
 		if ($catid > 0) {
 			$args['tax_query'] = array(
 						array(

@@ -35,7 +35,19 @@ class A3_Portfolio_Categories_Widget extends WP_Widget {
 		echo $before_widget;
 		if ( $title )
 			echo $before_title . $title . $after_title;
-		echo $this->show_portfolio_categories($category_orderby, $portfolio_orderby, $dropdown, $hierarchy, $show_portfolio);
+
+		$first_update = false;
+		if ( ! isset( $instance['categories_show'] ) ) {
+			$first_update = true;
+			$categories_show = array();
+		} else {
+			$categories_show = $instance['categories_show'];
+		}
+
+		if ( ! empty( $instance['categories_show'] ) || $first_update ) {
+			echo $this->show_portfolio_categories( $categories_show, $category_orderby, $portfolio_orderby, $dropdown, $hierarchy, $show_portfolio);
+		}
+
 		echo $after_widget;
 	}
 
@@ -67,11 +79,6 @@ class A3_Portfolio_Categories_Widget extends WP_Widget {
 
 		$args = wp_parse_args( $args, $defaults );
 
-		if ( $args['orderby'] == 'order' ) {
-			$args['menu_order'] = 'asc';
-			$args['orderby']    = 'name';
-		}
-
 		$terms = get_terms( 'portfolio_cat', $args );
 
 		if ( ! $terms ) {
@@ -96,12 +103,28 @@ class A3_Portfolio_Categories_Widget extends WP_Widget {
 		echo $output;
 	}
 
-	function show_portfolio_categories($category_orderby = 'order', $portfolio_orderby = 'menu_order', $dropdown = '', $hierarchy = '', $show_portfolio = '') {
+	function show_portfolio_categories( $categories_show = array(), $category_orderby = 'meta_value_num', $portfolio_orderby = 'menu_order', $dropdown = '', $hierarchy = '', $show_portfolio = '') {
 		global $post;
 		$cat_args = array('show_count' => 0, 'hierarchical' => false, 'taxonomy' => 'portfolio_cat');
 		if ($dropdown == 'yes') $cat_args['dropdown'] = true ;
 		if ($hierarchy == 'yes') $cat_args['hierarchical'] = true ;
+		$cat_args['menu_order'] = false;
 		$cat_args['orderby'] = $category_orderby;
+
+		if ( ! empty( $categories_show ) ) {
+			$cat_args['include'] = $categories_show;
+		}
+
+		if ( 'name' !== $category_orderby ) {
+			$cat_args['meta_query'] = array(
+				'relation'        => 'OR',
+				'position_clause' => array(
+					'key'     => 'order',
+					'value'   => 0,
+					'compare' => '>='
+				),
+			);
+		}
 
 		global $wp_query, $post;
 
@@ -184,40 +207,69 @@ class A3_Portfolio_Categories_Widget extends WP_Widget {
 			$instance['show_portfolio']    	= $new_instance['show_portfolio'];
 			else
 			$instance['show_portfolio'] 	= 'no';
+
+			if ( isset( $new_instance['categories_show'] ) )
+			$instance['categories_show']    	= $new_instance['categories_show'];
+			else
+			$instance['categories_show'] 	= array();
+
 		return $instance;
 	}
 
 	function form( $instance ) {
 		$instance = wp_parse_args( (array) $instance, array(
 			'title'             => '',
-			'category_orderby'  => 'order',
-			'portfolio_orderby' => 'menu_order',
+			'categories_show'   => array( 'all' ),
+			'category_orderby'  => 'meta_value_num',
+			'portfolio_orderby' => 'menu_order_asc',
 			'dropdown'          => 'yes',
 			'hierarchy'         => 'yes',
 			'show_portfolio'    => 'yes'
 			) );
 		$title             = esc_attr($instance['title']);
+		$categories_show   = $instance['categories_show'];
 		$category_orderby  = $instance['category_orderby'];
 		$portfolio_orderby = $instance['portfolio_orderby'];
 		$dropdown          = $instance['dropdown'];
 		$hierarchy         = $instance['hierarchy'];
 		$show_portfolio    = $instance['show_portfolio'];
+
+		$cat_args            = array(
+			'pad_counts'         => 1,
+			'show_counts'        => 1,
+			'hierarchical'       => 1,
+			'hide_empty'         => 1,
+		);
+
+		$terms = get_terms( 'portfolio_cat', $cat_args );
 ?>
 		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'a3-portfolio' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 		</p>
+		<div>
+        	<label for="<?php echo $this->get_field_id('categories_show'); ?>"><?php _e('Categories show:', 'a3-portfolio' ); ?></label>
+        	<div style="max-height: 100px; overflow-y: auto;">
+			<?php if ( ! empty( $terms ) ) { ?>
+				<?php foreach ( $terms as $term ) { ?>
+					<label><input type="checkbox" <?php checked( ( in_array( 'all', $categories_show ) || in_array( $term->term_id, $categories_show ) ), true ); ?> name="<?php echo $this->get_field_name('categories_show'); ?>[]" value="<?php echo $term->term_id; ?>" />
+        			<?php echo $term->name; ?></label><br/>
+				<?php } ?>
+			<?php } ?>
+        	</div>
+        </div>
         <p>
         	<label for="<?php echo $this->get_field_id('category_orderby'); ?>"><?php _e('Category Order by:', 'a3-portfolio' ); ?></label>
         	<select name="<?php echo $this->get_field_name('category_orderby'); ?>" id="<?php echo $this->get_field_id('category_orderby'); ?>">
-            	<option value="order" selected="selected"><?php _e('Category Order', 'a3-portfolio' ); ?></option>
-                <option value="title" <?php selected( $category_orderby, 'title' ); ?>><?php _e('Category Name', 'a3-portfolio' ); ?></option>
+            	<option value="meta_value_num" selected="selected"><?php _e('Category Order', 'a3-portfolio' ); ?></option>
+                <option value="name" <?php selected( $category_orderby, 'name' ); ?>><?php _e('Category Name', 'a3-portfolio' ); ?></option>
             </select>
         </p>
         <p>
         	<label for="<?php echo $this->get_field_id('portfolio_orderby'); ?>"><?php _e('Portfolio Order by:', 'a3-portfolio' ); ?></label>
         	<select name="<?php echo $this->get_field_name('portfolio_orderby'); ?>" id="<?php echo $this->get_field_id('portfolio_orderby'); ?>">
-            	<option value="menu_order" selected="selected"><?php _e('Menu Order', 'a3-portfolio' ); ?></option>
+            	<option value="date_desc" selected="selected"><?php _e('Newest Show First', 'a3-portfolio' ); ?></option>
+            	<option value="date_asc" <?php selected( $portfolio_orderby, 'date_asc'); ?>><?php _e('Oldest Show First', 'a3-portfolio' ); ?></option>
                 <option value="title" <?php selected( $portfolio_orderby, 'title'); ?>><?php _e('Portfolio Name', 'a3-portfolio' ); ?></option>
             </select>
         </p>

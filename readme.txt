@@ -3,8 +3,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.6
-Tested up to: 5.0.2
-Stable tag: 2.6.9
+Tested up to: 5.0.3
+Stable tag: 2.7.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,12 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.7.0 - 2019/01/12 =
+* This upgrade includes 2 new sort features on the Portfolio Category Widget plus 1 bug fix on it.
+* Feature - Portfolio Categories widget - Add option to exclude Categories from showing on the frontend
+* Feature - Portfolio Categories widget - Add sort option for category items with show Newest first or show Oldest first
+* Fix – Category Order option, show by the order set on the Categories menu was not working
 
 = 2.6.9 - 2019/01/05 =
 * This maintenance update is for compatibility with WordPress 5.0.2 and PHP 7.3. It also includes performance updates to the plugin framework.
@@ -539,6 +545,12 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.7.0 =
+This upgrade includes 2 new sort features on the Portfolio Category Widget plus 1 bug fix on it.
+
+= 2.6.9 =
+This maintenance update is for compatibility with WordPress 5.0.2 and PHP 7.3. It also includes performance updates to the plugin framework.
 
 = 2.6.8 =
 This maintenance update fixes an item card layout bug when 1 card is added to show full width in a single column when inserted by shortcode.

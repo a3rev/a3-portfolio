@@ -442,9 +442,15 @@ function a3_portfolio_card_get_first_thumb_image( $portfolio_id = 0, $gallery = 
 		}
 
 		if ( $card_url && $card_url[0] != '' ) {
+			$alt = get_post_meta( $gallery[0], '_wp_attachment_image_alt', true );
+			if ( empty( $alt ) ) {
+				$alt = get_the_title( $portfolio_id );
+			}
+
 			$main_card_image = '<img
 				class="a3-portfolio-thumb-lazy attachment-a3-portfolio wp-post-image"
 				src="'.$card_url[0].'"
+				alt="'.$alt.'"
 				'.$card_srcset.'
 				'.$card_sizes.'
 			/>';
@@ -693,10 +699,16 @@ function a3_portfolio_get_first_large_image( $gallery = array(), $echo = true ) 
 		}
 
 		if ( $large_url && $large_url[0] != '' ) {
+			$alt = get_post_meta( $gallery[0], '_wp_attachment_image_alt', true );
+			if ( empty( $alt ) ) {
+				$alt = '';
+			}
+
 			$the_caption = get_post_field( 'post_excerpt', $gallery[0] );
 			$main_large_image = '<img
 				class="'.$large_image_class.'"
 				src="'.$_blank.'"
+				alt="'.$alt.'"
 				item_id="1"
 				data-original="'.$large_url[0].'"
 				data-caption="'.$the_caption.'"

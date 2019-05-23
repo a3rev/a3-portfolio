@@ -3,8 +3,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.6
-Tested up to: 5.0.3
-Stable tag: 2.7.0
+Tested up to: 5.2.1
+Stable tag: 2.7.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,11 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.7.1 - 2019/05/23 =
+* This maintenance upgrade adds support for ALT text on all portfolio images plus compatibility with WordPress 5.2.1
+* Tweak - Add ALT text support for item card feature image and default gallery images
+* Tweak - Test for compatibility with WordPress 5.2.1
 
 = 2.7.0 - 2019/01/12 =
 * This upgrade includes 2 new sort features on the Portfolio Category Widget plus 1 bug fix on it.
@@ -545,6 +550,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.7.1 =
+This maintenance upgrade adds support for ALT text on all portfolio images plus compatibility with WordPress 5.2.1
 
 = 2.7.0 =
 This upgrade includes 2 new sort features on the Portfolio Category Widget plus 1 bug fix on it.

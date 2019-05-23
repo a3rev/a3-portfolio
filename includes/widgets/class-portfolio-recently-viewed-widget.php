@@ -66,9 +66,16 @@ class A3_Portfolio_Recently_Viewed_Widget extends WP_Widget {
 					} else {
 						$thumb_sizes  = 'sizes="' . esc_attr( $thumb_sizes ) . '"';
 					}
+
+					$alt = get_post_meta( $portfolio_gallery[0], '_wp_attachment_image_alt', true );
+					if ( empty( $alt ) ) {
+						$alt = get_the_title( $portfolio_id );
+					}
+
 					$img = '<img
 						class="a3_porfolio_thumb_widget_lazy thumbnail"
 						src="'.$thumb[0].'"
+						alt="'.$alt.'"
 						'.$thumb_srcset.'
 						'.$thumb_sizes.'
 					/>';

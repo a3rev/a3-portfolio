@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.6
 Tested up to: 5.2.1
-Stable tag: 2.7.1
+Stable tag: 2.7.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,10 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.7.2 - 2019/05/25 =
+* This is a small maintenance update to fix a PHP 7.3 count warning
+* Fix - count Parameter must be an array or an object that implements Countable
 
 = 2.7.1 - 2019/05/23 =
 * This maintenance upgrade adds support for ALT text on all portfolio images plus compatibility with WordPress 5.2.1
@@ -550,6 +554,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.7.2 =
+This is a small maintenance update to fix a PHP 7.3 count warning
 
 = 2.7.1 =
 This maintenance upgrade adds support for ALT text on all portfolio images plus compatibility with WordPress 5.2.1

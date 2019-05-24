@@ -83,12 +83,16 @@ class A3_Portfolio_Template_Loader
 				if ( !isset( $wp_query->query_vars['portfolio_cat'] ) )
 					$wp_query = new WP_Query('post_type=a3-portfolio&name='.$wp_query->query_vars['name']);
 
-				if ( isset( $wp_query->post->ID ) )
+				if ( isset( $wp_query->post->ID ) ) {
 					$post = $wp_query->post;
-				else
+				} else {
+					if ( ! is_array( $portfolio_query_vars ) ) {
+						$portfolio_query_vars = array();
+					}
 					$portfolio_query_vars['portfolio_cat'] = $wp_query->query_vars['name'];
+				}
 			}
-			if ( count( $portfolio_query_vars ) <= 1 ) {
+			if ( empty( $portfolio_query_vars ) ) {
 				$portfolio_query_vars = array(
 					'post_status' => 'publish, locked, private',
 					'post_parent' => 0,

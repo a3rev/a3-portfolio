@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 2.7.2 - 2019/05/25 =
+* This is a small maintenance update to fix a PHP 7.3 count warning
+* Fix - count Parameter must be an array or an object that implements Countable
+
 = 2.7.1 - 2019/05/23 =
 * This maintenance upgrade adds support for ALT text on all portfolio images plus compatibility with WordPress 5.2.1
 * Tweak - Add ALT text support for item card feature image and default gallery images

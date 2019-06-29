@@ -3,8 +3,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.6
-Tested up to: 5.2.1
-Stable tag: 2.7.2
+Tested up to: 5.2.2
+Stable tag: 2.7.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,10 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.7.3 - 2019/06/29 =
+* This is a maintenance upgrade to fix a potentially fatal error conflict with sites running PHP 7.3 plus compatibility with WordPress v 5.2.2
+* Fix - PHP warning continue targeting switch is equivalent to break for compatibility on PHP 7.3
 
 = 2.7.2 - 2019/05/25 =
 * This is a small maintenance update to fix a PHP 7.3 count warning
@@ -554,6 +558,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.7.3 =
+This is a maintenance upgrade to fix a potentially fatal error conflict with sites running PHP 7.3 plus compatibility with WordPress v 5.2.2
 
 = 2.7.2 =
 This is a small maintenance update to fix a PHP 7.3 count warning

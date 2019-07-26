@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.6
 Tested up to: 5.2.2
-Stable tag: 2.7.3
+Stable tag: 2.7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,10 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.7.4 - 2019/07/25 =
+* This upgrade has some small tweaks for compatibility with Responsi Framework 7.5.0
+* Refactor - Up grade all plugin CSS and JS called from Responsi Framework from Class ID to Class name for the new Responsi Class names.
 
 = 2.7.3 - 2019/06/29 =
 * This is a maintenance upgrade to fix a potentially fatal error conflict with sites running PHP 7.3 plus compatibility with WordPress v 5.2.2
@@ -558,6 +562,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.7.4 = 
+This upgrade has some small tweaks for compatibility with Responsi Framework 7.5.0
 
 = 2.7.3 =
 This is a maintenance upgrade to fix a potentially fatal error conflict with sites running PHP 7.3 plus compatibility with WordPress v 5.2.2

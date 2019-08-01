@@ -306,6 +306,7 @@ class A3_Portfolio_Template_Loader
 		if ( $wp_query->post->post_type == 'a3-portfolio' && ! is_archive() && $wp_query->post_count <= 1 ) {
 
 			remove_filter( 'the_content', array( $this, 'single_template'), 9 );
+			remove_filter( 'the_content', 'wpautop' );
 			if ( isset( $wp_query->query_vars['preview'] ) && $wp_query->query_vars['preview'] )
 				$is_preview = 'true';
 			else

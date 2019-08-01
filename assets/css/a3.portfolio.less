@@ -4,6 +4,10 @@
 @charset "UTF-8";
 /* CSS Document */
 
+.svg-inline--fa {
+    box-sizing: content-box !important;
+}
+
 /* Portfolio Container Global Style */
 .a3-portfolio-container, .a3-portfolio-expander-popup {
 
@@ -93,6 +97,11 @@
         .padding_left(2px);
         vertical-align: middle;
         cursor: pointer;
+    }
+
+    svg.a3-portfolio-navigation-mobile-icon {
+        box-sizing: content-box !important;
+        height: auto;
     }
 }
 
@@ -301,6 +310,11 @@
                 background-color: #00FF33;
                 color: #ffffff;
             }
+        }
+
+        svg.a3-portfolio-icon-close {
+            box-sizing: content-box !important;
+            height: auto;
         }
     }
 }
@@ -755,7 +769,7 @@ div.single-a3-portfolio {
 
             .a3-portfolio-icon-close {
                 background: none repeat scroll 0 0 #333 !important;
-                font-size: 26px;
+                font-size: 30px;
                 font-weight: normal !important;
                 .opacity(0.9);
                 -moz-user-select: none;

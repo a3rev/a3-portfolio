@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.6
 Tested up to: 5.2.2
-Stable tag: 2.7.4
+Stable tag: 2.7.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,11 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.7.5 - 2019/08/01 =
+* This maintenance upgrade is to fix a style conflict with fontawesome icons and a Categories layout style on Posts
+* Fix - fontawesome icons not able to get correct style on frontend when the fontawesome script is loaded on the page by theme or another plugin.
+* Fix - Categories layout style on Portfolio Post items
 
 = 2.7.4 - 2019/07/25 =
 * This upgrade has some small tweaks for compatibility with Responsi Framework 7.5.0
@@ -562,6 +567,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.7.5 =
+This maintenance upgrade is to fix a style conflict with fontawesome icons and a Categories layout style on Posts
 
 = 2.7.4 = 
 This upgrade has some small tweaks for compatibility with Responsi Framework 7.5.0

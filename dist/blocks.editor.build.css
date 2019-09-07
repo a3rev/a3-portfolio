@@ -1,0 +1,150 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.a3-blockpress-control-spacing {
+  position: relative;
+  width: 100%;
+  padding-top: 87%;
+  border: 1px solid #e8eaec;
+  margin-top: 5px !important; }
+  .a3-blockpress-control-spacing .components-base-control__field > svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    margin-top: -9px;
+    margin-left: -11px;
+    opacity: .3;
+    z-index: 1; }
+  .a3-blockpress-control-spacing .components-base-control,
+  .a3-blockpress-control-spacing .components-base-control__field {
+    margin: 0 !important; }
+  .a3-blockpress-control-spacing .a3-blockpress-control-spacing-margin,
+  .a3-blockpress-control-spacing .a3-blockpress-control-spacing-padding {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px); }
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-margin > span,
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-padding > span {
+      position: absolute;
+      top: 2px;
+      left: 6px;
+      font-size: .7em; }
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-margin > div,
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-padding > div {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-margin input,
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-padding input {
+      width: 35px;
+      padding: 3px 3px;
+      text-align: center;
+      background: none;
+      border: none; }
+  .a3-blockpress-control-spacing .a3-blockpress-control-spacing-margin .a3-blockpress-control-spacing-margin-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; }
+  .a3-blockpress-control-spacing .a3-blockpress-control-spacing-margin .a3-blockpress-control-spacing-margin-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%; }
+  .a3-blockpress-control-spacing .a3-blockpress-control-spacing-margin .a3-blockpress-control-spacing-margin-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; }
+  .a3-blockpress-control-spacing .a3-blockpress-control-spacing-margin .a3-blockpress-control-spacing-margin-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; }
+  .a3-blockpress-control-spacing .a3-blockpress-control-spacing-padding {
+    top: 34px;
+    left: 45px;
+    width: calc(100% - 90px);
+    height: calc(100% - 68px);
+    background-color: #f2f2f2; }
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-padding > span {
+      top: 6px;
+      left: 10px; }
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-padding .a3-blockpress-control-spacing-padding-top {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: calc(100% - 10px); }
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-padding .a3-blockpress-control-spacing-padding-right {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      height: calc(100% - 10px); }
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-padding .a3-blockpress-control-spacing-padding-bottom {
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      width: calc(100% - 10px); }
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-padding .a3-blockpress-control-spacing-padding-left {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      height: calc(100% - 10px); }
+  .a3-blockpress-control-spacing .a3-blockpress-control-spacing-units {
+    position: absolute;
+    right: 5px;
+    top: 5px; }
+  .a3-blockpress-control-spacing .a3-blockpress-control-spacing-units-bt,
+  .a3-blockpress-control-spacing .a3-blockpress-control-spacing-sync {
+    background: #fff;
+    border-color: #e2e4e7;
+    line-height: 18px;
+    font-size: 10px;
+    padding: 0;
+    text-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #6c7781;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    top: -1px;
+    box-shadow: none !important; }
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-units-bt.is-primary, .a3-blockpress-control-spacing .a3-blockpress-control-spacing-units-bt.is-primary:focus:enabled,
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-sync.is-primary,
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-sync.is-primary:focus:enabled {
+      background: #555d66;
+      border-color: #555d66;
+      color: #fff;
+      z-index: 1;
+      cursor: default; }
+  .a3-blockpress-control-spacing .a3-blockpress-control-spacing-sync {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    top: auto;
+    width: auto;
+    height: auto;
+    line-height: 17px;
+    padding: 0 2px; }
+    .a3-blockpress-control-spacing .a3-blockpress-control-spacing-sync.is-primary, .a3-blockpress-control-spacing .a3-blockpress-control-spacing-sync.is-primary:focus:enabled {
+      cursor: pointer; }
+  .a3-blockpress-control-spacing .a3-blockpress-control-spacing-margin .a3-blockpress-control-spacing-units {
+    right: 0px;
+    top: 0px; }
+  .a3-blockpress-control-spacing .a3-blockpress-control-spacing-margin .a3-blockpress-control-spacing-sync {
+    right: 0px;
+    bottom: 0px; }

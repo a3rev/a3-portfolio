@@ -1,0 +1,18 @@
+{
+  "name": "a3-portfolio-blocks",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cgb-scripts start",
+    "build": "cgb-scripts build",
+    "eject": "cgb-scripts eject"
+  },
+  "dependencies": {
+    "@bit/a3revsoftware.blockpress.spacing": "^1.0.4",
+    "cgb-scripts": "1.13.0",
+    "shorthash": "0.0.2"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^4.3.2"
+  }
+}

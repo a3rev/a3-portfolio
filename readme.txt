@@ -3,8 +3,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.6
-Tested up to: 5.2.2
-Stable tag: 2.7.5
+Tested up to: 5.2.3
+Stable tag: 2.8.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -45,6 +45,20 @@ Inspired by Google Images UI a3 Portfolio is an image based creation and managem
 * Portfolio Item gallery manager in post meta
 * Option to set width of the Gallery main image on item post.
 * Option to show thumbnails beside main image or under it on item post
+
+
+= EMBED PORTFOLIOS BY BLOCK OR SHORTCODE =
+
+Embed portfolios in any post or page with the a3 Portfolio Gutenberg Blocks or shortcodes if still using the old editor. Embed the entire Portfolio or embeded Portfolios via taxonomy:
+
+* Portfolio Categories
+* Portfolio Tags
+
+The plugin also has 3 other filters for creating custom portfolio display:
+
+* Portfolio Featured Posts
+* Portfolio Sticky Sticky Posts
+* Portfolio Latest Post
 
 
 = PORTFOLIO ATTRIBUTES =
@@ -92,7 +106,6 @@ There is an emerging ecosystem of Premium plugins that extend the Portfolio - yo
 * a3 Portfolio Dynamic Style Sheets - Customize the style and layout of your portfolio item cards and item expander without touching the code with this plugin.
 * a3 Dynamic Gallery - Converts the Item page and Item Expander static galleries into dynamic scrolling galleries with transition effects
 * a3 Portfolio Item Switcher - Enables visitors to scroll through the entire portfolio without closing the item expander.
-* a3 Portfolio Shortcodes - Add Portfolio items either individually, by recent, Sticky, Categories or Tags
 
 
 = MORE FEATURES =
@@ -134,11 +147,14 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 == Screenshots ==
 
-1. Screenshot Portfolio-items-front-end
-2. Screenshot Portfolio-items-front-end-open
-3. Screenshot Portfolio-items-post
-4. Portfolio-item
-
+1. Each item opens on screen in an expander
+2. Full Portfolio showcase including categories filter
+3. Showcase Sponsors another Portfolio use example
+4. Showcase Local Attrations example
+5. Full post with custom gallery and layout
+6. a3 Portfolio Blocks
+7. Block Settings
+8. Portfolio Shortcode inserter
 
 == Usage ==
 
@@ -151,6 +167,23 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.8.0 - 2019/09/07 =
+* This feature upgrade adds a3Portfolio Gutenberg Block plus 5 filter blocks. Also includes inclusion of shortcodes into core for those still using the legacy editor. 
+* Feature - a3 Portfolio Premium shortcodes plugin discontinued, shortcodes now included in the parent plugin.
+* Feature - Add a3 Portfolio Gutenberg block. 
+* Feature - Add Portfolio Items Gutenberg block
+* Feature - Add Portfolio Categories Gutenberg block
+* Feature - Add Portfolio Tags Gutenberg block
+* Feature - Add Portfolio Recent Gutenberg block
+* Feature - Add Portfolio Sticky Gutenberg block
+* Tweak - Remove a3 Portfolio Shortcode placecard and link from admin dashboard sidebar
+
+= 2.7.6 - 2019/09/03 =
+* This upgrade is for compatibility with Responsi Framework 7.6.0
+* Refactor - Rewrite frontend HTML, CSS, JS and Variables Class and ID names to the new framework 7.6.0 namespaces 
+* Refactor - Rewrite customizer HTML, CSS, JS and Variables Class and ID names to the new framework 7.6.0 namespaces
+* Refactor - HTML, CSS, JS and Variables Class and ID names called from the framework making plugin file sizes smaller and faster to load
 
 = 2.7.5 - 2019/08/01 =
 * This maintenance upgrade is to fix a style conflict with fontawesome icons and a Categories layout style on Posts
@@ -178,7 +211,7 @@ Automatic installation is the easiest option as WordPress handles the file trans
 * This upgrade includes 2 new sort features on the Portfolio Category Widget plus 1 bug fix on it.
 * Feature - Portfolio Categories widget - Add option to exclude Categories from showing on the frontend
 * Feature - Portfolio Categories widget - Add sort option for category items with show Newest first or show Oldest first
-* Fix – Category Order option, show by the order set on the Categories menu was not working
+* Fix - Category Order option, show by the order set on the Categories menu was not working
 
 = 2.6.9 - 2019/01/05 =
 * This maintenance update is for compatibility with WordPress 5.0.2 and PHP 7.3. It also includes performance updates to the plugin framework.
@@ -567,6 +600,12 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.8.0 =
+This feature upgrade adds a3Portfolio Gutenberg Block plus 5 filter blocks. Also includes inclusion of shortcodes into core for those still using the legacy editor.
+
+= 2.7.6 =
+This upgrade is for compatibility with Responsi Framework 7.6.0. IMPORTANT! Be sure that you have upgraded to Responsi 7.6.0 BEFORE you run this upgrade
 
 = 2.7.5 =
 This maintenance upgrade is to fix a style conflict with fontawesome icons and a Categories layout style on Posts

@@ -1,5 +1,22 @@
 == Changelog ==
 
+= 2.8.0 - 2019/09/07 =
+* This feature upgrade adds a3Portfolio Gutenberg Block plus 5 filter blocks. Also includes inclusion of shortcodes into core for those still using the legacy editor. 
+* Feature - a3 Portfolio Premium shortcodes plugin discontinued, shortcodes now included in the parent plugin.
+* Feature - Add a3 Portfolio Gutenberg block. 
+* Feature - Add Portfolio Items Gutenberg block
+* Feature - Add Portfolio Categories Gutenberg block
+* Feature - Add Portfolio Tags Gutenberg block
+* Feature - Add Portfolio Recent Gutenberg block
+* Feature - Add Portfolio Sticky Gutenberg block
+* Tweak - Remove a3 Portfolio Shortcode placecard and link from admin dashboard sidebar
+
+= 2.7.6 - 2019/09/03 =
+* This upgrade is for compatibility with Responsi Framework 7.6.0
+* Refactor - Rewrite frontend HTML, CSS, JS and Variables Class and ID names to the new framework 7.6.0 namespaces 
+* Refactor - Rewrite customizer HTML, CSS, JS and Variables Class and ID names to the new framework 7.6.0 namespaces
+* Refactor - HTML, CSS, JS and Variables Class and ID names called from the framework making plugin file sizes smaller and faster to load
+
 = 2.7.5 - 2019/08/01 =
 * This maintenance upgrade is to fix a style conflict with fontawesome icons and a Categories layout style on Posts
 * Fix - fontawesome icons not able to get correct style on frontend when the fontawesome script is loaded on the page by theme or another plugin.
@@ -26,7 +43,7 @@
 * This upgrade includes 2 new sort features on the Portfolio Category Widget plus 1 bug fix on it.
 * Feature - Portfolio Categories widget - Add option to exclude Categories from showing on the frontend
 * Feature - Portfolio Categories widget - Add sort option for category items with show Newest first or show Oldest first
-* Fix – Category Order option, show by the order set on the Categories menu was not working
+* Fix - Category Order option, show by the order set on the Categories menu was not working
 
 = 2.6.9 - 2019/01/05 =
 * This maintenance update is for compatibility with WordPress 5.0.2 and PHP 7.3. It also includes performance updates to the plugin framework.

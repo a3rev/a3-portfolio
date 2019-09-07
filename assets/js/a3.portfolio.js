@@ -612,7 +612,7 @@ jQuery(document).ready(function () {
 						var wpadminbar = jQuery('#wpadminbar');
 						if( wpadminbar.length > 0) wpadminbar_height = wpadminbar.outerHeight();
 
-						var headersticky = jQuery('.responsi-top-fixed');
+						var headersticky = jQuery('.toolbar-ctn');
 						if( headersticky.length > 0) headersticky_height = headersticky.outerHeight();
 
 						var card_height = thumb.outerHeight();
@@ -641,7 +641,7 @@ jQuery(document).ready(function () {
 					var wpadminbar = jQuery('#wpadminbar');
 					if( wpadminbar.length > 0) wpadminbar_height = wpadminbar.outerHeight();
 
-					var headersticky = jQuery('.responsi-top-fixed');
+					var headersticky = jQuery('.toolbar-ctn');
 					if( headersticky.length > 0) headersticky_height = headersticky.outerHeight();
 
 					var card_height = thumb.outerHeight();
@@ -773,7 +773,7 @@ jQuery(document).ready(function () {
 		var mobile_expander_top_alignment = a3_portfolio_script_params.mobile_expander_top_alignment;
 
 		var headersticky_height = 0;
-		var headersticky = jQuery('.responsi-top-fixed');
+		var headersticky = jQuery('.toolbar-ctn');
 		if( headersticky.length > 0) headersticky_height = headersticky.outerHeight();
 
 		var current_card_activated = portfolio_boxes.find('.a3-portfolio-item.active');

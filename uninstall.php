@@ -32,6 +32,7 @@ if ( get_option( $plugin_key . '_clean_on_deletion' ) == 1 ) {
 	delete_option( 'a3_portfolio_item_cards_settings' );
 	delete_option( 'a3_portfolio_global_item_expander_settings' );
 	delete_option( 'a3_portfolio_item_posts_settings' );
+	delete_option( 'a3_portfolio_shortcodes_setting' );
 
 	delete_option( $plugin_key . '_clean_on_deletion' );
 

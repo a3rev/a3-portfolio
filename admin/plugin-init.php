@@ -28,6 +28,13 @@ class A3_Portfolio {
 		do_action( 'a3_portfolios_before_include_admin_page' );
 
 		include( 'admin-pages/admin-settings-page.php' );
+		include( 'admin-pages/admin-shortcodes-page.php' );
+
+		// Remove hook from shortcode addon
+		global $a3_portfolio_shortcodes_addon;
+		if ( $a3_portfolio_shortcodes_addon ) {
+			remove_action( 'a3_portfolios_after_include_admin_page', array( $a3_portfolio_shortcodes_addon, 'includes_admin_page' ) );
+		}
 
 		do_action( 'a3_portfolios_after_include_admin_page' );
 
@@ -51,6 +58,7 @@ class A3_Portfolio {
 		include( A3_PORTFOLIO_DIR . '/includes/frontend/a3-portfolio-template-functions.php' );
 		include( A3_PORTFOLIO_DIR . '/includes/frontend/class-a3-portfolio-template-loader.php' );
 		include( A3_PORTFOLIO_DIR . '/includes/a3-portfolio-core-functions.php' );
+		include( A3_PORTFOLIO_DIR . '/includes/a3-portfolio-shortcode-functions.php' );
 
 		if ( is_admin() ) {
 			include( A3_PORTFOLIO_DIR . '/includes/backend/class-a3-portfolio-backend-scripts.php' );
@@ -59,6 +67,13 @@ class A3_Portfolio {
 			include( A3_PORTFOLIO_DIR . '/includes/addons/class-a3-portfolio-addons-page.php' );
 			include( A3_PORTFOLIO_DIR . '/includes/meta-boxes/a3-portfolio-data-metabox.php' );
 			include( A3_PORTFOLIO_DIR . '/includes/post-types/a3-portfolio-duplicate.php' );
+		}
+
+		if ( is_admin() ) {
+			$current_url = add_query_arg();
+			if ( ! defined( 'A3_PORTFOLIO_SHORTCODES_KEY' ) && ( false !== stristr( $current_url, 'post.php' ) || false !== stristr( $current_url, 'edit-tags.php' ) ) ) {
+				include( A3_PORTFOLIO_DIR . '/includes/backend/class-a3-portfolio-shortcodes-hooks.php' );
+			}
 		}
 
 		include( A3_PORTFOLIO_DIR . '/includes/widgets/class-portfolio-recently-viewed-widget.php' );
@@ -71,8 +86,15 @@ class A3_Portfolio {
 		include( A3_PORTFOLIO_DIR . '/includes/frontend/a3-portfolio-template-hooks.php' );
 		include( A3_PORTFOLIO_DIR . '/includes/a3-portfolio-shortcodes.php' );
 
+		if ( ! is_admin() && ! defined( 'A3_PORTFOLIO_SHORTCODES_KEY' ) ) {
+			include( A3_PORTFOLIO_DIR . '/includes/shortcodes/class-shortcodes-display.php' );
+		}
+
 		// Include Permalinks Structure
 		include( A3_PORTFOLIO_DIR . '/includes/backend/class-a3-portfolio-permalinks-structure.php' );
+
+		// Gutenberg Blocks
+		include( A3_PORTFOLIO_DIR . '/src/blocks.php' );
 
 		do_action( 'a3_portfolios_after_include_files' );
 	}

@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 2.8.1 - 2019/10/12 =
+* This maintenance update is to fix PHP query arg function errors
+* Fix - Parse parameter to add_query_arg function
+
 = 2.8.0 - 2019/09/07 =
 * This feature upgrade adds a3Portfolio Gutenberg Block plus 5 filter blocks. Also includes inclusion of shortcodes into core for those still using the legacy editor. 
 * Feature - a3 Portfolio Premium shortcodes plugin discontinued, shortcodes now included in the parent plugin.

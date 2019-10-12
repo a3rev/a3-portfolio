@@ -70,7 +70,7 @@ class A3_Portfolio {
 		}
 
 		if ( is_admin() ) {
-			$current_url = add_query_arg();
+			$current_url = add_query_arg( 'custom-portfolio', false );
 			if ( ! defined( 'A3_PORTFOLIO_SHORTCODES_KEY' ) && ( false !== stristr( $current_url, 'post.php' ) || false !== stristr( $current_url, 'edit-tags.php' ) ) ) {
 				include( A3_PORTFOLIO_DIR . '/includes/backend/class-a3-portfolio-shortcodes-hooks.php' );
 			}

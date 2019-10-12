@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.6
 Tested up to: 5.2.3
-Stable tag: 2.8.0
+Stable tag: 2.8.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -167,6 +167,10 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.8.1 - 2019/10/12 =
+* This maintenance update is to fix PHP query arg function errors
+* Fix - Parse parameter to add_query_arg function
 
 = 2.8.0 - 2019/09/07 =
 * This feature upgrade adds a3Portfolio Gutenberg Block plus 5 filter blocks. Also includes inclusion of shortcodes into core for those still using the legacy editor. 
@@ -600,6 +604,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.8.1 =
+This maintenance update is to fix PHP query arg function errors
 
 = 2.8.0 =
 This feature upgrade adds a3Portfolio Gutenberg Block plus 5 filter blocks. Also includes inclusion of shortcodes into core for those still using the legacy editor.

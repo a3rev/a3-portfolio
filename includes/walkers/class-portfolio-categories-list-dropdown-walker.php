@@ -1,10 +1,17 @@
 <?php
 /**
- * A3_Portfolio_Cat_List_Walker class.
+ * A3_Portfolio_Cat_List_Dropdown_Walker class.
  *
  * @extends Walker
  */
-class A3_Portfolio_Cat_List_Dropdown_Walker extends Walker {
+
+namespace A3Rev\Portfolio\Walker;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+class Cat_List_Dropdown extends \Walker {
 
 	var $tree_type = 'portfolio_cat';
 	var $db_fields = array ( 'parent' => 'parent', 'id' => 'term_id', 'slug' => 'slug' );
@@ -133,7 +140,7 @@ class A3_Portfolio_Cat_List_Dropdown_Walker extends Walker {
 
 	function get_portfolio($current_portfolio, $catid, $catslug, $orderby, $hierarchical, $depth, $pad) {
 		$output = '';
-		$portfolio_results = A3_Portfolio_Cat_List_Dropdown_Walker::get_portfolios($catid, $orderby, -1, 0);
+		$portfolio_results = self::get_portfolios($catid, $orderby, -1, 0);
 		if ( count($portfolio_results) > 0) {
 			
 			foreach ($portfolio_results as $portfolio) {

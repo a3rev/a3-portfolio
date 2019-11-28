@@ -1,5 +1,8 @@
 <?php
-class A3_Portfolio {
+
+namespace A3Rev;
+
+class Portfolio {
 
 	/**
 	* Default contructor
@@ -50,51 +53,72 @@ class A3_Portfolio {
 		do_action( 'a3_portfolios_before_include_files' );
 
 		include( A3_PORTFOLIO_DIR . '/includes/attributes/a3-portfolio-attribute-functions.php' );
-		include( A3_PORTFOLIO_DIR . '/includes/class-a3-portfolio-ajax.php' );
-		include( A3_PORTFOLIO_DIR . '/includes/wpml-support/class-portfolio-wpml.php' );
-		include( A3_PORTFOLIO_DIR . '/includes/taxonomies/a3-portfolio-cat.php' );
-		include( A3_PORTFOLIO_DIR . '/includes/attributes/a3-portfolio-attribute-taxonomies.php' );
-		include( A3_PORTFOLIO_DIR . '/includes/post-types/a3-portfolio-post-types.php' );
+
+		new Portfolio\AJAX();
+
+		global $a3_portfolio_wpml;
+		$a3_portfolio_wpml = new Portfolio\WPML();
+
+		global $a3_portfolio_category_taxonomy;
+		$a3_portfolio_category_taxonomy = new Portfolio\Taxonomy\Category();
+
+		global $a3_portfolio_attribute_taxonomies;
+		$a3_portfolio_attribute_taxonomies = new Portfolio\Attribute_Taxonomies();
+
+		global $a3_portfolio_post_types;
+		$a3_portfolio_post_types = new Portfolio\Post_Types();
+
 		include( A3_PORTFOLIO_DIR . '/includes/frontend/a3-portfolio-template-functions.php' );
-		include( A3_PORTFOLIO_DIR . '/includes/frontend/class-a3-portfolio-template-loader.php' );
+
+		global $a3_portfolio_template_loader;
+		$a3_portfolio_template_loader = new Portfolio\Frontend\Template_Loader();
+
 		include( A3_PORTFOLIO_DIR . '/includes/a3-portfolio-core-functions.php' );
 		include( A3_PORTFOLIO_DIR . '/includes/a3-portfolio-shortcode-functions.php' );
 
 		if ( is_admin() ) {
-			include( A3_PORTFOLIO_DIR . '/includes/backend/class-a3-portfolio-backend-scripts.php' );
-			include( A3_PORTFOLIO_DIR . '/includes/attributes/class-a3-portfolio-attributes-page.php' );
-			include( A3_PORTFOLIO_DIR . '/includes/taxonomies/a3-portfolio-tag.php' );
-			include( A3_PORTFOLIO_DIR . '/includes/addons/class-a3-portfolio-addons-page.php' );
-			include( A3_PORTFOLIO_DIR . '/includes/meta-boxes/a3-portfolio-data-metabox.php' );
-			include( A3_PORTFOLIO_DIR . '/includes/post-types/a3-portfolio-duplicate.php' );
+			global $a3_portfolio_backend_scripts;
+			$a3_portfolio_backend_scripts = new Portfolio\Backend\Scripts();
+
+			new Portfolio\Attributes();
+
+			global $a3_portfolio_tag_taxonomy;
+			$a3_portfolio_tag_taxonomy = new Portfolio\Taxonomy\Tag();
+
+			new Portfolio\Addons();
+			new Portfolio\Metabox();
+			new Portfolio\Duplicate();
 		}
 
 		if ( is_admin() ) {
 			$current_url = add_query_arg( 'custom-portfolio', false );
-			if ( ! defined( 'A3_PORTFOLIO_SHORTCODES_KEY' ) && ( false !== stristr( $current_url, 'post.php' ) || false !== stristr( $current_url, 'edit-tags.php' ) ) ) {
-				include( A3_PORTFOLIO_DIR . '/includes/backend/class-a3-portfolio-shortcodes-hooks.php' );
+			if ( ! defined( 'A3_PORTFOLIO_SHORTCODES_KEY' ) && ! class_exists( 'A3_Portfolio_Shortcodes_Backend_Hooks' ) && ( false !== stristr( $current_url, 'post.php' ) || false !== stristr( $current_url, 'edit-tags.php' ) ) ) {
+
+				global $a3_portfolio_shortcodes_backend_hooks;
+				$a3_portfolio_shortcodes_backend_hooks = new Portfolio\Backend\Shortcode\Hooks();
 			}
 		}
 
-		include( A3_PORTFOLIO_DIR . '/includes/widgets/class-portfolio-recently-viewed-widget.php' );
-		include( A3_PORTFOLIO_DIR . '/includes/widgets/class-portfolio-categories-widget.php' );
-		include( A3_PORTFOLIO_DIR . '/includes/widgets/class-portfolio-tags-widget.php' );
-		include( A3_PORTFOLIO_DIR . '/includes/widgets/class-portfolio-attribute-filter-widget.php' );
-		include( A3_PORTFOLIO_DIR . '/includes/cookies/class-a3-portfolio-cookies.php' );
+		global $a3_portfolio_cookies;
+		$a3_portfolio_cookies = new Portfolio\Cookies();
 
-		include( A3_PORTFOLIO_DIR . '/includes/frontend/class-a3-portfolio-frontend-scripts.php' );
+		global $a3_portfolio_frontend_scripts;
+		$a3_portfolio_frontend_scripts = new Portfolio\Frontend\Scripts();
+
 		include( A3_PORTFOLIO_DIR . '/includes/frontend/a3-portfolio-template-hooks.php' );
 		include( A3_PORTFOLIO_DIR . '/includes/a3-portfolio-shortcodes.php' );
 
-		if ( ! is_admin() && ! defined( 'A3_PORTFOLIO_SHORTCODES_KEY' ) ) {
-			include( A3_PORTFOLIO_DIR . '/includes/shortcodes/class-shortcodes-display.php' );
+		if ( ! is_admin() && ! defined( 'A3_PORTFOLIO_SHORTCODES_KEY' ) && ! class_exists( 'A3_Portfolio_Shortcode_Display' ) ) {
+			global $a3_portfolio_shortcode_display;
+			$a3_portfolio_shortcode_display = new Portfolio\Shortcode\Display();
 		}
 
 		// Include Permalinks Structure
-		include( A3_PORTFOLIO_DIR . '/includes/backend/class-a3-portfolio-permalinks-structure.php' );
+		global $a3_portfolio_permalinks_structure;
+		$a3_portfolio_permalinks_structure = new Portfolio\Backend\Permalinks\Structure();
 
 		// Gutenberg Blocks
-		include( A3_PORTFOLIO_DIR . '/src/blocks.php' );
+		new Portfolio\Blocks();
 
 		do_action( 'a3_portfolios_after_include_files' );
 	}
@@ -103,8 +127,9 @@ class A3_Portfolio {
 		update_option( 'a3_portfolio_version', A3_PORTFOLIO_VERSION );
 
 		// Install Database
-		include ( A3_PORTFOLIO_DIR . '/includes/class-a3-portfolio-data.php' );
 		global $a3_portfolio_data;
+		$a3_portfolio_data = new Portfolio\Data();
+
 		$a3_portfolio_data->install_database();
 
 		$portfolio_page_id_created = a3_portfolio_create_page( _x('portfolios', 'page_slug', 'a3-portfolio' ), '', __('Portfolios', 'a3-portfolio' ), '[portfoliopage]' );
@@ -143,10 +168,10 @@ class A3_Portfolio {
 	}
 
 	public function register_widget() {
-		register_widget( 'A3_Portfolio_Categories_Widget' );
-		register_widget( 'A3_Portfolio_Tags_Widget' );
-		register_widget( 'A3_Portfolio_Recently_Viewed_Widget' );
-		register_widget( 'A3_Portfolio_Attribute_Filter_Widget' );
+		register_widget( '\A3Rev\Portfolio\Widget\Categories' );
+		register_widget( '\A3Rev\Portfolio\Widget\Tags' );
+		register_widget( '\A3Rev\Portfolio\Widget\Recently_Viewed' );
+		register_widget( '\A3Rev\Portfolio\Widget\Attribute_Filter' );
 	}
 
 	public static function upgrade_plugin() {
@@ -166,7 +191,8 @@ class A3_Portfolio {
 		// Upgrade to 2.1.0
 		if ( version_compare( get_option('a3_portfolio_version'), '2.1.0' ) === -1 ) {
 			update_option('a3_portfolio_version', '2.1.0');
-			include( A3_PORTFOLIO_DIR . '/includes/class-a3-portfolio-data.php' );
+			global $a3_portfolio_data;
+			$a3_portfolio_data = new Portfolio\Data();
 			include( A3_PORTFOLIO_DIR. '/includes/updates/update-2.1.0.php' );
 		}
 
@@ -185,7 +211,3 @@ class A3_Portfolio {
 		update_option( 'a3_portfolio_version', A3_PORTFOLIO_VERSION );
 	}
 }
-
-global $a3_portfolio;
-$a3_portfolio = new A3_Portfolio();
-?>

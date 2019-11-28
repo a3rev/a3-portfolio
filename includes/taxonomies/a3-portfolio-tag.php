@@ -1,9 +1,12 @@
 <?php
+
+namespace A3Rev\Portfolio\Taxonomy;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class A3_Portfolio_Tag_Taxonomy
+class Tag
 {
 
 	public function __construct() {
@@ -15,7 +18,3 @@ class A3_Portfolio_Tag_Taxonomy
 	}
 
 }
-
-global $a3_portfolio_tag_taxonomy;
-$a3_portfolio_tag_taxonomy = new A3_Portfolio_Tag_Taxonomy();
-?>

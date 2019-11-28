@@ -1,11 +1,14 @@
 <?php
+
+namespace A3Rev\Portfolio;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-if ( ! class_exists( 'A3_Portfolio_Attributes_Page' ) ) :
+if ( ! class_exists( 'A3_Portfolio_Attributes_Page' ) && ! class_exists( '\A3Rev\Portfolio\Attributes') ) :
 
-class A3_Portfolio_Attributes_Page
+class Attributes
 {
 
 	var $parent_page = 'a3-portfolio';
@@ -66,8 +69,8 @@ class A3_Portfolio_Attributes_Page
 	 */
 	private function get_posted_attribute() {
 		$attribute = array(
-			'attribute_label'   => isset( $_POST['attribute_label'] )   ? sanitize_text_field( stripslashes( $_POST['attribute_label'] ) ) : '',
-			'attribute_name'    => isset( $_POST['attribute_name'] )    ? a3_portfolio_sanitize_taxonomy_name( stripslashes( $_POST['attribute_name'] ) ) : '',
+			'attribute_label'   => isset( $_POST['attribute_label'] )   ? sanitize_text_field( wp_unslash( $_POST['attribute_label'] ) ) : '',
+			'attribute_name'    => isset( $_POST['attribute_name'] )    ? a3_portfolio_sanitize_taxonomy_name( wp_unslash( $_POST['attribute_name'] ) ) : '',
 			'attribute_type'    => isset( $_POST['attribute_type'] )    ? sanitize_text_field( $_POST['attribute_type'] ) : 'select',
 			'attribute_orderby' => isset( $_POST['attribute_orderby'] ) ? sanitize_text_field( $_POST['attribute_orderby'] ) : '',
 		);
@@ -92,11 +95,11 @@ class A3_Portfolio_Attributes_Page
 	 */
 	private function valid_attribute_name( $attribute_name ) {
 		if ( strlen( $attribute_name ) >= 28 ) {
-			return new WP_Error( 'error', sprintf( __( 'Slug "%s" is too long (28 characters max). Shorten it, please.', 'a3-portfolio' ), sanitize_title( $attribute_name ) ) );
+			return new \WP_Error( 'error', sprintf( __( 'Slug "%s" is too long (28 characters max). Shorten it, please.', 'a3-portfolio' ), sanitize_title( $attribute_name ) ) );
 		}
 
 		if ( a3_portfolio_check_if_attribute_name_is_reserved( $attribute_name ) ) {
-			return new WP_Error( 'error', sprintf( __( 'Slug "%s" is not allowed because it is a reserved term. Change it, please.', 'a3-portfolio' ), sanitize_title( $attribute_name ) ) );
+			return new \WP_Error( 'error', sprintf( __( 'Slug "%s" is not allowed because it is a reserved term. Change it, please.', 'a3-portfolio' ), sanitize_title( $attribute_name ) ) );
 		}
 
 		return true;
@@ -113,11 +116,11 @@ class A3_Portfolio_Attributes_Page
 		$attribute = $this->get_posted_attribute();
 
 		if ( empty( $attribute['attribute_name'] ) || empty( $attribute['attribute_label'] ) ) {
-			return new WP_Error( 'error', __( 'Please, provide an attribute name and slug.', 'a3-portfolio' ) );
+			return new \WP_Error( 'error', __( 'Please, provide an attribute name and slug.', 'a3-portfolio' ) );
 		} elseif ( ( $valid_attribute_name = $this->valid_attribute_name( $attribute['attribute_name'] ) ) && is_wp_error( $valid_attribute_name ) ) {
 			return $valid_attribute_name;
 		} elseif ( taxonomy_exists( a3_portfolio_attribute_taxonomy_name( $attribute['attribute_name'] ) ) ) {
-			return new WP_Error( 'error', sprintf( __( 'Slug "%s" is already in use. Change it, please.', 'a3-portfolio' ), sanitize_title( $attribute['attribute_name'] ) ) );
+			return new \WP_Error( 'error', sprintf( __( 'Slug "%s" is already in use. Change it, please.', 'a3-portfolio' ), sanitize_title( $attribute['attribute_name'] ) ) );
 		}
 
 		$wpdb->insert( $wpdb->prefix . 'a3_portfolio_attributes', $attribute );
@@ -141,7 +144,7 @@ class A3_Portfolio_Attributes_Page
 		$attribute = $this->get_posted_attribute();
 
 		if ( empty( $attribute['attribute_name'] ) || empty( $attribute['attribute_label'] ) ) {
-			return new WP_Error( 'error', __( 'Please, provide an attribute name and slug.', 'a3-portfolio' ) );
+			return new \WP_Error( 'error', __( 'Please, provide an attribute name and slug.', 'a3-portfolio' ) );
 		} elseif ( ( $valid_attribute_name = $this->valid_attribute_name( $attribute['attribute_name'] ) ) && is_wp_error( $valid_attribute_name ) ) {
 			return $valid_attribute_name;
 		}
@@ -149,7 +152,7 @@ class A3_Portfolio_Attributes_Page
 		$taxonomy_exists    = taxonomy_exists( a3_portfolio_attribute_taxonomy_name( $attribute['attribute_name'] ) );
 		$old_attribute_name = $wpdb->get_var( "SELECT attribute_name FROM {$wpdb->prefix}a3_portfolio_attributes WHERE attribute_id = $attribute_id" );
 		if ( $old_attribute_name != $attribute['attribute_name'] && a3_portfolio_sanitize_taxonomy_name( $old_attribute_name ) != $attribute['attribute_name'] && $taxonomy_exists ) {
-			return new WP_Error( 'error', sprintf( __( 'Slug "%s" is already in use. Change it, please.', 'a3-portfolio' ), sanitize_title( $attribute['attribute_name'] ) ) );
+			return new \WP_Error( 'error', sprintf( __( 'Slug "%s" is already in use. Change it, please.', 'a3-portfolio' ), sanitize_title( $attribute['attribute_name'] ) ) );
 		}
 
 		$wpdb->update( $wpdb->prefix . 'a3_portfolio_attributes', $attribute, array( 'attribute_id' => $attribute_id ) );
@@ -469,5 +472,3 @@ class A3_Portfolio_Attributes_Page
 }
 
 endif;
-
-return new A3_Portfolio_Attributes_Page();

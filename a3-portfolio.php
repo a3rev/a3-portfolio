@@ -2,11 +2,11 @@
 /*
 Plugin Name: a3 Portfolio
 Description: Creates a beautiful fully mobile responsive, fully customizable, Google images style portfolio to showcase your work.
-Version: 2.8.1
+Version: 2.9.0
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Requires at least: 4.6
-Tested up to: 5.2.3
+Tested up to: 5.3
 Text Domain: a3-portfolio
 Domain Path: /languages
 License: GPLv2 or later
@@ -33,8 +33,18 @@ define('A3_PORTFOLIO_TEMPLATE_CSS_URL', A3_PORTFOLIO_URL . '/templates/css');
 define('A3_PORTFOLIO_TEMPLATE_IMAGES_URL', A3_PORTFOLIO_URL . '/templates/images');
 
 define( 'A3_PORTFOLIO_KEY', 'a3_portfolios' );
-define( 'A3_PORTFOLIO_VERSION', '2.8.1' );
+define( 'A3_PORTFOLIO_VERSION', '2.9.0' );
 define( 'A3_PORTFOLIO_G_FONTS', true );
+
+if ( version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {
+	require __DIR__ . '/vendor/autoload.php';
+
+	global $a3_portfolio;
+	$a3_portfolio = new A3Rev\Portfolio();
+
+} else {
+	return;
+}
 
 /**
  * Load Localisation files.
@@ -53,7 +63,8 @@ function a3_portfolio_plugin_textdomain() {
 	load_plugin_textdomain( 'a3-portfolio', false, A3_PORTFOLIO_FOLDER.'/languages' );
 }
 
-include ( 'admin/plugin-init.php' );
+// Backwards compatibility for 3rd party plugin use functions from this plugin
+include( 'includes/compatibilities/classes-backwards-compatibility.php' );
 
 // Compatibilities
 include ( 'includes/compatibilities/divi-theme.php' );
@@ -61,5 +72,4 @@ include ( 'includes/compatibilities/divi-theme.php' );
 /**
  * Call when the plugin is activated
  */
-global $a3_portfolio;
 register_activation_hook(__FILE__, array( $a3_portfolio, 'plugin_activated' ) );

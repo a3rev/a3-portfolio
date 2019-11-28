@@ -1,9 +1,12 @@
 <?php
+
+namespace A3Rev\Portfolio\Frontend;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class A3_Portfolio_Frontend_Scripts
+class Scripts
 {
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_scripts' ) );
@@ -365,7 +368,3 @@ class A3_Portfolio_Frontend_Scripts
 		}
 	}
 }
-
-global $a3_portfolio_frontend_scripts;
-$a3_portfolio_frontend_scripts = new A3_Portfolio_Frontend_Scripts();
-?>

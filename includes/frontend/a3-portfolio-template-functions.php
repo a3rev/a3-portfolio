@@ -360,7 +360,7 @@ function a3_portfolio_main_query() {
 		)
 	);
 
-	$wp_query = new WP_Query( $wp_query->query_vars );
+	$wp_query = new \WP_Query( $wp_query->query_vars );
 }
 
 /**
@@ -399,7 +399,7 @@ function a3_portfolio_main_uncategorized_query() {
 		)
 	);
 
-	$wp_query = new WP_Query( $wp_query->query_vars );
+	$wp_query = new \WP_Query( $wp_query->query_vars );
 }
 
 /**
@@ -1043,5 +1043,3 @@ function a3_portfolio_single_get_layout_column_class( $portfolio_id = 0 ) {
 
 	return apply_filters( 'a3_portfolio_single_get_layout_column_class', $a3_portfolio_single_column_class, $portfolio_id );
 }
-
-?>

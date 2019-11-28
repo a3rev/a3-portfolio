@@ -1,9 +1,12 @@
 <?php
+
+namespace A3Rev\Portfolio;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class A3_Portfolio_Post_Types
+class Post_Types
 {
 	public function __construct() {
 
@@ -201,7 +204,7 @@ class A3_Portfolio_Post_Types
 	public function cats_restrict_manage_posts_print_terms( $taxonomy, $parent = 0, $level = 0 ){
 		$prefix = str_repeat( '&nbsp;&nbsp;&nbsp;' , $level );
 		$terms = get_terms( $taxonomy, array( 'parent' => $parent, 'hide_empty' => false ) );
-		if ( !( $terms instanceof WP_Error ) && !empty( $terms ) ) {
+		if ( !( $terms instanceof \WP_Error ) && !empty( $terms ) ) {
 			foreach ( $terms as $term ){
 				echo '<option value="'. $term->slug . '"', ( isset($_GET[$term->taxonomy]) && $_GET[$term->taxonomy] == $term->slug) ? ' selected="selected"' : '','>' . $prefix . $term->name .' (' . $term->count . ')</option>';
 				$this->cats_restrict_manage_posts_print_terms( $taxonomy, $term->term_id, $level+1 );
@@ -220,7 +223,7 @@ class A3_Portfolio_Post_Types
 					echo "<option value=''>" . __( 'Show all categories', 'a3-portfolio' ) . "</option>";
 					$this->cats_restrict_manage_posts_print_terms( $tax_slug );
 
-				$the_query = new WP_Query( array(
+				$the_query = new \WP_Query( array(
 					'posts_per_page'	=> 1,
 					'post_type'			=> 'a3-portfolio',
 					'post_status'		=> array( 'publish', 'pending', 'draft' ),
@@ -305,7 +308,3 @@ class A3_Portfolio_Post_Types
 		}
 	}
 }
-
-global $a3_portfolio_post_types;
-$a3_portfolio_post_types = new A3_Portfolio_Post_Types();
-?>

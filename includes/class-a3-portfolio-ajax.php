@@ -6,11 +6,13 @@
  *
  */
 
+namespace A3Rev\Portfolio;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class A3_Portfolio_AJAX {
+class AJAX {
 
 	/**
 	 * Hook in ajax handlers.
@@ -242,6 +244,3 @@ class A3_Portfolio_AJAX {
 		die();
 	}
 }
-
-new A3_Portfolio_AJAX();
-?>

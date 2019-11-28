@@ -8,12 +8,14 @@
  * @package CGB
  */
 
+namespace A3Rev\Portfolio\Blocks;
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class A3_Portfolio_Categories_Block {
+class Categories {
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_block' ) );	
@@ -77,6 +79,3 @@ class A3_Portfolio_Categories_Block {
 		return $output;
 	}
 }
-
-new A3_Portfolio_Categories_Block();
-?>

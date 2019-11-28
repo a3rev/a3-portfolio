@@ -1,9 +1,12 @@
 <?php
+
+namespace A3Rev\Portfolio;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class A3_Portfolio_Cookies
+class Cookies
 {
 
 	public function __construct() {
@@ -79,9 +82,9 @@ class A3_Portfolio_Cookies
 
 	public function a3_portfolio_set_cookie() {
 		if ( isset( $_POST['portfolio_id'] ) ) {
-			$portfolio_id = $_POST['portfolio_id'];
-			$lang = $_POST['lang'];
-			$this->portfolio_cookies( 'portfolio_recentviews' . $lang, $_POST['portfolio_id'], 7);
+			$portfolio_id = absint( $_POST['portfolio_id'] );
+			$lang = sanitize_text_field( $_POST['lang'] );
+			$this->portfolio_cookies( 'portfolio_recentviews' . $lang, $portfolio_id, 7);
 			echo 'true';
 		} else {
 			echo 'false';
@@ -91,7 +94,7 @@ class A3_Portfolio_Cookies
 
 
 	public function a3_portfolio_remove_all_cookie() {
-		$lang = $_POST['lang'];
+		$lang = sanitize_text_field( $_POST['lang'] );
 		$this->remove_all_portfolio_cookies( 'portfolio_recentviews' . $lang );
 		echo 'true';
 		die();
@@ -99,8 +102,8 @@ class A3_Portfolio_Cookies
 
 	public function a3_portfolio_remove_cookie() {
 		if ( isset( $_POST['portfolio_id'] ) ) {
-			$portfolio_id = $_POST['portfolio_id'];
-			$lang = $_POST['lang'];
+			$portfolio_id = absint( $_POST['portfolio_id'] );
+			$lang = sanitize_text_field( $_POST['lang'] );
 			$this->remove_portfolio_cookies( 'portfolio_recentviews' . $lang, $portfolio_id );
 			echo $portfolio_id;
 		} else {
@@ -109,7 +112,3 @@ class A3_Portfolio_Cookies
 		die();
 	}
 }
-
-global $a3_portfolio_cookies;
-$a3_portfolio_cookies = new A3_Portfolio_Cookies();
-?>

@@ -342,4 +342,17 @@ function a3_portfolio_blue_message_dismiss() {
 	$_SESSION[$session_name] = 1 ;
 	die();
 }
-?>
+
+function a3_portfolio_ict_t_e( $name, $string ) {
+	global $a3_portfolio_wpml;
+	$string = ( function_exists('icl_t') ? icl_t( $a3_portfolio_wpml->plugin_wpml_name, $name, $string ) : $string );
+
+	echo $string;
+}
+
+function a3_portfolio_ei_ict_t__( $name, $string ) {
+	global $a3_portfolio_wpml;
+	$string = ( function_exists('icl_t') ? icl_t( $a3_portfolio_wpml->plugin_wpml_name, $name, $string ) : $string );
+
+	return $string;
+}

@@ -1,11 +1,14 @@
 <?php
+
+namespace A3Rev\Portfolio\Backend\Permalinks;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-if ( ! class_exists( 'A3_Portfolio_Permalink_Settings' ) ) :
+if ( ! class_exists( 'A3_Portfolio_Permalink_Settings' ) && ! class_exists( '\A3Rev\Portfolio\Backend\Permalinks\Settings' ) ) :
 
-class A3_Portfolio_Permalink_Settings {
+class Settings {
 
 	private $permalinks = array();
 
@@ -189,6 +192,3 @@ class A3_Portfolio_Permalink_Settings {
 }
 
 endif;
-
-global $a3_portfolio_permalink_settings;
-$a3_portfolio_permalink_settings = new A3_Portfolio_Permalink_Settings();

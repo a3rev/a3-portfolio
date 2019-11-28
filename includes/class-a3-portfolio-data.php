@@ -1,9 +1,12 @@
 <?php
+
+namespace A3Rev\Portfolio;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class A3_Portfolio_Data
+class Data
 {
 	public function install_database() {
 		global $wpdb;
@@ -44,7 +47,3 @@ class A3_Portfolio_Data
 		}
 	}
 }
-
-global $a3_portfolio_data;
-$a3_portfolio_data = new A3_Portfolio_Data();
-?>

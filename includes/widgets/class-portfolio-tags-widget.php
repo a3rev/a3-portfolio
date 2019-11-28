@@ -11,7 +11,13 @@
  * form()
  */
 
-class A3_Portfolio_Tags_Widget extends WP_Widget {
+namespace A3Rev\Portfolio\Widget;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+class Tags extends \WP_Widget {
 
 	public function __construct() {
 		$widget_ops = array(
@@ -76,4 +82,3 @@ class A3_Portfolio_Tags_Widget extends WP_Widget {
 		return 'portfolio_tag';
 	}
 }
-?>

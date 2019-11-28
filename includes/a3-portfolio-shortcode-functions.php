@@ -119,5 +119,3 @@ function a3_portfolio_items( $ids='', $column='', $custom_style='', $echo = true
 		return $output;
 	}
 }
-
-?>

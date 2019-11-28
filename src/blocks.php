@@ -8,22 +8,25 @@
  * @package CGB
  */
 
+namespace A3Rev\Portfolio;
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class A3_Portfolio_Blocks {
+class Blocks {
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_block' ) );
 
-		include( 'blocks/main/block.php' );
-		include( 'blocks/items/block.php' );
-		include( 'blocks/categories/block.php' );
-		include( 'blocks/tags/block.php' );
-		include( 'blocks/sticky/block.php' );
-		include( 'blocks/recent/block.php' );
+		new Blocks\Main();
+		new Blocks\Items();
+		new Blocks\Categories();
+
+		new Blocks\Tags();
+		new Blocks\Sticky();
+		new Blocks\Recent();
 
 		// Hook: Editor assets.
 		add_action( 'enqueue_block_editor_assets', array( $this, 'cgb_editor_assets' ) );
@@ -150,6 +153,3 @@ class A3_Portfolio_Blocks {
 
 	}
 }
-
-new A3_Portfolio_Blocks();
-?>

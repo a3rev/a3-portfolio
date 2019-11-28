@@ -1,11 +1,14 @@
 <?php
+
+namespace A3Rev\Portfolio\Backend\Permalinks;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-if ( ! class_exists( 'A3_Portfolio_Permalinks_Structure' ) ) :
+if ( ! class_exists( 'A3_Portfolio_Permalinks_Structure' ) && ! class_exists( '\A3Rev\Portfolio\Backend\Permalinks\Structure' ) ) :
 
-class A3_Portfolio_Permalinks_Structure {
+class Structure {
 
 	public function __construct() {
 
@@ -21,7 +24,8 @@ class A3_Portfolio_Permalinks_Structure {
 
 		switch ( $screen->id ) {
 			case 'options-permalink' :
-				include( 'class-a3-portfolio-permalink-settings.php' );
+				global $a3_portfolio_permalink_settings;
+				$a3_portfolio_permalink_settings = new Settings();
 			break;
 		}
 	}
@@ -136,6 +140,3 @@ class A3_Portfolio_Permalinks_Structure {
 }
 
 endif;
-
-global $a3_portfolio_permalinks_structure;
-$a3_portfolio_permalinks_structure = new A3_Portfolio_Permalinks_Structure();

@@ -3,8 +3,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.6
-Tested up to: 5.2.3
-Stable tag: 2.8.1
+Tested up to: 5.3
+Stable tag: 2..9.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -167,6 +167,15 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.9.0 - 2019/11/28 =
+* This feature release has a lot including compatibility with WordPress 5.3 PHP upgrade to Composer PHP Dependency Manger, a full security review plus a bug fix.
+* Feature - Plugin fully refactored to Composer for cleaner and faster PHP code
+* Tweak - Remove the hard coded PHP error_reporting display errors false from compile sass to css
+* Tweak - Test for compatibility with WordPress 5.3.0
+* Dev - Replace file_get_contents with HTTP API wp_remote_get
+* Dev - Ensure that all inputs are sanitized and all outputs are escaped
+* Fix - Called remove_filter( 'the_title', array( $this, 'portfolio_the_title' ) ); after add filter, so that html code is not added into attribute of image on card , solves the item card showing code on category pages
 
 = 2.8.1 - 2019/10/12 =
 * This maintenance update is to fix PHP query arg function errors
@@ -604,6 +613,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.9.0 =
+* This feature release has a lot including compatibility with WordPress 5.3 PHP upgrade to Composer PHP Dependency Manger, a full security review plus a bug fix.
 
 = 2.8.1 =
 This maintenance update is to fix PHP query arg function errors

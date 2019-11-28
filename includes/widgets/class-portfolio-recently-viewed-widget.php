@@ -10,7 +10,14 @@
  * update()
  * form()
  */
-class A3_Portfolio_Recently_Viewed_Widget extends WP_Widget {
+
+namespace A3Rev\Portfolio\Widget;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+class Recently_Viewed extends \WP_Widget {
 
 	function __construct() {
 		$widget_ops = array(
@@ -120,4 +127,3 @@ class A3_Portfolio_Recently_Viewed_Widget extends WP_Widget {
 <?php
 	}
 }
-?>

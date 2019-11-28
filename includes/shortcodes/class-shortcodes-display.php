@@ -12,9 +12,11 @@
  * parse_shortcode_portfolio_item()
  */
 
-if ( ! class_exists( 'A3_Portfolio_Shortcode_Display' ) ) {
+namespace A3Rev\Portfolio\Shortcode;
 
-class A3_Portfolio_Shortcode_Display
+if ( ! class_exists( 'A3_Portfolio_Shortcode_Display' ) && ! class_exists( '\A3Rev\Portfolio\Shortcode\Display' ) ) {
+
+class Display
 {
 
 	public function __construct() {
@@ -187,8 +189,5 @@ class A3_Portfolio_Shortcode_Display
 		return $output;
 	}
 }
-
-global $a3_portfolio_shortcode_display;
-$a3_portfolio_shortcode_display = new A3_Portfolio_Shortcode_Display();
 
 }

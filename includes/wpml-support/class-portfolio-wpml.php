@@ -3,11 +3,14 @@
  * a3 Portfolio WPML Class
  *
  */
+
+namespace A3Rev\Portfolio;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class A3_Portfolio_WPML
+class WPML
 {
 	public $plugin_wpml_name = 'a3 Portfolios';
 
@@ -70,21 +73,3 @@ class A3_Portfolio_WPML
 	}
 
 }
-
-global $a3_portfolio_wpml;
-$a3_portfolio_wpml = new A3_Portfolio_WPML();
-
-function a3_portfolio_ict_t_e( $name, $string ) {
-	global $a3_portfolio_wpml;
-	$string = ( function_exists('icl_t') ? icl_t( $a3_portfolio_wpml->plugin_wpml_name, $name, $string ) : $string );
-
-	echo $string;
-}
-
-function a3_portfolio_ei_ict_t__( $name, $string ) {
-	global $a3_portfolio_wpml;
-	$string = ( function_exists('icl_t') ? icl_t( $a3_portfolio_wpml->plugin_wpml_name, $name, $string ) : $string );
-
-	return $string;
-}
-?>

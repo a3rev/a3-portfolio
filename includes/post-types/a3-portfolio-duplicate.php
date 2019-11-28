@@ -1,9 +1,12 @@
 <?php
+
+namespace A3Rev\Portfolio;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class A3_Portfolio_Duplicate
+class Duplicate
 {
 
 	public function __construct() {
@@ -60,7 +63,7 @@ class A3_Portfolio_Duplicate
 		}
 
 		// Get the original page
-		$id = ( isset( $_GET['post'] ) ? $_GET['post'] : $_POST['post'] );
+		$id = ( isset( $_GET['post'] ) ? absint( $_GET['post'] ) : absint( $_POST['post'] ) );
 		check_admin_referer( 'a3-duplicate-portfolio_' . $id );
 		$post = $this->get_item_to_duplicate( $id );
 

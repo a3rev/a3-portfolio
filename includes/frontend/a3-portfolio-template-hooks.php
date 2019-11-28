@@ -119,4 +119,3 @@ add_action( 'a3_portfolio_single_after_item_expander_content', 'a3_portfolio_sin
  * Footer
  *
  */
-?>

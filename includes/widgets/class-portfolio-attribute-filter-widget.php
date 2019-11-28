@@ -10,7 +10,14 @@
  * update()
  * form()
  */
-class A3_Portfolio_Attribute_Filter_Widget extends WP_Widget {
+
+namespace A3Rev\Portfolio\Widget;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+class Attribute_Filter extends \WP_Widget {
 
 	function __construct() {
 		$widget_ops = array(
@@ -96,4 +103,3 @@ class A3_Portfolio_Attribute_Filter_Widget extends WP_Widget {
 <?php
 	}
 }
-?>

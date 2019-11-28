@@ -2,7 +2,14 @@
 /**
  * Template Loader
  */
-class A3_Portfolio_Template_Loader
+
+namespace A3Rev\Portfolio\Frontend;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+class Template_Loader
 {
 	public function __construct() {
 		// Process template for Portfolio plugin
@@ -81,7 +88,7 @@ class A3_Portfolio_Template_Loader
 				global $post;
 				$is_404 = true;
 				if ( !isset( $wp_query->query_vars['portfolio_cat'] ) )
-					$wp_query = new WP_Query('post_type=a3-portfolio&name='.$wp_query->query_vars['name']);
+					$wp_query = new \WP_Query('post_type=a3-portfolio&name='.$wp_query->query_vars['name']);
 
 				if ( isset( $wp_query->post->ID ) ) {
 					$post = $wp_query->post;
@@ -122,7 +129,7 @@ class A3_Portfolio_Template_Loader
 
 				add_filter( 'pre_get_posts', array( $this, 'generate_portfolio_query' ), 11 );
 
-				$portfolio_query = new WP_Query( $portfolio_query_vars );
+				$portfolio_query = new \WP_Query( $portfolio_query_vars );
 			}
 		}
 
@@ -130,10 +137,10 @@ class A3_Portfolio_Template_Loader
 
 			$args = array_merge($portfolio_query->query, array('posts_per_page' => $number_portfolios, 'orderby' => 'post_date' ) );
 
-			$wp_query = new WP_Query($args);
+			$wp_query = new \WP_Query($args);
 
 			if ( empty( $portfolio_query->posts ) ) {
-				$wp_query = new WP_Query( 'page_id='.$portfolio_page_id);
+				$wp_query = new \WP_Query( 'page_id='.$portfolio_page_id);
 			}
 		}
 		if ( isset( $wp_query->post->ID ) )
@@ -148,6 +155,8 @@ class A3_Portfolio_Template_Loader
 		global $wp_query, $portfolio_page_id, $portfolio_cat_id, $portfolio_tag_id;
 		$post = get_post($id);
 
+		remove_filter('the_title', array( $this, 'portfolio_the_title') );
+
 		// If its the category page
 		if ( is_viewing_portfolio_taxonomy() && isset( $wp_query->posts[0] ) && $wp_query->posts[0]->post_title == $post->post_title && $wp_query->is_archive && !is_admin() && (isset($wp_query->query_vars['portfolio_cat']) || isset($wp_query->query_vars['portfolio_tag']))) {
 			if ( isset( $wp_query->query_vars['portfolio_cat'] ) ) {
@@ -158,16 +167,12 @@ class A3_Portfolio_Template_Loader
 				$category         = get_term_by('slug',$wp_query->query_vars['portfolio_tag'],'portfolio_tag');
 				$portfolio_tag_id = $category->term_id;
 			}
-			remove_filter('the_title', array( $this, 'portfolio_the_title') );
-
 		}
 
 		//if this is paginated products_page
 		if ( $wp_query->in_the_loop && empty($category->name) && isset( $wp_query->query_vars['paged'] ) && $wp_query->query_vars['paged'] && isset( $wp_query->query_vars['page'] ) && $wp_query->query_vars['page'] && 'a3-portfolio' == $wp_query->query_vars['post_type']) {
 			$post  = get_post( $portfolio_page_id );
 			$title = $post->post_title;
-			remove_filter( 'the_title', array( $this, 'portfolio_the_title') );
-
 		}
 
 		if ( ! empty( $category->name ) )
@@ -268,7 +273,7 @@ class A3_Portfolio_Template_Loader
 
 		if ( isset( $_GET['items_per_page'] ) ) {
 			if ( is_numeric( $_GET['items_per_page'] ) ) {
-				$query->query_vars['posts_per_page'] = (int) $_GET['items_per_page'];
+				$query->query_vars['posts_per_page'] = absint( $_GET['items_per_page'] );
 			} elseif ( $_GET['items_per_page'] == 'all' ) {
 				$query->query_vars['posts_per_page'] = 1000000;
 				$query->query_vars['nopaging']       = 1;
@@ -312,7 +317,7 @@ class A3_Portfolio_Template_Loader
 			else
 				$is_preview = 'false';
 
-			$portfolio_temp_query = new WP_Query( array(
+			$portfolio_temp_query = new \WP_Query( array(
 				'p'              => $wp_query->post->ID ,
 				'post_type'      => 'a3-portfolio',
 				'posts_per_page' => 1,
@@ -390,7 +395,3 @@ class A3_Portfolio_Template_Loader
 		return $title;
 	}
 }
-
-global $a3_portfolio_template_loader;
-$a3_portfolio_template_loader = new A3_Portfolio_Template_Loader();
-?>

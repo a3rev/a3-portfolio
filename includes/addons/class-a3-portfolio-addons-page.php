@@ -1,9 +1,12 @@
 <?php
+
+namespace A3Rev\Portfolio;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class A3_Portfolio_Addons_Page
+class Addons
 {
 	public function __construct() {
 
@@ -140,5 +143,3 @@ class A3_Portfolio_Addons_Page
 		return $boxes;
 	}
 }
-
-return new A3_Portfolio_Addons_Page();

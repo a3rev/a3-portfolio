@@ -1,9 +1,12 @@
 <?php
+
+namespace A3Rev\Portfolio\Backend;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class A3_Portfolio_Backend_Scripts
+class Scripts
 {
 	public function __construct() {
 		if ( is_admin() ) {
@@ -99,7 +102,3 @@ class A3_Portfolio_Backend_Scripts
 	}
 
 }
-
-global $a3_portfolio_backend_scripts;
-$a3_portfolio_backend_scripts = new A3_Portfolio_Backend_Scripts();
-?>

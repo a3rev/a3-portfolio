@@ -1,11 +1,14 @@
 <?php
+
+namespace A3Rev\Portfolio;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-if ( ! class_exists( 'A3_Portfolio_Attribute_Taxonomies' ) ) :
+if ( ! class_exists( 'A3_Portfolio_Attribute_Taxonomies' ) && ! class_exists( '\A3Rev\Portfolio\Attribute_Taxonomies' ) ) :
 
-class A3_Portfolio_Attribute_Taxonomies
+class Attribute_Taxonomies
 {
 
 	public function __construct() {
@@ -39,7 +42,7 @@ class A3_Portfolio_Attribute_Taxonomies
 
 		wp_enqueue_script( 'a3-portfolio-term-admin-script', A3_PORTFOLIO_JS_URL . '/a3.portfolio.term.admin' . $suffix . '.js', array('jquery-ui-sortable'), '1.0.0' );
 
-		$taxonomy = isset( $_GET['taxonomy'] ) ? $_GET['taxonomy'] : '';
+		$taxonomy = isset( $_GET['taxonomy'] ) ? sanitize_text_field( $_GET['taxonomy'] ) : '';
 
 		$portfolio_term_order_params = array(
 			'taxonomy' 			=>  $taxonomy
@@ -57,9 +60,9 @@ class A3_Portfolio_Attribute_Taxonomies
 
 	public function portfolio_update_taxonomy_order(){
 		global $wpdb;
-		$id       = (int) $_POST['id'];
-		$next_id  = isset( $_POST['nextid'] ) && (int) $_POST['nextid'] ? (int) $_POST['nextid'] : null;
-		$taxonomy = isset( $_POST['thetaxonomy'] ) ? esc_attr( $_POST['thetaxonomy'] ) : null;
+		$id       = absint( $_POST['id'] );
+		$next_id  = isset( $_POST['nextid'] ) && (int) $_POST['nextid'] ? absint( $_POST['nextid'] ) : null;
+		$taxonomy = isset( $_POST['thetaxonomy'] ) ? sanitize_text_field( $_POST['thetaxonomy'] ) : null;
 		$term     = get_term_by('id', $id, $taxonomy);
 
 		if ( ! $id || ! $term || ! $taxonomy ) {
@@ -196,6 +199,3 @@ class A3_Portfolio_Attribute_Taxonomies
 }
 
 endif;
-
-global $a3_portfolio_attribute_taxonomies;
-$a3_portfolio_attribute_taxonomies = new A3_Portfolio_Attribute_Taxonomies();

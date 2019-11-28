@@ -1,9 +1,12 @@
 <?php
+
+namespace A3Rev\Portfolio\Taxonomy;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class A3_Portfolio_Category_Taxonomy
+class Category
 {
 	public $table_name = 'a3_portfolio_categorymeta';
 
@@ -135,7 +138,7 @@ class A3_Portfolio_Category_Taxonomy
 		if ( ( ( ! empty( $_GET['taxonomy'] ) && in_array( $_GET['taxonomy'], array( 'portfolio_cat' ) ) ) ) && ! isset( $_GET['orderby'] ) ) {
 			wp_enqueue_script( 'a3-portfolio-term-admin-script', A3_PORTFOLIO_JS_URL . '/a3.portfolio.term.admin' . $suffix . '.js', array('jquery-ui-sortable'), '1.0.0' );
 
-			$taxonomy = isset( $_GET['taxonomy'] ) ? $_GET['taxonomy'] : '';
+			$taxonomy = isset( $_GET['taxonomy'] ) ? sanitize_text_field( $_GET['taxonomy'] ) : '';
 
 			$portfolio_term_order_params = array(
 				'taxonomy' 			=>  $taxonomy
@@ -214,7 +217,7 @@ class A3_Portfolio_Category_Taxonomy
 
 	// Save extra taxonomy fields callback function.
 	public function a3_portfolio_update_taxonomy_custom_meta() {
-		$this->update_a3_portfolio_category_meta($_POST['tax_id'], 'active_portfolio_taxonomy', $_POST['pri_navbar']);
+		$this->update_a3_portfolio_category_meta( absint( $_POST['tax_id'] ), 'active_portfolio_taxonomy', sanitize_text_field( $_POST['pri_navbar'] ) );
 	}
 
 	/**
@@ -286,9 +289,9 @@ class A3_Portfolio_Category_Taxonomy
 
 	public function portfolio_update_taxonomy_order(){
 		global $wpdb;
-		$id       = (int) $_POST['id'];
-		$next_id  = isset( $_POST['nextid'] ) && (int) $_POST['nextid'] ? (int) $_POST['nextid'] : null;
-		$taxonomy = isset( $_POST['thetaxonomy'] ) ? esc_attr( $_POST['thetaxonomy'] ) : null;
+		$id       = absint( $_POST['id'] );
+		$next_id  = isset( $_POST['nextid'] ) && (int) $_POST['nextid'] ? absint( $_POST['nextid'] ) : null;
+		$taxonomy = isset( $_POST['thetaxonomy'] ) ? sanitize_text_field( $_POST['thetaxonomy'] ) : null;
 		$term     = get_term_by('id', $id, $taxonomy);
 
 		if ( ! $id || ! $term || ! $taxonomy ) {
@@ -427,7 +430,3 @@ class A3_Portfolio_Category_Taxonomy
 	}
 
 }
-
-global $a3_portfolio_category_taxonomy;
-$a3_portfolio_category_taxonomy = new A3_Portfolio_Category_Taxonomy();
-?>

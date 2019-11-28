@@ -10,7 +10,16 @@
  * update()
  * form()
  */
-class A3_Portfolio_Categories_Widget extends WP_Widget {
+
+namespace A3Rev\Portfolio\Widget;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+use A3Rev\Portfolio;
+
+class Categories extends \WP_Widget {
 	var $cat_ancestors;
 	var $current_cat;
 	var $current_portfolio;
@@ -56,7 +65,7 @@ class A3_Portfolio_Categories_Widget extends WP_Widget {
 
 		// the user's options are the third parameter
 		if ( empty( $args[2]['walker']) || !is_a($args[2]['walker'], 'Walker' ) ) {
-			$walker = new A3_Portfolio_Cat_List_Dropdown_Walker;
+			$walker = new Portfolio\Walker\Cat_List_Dropdown();
 		} else {
 			$walker = $args[2]['walker'];
 		}
@@ -149,8 +158,7 @@ class A3_Portfolio_Categories_Widget extends WP_Widget {
 		endif;
 
 		if ( $dropdown == 'yes' ) {
-			include_once( A3_PORTFOLIO_DIR . '/includes/walkers/class-portfolio-categories-list-dropdown-walker.php' );
-			$cat_args['walker'] 			= new A3_Portfolio_Cat_List_Dropdown_Walker;
+			$cat_args['walker'] 			= new Portfolio\Walker\Cat_List_Dropdown();
 			$cat_args['title_li'] 			= '';
 			$cat_args['show_children_only']	= 0;
 			$cat_args['current_portfolio']		= ( $this->current_portfolio != false ) ? $this->current_portfolio : '';
@@ -165,8 +173,7 @@ class A3_Portfolio_Categories_Widget extends WP_Widget {
 			$result_html = ob_get_clean();
 
 		} else {
-			include_once( A3_PORTFOLIO_DIR . '/includes/walkers/class-portfolio-categories-list-walker.php' );
-			$cat_args['walker'] 			= new A3_Portfolio_Cat_List_Walker;
+			$cat_args['walker'] 			= new Portfolio\Walker\Cat_List();
 			$cat_args['title_li'] 			= '';
 			$cat_args['show_children_only']	= 0;
 			$cat_args['current_portfolio']		= ( $this->current_portfolio != false ) ? $this->current_portfolio : '';
@@ -288,4 +295,3 @@ class A3_Portfolio_Categories_Widget extends WP_Widget {
 <?php
 	}
 }
-?>

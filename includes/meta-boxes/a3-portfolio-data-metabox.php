@@ -1,4 +1,7 @@
 <?php
+
+namespace A3Rev\Portfolio;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
@@ -8,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  *
  */
-class A3_Portfolio_Data_Metabox
+class Metabox
 {
 	public function __construct() {
 		if ( is_admin() ) {
@@ -504,28 +507,28 @@ class A3_Portfolio_Data_Metabox
 		if ( ! current_user_can( 'edit_post', $post_id ) )
 			return $post_id;
 
-		update_post_meta( $post_id, '_a3_portfolio_card_desc', $_POST['_a3_portfolio_card_desc'] );
+		update_post_meta( $post_id, '_a3_portfolio_card_desc', sanitize_textarea_field( $_POST['_a3_portfolio_card_desc'] ) );
 
 		$layout_column = 2;
 		if ( isset( $_POST['_a3_portfolio_meta_layout_column'] ) ) {
-			$layout_column = $_POST['_a3_portfolio_meta_layout_column'];
+			$layout_column = sanitize_text_field( $_POST['_a3_portfolio_meta_layout_column'] );
 		}
 		update_post_meta( $post_id, '_a3_portfolio_meta_layout_column', $layout_column );
 
-		update_post_meta( $post_id, '_a3_portfolio_meta_gallery_wide', $_POST['_a3_portfolio_meta_gallery_wide'] );
-		update_post_meta( $post_id, '_a3_portfolio_meta_thumb_position', $_POST['_a3_portfolio_meta_thumb_position'] );
-		update_post_meta( $post_id, '_a3_portfolio_launch_site_url', $_POST['_a3_portfolio_launch_site_url'] );
-		update_post_meta( $post_id, '_a3_portfolio_launch_button_text', $_POST['_a3_portfolio_launch_button_text'] );
+		update_post_meta( $post_id, '_a3_portfolio_meta_gallery_wide', sanitize_text_field( $_POST['_a3_portfolio_meta_gallery_wide'] ) );
+		update_post_meta( $post_id, '_a3_portfolio_meta_thumb_position', sanitize_text_field( $_POST['_a3_portfolio_meta_thumb_position'] ) );
+		update_post_meta( $post_id, '_a3_portfolio_launch_site_url', sanitize_text_field( $_POST['_a3_portfolio_launch_site_url'] ) );
+		update_post_meta( $post_id, '_a3_portfolio_launch_button_text', sanitize_text_field( $_POST['_a3_portfolio_launch_button_text'] ) );
 
 		$launch_open_type = '';
 		if ( isset( $_POST['_a3_portfolio_launch_open_type'] ) ) {
-			$launch_open_type = $_POST['_a3_portfolio_launch_open_type'];
+			$launch_open_type = sanitize_text_field( $_POST['_a3_portfolio_launch_open_type'] );
 		}
 		update_post_meta( $post_id, '_a3_portfolio_launch_open_type', $launch_open_type );
 
-		update_post_meta( $post_id, '_a3_portfolio_viewmore_button_text', $_POST['_a3_portfolio_viewmore_button_text'] );
+		update_post_meta( $post_id, '_a3_portfolio_viewmore_button_text', sanitize_text_field( $_POST['_a3_portfolio_viewmore_button_text'] ) );
 
-		$attachment_ids = array_map( 'trim', array_filter( explode( ',', $_POST['portfolio_image_gallery'] ) ) );
+		$attachment_ids = array_map( 'absint', array_filter( explode( ',', $_POST['portfolio_image_gallery'] ) ) );
 		update_post_meta( $post_id, '_a3_portfolio_image_gallery', implode( ',', $attachment_ids ) );
 
 		// Save Attributes
@@ -625,5 +628,3 @@ class A3_Portfolio_Data_Metabox
 	}
 
 }
-$a3_portfolio_data_metabox = new A3_Portfolio_Data_Metabox();
-?>

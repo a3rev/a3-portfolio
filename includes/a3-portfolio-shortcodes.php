@@ -37,7 +37,7 @@ function a3_portfolio_get_main_page( $type = 'none', $column = '', $number_items
 
 	list($wp_query, $portfolio_query) = array( $portfolio_query, $wp_query ); // swap the wpsc_query object
 
-	$wp_query = new WP_Query( $query_args );
+	$wp_query = new \WP_Query( $query_args );
 
 	ob_start();
 
@@ -109,7 +109,7 @@ function a3_portfolio_get_item_ids_page( $item_ids = -1, $column = '', $custom_s
 
 	list($wp_query, $portfolio_query) = array( $portfolio_query, $wp_query ); // swap the wpsc_query object
 
-	$wp_query = new WP_Query( $query_args );
+	$wp_query = new \WP_Query( $query_args );
 
 	ob_start();
 
@@ -182,7 +182,7 @@ function a3_portfolio_get_categories_page( $cat_ids, $column = '', $number_items
 			)
 	);
 
-	$wp_query = new WP_Query( $category_args );
+	$wp_query = new \WP_Query( $category_args );
 
 	ob_start();
 
@@ -259,7 +259,7 @@ function a3_portfolio_get_tags_page( $tag_ids, $column = '', $number_items = -1,
 			)
 	);
 
-	$wp_query = new WP_Query( $category_args );
+	$wp_query = new \WP_Query( $category_args );
 
 	ob_start();
 
@@ -289,4 +289,3 @@ function a3_portfolio_get_tags_page( $tag_ids, $column = '', $number_items = -1,
 
 	return $ouput;
 }
-?>

@@ -1,11 +1,14 @@
 <?php
+
+namespace A3Rev\Portfolio\Backend\Shortcode;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-if ( ! class_exists( 'A3_Portfolio_Shortcodes_Backend_Hooks' ) ) {
+if ( ! class_exists( 'A3_Portfolio_Shortcodes_Backend_Hooks' ) && ! class_exists( '\A3Rev\Portfolio\Backend\Shortcode\Hooks' ) ) {
 
-class A3_Portfolio_Shortcodes_Backend_Hooks
+class Hooks
 {
 	public function __construct() {
 		add_action( 'init', array( $this, 'plugin_init' ), 1 );
@@ -632,8 +635,5 @@ class A3_Portfolio_Shortcodes_Backend_Hooks
 	}
 
 }
-
-global $a3_portfolio_shortcodes_backend_hooks;
-$a3_portfolio_shortcodes_backend_hooks = new A3_Portfolio_Shortcodes_Backend_Hooks();
 
 }

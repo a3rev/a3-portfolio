@@ -8,12 +8,14 @@
  * @package CGB
  */
 
+namespace A3Rev\Portfolio\Blocks;
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class A3_Portfolio_Sticky_Block {
+class Sticky {
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_block' ) );	
@@ -70,6 +72,3 @@ class A3_Portfolio_Sticky_Block {
 		return $output;
 	}
 }
-
-new A3_Portfolio_Sticky_Block();
-?>

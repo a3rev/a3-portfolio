@@ -1,9 +1,13 @@
 <?php
 /* "Copyright 2012 a3 Revolution Web Design" This software is distributed under the terms of GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 */
+
+namespace A3Rev\Portfolio\FrameWork\Pages {
+
+use A3Rev\Portfolio\FrameWork;
+
 // File Security Check
 if ( ! defined( 'ABSPATH' ) ) exit;
-?>
-<?php
+
 /*-----------------------------------------------------------------------------------
 Portfolio Settings Page
 
@@ -21,7 +25,7 @@ TABLE OF CONTENTS
 
 -----------------------------------------------------------------------------------*/
 
-class A3_Portfolio_Settings_Page extends A3_Portfolio_Admin_UI
+class Settings extends FrameWork\Admin_UI
 {
 	/**
 	 * @var string
@@ -93,10 +97,17 @@ class A3_Portfolio_Settings_Page extends A3_Portfolio_Admin_UI
 	/* Include all tabs into this page
 	/*-----------------------------------------------------------------------------------*/
 	public function tabs_include() {
-		include_once( $this->admin_plugin_dir() . '/tabs/template-settings/global-settings-tab.php' );
-		include_once( $this->admin_plugin_dir() . '/tabs/template-settings/item-cards-tab.php' );
-		include_once( $this->admin_plugin_dir() . '/tabs/template-settings/item-expander-tab.php' );
-		include_once( $this->admin_plugin_dir() . '/tabs/template-settings/item-posts-tab.php' );
+		global $a3_portfolio_global_settings_tab;
+		$a3_portfolio_global_settings_tab = new FrameWork\Tabs\Global_Settings();
+
+		global $a3_portfolio_item_cards_tab;
+		$a3_portfolio_item_cards_tab = new FrameWork\Tabs\Item_Cards();
+
+		global $a3_portfolio_global_item_expander_tab;
+		$a3_portfolio_global_item_expander_tab = new FrameWork\Tabs\Item_Expander();
+
+		global $a3_portfolio_item_posts_title_tab;
+		$a3_portfolio_item_posts_title_tab = new FrameWork\Tabs\Item_Posts();
 	}
 
 	/*-----------------------------------------------------------------------------------*/
@@ -104,15 +115,15 @@ class A3_Portfolio_Settings_Page extends A3_Portfolio_Admin_UI
 	/* Show Settings Page */
 	/*-----------------------------------------------------------------------------------*/
 	public function admin_settings_page() {
-		global $a3_portfolio_admin_init;
-
-		$a3_portfolio_admin_init->admin_settings_page( $this->page_data() );
+		$GLOBALS[$this->plugin_prefix.'admin_init']->admin_settings_page( $this->page_data() );
 	}
 
 }
 
-global $a3_portfolio_settings_page;
-$a3_portfolio_settings_page = new A3_Portfolio_Settings_Page();
+}
+
+// global code
+namespace {
 
 /**
  * a3_portfolio_settings_page_show()
@@ -128,4 +139,4 @@ function callback_a3_portfolio_settings_page_show() {
 	$a3_portfolio_global_settings_tab->tab_manager();
 }
 
-?>
+}

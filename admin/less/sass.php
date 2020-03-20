@@ -1,9 +1,12 @@
 <?php
+
+namespace A3Rev\Portfolio\FrameWork {
+
 // File Security Check
 if (!defined('ABSPATH'))
     exit;
 
-class A3_Portfolio_Less
+class Less_Sass
 {
     public $plugin_name   = A3_PORTFOLIO_KEY;
     public $css_file_name = 'a3_portfolios';
@@ -134,7 +137,7 @@ class A3_Portfolio_Less
                 $wp_filesystem->put_contents($less_file, $sass_data, 0644);
                 $css_file     = $_upload_dir['basedir'] . '/sass/' . $filename . '.css';
                 $css_min_file = $_upload_dir['basedir'] . '/sass/' . $filename . '.min.css';
-                $compile      = new Compile_Less_Sass;
+                $compile      = new \Compile_Less_Sass;
                 $compile->compileLessFile($less_file, $css_file, $css_min_file);
             }
         }
@@ -188,6 +191,5 @@ class A3_Portfolio_Less
     }
 }
 
-global $a3_portfolio_less;
-$a3_portfolio_less = new A3_Portfolio_Less();
-?>
+}
+

@@ -36,6 +36,9 @@ class Categories {
 				),
 				'catIDs' => array(
 					'type'    => 'array',
+					'items'   => [
+						'type' => 'integer',
+					],
 				),
 				'enableCustomColumns'	=> array(
 					'type'    => 'boolean',

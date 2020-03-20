@@ -36,14 +36,13 @@ class Metabox
 
 	public function include_js() {
 		global $post;
-		global $a3_portfolio_admin_interface;
 
 		$suffix	= defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		wp_register_script( 'jquery-blockui', A3_PORTFOLIO_JS_URL . '/jquery-blockui/jquery.blockUI' . $suffix . '.js', array( 'jquery' ), '2.70', true );
 
-		add_action( 'admin_footer', array( $a3_portfolio_admin_interface, 'admin_script_load' ) );
-		add_action( 'admin_footer', array( $a3_portfolio_admin_interface, 'admin_css_load' ) );
+		add_action( 'admin_footer', array( $GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface'], 'admin_script_load' ) );
+		add_action( 'admin_footer', array( $GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface'], 'admin_css_load' ) );
 		wp_enqueue_style( 'a3_portfolio-metabox-admin-style', A3_PORTFOLIO_CSS_URL . '/a3.portfolio.metabox.admin.css' );
 		wp_enqueue_script( 'a3-portfolio-metabox-admin-script', A3_PORTFOLIO_JS_URL . '/a3.portfolio.metabox.admin' . $suffix . '.js', array( 'jquery', 'jquery-blockui', 'jquery-ui-sortable' ) );
 		wp_enqueue_media();

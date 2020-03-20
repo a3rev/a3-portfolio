@@ -1,9 +1,13 @@
 <?php
 /* "Copyright 2012 a3 Revolution Web Design" This software is distributed under the terms of GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 */
+
+namespace A3Rev\Portfolio\FrameWork\Pages {
+
+use A3Rev\Portfolio\FrameWork;
+
 // File Security Check
 if ( ! defined( 'ABSPATH' ) ) exit;
-?>
-<?php
+
 /*-----------------------------------------------------------------------------------
 Portfolio Shortcodes Settings Page
 
@@ -21,7 +25,7 @@ TABLE OF CONTENTS
 
 -----------------------------------------------------------------------------------*/
 
-class A3_Portfolio_Shortcodes_Page extends A3_Portfolio_Admin_UI
+class Shortcodes extends FrameWork\Admin_UI
 {
 	/**
 	 * @var string
@@ -95,7 +99,8 @@ class A3_Portfolio_Shortcodes_Page extends A3_Portfolio_Admin_UI
 	/* Include all tabs into this page
 	/*-----------------------------------------------------------------------------------*/
 	public function tabs_include() {
-		include_once( A3_PORTFOLIO_FILE_PATH . '/admin' . '/tabs/template-settings/shortcode-tab.php' );
+		global $a3_portfolio_shortcodes_general_tab;
+		$a3_portfolio_shortcodes_general_tab = new FrameWork\Tabs\Shortcodes();
 	}
 
 	/*-----------------------------------------------------------------------------------*/
@@ -103,9 +108,7 @@ class A3_Portfolio_Shortcodes_Page extends A3_Portfolio_Admin_UI
 	/* Show Settings Page */
 	/*-----------------------------------------------------------------------------------*/
 	public function admin_settings_page() {
-		//global $a3_portfolio_admin_init;
-
-		//$a3_portfolio_admin_init->admin_settings_page( $this->page_data() );
+		//$GLOBALS[$this->plugin_prefix.'admin_init']->admin_settings_page( $this->page_data() );
 
 		global $a3_portfolio_shortcodes_panel;
 
@@ -114,8 +117,10 @@ class A3_Portfolio_Shortcodes_Page extends A3_Portfolio_Admin_UI
 
 }
 
-global $a3_portfolio_shortcodes_page;
-$a3_portfolio_shortcodes_page = new A3_Portfolio_Shortcodes_Page();
+}
+
+// global code
+namespace {
 
 /**
  * a3_portfolio_shortcodes_page_show()
@@ -126,4 +131,4 @@ function a3_portfolio_shortcodes_page_show() {
 	$a3_portfolio_shortcodes_page->admin_settings_page();
 }
 
-?>
+}

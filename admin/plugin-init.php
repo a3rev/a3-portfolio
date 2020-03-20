@@ -25,13 +25,15 @@ class Portfolio {
 	}
 
 	public function includes_framework() {
-		include( 'admin-ui.php' );
-		include( 'admin-interface.php' );
+		$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface'] = new Portfolio\FrameWork\Admin_Interface();
 
 		do_action( 'a3_portfolios_before_include_admin_page' );
 
-		include( 'admin-pages/admin-settings-page.php' );
-		include( 'admin-pages/admin-shortcodes-page.php' );
+		global $a3_portfolio_settings_page;
+		$a3_portfolio_settings_page = new Portfolio\FrameWork\Pages\Settings();
+
+		global $a3_portfolio_shortcodes_page;
+		$a3_portfolio_shortcodes_page = new Portfolio\FrameWork\Pages\Shortcodes();
 
 		// Remove hook from shortcode addon
 		global $a3_portfolio_shortcodes_addon;
@@ -41,10 +43,9 @@ class Portfolio {
 
 		do_action( 'a3_portfolios_after_include_admin_page' );
 
-		include( 'admin-init.php' );
+		$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_init'] = new Portfolio\FrameWork\Admin_Init();
 
-		global $a3_portfolio_admin_init;
-		$a3_portfolio_admin_init->init();
+		$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_init']->init();
 
 	}
 
@@ -153,10 +154,9 @@ class Portfolio {
 
 		if ( 'yes' === get_option( 'a3_portfolio_just_installed', 'no' ) ) {
 			// Set Settings Default from Admin Init
-			global $a3_portfolio_admin_init;
-			$a3_portfolio_admin_init->set_default_settings();
+			$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_init']->set_default_settings();
 
-			delete_metadata( 'user', 0, $a3_portfolio_admin_init->plugin_name . '-' . 'plugin_framework_global_box' . '-' . 'opened', '', true );
+			delete_metadata( 'user', 0, $GLOBALS[A3_PORTFOLIO_PREFIX.'admin_init']->plugin_name . '-' . 'plugin_framework_global_box' . '-' . 'opened', '', true );
 
 			delete_option( 'a3_portfolio_just_installed' );
 		}

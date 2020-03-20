@@ -6,7 +6,8 @@ import Inspector from './inspector';
 
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { ServerSideRender, Disabled } = wp.components;
+const { Disabled } = wp.components;
+const { serverSideRender: ServerSideRender } = wp;
 
 export default class BlockEdit extends Component {
 	render() {

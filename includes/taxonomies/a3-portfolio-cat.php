@@ -54,9 +54,8 @@ class Category
 		if ( ! in_array( basename( $_SERVER['PHP_SELF'] ), array( 'edit-tags.php', 'term.php' ) ) ) return;
 		if ( ! isset( $_REQUEST['taxonomy'] ) || ! in_array( $_REQUEST['taxonomy'], array( 'portfolio_cat' ) ) ) return;
 
-		global $a3_portfolio_admin_interface;
-		add_action( 'admin_footer', array( $a3_portfolio_admin_interface, 'admin_script_load' ) );
-		add_action( 'admin_footer', array( $a3_portfolio_admin_interface, 'admin_css_load' ) );
+		add_action( 'admin_footer', array( $GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface'], 'admin_script_load' ) );
+		add_action( 'admin_footer', array( $GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface'], 'admin_css_load' ) );
 		add_action( 'admin_footer', array( $this, 'include_style' ) );
 		add_action( 'admin_footer', array( $this, 'portfolio_term_ordering_validate_script' ), 11 );
 	}
@@ -129,7 +128,6 @@ class Category
 
 	// Addnew term page
 	public function a3_portfolio_taxonomy_add_new_meta_field() {
-		global $a3_portfolio_admin_interface;
 
 		$suffix	= defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
@@ -157,7 +155,7 @@ class Category
 
 			<?php
 			$settings_html = ob_get_clean();
-			$a3_portfolio_admin_interface->panel_box( $settings_html, array(
+			$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface']->panel_box( $settings_html, array(
 				'name' 		=> __( 'Portfolio Nav Bar Item', 'a3-portfolio' ),
 				'id'		=> 'portfolio_navbar_item',
 				'is_box'	=> true,
@@ -170,7 +168,6 @@ class Category
 
 	// Edit term page
 	public function a3_portfolio_taxonomy_edit_meta_field( $term, $taxonomy ) {
-		global $a3_portfolio_admin_interface;
 
 		$active_portfolio_taxonomy = get_metadata( 'a3_portfolio_category', $term->term_id, 'active_portfolio_taxonomy', true );
 
@@ -193,7 +190,7 @@ class Category
 	    </table>
 	    <?php
 		$settings_html = ob_get_clean();
-		$a3_portfolio_admin_interface->panel_box( $settings_html, array(
+		$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface']->panel_box( $settings_html, array(
 			'name' 		=> __( 'Portfolio Nav Bar Item', 'a3-portfolio' ),
 			'id'		=> 'portfolio_navbar_item',
 			'is_box'	=> true,

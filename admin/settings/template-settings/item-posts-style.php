@@ -1,9 +1,13 @@
 <?php
 /* "Copyright 2012 a3 Revolution Web Design" This software is distributed under the terms of GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 */
+
+namespace A3Rev\Portfolio\FrameWork\Settings {
+
+use A3Rev\Portfolio\FrameWork;
+
 // File Security Check
 if ( ! defined( 'ABSPATH' ) ) exit;
-?>
-<?php
+
 /*-----------------------------------------------------------------------------------
 Portfolio General Settings
 
@@ -28,7 +32,7 @@ TABLE OF CONTENTS
 
 -----------------------------------------------------------------------------------*/
 
-class A3_Portfolio_Item_Posts_Settings extends A3_Portfolio_Admin_UI
+class Item_Posts extends FrameWork\Admin_UI
 {
 
 	/**
@@ -107,9 +111,7 @@ class A3_Portfolio_Item_Posts_Settings extends A3_Portfolio_Admin_UI
 	/* Set default settings with function called from Admin Interface */
 	/*-----------------------------------------------------------------------------------*/
 	public function set_default_settings() {
-		global $a3_portfolio_admin_interface;
-
-		$a3_portfolio_admin_interface->reset_settings( $this->form_fields, $this->option_name, false );
+		$GLOBALS[$this->plugin_prefix.'admin_interface']->reset_settings( $this->form_fields, $this->option_name, false );
 	}
 
 	/*-----------------------------------------------------------------------------------*/
@@ -117,9 +119,7 @@ class A3_Portfolio_Item_Posts_Settings extends A3_Portfolio_Admin_UI
 	/* Get settings with function called from Admin Interface */
 	/*-----------------------------------------------------------------------------------*/
 	public function get_settings() {
-		global $a3_portfolio_admin_interface;
-
-		$a3_portfolio_admin_interface->get_settings( $this->form_fields, $this->option_name );
+		$GLOBALS[$this->plugin_prefix.'admin_interface']->get_settings( $this->form_fields, $this->option_name );
 	}
 
 	/*-----------------------------------------------------------------------------------*/
@@ -177,10 +177,8 @@ class A3_Portfolio_Item_Posts_Settings extends A3_Portfolio_Admin_UI
 	/* Call the form from Admin Interface
 	/*-----------------------------------------------------------------------------------*/
 	public function settings_form() {
-		global $a3_portfolio_admin_interface;
-
 		$output = '';
-		$output .= $a3_portfolio_admin_interface->admin_forms( $this->form_fields, $this->form_key, $this->option_name, $this->form_messages );
+		$output .= $GLOBALS[$this->plugin_prefix.'admin_interface']->admin_forms( $this->form_fields, $this->form_key, $this->option_name, $this->form_messages );
 
 		return $output;
 	}
@@ -324,8 +322,9 @@ class A3_Portfolio_Item_Posts_Settings extends A3_Portfolio_Admin_UI
 	}
 }
 
-global $a3_portfolio_item_posts_settings_panel;
-$a3_portfolio_item_posts_settings_panel = new A3_Portfolio_Item_Posts_Settings();
+}
+
+namespace {
 
 /**
  * a3_portfolio_item_posts_settings_form()
@@ -336,4 +335,4 @@ function a3_portfolio_item_posts_settings_form() {
 	$a3_portfolio_item_posts_settings_panel->settings_form();
 }
 
-?>
+}

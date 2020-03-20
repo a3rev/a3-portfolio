@@ -78,9 +78,8 @@ class Hooks
 		$is_post_edit_page = in_array( basename( $_SERVER['PHP_SELF'] ), array( 'post.php', 'page.php', 'page-new.php', 'post-new.php' ) );
         if ( ! $is_post_edit_page ) return;
 
-        global $a3_portfolio_admin_interface;
-		$a3_portfolio_admin_interface->admin_script_load();
-		$a3_portfolio_admin_interface->admin_css_load();
+		$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface']->admin_script_load();
+		$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface']->admin_css_load();
 
 		$list_portfolios = get_posts( array(
 			'posts_per_page'		=> -1,

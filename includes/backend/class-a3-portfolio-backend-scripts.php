@@ -19,8 +19,7 @@ class Scripts
 			}
 
 			// Add upgrade notice to Dashboard pages
-			global $a3_portfolio_admin_init;
-			add_filter( $a3_portfolio_admin_init->plugin_name . '_plugin_extension_boxes', array( $this, 'plugin_extension_box' ) );
+			add_filter( $GLOBALS[A3_PORTFOLIO_PREFIX.'admin_init']->plugin_name . '_plugin_extension_boxes', array( $this, 'plugin_extension_box' ) );
 
 			// Add text on right of Visit the plugin on Plugin manager page
 			add_filter( 'plugin_row_meta', array( $this, 'plugin_extra_links'), 10, 2 );

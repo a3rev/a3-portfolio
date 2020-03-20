@@ -36,6 +36,9 @@ class Tags {
 				),
 				'tagIDs' => array(
 					'type'    => 'array',
+					'items'   => [
+						'type' => 'integer',
+					],
 				),
 				'enableCustomColumns'	=> array(
 					'type'    => 'boolean',

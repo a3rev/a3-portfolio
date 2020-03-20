@@ -33,6 +33,7 @@ define('A3_PORTFOLIO_TEMPLATE_CSS_URL', A3_PORTFOLIO_URL . '/templates/css');
 define('A3_PORTFOLIO_TEMPLATE_IMAGES_URL', A3_PORTFOLIO_URL . '/templates/images');
 
 define( 'A3_PORTFOLIO_KEY', 'a3_portfolios' );
+define( 'A3_PORTFOLIO_PREFIX', 'a3_portfolio_' );
 define( 'A3_PORTFOLIO_VERSION', '2.9.0' );
 define( 'A3_PORTFOLIO_G_FONTS', true );
 

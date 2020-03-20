@@ -1,9 +1,13 @@
 <?php
 /* "Copyright 2012 a3 Revolution Web Design" This software is distributed under the terms of GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 */
+
+namespace A3Rev\Portfolio\FrameWork\Tabs {
+
+use A3Rev\Portfolio\FrameWork;
+
 // File Security Check
 if ( ! defined( 'ABSPATH' ) ) exit;
-?>
-<?php
+
 /*-----------------------------------------------------------------------------------
 Portfolio Shortcodes General Tab
 
@@ -22,7 +26,7 @@ TABLE OF CONTENTS
 
 -----------------------------------------------------------------------------------*/
 
-class A3_Portfolio_Shortcodes_General_Tab extends A3_Portfolio_Admin_UI
+class Shortcodes extends FrameWork\Admin_UI
 {
 	/**
 	 * @var string
@@ -103,7 +107,8 @@ class A3_Portfolio_Shortcodes_General_Tab extends A3_Portfolio_Admin_UI
 	public function settings_include() {
 
 		// Includes Settings file
-		include_once( A3_PORTFOLIO_FILE_PATH . '/admin' . '/settings/template-settings/shortcodes-settings.php' );
+		global $a3_portfolio_shortcodes_panel;
+		$a3_portfolio_shortcodes_panel = new FrameWork\Settings\Shortcodes();
 
 	}
 
@@ -116,15 +121,14 @@ class A3_Portfolio_Shortcodes_General_Tab extends A3_Portfolio_Admin_UI
 
 		$a3_portfolio_shortcodes_panel->settings_form();
 
-		//global $a3_portfolio_admin_init;
-
-		//$a3_portfolio_admin_init->admin_settings_tab( $this->parent_page, $this->tab_data() );
+		//$GLOBALS[$this->plugin_prefix.'admin_init']->admin_settings_tab( $this->parent_page, $this->tab_data() );
 
 	}
 }
 
-global $a3_portfolio_shortcodes_general_tab;
-$a3_portfolio_shortcodes_general_tab = new A3_Portfolio_Shortcodes_General_Tab();
+}
+
+namespace {
 
 /**
  * people_contact_grid_view_tab_manager()
@@ -135,4 +139,4 @@ function a3_portfolio_shortcodes_general_tab_manager() {
 	$a3_portfolio_shortcodes_general_tab->tab_manager();
 }
 
-?>
+}

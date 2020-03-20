@@ -6,8 +6,9 @@ import Inspector, { cardSpacingAttributes } from './inspector';
 
 const { __ } = wp.i18n;
 const { Component, Fragment } = wp.element;
-const { ServerSideRender, Placeholder, Disabled } = wp.components;
+const { Placeholder, Disabled } = wp.components;
 const { BlockControls, BlockAlignmentToolbar } = wp.blockEditor;
+const { serverSideRender: ServerSideRender } = wp;
 
 export { cardSpacingAttributes };
 

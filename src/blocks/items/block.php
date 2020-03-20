@@ -36,6 +36,9 @@ class Items {
 				),
 				'itemIDs' => array(
 					'type'    => 'array',
+					'items'   => [
+						'type' => 'integer',
+					],
 				),
 				'align'	=> array(
 					'type'    => 'string',

@@ -39,8 +39,7 @@ class Scripts
 
 		// If don't have any plugin or theme register font awesome style then register it from plugin framework
 		if ( ! wp_style_is( 'font-awesome-styles', 'registered' ) ) {
-			global $a3_portfolio_admin_interface;
-			$a3_portfolio_admin_interface->register_fontawesome_style();
+			$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface']->register_fontawesome_style();
 		}
 
 		return apply_filters( 'a3_portfolio_enqueue_styles', array(

@@ -11,8 +11,7 @@ class Addons
 	public function __construct() {
 
 		if ( is_admin() ) {
-			global $a3_portfolio_admin_init;
-			add_filter( $a3_portfolio_admin_init->plugin_name . '_plugin_extension_boxes', array( $this, 'plugin_extension_box' ) );
+			add_filter( $GLOBALS[A3_PORTFOLIO_PREFIX.'admin_init']->plugin_name . '_plugin_extension_boxes', array( $this, 'plugin_extension_box' ) );
 		}
 	}
 

@@ -24,7 +24,7 @@ define('A3_PORTFOLIO_DIR_NAME', basename(A3_PORTFOLIO_FILE_PATH));
 define('A3_PORTFOLIO_FOLDER', dirname(plugin_basename(__FILE__)));
 define('A3_PORTFOLIO_NAME', plugin_basename(__FILE__));
 define('A3_PORTFOLIO_URL', str_replace(array('http:','https:'), '', untrailingslashit(plugins_url('/', __FILE__))));
-define('A3_PORTFOLIO_DIR', WP_PLUGIN_DIR . '/' . A3_PORTFOLIO_FOLDER);
+define('A3_PORTFOLIO_DIR', A3_PORTFOLIO_FILE_PATH . '/' );
 define('A3_PORTFOLIO_JS_URL', A3_PORTFOLIO_URL . '/assets/js');
 define('A3_PORTFOLIO_CSS_URL', A3_PORTFOLIO_URL . '/assets/css');
 define('A3_PORTFOLIO_IMAGES_URL', A3_PORTFOLIO_URL . '/assets/images');

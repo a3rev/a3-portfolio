@@ -2,9 +2,9 @@
 
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
-Requires at least: 4.6
-Tested up to: 5.3
-Stable tag: 2..9.0
+Requires at least: 4.0
+Tested up to: 5.4
+Stable tag: 2.9.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -167,6 +167,17 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.9.1 - 2020/03/21 =
+* This maintenance release has compatibility with WordPress 5.4 plus completion of framework refactor to Composer, implement Travis CI unit testing and compat tweaks for PHP 7.0 to 7.4 and Gutenberg 7.5
+* Tweak - Test for compatibility with WordPress 5.4
+* Tweak - Run Travis CI unit build tests for PHP compatibility issues with PHP 7.0 to 7.4
+* Tweak - Plugin Framework fully refactored to Composer for cleaner code and faster PHP code
+* Tweak - Update Gutenberg block for work compatibility with Gutenberg latest version 7.5
+* Fix - Update global ${$this- to $GLOBALS[$this to resolve 7.0+ PHP warnings
+* Fix - Update global ${$option to $GLOBALS[$option to resolve 7.0+ PHP warnings
+* Fix - Update less PHP lib that use square brackets [] instead of curly braces {} for Array , depreciated in PHP 7.4
+* Fix - Validate for not use get_magic_quotes_gpc function for PHP 7.4 
 
 = 2.9.0 - 2019/11/28 =
 * This feature release has a lot including compatibility with WordPress 5.3 PHP upgrade to Composer PHP Dependency Manger, a full security review plus a bug fix.

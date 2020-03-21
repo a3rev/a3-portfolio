@@ -33,9 +33,7 @@ tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 function _manual_install_data() {
 	echo esc_html( 'Installing Plugin Data ...' . PHP_EOL );
 
-	global $a3_portfolio_data;
-	$a3_portfolio_data = new Portfolio\Data();
-
+	$a3_portfolio_data = new \A3Rev\Portfolio\Data();
 	$a3_portfolio_data->install_database();
 
 	update_option('a3_portfolio_just_installed', true);

@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $wpdb;
 
-global $a3_portfolio_data;
+$a3_portfolio_data = new \A3Rev\Portfolio\Data();
 $a3_portfolio_data->install_database();
 
 // Get all feature data

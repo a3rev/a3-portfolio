@@ -130,9 +130,7 @@ class Portfolio {
 		update_option( 'a3_portfolio_version', A3_PORTFOLIO_VERSION );
 
 		// Install Database
-		global $a3_portfolio_data;
 		$a3_portfolio_data = new Portfolio\Data();
-
 		$a3_portfolio_data->install_database();
 
 		$portfolio_page_id_created = a3_portfolio_create_page( _x('portfolios', 'page_slug', 'a3-portfolio' ), '', __('Portfolios', 'a3-portfolio' ), '[portfoliopage]' );
@@ -193,8 +191,6 @@ class Portfolio {
 		// Upgrade to 2.1.0
 		if ( version_compare( get_option('a3_portfolio_version'), '2.1.0' ) === -1 ) {
 			update_option('a3_portfolio_version', '2.1.0');
-			global $a3_portfolio_data;
-			$a3_portfolio_data = new Portfolio\Data();
 			include( A3_PORTFOLIO_DIR. '/includes/updates/update-2.1.0.php' );
 		}
 

@@ -23,6 +23,7 @@ require_once $_tests_dir . '/includes/functions.php';
  * Manually load the plugin being tested.
  */
 function _manually_load_plugin() {
+	define( 'A3_PORTFOLIO_TRAVIS', true );
 	update_option('a3_portfolio_just_installed', false);
 
 	require dirname( dirname( __FILE__ ) ) . '/a3-portfolio.php';
@@ -31,6 +32,7 @@ function _manually_load_plugin() {
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 
 function _manual_install_data() {
+	define( 'A3_PORTFOLIO_TRAVIS', true );
 	echo esc_html( 'Installing Plugin Data ...' . PHP_EOL );
 
 	$a3_portfolio_data = new \A3Rev\Portfolio\Data();

@@ -16,7 +16,11 @@ class Portfolio {
 		// Include required files
 		$this->includes();
 
-		add_action( 'plugins_loaded', 'a3_portfolio_set_global_page' );
+		add_action( 'plugins_loaded', function() {
+			if ( ! defined( 'A3_PORTFOLIO_TRAVIS' ) ) {
+				a3_portfolio_set_global_page();
+			}
+		} );
 
 		add_action( 'init', array( $this, 'plugin_init' ), 8 );
 

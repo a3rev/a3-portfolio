@@ -16,9 +16,7 @@ class Portfolio {
 		// Include required files
 		$this->includes();
 
-		if ( is_admin() ) {
-			a3_portfolio_set_global_page();
-		}
+		add_action( 'plugins_loaded', 'a3_portfolio_set_global_page' );
 
 		add_action( 'init', array( $this, 'plugin_init' ), 8 );
 

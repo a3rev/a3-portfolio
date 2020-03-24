@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.0
 Tested up to: 5.4
-Stable tag: 2.9.1
+Stable tag: 2.9.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -135,9 +135,9 @@ Want to add a new language to a3 Portfolio! You can contribute via [translate.wo
 
 = Minimum Requirements =
 
-* WordPress 4.5
-* PHP version 5.5 or greater
-* MySQL version 5.5 or greater
+* WordPress 5.0
+* PHP version 7.0 or greater
+* MySQL version 5.6 or greater
 
 
 = Automatic installation =
@@ -167,6 +167,10 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.9.2 - 2020/03/24 =
+* This maintenace release fixes a bug that creates an error with JSON loaded from AJAX 
+* Fix - Hook 'a3_portfolio_set_global_page' to action 'plugins_loaded' tag to stop warning that effect to JSON value from AJAX
 
 = 2.9.1 - 2020/03/21 =
 * This maintenance release has compatibility with WordPress 5.4 plus completion of framework refactor to Composer, implement Travis CI unit testing and compat tweaks for PHP 7.0 to 7.4 and Gutenberg 7.5
@@ -624,6 +628,12 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.9.2 =
+This maintenace release fixes a bug that creates an error with JSON loaded from AJAX
+
+= 2.9.1 =
+This maintenance release has compatibility with WordPress 5.4 plus completion of framework refactor to Composer, implement Travis CI unit testing and compat tweaks for PHP 7.0 to 7.4 and Gutenberg 7.5
 
 = 2.9.0 =
 * This feature release has a lot including compatibility with WordPress 5.3 PHP upgrade to Composer PHP Dependency Manger, a full security review plus a bug fix.

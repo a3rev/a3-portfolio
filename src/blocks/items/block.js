@@ -17,6 +17,9 @@ import IconItems from './../../assets/icons/items.svg';
 
 import ItemsAttributes from './attributes';
 
+// editor style
+import './editor.scss';
+
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks;
 

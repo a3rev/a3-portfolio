@@ -27,7 +27,7 @@ export default class InspectorContainerStyle extends Component {
 
 		return (
 			<PanelBody
-				className="a3-blockpress-inspect-panel"
+				className="a3-blockpress-inspect-panel a3-portfolio-inspect-panel"
 				title={ __( 'Container Style' ) }
 				initialOpen={ false }
 			>

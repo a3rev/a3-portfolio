@@ -1,0 +1,10 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.animateMe {
+	opacity: 0; }
+	.animateMe.animated {
+	  opacity: 1; }

@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 2.9.4 - 2020/08/08 =
+* This maintenance release is for compatibility with WordPress major version 5.5 and WooCommerce 4.3.1.
+* Tweak - Test for compatibility with WordPress 5.5
+* Tweak - Test for compatibility with WooCommerce 4.3.1
+
 = 2.9.2 - 2020/03/24 =
 * This maintenace release fixes a bug that creates an error with JSON loaded from AJAX 
 * Fix - Hook 'a3_portfolio_set_global_page' to action 'plugins_loaded' tag to stop warning that effect to JSON value from AJAX 

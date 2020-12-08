@@ -44,7 +44,7 @@ function a3_portfolio_isiPhone(){
 }
 
 function a3_portfolio_is_iOS_8() {
-		if ("600.1.4" == jQuery.browser.version || ~navigator.userAgent.indexOf('OS 8_') ){
+		if ( ~navigator.userAgent.indexOf('OS 8_') ){
 		return true;
 		}
 		return false;

@@ -8,11 +8,11 @@
     "eject": "cgb-scripts eject"
   },
   "dependencies": {
-    "@bit/a3revsoftware.blockpress.spacing": "^1.0.4",
+    "@bit/a3revsoftware.blockpress.spacing": "^1.0.10",
     "cgb-scripts": "1.13.0",
     "shorthash": "0.0.2"
   },
   "devDependencies": {
-    "@svgr/webpack": "^4.3.2"
+    "@svgr/webpack": "^4.3.3"
   }
 }

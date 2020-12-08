@@ -5,11 +5,6 @@
  * Simple block, renders and saves the same content without any interactivity.
  */
 
-/**
- * Internal dependencies
- */
-import shorthash from 'shorthash';
-
 import BlockEdit from './edit';
 
 // icons
@@ -21,11 +16,6 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks;
 
 const { Fragment } = wp.element;
-
-/**
- * List uniqueID of this block is using on a post to see if the block needs to generate a new ID.
- */
-const listUniqueIDs = [];
 
 /**
  * Register: a3 Gutenberg Block.
@@ -66,20 +56,6 @@ registerBlockType( 'a3-portfolio/sticky', {
 
 	// The "edit" property must be a valid function.
 	edit( props ) {
-		const { attributes, setAttributes } = props;
-
-		const { blockID = shorthash.unique( props.clientId ) } = attributes;
-
-		if ( ! attributes || typeof attributes.blockID === 'undefined' ) {
-			setAttributes( { blockID: blockID } );
-			listUniqueIDs.push( blockID );
-		} else if ( listUniqueIDs.includes( blockID ) ) {
-			const newBlockID = shorthash.unique( props.clientId );
-			setAttributes( { blockID: newBlockID } );
-			listUniqueIDs.push( newBlockID );
-		} else {
-			listUniqueIDs.push( blockID );
-		}
 
 		return (
 			<Fragment>

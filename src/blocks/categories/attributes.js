@@ -21,6 +21,13 @@ const CategoriesAttributes = {
 		type: 'boolean',
 		default: false,
 	},
+	/**
+	 * For previewing?
+	 */
+	isPreview: {
+		type: 'boolean',
+		default: false,
+	},
 };
 
 export default CategoriesAttributes;

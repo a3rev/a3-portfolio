@@ -121,7 +121,13 @@ class Blocks {
 
 		$global_column = a3_portfolio_get_col_per_row();
 
-		wp_localize_script( 'a3-portfolio-block-js', 'a3_portfolio_blocks_vars', array( 'itemList' => json_encode( $itemList ), 'catList' => json_encode( $catList ), 'tagList' => json_encode( $tagList ), 'globalColumn' => $global_column ) );
+		wp_localize_script( 'a3-portfolio-block-js', 'a3_portfolio_blocks_vars', array( 
+			'itemList'     => json_encode( $itemList ), 
+			'catList'      => json_encode( $catList ), 
+			'tagList'      => json_encode( $tagList ), 
+			'globalColumn' => $global_column,
+			'preview'      => A3_PORTFOLIO_IMAGES_URL.  '/preview.jpg',
+		) );
 	}
 
 	public function create_a3blocks_section() {

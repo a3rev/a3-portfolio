@@ -44,6 +44,11 @@ registerBlockType( 'a3-portfolio/sticky', {
 		__( 'Portfolio Sticky Items' ),
 		__( 'a3rev' ),
 	],
+	example: {
+		attributes: {
+			isPreview: true,
+		},
+	},
 
 	attributes: {
 		...StickyAttributes,
@@ -56,6 +61,25 @@ registerBlockType( 'a3-portfolio/sticky', {
 
 	// The "edit" property must be a valid function.
 	edit( props ) {
+		const { attributes } = props;
+
+		if ( attributes.isPreview ) {
+			return (
+				<Fragment>
+					<h3 style={ {
+						textAlign: 'center'
+					} }>{ __( 'a3 Portfolio Sticky' ) }</h3>
+					<img
+						src={ a3_portfolio_blocks_vars.preview }
+						alt={ __( 'a3 Portfolio Sticky Preview' ) }
+						style={ {
+							width: '100%',
+							height: 'auto',
+						} }
+					/>
+				</Fragment>
+			);
+		}
 
 		return (
 			<Fragment>

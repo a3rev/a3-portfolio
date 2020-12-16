@@ -44,6 +44,11 @@ registerBlockType( 'a3-portfolio/recent', {
 		__( 'Portfolio Recent Items' ),
 		__( 'a3rev' ),
 	],
+	example: {
+		attributes: {
+			isPreview: true,
+		},
+	},
 
 	attributes: {
 		...RecentAttributes,
@@ -56,6 +61,25 @@ registerBlockType( 'a3-portfolio/recent', {
 
 	// The "edit" property must be a valid function.
 	edit( props ) {
+		const { attributes } = props;
+
+		if ( attributes.isPreview ) {
+			return (
+				<Fragment>
+					<h3 style={ {
+						textAlign: 'center'
+					} }>{ __( 'a3 Portfolio Recent' ) }</h3>
+					<img
+						src={ a3_portfolio_blocks_vars.preview }
+						alt={ __( 'a3 Portfolio Recent Preview' ) }
+						style={ {
+							width: '100%',
+							height: 'auto',
+						} }
+					/>
+				</Fragment>
+			);
+		}
 
 		return (
 			<Fragment>

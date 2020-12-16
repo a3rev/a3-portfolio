@@ -56,6 +56,10 @@ class Categories {
 					'type'    => 'boolean',
 					'default' => false,
 				),
+				'isPreview'	=> array(
+					'type'    => 'boolean',
+					'default' => false,
+				),
 			),
 			'render_callback' 	=> array( $this, 'render' )
 		);

@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.0
 Tested up to: 5.6
-Stable tag: 2.9.5
+Stable tag: 2.9.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -167,6 +167,18 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.9.6 - 2020/12/15 =
+* This maintenance release adds block preview images for block discovery
+* Tweak - Add support for Block Discovery Preview
+
+= 2.9.5 - 2020/12/08 =
+* This maintenance release has tweaks and fixes for compatibility with WordPress major version 5.6 and PHP 7.4.8 and Gutenberg 9.4
+* Tweak - Test for compatibility with PHP 7.4.8
+* Tweak - Test for compatibility with WordPress 5.6
+* Tweak - Test for compatibility with Gutenberg 9.4
+* Tweak - Update the Spacing component to latest version 1.0.10
+* Fix - Update plugin framework script, remove jQuery.browser is deprecated to resolve conflict with jQuery Migrate Helper plugin
 
 = 2.9.4 - 2020/08/08 =
 * This maintenance release is for compatibility with WordPress major version 5.5 and WooCommerce 4.3.1.
@@ -640,6 +652,12 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.9.6 =
+This maintenance release adds a block preview images for block discovery
+
+= 2.9.5 =
+This maintenance release has tweaks and fixes for compatibility with WordPress major version 5.6 and PHP 7.4.8 and Gutenberg 9.4
 
 = 2.9.4 =
 This maintenance release is for compatibility with WordPress major version 5.5 and WooCommerce 4.3.1.

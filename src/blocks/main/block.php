@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Main {
 
 	public function __construct() {
-		add_action( 'init', array( $this, 'register_block' ) );	
+		add_action( 'init', array( $this, 'register_block' ) );
 	}
 
 	public function register_block() {
@@ -47,6 +47,10 @@ class Main {
 					'default' => '',
 				),
 				'showNavBar'	=> array(
+					'type'    => 'boolean',
+					'default' => false,
+				),
+				'isPreview'	=> array(
 					'type'    => 'boolean',
 					'default' => false,
 				),

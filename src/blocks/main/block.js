@@ -39,6 +39,11 @@ registerBlockType( 'a3-portfolio/main', {
 	}, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'a3rev-blocks', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [ __( 'a3 Portfolios' ), __( 'a3 Portfolio Full' ), __( 'Portfolio Full Items' ), __( 'a3rev' ) ],
+	example: {
+		attributes: {
+			isPreview: true,
+		},
+	},
 
 	attributes: {
 		...MainAttributes,
@@ -51,6 +56,25 @@ registerBlockType( 'a3-portfolio/main', {
 
 	// The "edit" property must be a valid function.
 	edit( props ) {
+		const { attributes } = props;
+
+		if ( attributes.isPreview ) {
+			return (
+				<Fragment>
+					<h3 style={ {
+						textAlign: 'center'
+					} }>{ __( 'a3 Portfolios' ) }</h3>
+					<img
+						src={ a3_portfolio_blocks_vars.preview }
+						alt={ __( 'a3 Portfolios Preview' ) }
+						style={ {
+							width: '100%',
+							height: 'auto',
+						} }
+					/>
+				</Fragment>
+			);
+		}
 
 		return (
 			<Fragment>

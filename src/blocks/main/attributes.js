@@ -18,6 +18,13 @@ const MainAttributes = {
 		type: 'boolean',
 		default: false,
 	},
+	/**
+	 * For previewing?
+	 */
+	isPreview: {
+		type: 'boolean',
+		default: false,
+	},
 };
 
 export default MainAttributes;

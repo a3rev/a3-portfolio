@@ -113,7 +113,7 @@ class Settings {
 						jQuery('.a3_portfolio_permalink_structure_table input').removeAttr('disabled');
 					} else {
 						jQuery('.a3_portfolio_permalink_structure_table code.default-example').show();
-						jQuery('.a3_portfolio_permalink_structure_table input:eq(0)').click();
+						jQuery('.a3_portfolio_permalink_structure_table input').eq(0).click();
 						jQuery('.a3_portfolio_permalink_structure_table input').attr('disabled', 'disabled');
 					}
 				});

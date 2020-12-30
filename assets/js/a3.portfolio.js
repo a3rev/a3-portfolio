@@ -85,7 +85,7 @@ function a3_portfolio_removeActiveThumbs() {
 
 // CLOSE DETAILVIEW
 function a3_portfolio_closeDetailView(portfolio_boxes, speed) {
-	var ie = !jQuery.support.opacity;
+	var ie = false;
 	var ie9 = (document.documentMode == 9);
 
 	jQuery('body').find('.a3-portfolio-activate-up-arrow').remove();
@@ -133,7 +133,7 @@ function add_arrow_active_thumb(){
 
 // MOVE THE THUMBS
 function a3_portfolio_moveThumbs(itemstomove,offset, speed) {
-	var ie = !jQuery.support.opacity;
+	var ie = false;
 	var ie9 = (document.documentMode == 9);
 
 	jQuery.each(itemstomove,function() {
@@ -181,7 +181,7 @@ jQuery(document).ready(function () {
 	var scrollspeed = 600;
 	var force_scrolltotop = true;
 	var deeplink = a3_portfolio_getUrlVars("#");
-	var ie = !jQuery.support.opacity;
+	var ie = false;
 	var ie9 = (document.documentMode == 9);
 	var isRTL = false;
 	if ( a3_portfolio_script_params.rtl == 1 ) {
@@ -317,7 +317,7 @@ jQuery(document).ready(function () {
 	}
 
 	// Load all large images after 15 seconds page is loaded
-	$win.bind("load", function() {
+	$win.on("load", function() {
 		setTimeout( function() {
 			console.log('[a3 Portfolio] - Start Load First Large Images inside the exapander of all Portfolio Items');
 			jQuery('.a3-portfolio-container').each(function() {
@@ -722,7 +722,7 @@ jQuery(document).ready(function () {
 		}
 
 		if (!ie) {
-			jQuery(window).bind('resize',function()  {
+			jQuery(window).on('resize',function()  {
 				if ( jQuery('html').width() > 767 ) {
 					a3_portfolio_closeDetailView(portfolio_boxes, speed);
 					a3_portfolio_centerpdv();
@@ -750,7 +750,7 @@ jQuery(document).ready(function () {
 
 	// Resize Height of Card Image Container when wind is resized
 	if ( card_image_height_fixed != false ) {
-		jQuery(window).bind('resize',function()  {
+		jQuery(window).on('resize',function()  {
 			jQuery('.a3-portfolio-container').each(function() {
 				var portfolio_boxes = jQuery(this).find('.a3-portfolio-box-content');
 

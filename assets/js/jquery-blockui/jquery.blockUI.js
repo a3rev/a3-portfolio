@@ -25,7 +25,7 @@
 		var msie = /MSIE/.test(navigator.userAgent);
 		var ie6  = /MSIE 6.0/.test(navigator.userAgent) && ! /MSIE 8.0/.test(navigator.userAgent);
 		var mode = document.documentMode || 0;
-		var setExpr = $.isFunction( document.createElement('div').style.setExpression );
+		var setExpr = typeof document.createElement('div').style.setExpression === "function";
 
 		// global $ methods for blocking/unblocking the entire page
 		$.blockUI   = function(opts) { install(window, opts); };
@@ -357,14 +357,14 @@
 			}
 
 			// ie7 must use absolute positioning in quirks mode and to account for activex issues (when scrolling)
-			var expr = setExpr && (!$.support.boxModel || $('object,embed', full ? null : el).length > 0);
+			var expr = setExpr && ($('object,embed', full ? null : el).length > 0);
 			if (ie6 || expr) {
 				// give body 100% height
-				if (full && opts.allowBodyStretch && $.support.boxModel)
+				if (full && opts.allowBodyStretch)
 					$('html,body').css('height','100%');
 
 				// fix ie6 issue when blocked element has a border width
-				if ((ie6 || !$.support.boxModel) && !full) {
+				if (ie6 && !full) {
 					var t = sz(el,'borderTopWidth'), l = sz(el,'borderLeftWidth');
 					var fixT = t ? '(0 - '+t+')' : 0;
 					var fixL = l ? '(0 - '+l+')' : 0;
@@ -550,9 +550,9 @@
 			// bind anchors and inputs for mouse and key events
 			var events = 'mousedown mouseup keydown keypress keyup touchstart touchend touchmove';
 			if (b)
-				$(document).bind(events, opts, handler);
+				$(document).on(events, opts, handler);
 			else
-				$(document).unbind(events, handler);
+				$(document).off(events, handler);
 
 		// former impl...
 		//		var $e = $('a,:input');

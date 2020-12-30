@@ -17,7 +17,7 @@ jQuery(document).ready(function () {
 		});
 	});
 
-	jQuery(window).bind('load',function()  {
+	jQuery(window).on('load',function()  {
 		if(jQuery(".a3-portfolio-single-wrap").width() <= 767 ){
 			jQuery(".a3-portfolio-single-wrap").addClass("a3-portfolio-expander-popup-mobile");
 		}else{
@@ -50,7 +50,7 @@ jQuery(document).ready(function () {
 		});
 	});
 
-	jQuery(window).bind('resize',function()  {
+	jQuery(window).on('resize',function()  {
 		if(jQuery(".a3-portfolio-single-wrap").width() <= 767 ){
 			jQuery(".a3-portfolio-single-wrap").addClass("a3-portfolio-expander-popup-mobile");
 		}else{

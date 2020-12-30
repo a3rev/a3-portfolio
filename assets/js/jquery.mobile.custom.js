@@ -30,10 +30,10 @@
 	(function( $ ) {
 		$.event.special.throttledresize = {
 			setup: function() {
-				$( this ).bind( "resize", handler );
+				$( this ).on( "resize", handler );
 			},
 			teardown: function() {
-				$( this ).unbind( "resize", handler );
+				$( this ).off( "resize", handler );
 			}
 		};
 
@@ -133,7 +133,7 @@
 
 			// Because the orientationchange event doesn't exist, simulate the
 			// event by testing window dimensions on resize.
-			win.bind( "throttledresize", handler );
+			win.on( "throttledresize", handler );
 		},
 		teardown: function() {
 			// If the event is not supported natively, return false so that
@@ -144,7 +144,7 @@
 
 			// Because the orientationchange event doesn't exist, unbind the
 			// resize event handler.
-			win.unbind( "throttledresize", handler );
+			win.off( "throttledresize", handler );
 		},
 		add: function( handleObj ) {
 			// Save a reference to the bound event handler.
@@ -195,7 +195,7 @@
 	};
 
 	$.fn[ event_name ] = function( fn ) {
-		return fn ? this.bind( event_name, fn ) : this.trigger( event_name );
+		return fn ? this.on( event_name, fn ) : this.trigger( event_name );
 	};
 
 	// jQuery < 1.8
@@ -553,14 +553,14 @@ function getSpecialEventObject( eventType ) {
 			activeDocHandlers[ eventType ] = ( activeDocHandlers[ eventType ] || 0 ) + 1;
 
 			if ( activeDocHandlers[ eventType ] === 1 ) {
-				$document.bind( realType, mouseEventCallback );
+				$document.on( realType, mouseEventCallback );
 			}
 
 			// Some browsers, like Opera Mini, won't dispatch mouse/click events
 			// for elements unless they actually have handlers registered on them.
 			// To get around this, we register dummy handlers on the elements.
 
-			$( this ).bind( realType, dummyMouseHandler );
+			$( this ).on( realType, dummyMouseHandler );
 
 			// For now, if event capture is not supported, we rely on mouse handlers.
 			if ( eventCaptureSupported ) {
@@ -570,8 +570,8 @@ function getSpecialEventObject( eventType ) {
 				activeDocHandlers[ "touchstart" ] = ( activeDocHandlers[ "touchstart" ] || 0) + 1;
 
 				if ( activeDocHandlers[ "touchstart" ] === 1 ) {
-					$document.bind( "touchstart", handleTouchStart )
-						.bind( "touchend", handleTouchEnd )
+					$document.on( "touchstart", handleTouchStart )
+						.on( "touchend", handleTouchEnd )
 
 						// On touch platforms, touching the screen and then dragging your finger
 						// causes the window content to scroll after some distance threshold is
@@ -583,8 +583,8 @@ function getSpecialEventObject( eventType ) {
 						// we need to watch both scroll and touchmove events to figure out whether
 						// or not a scroll happenens before the touchend event is fired.
 
-						.bind( "touchmove", handleTouchMove )
-						.bind( "scroll", handleScroll );
+						.on( "touchmove", handleTouchMove )
+						.on( "scroll", handleScroll );
 				}
 			}
 		},
@@ -596,7 +596,7 @@ function getSpecialEventObject( eventType ) {
 			--activeDocHandlers[ eventType ];
 
 			if ( !activeDocHandlers[ eventType ] ) {
-				$document.unbind( realType, mouseEventCallback );
+				$document.off( realType, mouseEventCallback );
 			}
 
 			if ( eventCaptureSupported ) {
@@ -606,10 +606,10 @@ function getSpecialEventObject( eventType ) {
 				--activeDocHandlers[ "touchstart" ];
 
 				if ( !activeDocHandlers[ "touchstart" ] ) {
-					$document.unbind( "touchstart", handleTouchStart )
-						.unbind( "touchmove", handleTouchMove )
-						.unbind( "touchend", handleTouchEnd )
-						.unbind( "scroll", handleScroll );
+					$document.off( "touchstart", handleTouchStart )
+						.off( "touchmove", handleTouchMove )
+						.off( "touchend", handleTouchEnd )
+						.off( "scroll", handleScroll );
 				}
 			}
 
@@ -627,7 +627,7 @@ function getSpecialEventObject( eventType ) {
 
 			// Unregister the dummy event handler.
 
-			$this.unbind( realType, dummyMouseHandler );
+			$this.off( realType, dummyMouseHandler );
 
 			// If this is the last virtual mouse binding on the
 			// element, remove the binding data from the element.
@@ -739,7 +739,7 @@ if ( eventCaptureSupported ) {
 		"scrollstart scrollstop" ).split( " " ), function( i, name ) {
 
 		$.fn[ name ] = function( fn ) {
-			return fn ? this.bind( name, fn ) : this.trigger( name );
+			return fn ? this.on( name, fn ) : this.trigger( name );
 		};
 
 		// jQuery < 1.8
@@ -776,7 +776,7 @@ if ( eventCaptureSupported ) {
 			}
 
 			// iPhone triggers scroll after a small delay; use touchmove instead
-			$this.bind( scrollEvent, function( event ) {
+			$this.on( scrollEvent, function( event ) {
 
 				if ( !$.event.special.scrollstart.enabled ) {
 					return;
@@ -793,7 +793,7 @@ if ( eventCaptureSupported ) {
 			});
 		},
 		teardown: function() {
-			$( this ).unbind( scrollEvent );
+			$( this ).off( scrollEvent );
 		}
 	};
 
@@ -806,7 +806,7 @@ if ( eventCaptureSupported ) {
 				$this = $( thisObject ),
 				isTaphold = false;
 
-			$this.bind( "vmousedown", function( event ) {
+			$this.on( "vmousedown", function( event ) {
 				isTaphold = false;
 				if ( event.which && event.which !== 1 ) {
 					return false;
@@ -822,9 +822,9 @@ if ( eventCaptureSupported ) {
 				function clearTapHandlers() {
 					clearTapTimer();
 
-					$this.unbind( "vclick", clickHandler )
-						.unbind( "vmouseup", clearTapTimer );
-					$document.unbind( "vmousecancel", clearTapHandlers );
+					$this.off( "vclick", clickHandler )
+						.off( "vmouseup", clearTapTimer );
+					$document.off( "vmousecancel", clearTapHandlers );
 				}
 
 				function clickHandler( event ) {
@@ -839,9 +839,9 @@ if ( eventCaptureSupported ) {
 					}
 				}
 
-				$this.bind( "vmouseup", clearTapTimer )
-					.bind( "vclick", clickHandler );
-				$document.bind( "vmousecancel", clearTapHandlers );
+				$this.on( "vmouseup", clearTapTimer )
+					.on( "vclick", clickHandler );
+				$document.on( "vmousecancel", clearTapHandlers );
 
 				timer = setTimeout( function() {
 					if ( !$.event.special.tap.emitTapOnTaphold ) {
@@ -852,8 +852,8 @@ if ( eventCaptureSupported ) {
 			});
 		},
 		teardown: function() {
-			$( this ).unbind( "vmousedown" ).unbind( "vclick" ).unbind( "vmouseup" );
-			$document.unbind( "vmousecancel" );
+			$( this ).off( "vmousedown" ).off( "vclick" ).off( "vmouseup" );
+			$document.off( "vmousecancel" );
 		}
 	};
 
@@ -1037,10 +1037,10 @@ if ( eventCaptureSupported ) {
 
 		$.event.special[ event ] = {
 			setup: function() {
-				$( this ).bind( sourceEvent, $.noop );
+				$( this ).on( sourceEvent, $.noop );
 			},
 			teardown: function() {
-				$( this ).unbind( sourceEvent );
+				$( this ).off( sourceEvent );
 			}
 		};
 	});

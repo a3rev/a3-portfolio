@@ -86,7 +86,7 @@
 	event_purge = prefix + '_purge',
 	
 	// Special Handling for IE
-	isIE = !$.support.leadingWhitespace, // IE6 to IE8
+	isIE = false, // IE6 to IE8
 	isIE6 = isIE && !window.XMLHttpRequest, // IE6
 	event_ie6 = prefix + '_IE6',
 
@@ -203,7 +203,7 @@
 		}
 		
 		for (i in settings) {
-			if ($.isFunction(settings[i]) && i.slice(0, 2) !== 'on') { // checks to make sure the function isn't one of the callbacks, they will be handled at the appropriate time.
+			if (typeof settings[i] === "function" && i.slice(0, 2) !== 'on') { // checks to make sure the function isn't one of the callbacks, they will be handled at the appropriate time.
 				settings[i] = settings[i].call(element);
 			}
 		}
@@ -213,7 +213,7 @@
 		settings.title = settings.title || element.title;
 		
 		if (typeof settings.href === "string") {
-			settings.href = $.trim(settings.href);
+			settings.href = settings.href.trim();
 		}
 	}
 
@@ -224,7 +224,7 @@
 		// for internal use
 		$events.trigger(event);
 
-		if ($.isFunction(callback)) {
+		if (typeof callback === "function") {
 			callback.call(element);
 		}
 	}
@@ -254,13 +254,13 @@
 			start = function () {
 				$slideshow
 					.html(settings.slideshowStop)
-					.unbind(click)
+					.off(click)
 					.one(click, stop);
 
 				$events
-					.bind(event_complete, set)
-					.bind(event_load, clear)
-					.bind(event_cleanup, stop);
+					.on(event_complete, set)
+					.on(event_load, clear)
+					.on(event_cleanup, stop);
 
 				$box.removeClass(className + "off").addClass(className + "on");
 			};
@@ -269,13 +269,13 @@
 				clear();
 				
 				$events
-					.unbind(event_complete, set)
-					.unbind(event_load, clear)
-					.unbind(event_cleanup, stop);
+					.off(event_complete, set)
+					.off(event_load, clear)
+					.off(event_cleanup, stop);
 				
 				$slideshow
 					.html(settings.slideshowStart)
-					.unbind(click)
+					.off(click)
 					.one(click, function () {
 						publicMethod.next();
 						start();
@@ -352,7 +352,7 @@
 				publicMethod.position();
 
 				if (isIE6) {
-					$window.bind('resize.' + event_ie6 + ' scroll.' + event_ie6, function () {
+					$window.on('resize.' + event_ie6 + ' scroll.' + event_ie6, function () {
 						$overlay.css({width: $window.width(), height: winheight(), top: $window.scrollTop(), left: $window.scrollLeft()});
 					}).trigger('resize.' + event_ie6);
 				}
@@ -474,7 +474,7 @@
 				});
 				
 				// Key Bindings
-				$(document).bind('keydown.' + prefix, function (e) {
+				$(document).on('keydown.' + prefix, function (e) {
 					var key = e.keyCode;
 					if (open && settings.escKey && key === 27) {
 						e.preventDefault();
@@ -491,7 +491,7 @@
 					}
 				});
 
-				if ($.isFunction($.fn.on)) {
+				if (typeof $.fn.on === "function") {
 					// For jQuery 1.7+
 					$(document).on('click.'+prefix, '.'+boxElement, clickHandler);
 				} else {
@@ -529,7 +529,7 @@
 		appendHTML();
 
 		if (addBindings()) {
-			if ($.isFunction($this)) { // assume a call to $.colorbox
+			if (typeof $this === "function") { // assume a call to $.colorbox
 				$this = $('<a/>');
 				options.open = true;
 			} else if (!$this[0]) { // colorbox being applied to empty collection
@@ -544,7 +544,7 @@
 				$.data(this, colorbox, $.extend({}, $.data(this, colorbox) || defaults, options));
 			}).addClass(boxElement);
 			
-			if (($.isFunction(options.open) && options.open.call($this)) || options.open) {
+			if ((typeof options.open === "function" && options.open.call($this)) || options.open) {
 				launch($this[0]);
 			}
 		}
@@ -561,7 +561,7 @@
 		scrollTop,
 		scrollLeft;
 		
-		$window.unbind('resize.' + prefix);
+		$window.off('resize.' + prefix);
 
 		// remove the modal so that it doesn't influence the document width/height
 		$box.css({top: -9e4, left: -9e4});
@@ -629,7 +629,7 @@
 				
 				if (settings.reposition) {
 					setTimeout(function () {  // small delay before binding onresize due to an IE8 bug.
-						$window.bind('resize.' + prefix, publicMethod.position);
+						$window.on('resize.' + prefix, publicMethod.position);
 					}, 1);
 				}
 
@@ -759,7 +759,7 @@
 
 						if (data && data.href) {
 							src = data.href;
-							if ($.isFunction(src)) {
+							if (typeof src === "function") {
 								src = src.call(i);
 							}
 						} else {
@@ -907,7 +907,7 @@
 
 			$(photo = new Image())
 			.addClass(prefix + 'Photo')
-			.bind('error',function () {
+			.on('error',function () {
 				settings.title = false;
 				prep($tag(div, 'Error').html(settings.imgError));
 			})
@@ -995,7 +995,7 @@
 			
 			trigger(event_cleanup, settings.onCleanup);
 			
-			$window.unbind('.' + prefix + ' .' + event_ie6);
+			$window.off('.' + prefix + ' .' + event_ie6);
 			
 			$overlay.fadeTo(200, 0);
 			
@@ -1024,7 +1024,7 @@
 			.removeData(colorbox)
 			.removeClass(boxElement);
 
-		$(document).unbind('click.'+prefix);
+		$(document).off('click.'+prefix);
 	};
 
 	// A method for fetching the current element ColorBox is referencing.

@@ -3,8 +3,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.0
-Tested up to: 5.6
-Stable tag: 2.9.7
+Tested up to: 5.7
+Stable tag: 2.9.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -167,6 +167,11 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.9.8 - 2021/03/09 =
+* This maintenance release is for compatibility with WordPress 5.7 and Gutenberg 10.0
+* Tweak - Test for compatibility with WordPress 5.7
+* Tweak - Test for compatibility with Gutenberg 10.0
 
 = 2.9.7 - 2020/12/30 =
 * This is an important maintenance release that updates our scripts for compatibility with the latest version of jQuery released in WordPress 5.6
@@ -674,6 +679,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.9.8 =
+This maintenance release is for compatibility with WordPress 5.7 and Gutenberg 10.0
 
 = 2.9.7 =
 This is an important maintenance release that updates our scripts for compatibility with the latest version of jQuery released in WordPress 5.6

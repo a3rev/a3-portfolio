@@ -161,7 +161,7 @@ jQuery( function( $ ){
 
 	$( '.portfolio_attributes .portfolio_attribute' ).each( function( index, el ) {
 		if ( $( el ).css( 'display' ) !== 'none' && $( el ).is( '.taxonomy' ) ) {
-			$( 'select.attribute_taxonomy' ).find( 'option[value="' + $( el ).data( 'attribute-id' ) + '"]' ).attr( 'disabled', 'disabled' );
+			$( 'select.attribute_taxonomy' ).find( 'option[value="' + $( el ).data( 'attribute-id' ) + '"]' ).prop( 'disabled', true );
 		}
 	});
 
@@ -199,7 +199,7 @@ jQuery( function( $ ){
 		});
 
 		if ( attribute_id ) {
-			$( 'select.attribute_taxonomy' ).find( 'option[value="' + attribute_id + '"]' ).attr( 'disabled','disabled' );
+			$( 'select.attribute_taxonomy' ).find( 'option[value="' + attribute_id + '"]' ).prop( 'disabled', true );
 			$( 'select.attribute_taxonomy' ).val( '' );
 		}
 
@@ -207,13 +207,13 @@ jQuery( function( $ ){
 	});
 
 	$( '.portfolio_attributes' ).on( 'click', 'button.select_all_attributes', function() {
-		$( this ).closest( 'td' ).find( 'select option' ).attr( 'selected', 'selected' );
+		$( this ).closest( 'td' ).find( 'select option' ).prop( 'selected', true );
 		$( this ).closest( 'td' ).find( 'select' ).trigger("chosen:updated");
 		return false;
 	});
 
 	$( '.portfolio_attributes' ).on( 'click', 'button.select_no_attributes', function() {
-		$( this ).closest( 'td' ).find( 'select option' ).removeAttr( 'selected' );
+		$( this ).closest( 'td' ).find( 'select option' ).prop( 'selected', false );
 		$( this ).closest( 'td' ).find( 'select').trigger("chosen:updated");
 		return false;
 	});
@@ -223,7 +223,7 @@ jQuery( function( $ ){
 			var $parent = $( this ).parent().parent();
 
 			$parent.remove();
-			$( 'select.attribute_taxonomy' ).find( 'option[value="' + $parent.data( 'attribute-id' ) + '"]' ).removeAttr( 'disabled' );
+			$( 'select.attribute_taxonomy' ).find( 'option[value="' + $parent.data( 'attribute-id' ) + '"]' ).prop( 'disabled', false );
 		}
 		return false;
 	});

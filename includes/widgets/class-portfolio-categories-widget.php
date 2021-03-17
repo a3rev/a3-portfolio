@@ -101,7 +101,7 @@ class Categories extends \WP_Widget {
 
 		$output .= "
 		<script>
-		jQuery('.dropdown_portfolio_cat').change(function(){
+		jQuery('.dropdown_portfolio_cat').on('change',function(){
 			if(jQuery(this).val() != '') {
 				location.href = jQuery(this).val();
 			}

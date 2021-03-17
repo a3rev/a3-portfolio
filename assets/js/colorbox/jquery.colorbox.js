@@ -184,7 +184,7 @@
 	function trapFocus(e) {
 		if ('contains' in $box[0] && !$box[0].contains(e.target)) {
 			e.stopPropagation();
-			$box.focus();
+			$box.trigger('focus');
 		}
 	}
 
@@ -365,7 +365,7 @@
 				
 				$close.html(settings.close).show();
 
-                $box.focus();
+                $box.trigger('focus');
                 
                 // Confine focus to the modal
                 // Uses event capturing that is not supported in IE8-
@@ -381,7 +381,7 @@
                 // Return focus on closing
                 if (settings.returnFocus) {
                     $events.one(event_closed, function () {
-                        $(element).focus();
+                        $(element).trigger('focus');
                     });
                 }
 			}
@@ -458,16 +458,16 @@
 				init = true;
 
 				// Anonymous functions here keep the public method from being cached, thereby allowing them to be redefined on the fly.
-				$next.click(function () {
+				$next.on('click', function () {
 					publicMethod.next();
 				});
-				$prev.click(function () {
+				$prev.on('click', function () {
 					publicMethod.prev();
 				});
-				$close.click(function () {
+				$close.on('click', function () {
 					publicMethod.close();
 				});
-				$overlay.click(function () {
+				$overlay.on('click', function () {
 					if (settings.overlayClose) {
 						publicMethod.close();
 					}
@@ -483,10 +483,10 @@
                     if (open && settings.arrowKey && $related[1] && !e.altKey) {
 						if (key === 37) {
 							e.preventDefault();
-							$prev.click();
+							$prev.trigger('click');
 						} else if (key === 39) {
 							e.preventDefault();
-							$next.click();
+							$next.trigger('click');
 						}
 					}
 				});

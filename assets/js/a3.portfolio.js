@@ -837,7 +837,7 @@ jQuery(document).ready(function () {
 			var pvctrl = 0;
 		}
 
-		closeb.click(function() {
+		closeb.on('click', function() {
 			a3_portfolio_moveToActivateRow(portfolio_boxes);
 			a3_portfolio_closeDetailView(portfolio_boxes, speed);
 		});

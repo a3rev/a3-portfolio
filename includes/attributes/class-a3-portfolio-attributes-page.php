@@ -457,7 +457,7 @@ class Attributes
 			<script type="text/javascript">
 			/* <![CDATA[ */
 
-				jQuery( 'a.delete' ).click( function() {
+				jQuery( 'a.delete' ).on('click', function() {
 					if ( window.confirm( '<?php _e( "Are you sure you want to delete this attribute?", 'a3-portfolio' ); ?>' ) ) {
 						return true;
 					}

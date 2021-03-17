@@ -103,23 +103,23 @@ class Settings {
 		</table>
 		<script type="text/javascript">
 			jQuery( function() {
-				jQuery('input.a3_portfolio_permalink').change(function() {
+				jQuery('input.a3_portfolio_permalink').on('change', function() {
 					jQuery('#a3_portfolio_permalink_structure').val( jQuery( this ).val() );
 				});
-				jQuery('.permalink-structure input').change(function() {
+				jQuery('.permalink-structure input').on('change', function() {
 					jQuery('.a3_portfolio_permalink_structure_table').find('code.non-default-example, code.default-example').hide();
 					if ( jQuery(this).val() ) {
 						jQuery('.a3_portfolio_permalink_structure_table code.non-default-example').show();
-						jQuery('.a3_portfolio_permalink_structure_table input').removeAttr('disabled');
+						jQuery('.a3_portfolio_permalink_structure_table input').prop('disabled',false);
 					} else {
 						jQuery('.a3_portfolio_permalink_structure_table code.default-example').show();
-						jQuery('.a3_portfolio_permalink_structure_table input').eq(0).click();
-						jQuery('.a3_portfolio_permalink_structure_table input').attr('disabled', 'disabled');
+						jQuery('.a3_portfolio_permalink_structure_table input').eq(0).trigger('click');
+						jQuery('.a3_portfolio_permalink_structure_table input').prop('disabled', true);
 					}
 				});
-				jQuery('.permalink-structure input:checked').change();
-				jQuery('#a3_portfolio_permalink_structure').focus( function(){
-					jQuery('#a3_portfolio_custom_selection').click();
+				jQuery('.permalink-structure input:checked').trigger('change');
+				jQuery('#a3_portfolio_permalink_structure').on('focus', function(){
+					jQuery('#a3_portfolio_custom_selection').trigger('click');
 				} );
 			} );
 		</script>

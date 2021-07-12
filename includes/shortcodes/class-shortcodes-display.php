@@ -73,6 +73,9 @@ class Display
 			), $attributes)
 		);
 
+		// XSS ok
+		$column = esc_attr( $column );
+
 		if ( 'all' == $number_items ) {
 			$number_items = -1;
 		} else {
@@ -104,6 +107,9 @@ class Display
 			), $attributes)
 		);
 
+		// XSS ok
+		$column = esc_attr( $column );
+
 		if ( 'all' == $number_items ) {
 			$number_items = -1;
 		} else {
@@ -134,6 +140,9 @@ class Display
 				'show_navbar'  => 1,
 			), $attributes)
 		);
+
+		// XSS ok
+		$column = esc_attr( $column );
 
 		if ( 'all' == $number_items ) {
 			$number_items = -1;
@@ -169,6 +178,15 @@ class Display
 				'padding_right'  => 0,
 			), $attributes)
 		);
+
+		// XSS ok
+		$align          = esc_attr( $align );
+		$width          = esc_attr( $width );
+		$column         = esc_attr( $column );
+		$padding_top    = esc_attr( $padding_top );
+		$padding_bottom = esc_attr( $padding_bottom );
+		$padding_left   = esc_attr( $padding_left );
+		$padding_right  = esc_attr( $padding_right );
 
 		$custom_style = '';
 		$custom_style .= 'width:'.$width.'; max-width:100%; box-sizing: border-box; ';

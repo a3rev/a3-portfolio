@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 2.9.11 - 2021/07/12 =
+* This small maintenance release contains a security patch.
+* Security - Added escaping for the shortcode parameters
+* Tweak - Skipped version 2.9.10 to avoid PHP misread
+
 = 2.9.9 - 2021/03/17 =
 * This maintenance release updates 23 deprecated jQuery functions for compatibility with the latest version of jQuery in WordPress 5.7
 * Tweak - Update JavaScript on plugin framework for compatibility with latest version of jQuery and resolve PHP warning event shorthand is deprecated.

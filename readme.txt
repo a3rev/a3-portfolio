@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.0
 Tested up to: 5.7
-Stable tag: 2.9.9
+Stable tag: 2.9.11
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -167,6 +167,11 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.9.11 - 2021/07/12 =
+* This small maintenance release contains a security patch.
+* Security - Added escaping for the shortcode parameters
+* Tweak - Skipped version 2.9.10 to avoid PHP misread
 
 = 2.9.9 - 2021/03/17 =
 * This maintenance release updates 23 deprecated jQuery functions for compatibility with the latest version of jQuery in WordPress 5.7
@@ -706,6 +711,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.9.11 =
+This small maintenance release contains a security patch
 
 = 2.9.9 =
 This maintenance release updates 23 deprecated jQuery functions for compatibility with the latest version of jQuery in WordPress 5.7

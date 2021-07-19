@@ -64,31 +64,30 @@ class Display
 			return '';
 		}
 
-		extract( shortcode_atts(
+		$attr = shortcode_atts(
 			array(
 				'type'         => 'none', // none | recent | sticky
 				'column'       => '',
 				'number_items' => 'all',
 				'show_navbar'  => 1,
-			), $attributes)
-		);
+			), $attributes );
 
 		// XSS ok
-		$column = esc_attr( $column );
+		$column = esc_attr( $attr['column'] );
 
-		if ( 'all' == $number_items ) {
+		if ( 'all' == $attr['number_items'] ) {
 			$number_items = -1;
 		} else {
-			$number_items = (int) $number_items;
+			$number_items = (int) $attr['number_items'];
 		}
 
-		if ( 1 == (int) $show_navbar ) {
+		if ( 1 == (int) $attr['show_navbar'] ) {
 			$show_navbar = true;
 		} else {
 			$show_navbar = false;
 		}
 
-		$output = a3_portfolio_get_main_page( $type, $column, $number_items, $show_navbar );
+		$output = a3_portfolio_get_main_page( $attr['type'], $column, $number_items, $show_navbar );
 
 		return $output;
 	}
@@ -98,31 +97,30 @@ class Display
 			return '';
 		}
 
-		extract( shortcode_atts(
+		$attr = shortcode_atts(
 			array(
 				'ids'          => '',
 				'column'       => '',
 				'number_items' => 'all',
 				'show_navbar'  => 1,
-			), $attributes)
-		);
+			), $attributes );
 
 		// XSS ok
-		$column = esc_attr( $column );
+		$column = esc_attr( $attr['column'] );
 
-		if ( 'all' == $number_items ) {
+		if ( 'all' == $attr['number_items'] ) {
 			$number_items = -1;
 		} else {
-			$number_items = (int) $number_items;
+			$number_items = (int) $attr['number_items'];
 		}
 
-		if ( 1 == (int) $show_navbar ) {
+		if ( 1 == (int) $attr['show_navbar'] ) {
 			$show_navbar = true;
 		} else {
 			$show_navbar = false;
 		}
 
-		$output = a3_portfolio_get_categories_page( $ids, $column, $number_items, $show_navbar );
+		$output = a3_portfolio_get_categories_page( $attr['ids'], $column, $number_items, $show_navbar );
 
 		return $output;
 	}
@@ -132,31 +130,30 @@ class Display
 			return '';
 		}
 		
-		extract( shortcode_atts(
+		$attr = shortcode_atts(
 			array(
 				'ids'          => '',
 				'column'       => '',
 				'number_items' => 'all',
 				'show_navbar'  => 1,
-			), $attributes)
-		);
+			), $attributes );
 
 		// XSS ok
-		$column = esc_attr( $column );
+		$column = esc_attr( $attr['column'] );
 
-		if ( 'all' == $number_items ) {
+		if ( 'all' == $attr['number_items'] ) {
 			$number_items = -1;
 		} else {
-			$number_items = (int) $number_items;
+			$number_items = (int) $attr['number_items'];
 		}
 
-		if ( 1 == (int) $show_navbar ) {
+		if ( 1 == (int) $attr['show_navbar'] ) {
 			$show_navbar = true;
 		} else {
 			$show_navbar = false;
 		}
 
-		$output = a3_portfolio_get_tags_page( $ids, $column, $number_items, $show_navbar );
+		$output = a3_portfolio_get_tags_page( $attr['ids'], $column, $number_items, $show_navbar );
 
 		return $output;
 	}
@@ -166,7 +163,7 @@ class Display
 			return '';
 		}
 
-		extract( shortcode_atts(
+		$attr = shortcode_atts(
 			array(
 				'ids'            => '',
 				'align'          => 'none',
@@ -176,17 +173,16 @@ class Display
 				'padding_bottom' => 0,
 				'padding_left'   => 0,
 				'padding_right'  => 0,
-			), $attributes)
-		);
+			), $attributes );
 
 		// XSS ok
-		$align          = esc_attr( $align );
-		$width          = esc_attr( $width );
-		$column         = esc_attr( $column );
-		$padding_top    = esc_attr( $padding_top );
-		$padding_bottom = esc_attr( $padding_bottom );
-		$padding_left   = esc_attr( $padding_left );
-		$padding_right  = esc_attr( $padding_right );
+		$align          = esc_attr( $attr['align'] );
+		$width          = esc_attr( $attr['width'] );
+		$column         = esc_attr( $attr['column'] );
+		$padding_top    = esc_attr( $attr['padding_top'] );
+		$padding_bottom = esc_attr( $attr['padding_bottom'] );
+		$padding_left   = esc_attr( $attr['padding_left'] );
+		$padding_right  = esc_attr( $attr['padding_right'] );
 
 		$custom_style = '';
 		$custom_style .= 'width:'.$width.'; max-width:100%; box-sizing: border-box; ';
@@ -202,7 +198,7 @@ class Display
 		elseif ( 'right-nowrap' == trim( $align ) ) $custom_style .= 'float:right; ';
 		else $custom_style .= 'float:'.trim( $align ).'; ';
 
-		$output = a3_portfolio_get_item_ids_page( $ids, $column, $custom_style );
+		$output = a3_portfolio_get_item_ids_page( $attr['ids'], $column, $custom_style );
 
 		return $output;
 	}

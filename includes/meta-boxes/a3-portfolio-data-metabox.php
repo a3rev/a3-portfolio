@@ -178,7 +178,7 @@ class Metabox
 								$portfolio_gallery = array_diff( $portfolio_gallery, array( get_post_thumbnail_id() ) );
 								foreach ( $portfolio_gallery as $attachment_id ) {
 						?>
-						<li class="image" data-attachment_id="<?php echo $attachment_id ; ?> ">
+						<li class="image" data-attachment_id="<?php echo esc_attr( $attachment_id ); ?> ">
 							<?php echo wp_get_attachment_image( $attachment_id, 'thumbnail' ); ?>
 							<ul class="actions">
 								<li><a href="#" class="delete tips" data-tip="<?php echo __( 'Delete image', 'a3-portfolio' ); ?>"><?php echo __( 'Delete image', 'a3-portfolio' ); ?></a></li>

@@ -3,8 +3,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 4.0
-Tested up to: 5.7
-Stable tag: 2.9.11
+Tested up to: 5.8
+Stable tag: 2.9.12
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -167,6 +167,13 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 2.9.12 - 2021/07/19 =
+* This maintenance release has code tweaks for WordPress 5.8 compatibility plus Security Hardening.
+* Tweak - Test for compatibility with WordPress 5.8
+* Tweak - Test for compatibility with Gutenberg 10.7
+* Security - Add more variable, options and html escaping
+* Security - Get variable via name instead of use extract
 
 = 2.9.11 - 2021/07/12 =
 * This small maintenance release contains a security patch.
@@ -711,6 +718,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 2.9.12 =
+This maintenance release has code tweaks for WordPress 5.8 compatibility plus Security Hardening.
 
 = 2.9.11 =
 This small maintenance release contains a security patch

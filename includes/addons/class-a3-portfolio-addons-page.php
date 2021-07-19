@@ -101,7 +101,7 @@ class Addons
 
 				<div class="extension-card <?php echo esc_attr( $id ); ?>">
 					<a class="extension-card-header" target="_blank" href="<?php echo esc_url( $addon->url ); ?>">
-						<h3 style="<?php echo $header_style; ?>"><span class="extension-title" style="<?php echo $title_style; ?>"><?php echo esc_html( $addon->title ); ?></span></h3>
+						<h3 style="<?php echo esc_attr( $header_style ); ?>"><span class="extension-title" style="<?php echo esc_attr( $title_style ); ?>"><?php echo esc_html( $addon->title ); ?></span></h3>
 					</a>
 
 					<p><?php echo esc_html( $addon->desc ); ?></p>

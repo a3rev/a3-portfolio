@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 2.9.12 - 2021/07/19 =
+* This maintenance release has code tweaks for WordPress 5.8 compatibility plus Security Hardening.
+* Tweak - Test for compatibility with WordPress 5.8
+* Tweak - Test for compatibility with Gutenberg 10.7
+* Security - Add more variable, options and html escaping
+* Security - Get variable via name instead of use extract
+
 = 2.9.11 - 2021/07/12 =
 * This small maintenance release contains a security patch.
 * Security - Added escaping for the shortcode parameters

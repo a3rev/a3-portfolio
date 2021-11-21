@@ -659,7 +659,7 @@ function a3_portfolio_card_item_viewmore( $portfolio_id = 0, $echo = true ) {
  *
  * @return void
  */
-function a3_portfolio_get_large_image_container( $portfolio_id = 0, $gallery ) {
+function a3_portfolio_get_large_image_container( $portfolio_id = 0, $gallery = '' ) {
 	if ( $portfolio_id < 1 ) {
 		$portfolio_id = get_the_ID();
 	}
@@ -771,7 +771,7 @@ function a3_portfolio_get_social_icons( $portfolio_id = 0 ) {
  *
  * @return void
  */
-function a3_portfolio_get_gallery_thumbs( $portfolio_id = 0, $gallery, $include_lightbox_script = false ) {
+function a3_portfolio_get_gallery_thumbs( $portfolio_id = 0, $gallery = '', $include_lightbox_script = false ) {
 	if ( $portfolio_id < 1 ) {
 		$portfolio_id = get_the_ID();
 	}

@@ -60,7 +60,7 @@ class Cookies
 		$res = setcookie('portfolio_recentviews','', time() - 3600, '/');
 	}
 
-	public function remove_portfolio_cookies( $cookie_name = 'portfolio_recentviews', $portfolio_cookie_ID) {
+	public function remove_portfolio_cookies( $cookie_name = 'portfolio_recentviews', $portfolio_cookie_ID = 0) {
 		if(array_key_exists($cookie_name, $_COOKIE)) {
 			$portfolio_cookie_ID = (int)$portfolio_cookie_ID;
 			$cookie = $_COOKIE[$cookie_name];

@@ -92,10 +92,14 @@ class Cat_List_Dropdown extends \Walker {
 	 * @param string $output Passed by reference. Used to append additional content.
 	 * @return null Null on failure with no changes to parameters.
 	 */
-	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+	function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
 
 		if ( !$element )
 			return;
+
+		if ( empty( $depth ) ) {
+			$depth = 0;
+		}
 
 		if ( ! $args[0]['show_children_only'] || ( $args[0]['show_children_only'] && ( $element->parent == 0 || $args[0]['current_category'] == $element->parent || in_array( $element->parent, $args[0]['current_category_ancestors'] ) ) ) ) {
 

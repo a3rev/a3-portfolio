@@ -1,5 +1,13 @@
 == Changelog ==
 
+= 2.10 - 2022/01/21 =
+* This release has a new Google Fonts API Validation feature plus compatibility with WordPress major version 5.9
+* Feature - Add Ajax Validate button for the Google Font API field, for quick and easy Validation of API keys
+* Dev - Add dynamic help text to Google Font API fields
+* Tweak - Test for compatibility with WordPress 5.9
+* Tweak - Test for compatibility with latest version of Gutenberg from WordPress 5.9
+* Framework - Update a3rev Plugin Framework to version 2.5.0
+
 = 2.9.13 - 2021/11/20 =
 * This maintenance release has a bug fix for compatibility with PHP 8.x
 * Tweak - Test for compatibility with PHP 8.x

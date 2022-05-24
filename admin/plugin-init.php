@@ -59,6 +59,8 @@ class Portfolio {
 
 		include( A3_PORTFOLIO_DIR . '/includes/attributes/a3-portfolio-attribute-functions.php' );
 
+		new Portfolio\BlockTemplatesController();
+
 		new Portfolio\AJAX();
 
 		global $a3_portfolio_wpml;

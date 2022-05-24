@@ -92,6 +92,10 @@ function a3_portfolio_get_item_ids_page( $item_ids = -1, $column = '', $custom_s
 		$item_ids_get[] = (int) trim( $item_ids );
 	}
 
+	if ( ( ! is_array( $item_ids_get ) || count( $item_ids_get ) < 1 || ( count( $item_ids_get ) == 1 && in_array( 0, $item_ids_get ) ) ) && is_singular( 'a3-portfolio' ) ) {
+		$item_ids_get = array( $wp_query->post->ID );
+	}
+
 	// if don't parse any IDs then return main portfolios page
 	if ( ! is_array( $item_ids_get ) || count( $item_ids_get ) < 1 ) {
 		return a3_portfolio_get_main_page( 'none', $column );
@@ -160,6 +164,10 @@ function a3_portfolio_get_categories_page( $cat_ids, $column = '', $number_items
 		}
 	} elseif ( (int) $cat_ids > 0 ) {
 		$cat_ids_get[] = (int) trim( $cat_ids );
+	}
+
+	if ( count( $cat_ids_get ) == 1 && in_array( 0, $cat_ids_get ) && is_taxonomy( 'portfolio_cat' ) ) {
+		$cat_ids_get = array( get_queried_object_id() );
 	}
 
 	list($wp_query, $portfolio_query) = array( $portfolio_query, $wp_query ); // swap the wpsc_query object
@@ -237,6 +245,10 @@ function a3_portfolio_get_tags_page( $tag_ids, $column = '', $number_items = -1,
 		}
 	} elseif ( (int) $tag_ids > 0 ) {
 		$tag_ids_get[] = (int) trim( $tag_ids );
+	}
+
+	if ( count( $tag_ids_get ) == 1 && in_array( 0, $tag_ids_get ) && is_taxonomy( 'portfolio_tag' ) ) {
+		$tag_ids_get = array( get_queried_object_id() );
 	}
 
 	list($wp_query, $portfolio_query) = array( $portfolio_query, $wp_query ); // swap the wpsc_query object

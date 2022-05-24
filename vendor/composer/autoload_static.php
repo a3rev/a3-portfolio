@@ -32,6 +32,8 @@ class ComposerStaticInite9349560c96c7642da0660d51e4bdd0f
         'A3Rev\\Portfolio\\Backend\\Permalinks\\Structure' => __DIR__ . '/../..' . '/includes/backend/class-a3-portfolio-permalinks-structure.php',
         'A3Rev\\Portfolio\\Backend\\Scripts' => __DIR__ . '/../..' . '/includes/backend/class-a3-portfolio-backend-scripts.php',
         'A3Rev\\Portfolio\\Backend\\Shortcode\\Hooks' => __DIR__ . '/../..' . '/includes/backend/class-a3-portfolio-shortcodes-hooks.php',
+        'A3Rev\\Portfolio\\BlockTemplateUtils' => __DIR__ . '/../..' . '/includes/BlockTemplateUtils.php',
+        'A3Rev\\Portfolio\\BlockTemplatesController' => __DIR__ . '/../..' . '/includes/BlockTemplatesController.php',
         'A3Rev\\Portfolio\\Blocks' => __DIR__ . '/../..' . '/src/blocks.php',
         'A3Rev\\Portfolio\\Blocks\\Categories' => __DIR__ . '/../..' . '/src/blocks/categories/block.php',
         'A3Rev\\Portfolio\\Blocks\\Items' => __DIR__ . '/../..' . '/src/blocks/items/block.php',

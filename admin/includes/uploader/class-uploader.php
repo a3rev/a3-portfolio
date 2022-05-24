@@ -92,8 +92,13 @@ class Uploader extends Admin_UI
 
 		if ( strstr( $name_attribute, ']' ) ) {
 			$attachment_id_name_attribute = substr_replace( $name_attribute, '_attachment_id', -1, 0 );
+
+			$attachment_size_name_attribute = substr_replace( $name_attribute, '_attachment_size', -1, 0 );
+
 		} else {
 			$attachment_id_name_attribute = $name_attribute.'_attachment_id';
+
+			$attachment_size_name_attribute = $name_attribute.'_attachment_size';
 		}
 
 		if ( $strip_methods === false ) {
@@ -103,6 +108,7 @@ class Uploader extends Admin_UI
 		}
 
 		$output .= '<input type="hidden" name="'.$attachment_id_name_attribute.'" id="'.$id_attribute.'_attachment_id" value="'.$attachment_id.'" class=" a3_upload_attachment_id" />';
+		$output .= '<input type="hidden" name="'.$attachment_size_name_attribute.'" id="'.$id_attribute.'_attachment_size" value="'.$size.'" class=" a3_upload_attachment_size" />';
 		$output .= '<input data-strip-methods="'.$strip_methods.'" type="text" name="'.$name_attribute.'" id="'.$id_attribute.'" value="'.esc_attr( $value ).'" class="'.$id_attribute. ' ' .$class.' a3_upload" style="'.$css.'" rel="'.$field_name.'" /> ';
 		$output .= '<input id="upload_'.$id_attribute.'" class="a3rev-ui-upload-button a3_upload_button button" type="button" value="'.__( 'Upload', 'a3-portfolio' ).'" /> '.$description;
 		
@@ -126,7 +132,7 @@ class Uploader extends Admin_UI
 
 				$title = __( 'View File', 'a3-portfolio' );
 
-				$output .= '<div class="a3_no_image"><span class="a3_file_link"><a href="'.esc_url( $value ).'" target="_blank" rel="a3_external">'.$title.'</a></span>'.$remove.'</div>';
+				$output .= '<div class="a3_no_image"><span class="a3_file_link"><a href="'.esc_url( $value ).'" target="_blank" rel="noopener">'.$title.'</a></span>'.$remove.'</div>';
 
 			}
 		}

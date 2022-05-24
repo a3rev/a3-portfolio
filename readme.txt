@@ -3,8 +3,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 5.6
-Tested up to: 5.9
-Stable tag: 2.10
+Tested up to: 6.0
+Stable tag: 3.0.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -166,6 +166,22 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 3.0.0 - 2022/05/24 =
+* This feature release has compatibility tweaks for WordPress major version 6.0 and includes various code tweaks for FSE compatibility and tweaks for hardening security. 
+* Feature - Add BlockTemplatesController for control block templates of Portfolio singular, category and tag
+* Feature - Define single-a3-portfolio.html block template with custom layout of portfolio item on FSE
+* Feature - Define taxonomy-portfolio_cat.html block template with custom layout from plugin on FSE
+* Feature - Define taxonomy-portfolio_tag.html block template with custom layout from plugin on FSE
+* Tweak - Test for compatibility with WordPress 6.0
+* Tweak - Test for compatibility with WordPress 6.0
+* Tweak - Add filter on generate_border_style_css
+* Tweak - Add filter on generate_border_corner_css
+* Framework – Upgrade Plugin Framework to version 2.6.0
+* Security - Various code hardening tweaks.
+* Security - Escape all $-variable
+* Security - Sanitize all $_REQUEST, $_GET, $_POST
+* Security - Apply wp_unslash before sanitize
 
 = 2.10 - 2022/01/21 =
 * This release has a new Google Fonts API Validation feature plus compatibility with WordPress major version 5.9
@@ -730,6 +746,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 3.0.0 =
+ This feature release has compatibility tweaks for WordPress major version 6.0 and includes various code tweaks for FSE compatibility and tweaks for hardening security. 
 
 = 2.10 =
 This release has a new Google Fonts API Validation feature plus compatibility with WordPress major version 5.9

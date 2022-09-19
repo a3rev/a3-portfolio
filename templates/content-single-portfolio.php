@@ -127,7 +127,7 @@ $portfolio_gallery = a3_portfolio_get_gallery( $portfolio_id );
 	?>
 
 	<div class="a3-portfolio-item-content-text">
-		<?php echo wpautop( $portfolio_data->post_content ); ?>
+		<?php echo apply_filters( 'the_content', wpautop( $portfolio_data->post_content ) ); ?>
 	</div>
 
 	<?php

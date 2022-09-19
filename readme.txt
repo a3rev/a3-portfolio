@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 5.6
 Tested up to: 6.0
-Stable tag: 3.0.0
+Stable tag: 3.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -166,6 +166,10 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 3.0.1 - 2022/09/19 =
+* This maintenance release fixes a missing content filter on portfolio item pages
+* Fix - apply filters the_content into content-single-portfolio so all shortcode, embed media that can show on portfolio single detail page
 
 = 3.0.0 - 2022/05/24 =
 * This feature release has compatibility tweaks for WordPress major version 6.0 and includes various code tweaks for FSE compatibility and tweaks for hardening security. 
@@ -746,6 +750,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 3.0.1 =
+This maintenance release fixes a missing content filter on portfolio item pages
 
 = 3.0.0 =
  This feature release has compatibility tweaks for WordPress major version 6.0 and includes various code tweaks for FSE compatibility and tweaks for hardening security. 

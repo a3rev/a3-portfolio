@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 3.0.1 - 2022/09/19 =
+* This maintenance release fixes a missing content filter on portfolio item pages
+* Fix - apply filters the_content into content-single-portfolio so all shortcode, embed media that can show on portfolio single detail page
+
 = 3.0.0 - 2022/05/24 =
 * This feature release has compatibility tweaks for WordPress major version 6.0 and includes various code tweaks for FSE compatibility and tweaks for hardening security. 
 * Feature - Add BlockTemplatesController for control block templates of Portfolio singular, category and tag

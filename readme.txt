@@ -170,7 +170,7 @@ Automatic installation is the easiest option as WordPress handles the file trans
 = 3.0.2 - 2022/11/01 =
 * This maintenance release has a security vulnerability patch, plus compatibility with WordPress major version 6.1.0
 * Tweak - Test for compatibility with WordPress 6.1
-* Security – This release has a patch for a security vulnerability
+* Security - This release has a patch for a security vulnerability
 
 = 3.0.1 - 2022/09/19 =
 * This maintenance release fixes a missing content filter on portfolio item pages

@@ -85,7 +85,7 @@ class Uploader extends Admin_UI
 	/*-----------------------------------------------------------------------------------*/
 	/* Get Upload Input Field */
 	/*-----------------------------------------------------------------------------------*/
-	public function upload_input ( $name_attribute, $id_attribute = '', $value = '', $attachment_id = 0, $default_value = '', $field_name = '', $class = '', $css = '', $description = '', $strip_methods = true ) {
+	public function upload_input ( $name_attribute, $id_attribute = '', $value = '', $attachment_id = 0, $default_value = '', $field_name = '', $class = '', $css = '', $description = '', $strip_methods = true, $size = 'original' ) {
 		$output = '';
 
 		if ( trim( $value ) == '' ) $value = trim( $default_value );

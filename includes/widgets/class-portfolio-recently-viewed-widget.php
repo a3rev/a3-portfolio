@@ -94,7 +94,7 @@ class Recently_Viewed extends \WP_Widget {
 					/>';
 				}
 
-				$result_html .= '<li class="portfolio_recently_item portfolio_recently_item_'.$portfolio_id.'"><a href="'.get_permalink( $portfolio_id ).'">'.$img.'</a><div class="portfolio_name"><a href="'.get_permalink( $portfolio_id ).'">'.get_the_title( $portfolio_id ).'</a></div><span class="remove_portfolio_item" data-id="'.$portfolio_id.'"><i class="fa fa-times a3-portfolio-icon-close"></i></span></li>';
+				$result_html .= '<li class="portfolio_recently_item portfolio_recently_item_'.$portfolio_id.'"><a href="'.get_permalink( $portfolio_id ).'">'.$img.'</a><div class="portfolio_name"><a href="'.get_permalink( $portfolio_id ).'">'.get_the_title( $portfolio_id ).'</a></div><span class="remove_portfolio_item" data-id="'.$portfolio_id.'"><i class="a3-portfolio-icon-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></i></span></li>';
 			}
 
 			$result_html .= '</ul>';

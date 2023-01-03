@@ -393,13 +393,13 @@ jQuery(document).ready(function () {
 	jQuery(document).on("click tap", ".a3-portfolio-navigation-mobile .a3-portfolio-icon-close", function(){
 		var portfolio_container = jQuery(this).parents('.a3-portfolio-container');
 		portfolio_container.find( ".a3-portfolio-menus-container" ).slideUp( "fast", function() {
-			portfolio_container.find( '.a3-portfolio-navigation-mobile-icon' ).removeClass('a3-portfolio-icon-close').removeClass('fa-times').addClass('a3-portfolio-icon-list').addClass('fa-bars');
+			portfolio_container.find( '.a3-portfolio-navigation-mobile-icon' ).removeClass('a3-portfolio-icon-close').addClass('a3-portfolio-icon-list').html('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M48 128c-17.7 0-32 14.3-32 32s14.3 32 32 32H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H48zm0 192c-17.7 0-32 14.3-32 32s14.3 32 32 32H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H48z"/></svg>');
 		});
 	});
 	jQuery(document).on("click tap", ".a3-portfolio-navigation-mobile .a3-portfolio-icon-list", function(){
 		var portfolio_container = jQuery(this).parents('.a3-portfolio-container');
 		portfolio_container.find( ".a3-portfolio-menus-container" ).slideDown( "fast", function() {
-			portfolio_container.find( '.a3-portfolio-navigation-mobile-icon' ).removeClass('a3-portfolio-icon-list').removeClass('fa-bars').addClass('a3-portfolio-icon-close').addClass('fa-times');
+			portfolio_container.find( '.a3-portfolio-navigation-mobile-icon' ).removeClass('a3-portfolio-icon-list').addClass('a3-portfolio-icon-close').html('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>');
 		});
 	});
 

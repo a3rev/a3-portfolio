@@ -37,11 +37,6 @@ class Scripts
 	 */
 	public function get_styles() {
 
-		// If don't have any plugin or theme register font awesome style then register it from plugin framework
-		if ( ! wp_style_is( 'font-awesome-styles', 'registered' ) ) {
-			$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface']->register_fontawesome_style();
-		}
-
 		return apply_filters( 'a3_portfolio_enqueue_styles', array(
 			'a3-portfolio-layout-css' => array(
 				'src'     => a3_portfolio_get_css_file_url( 'a3.portfolio.layout.css' ),
@@ -57,13 +52,13 @@ class Scripts
 			),
 			'a3-portfolio-attribute-filter-widget-css' => array(
 				'src'     => a3_portfolio_get_css_file_url( 'a3.portfolio.filter.widget.css' ),
-				'deps'    => array( 'font-awesome-styles' ),
+				'deps'    => '',
 				'version' => A3_PORTFOLIO_VERSION,
 				'media'   => 'all'
 			),
 			'a3-portfolio-general-css' => array(
 				'src'     => a3_portfolio_get_css_file_url( 'a3.portfolio.css' ),
-				'deps'    => array( 'font-awesome-styles' ),
+				'deps'    => '',
 				'version' => A3_PORTFOLIO_VERSION,
 				'media'   => 'all'
 			),

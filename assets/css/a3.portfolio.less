@@ -100,11 +100,13 @@
         .padding_left(2px);
         vertical-align: middle;
         cursor: pointer;
-    }
+        display: inline-block;
 
-    svg.a3-portfolio-navigation-mobile-icon {
-        box-sizing: content-box !important;
-        height: auto;
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+        }
     }
 }
 
@@ -308,16 +310,22 @@
             .padding(5px, 8px, 5px, 8px);
             .transition(all, ease-in, 200ms);
             .border_radius(3px);
+            display: inline-block;
 
             &:hover {
                 background-color: #00FF33;
                 color: #ffffff;
-            }
-        }
 
-        svg.a3-portfolio-icon-close {
-            box-sizing: content-box !important;
-            height: auto;
+                svg {
+                    fill: #ffffff;
+                }
+            }
+
+            svg {
+                width: 26px;
+                height: 26px;
+                fill: #ffffff;
+            }
         }
     }
 }
@@ -412,6 +420,12 @@
 
     .portfolio-entry-meta {
         margin-bottom: 10px;
+
+        svg {
+            width: 15px;
+            height: 15px;
+            fill: #e0e0e0;
+        }
 
         .a3-portfolio-icon-user {
             margin-left:0px;
@@ -790,6 +804,12 @@ div.single-a3-portfolio {
                 box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 1px 1px 0 rgba(255, 255, 255, 0.03), -1px -1px 0 rgba(0, 0, 0, 0.02), 1px 1px 0 rgba(255, 255, 255, 0.05) inset !important;
                 -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 1px 1px 0 rgba(255, 255, 255, 0.03), -1px -1px 0 rgba(0, 0, 0, 0.02), 1px 1px 0 rgba(255, 255, 255, 0.05) inset !important;
                 -webkitbox-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 1px 1px 0 rgba(255, 255, 255, 0.03), -1px -1px 0 rgba(0, 0, 0, 0.02), 1px 1px 0 rgba(255, 255, 255, 0.05) inset !important;
+
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    fill: #ffffff !important;
+                }
             }
         }
     }

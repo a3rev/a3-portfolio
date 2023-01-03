@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div style="clear:both"></div>
 
 <div class="a3-portfolio-navigation-mobile">
-	<i class="fa fa-bars a3-portfolio-navigation-mobile-icon a3-portfolio-icon-list"></i>
+	<i class="a3-portfolio-navigation-mobile-icon a3-portfolio-icon-list"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M48 128c-17.7 0-32 14.3-32 32s14.3 32 32 32H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H48zm0 192c-17.7 0-32 14.3-32 32s14.3 32 32 32H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H48z"/></svg></i>
 	<span><?php echo a3_portfolio_ei_ict_t__( 'Mobile Navigation', __( 'Navigation', 'a3-portfolio' ) ); ?></span>
 </div>
 

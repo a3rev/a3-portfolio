@@ -516,7 +516,7 @@ class Metabox
 
 		update_post_meta( $post_id, '_a3_portfolio_meta_gallery_wide', sanitize_text_field( $_POST['_a3_portfolio_meta_gallery_wide'] ) );
 		update_post_meta( $post_id, '_a3_portfolio_meta_thumb_position', sanitize_text_field( $_POST['_a3_portfolio_meta_thumb_position'] ) );
-		update_post_meta( $post_id, '_a3_portfolio_launch_site_url', sanitize_text_field( $_POST['_a3_portfolio_launch_site_url'] ) );
+		update_post_meta( $post_id, '_a3_portfolio_launch_site_url', sanitize_url( $_POST['_a3_portfolio_launch_site_url'] ) );
 		update_post_meta( $post_id, '_a3_portfolio_launch_button_text', sanitize_text_field( $_POST['_a3_portfolio_launch_button_text'] ) );
 
 		$launch_open_type = '';

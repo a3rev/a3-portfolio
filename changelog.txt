@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 3.1.1 - 2023/04/08 =
+* This release has a vulnerability security patch, please upgrade now.
+* Security - Add escaping the URL of Launch Button before output.
+* Tweak - Test for compatibility with WordPress 6.2.
+* Props - Security researcher Yuki Haruma reported via Patchstack.
+
 = 3.1.0 - 2023/01/03 =
 * This feature release removes the fontawesome lib and replaces icons with SVGs plus adds Default Topography option to font controls.
 * Feature - Convert icon from font awesome to SVG

@@ -3,7 +3,7 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 5.6
-Tested up to: 6.2
+Tested up to: 6.3
 Stable tag: 3.1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -166,6 +166,12 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 3.1.1 - 2023/04/08 =
+* This release has a vulnerability security patch, please upgrade now.
+* Security - Add escaping the URL of Launch Button before output.
+* Tweak - Test for compatibility with WordPress 6.2.
+* Props - Security researcher Yuki Haruma reported via Patchstack.
 
 = 3.1.0 - 2023/01/03 =
 * This feature release removes the fontawesome lib and replaces icons with SVGs plus adds Default Topography option to font controls.
@@ -764,6 +770,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 3.1.1 =
+This release has a vulnerability security patch, please upgrade now.
 
 = 3.1.0 =
 This feature release removes the fontawesome lib and replaces icons with SVGs plus adds Default Topography option to font controls.

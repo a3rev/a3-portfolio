@@ -6,7 +6,7 @@ Version: 3.1.1
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Requires at least: 5.6
-Tested up to: 6.2
+Tested up to: 6.3
 Text Domain: a3-portfolio
 Domain Path: /languages
 License: GPLv2 or later

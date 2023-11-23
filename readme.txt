@@ -2,9 +2,9 @@
 
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
-Requires at least: 5.6
-Tested up to: 6.3
-Stable tag: 3.1.1
+Requires at least: 6.0
+Tested up to: 6.4.1
+Stable tag: 3.1.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -166,6 +166,12 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 3.1.2 - 2023/11/23 =
+* This maintenance release has plugin framework updates for compatibility with PHP 8.1 onwards, plus compatibility with WordPress 6.4.1
+* Tweak - Test for compatibility with WordPress 6.4.1
+* Framework - Set parameter number of preg_match function from null to 0 for compatibility with PHP 8.1 onwards
+* Framework - Validate empty before call trim for option value
 
 = 3.1.1 - 2023/04/08 =
 * This release has a vulnerability security patch, please upgrade now.
@@ -770,6 +776,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 3.1.2 =
+This maintenance release has plugin framework updates for compatibility with PHP 8.1 onwards, plus compatibility with WordPress 6.4.1
 
 = 3.1.1 =
 This release has a vulnerability security patch, please upgrade now.

@@ -18,6 +18,7 @@ return array(
     'A3Rev\\Portfolio\\BlockTemplateUtils' => $baseDir . '/includes/BlockTemplateUtils.php',
     'A3Rev\\Portfolio\\BlockTemplatesController' => $baseDir . '/includes/BlockTemplatesController.php',
     'A3Rev\\Portfolio\\Blocks' => $baseDir . '/src/blocks.php',
+    'A3Rev\\Portfolio\\Blocks\\Styles' => $baseDir . '/src/blocks-generate-styles.php',
     'A3Rev\\Portfolio\\Blocks\\Categories' => $baseDir . '/src/blocks/categories/block.php',
     'A3Rev\\Portfolio\\Blocks\\Items' => $baseDir . '/src/blocks/items/block.php',
     'A3Rev\\Portfolio\\Blocks\\Main' => $baseDir . '/src/blocks/main/block.php',

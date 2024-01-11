@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "a3-portfolio/tags-meta",
+	"title": "Portfolio Tags Meta",
+	"category": "a3rev-blocks",
+	"description": "Show Tags of a Portfolio",
+	"keywords": [ "a3 Portfolio", "a3 Portfolio Tags Meta", "a3rev" ],
+	"version": "1.0",
+	"textdomain": "a3-portfolio",
+	"attributes":{
+		"blockID": {
+			"type": "string"
+		},
+		"itemID": {
+			"type": "string",
+			"default": "0"
+		},
+		"styleCardSticker": {
+			"type": "object",
+			"default": {}
+		}
+	},
+	"supports": {
+		"align": true,
+		"html": false
+	},
+	"editorStyle": "a3-portfolio-block-editor-css"
+}

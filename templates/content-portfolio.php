@@ -21,7 +21,11 @@ if ( $item_class == '' ) {
 	$item_class = 'uncategorized';
 }
 
-$portfolio_gallery = a3_portfolio_get_gallery( $portfolio_id );
+$portfolio_gallery       = a3_portfolio_get_gallery( $portfolio_id );
+$enableCardSticker       = $enableCardSticker ?? false;
+$cardStickerPosition     = $cardStickerPosition ?? 'under-image';
+$enableDropDownSticker   = $enableDropDownSticker ?? false;
+$dropDownStickerPosition = $dropDownStickerPosition ?? 'top-right';
 ?>
 <div class="a3-portfolio-item-load a3-portfolio-item <?php echo $item_class; ?>" data-index="<?php echo $post->post_name; ?>">
 
@@ -33,7 +37,7 @@ $portfolio_gallery = a3_portfolio_get_gallery( $portfolio_id );
 
 			<?php do_action( 'a3_portfolio_before_loop_item_card', $portfolio_id ); ?>
 
-			<?php a3_portfolio_card_get_first_thumb_image( $portfolio_id, $portfolio_gallery ); ?>
+			<?php a3_portfolio_card_get_first_thumb_image( $portfolio_id, $portfolio_gallery, $enableCardSticker, $cardStickerPosition ); ?>
 			<?php a3_portfolio_card_get_item_title( $portfolio_id ); ?>
 
 			<?php
@@ -58,9 +62,9 @@ $portfolio_gallery = a3_portfolio_get_gallery( $portfolio_id );
 
 		<div class="a3-portfolio-item-image-container" data-portfolioId="<?php echo $portfolio_id; ?>">
 
-			<?php do_action( 'a3_portfolio_before_item_expander_large_image_container', $portfolio_id ); ?>
+			<?php do_action( 'a3_portfolio_before_item_expander_large_image_container', $portfolio_id, $enableDropDownSticker, $dropDownStickerPosition ); ?>
 
-			<?php a3_portfolio_get_large_image_container( $portfolio_id, $portfolio_gallery ); ?>
+			<?php a3_portfolio_get_large_image_container( $portfolio_id, $portfolio_gallery, $enableDropDownSticker, $dropDownStickerPosition ); ?>
 
 			<?php
 				/**
@@ -68,7 +72,7 @@ $portfolio_gallery = a3_portfolio_get_gallery( $portfolio_id );
 				 *
 				 * @hooked a3_portfolio_get_thumbs_below_gallery - 10
 				 */
-				do_action( 'a3_portfolio_after_item_expander_large_image_container', $portfolio_id );
+				do_action( 'a3_portfolio_after_item_expander_large_image_container', $portfolio_id, $enableDropDownSticker, $dropDownStickerPosition );
 			?>
 
 		</div>

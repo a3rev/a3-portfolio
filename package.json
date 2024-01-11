@@ -10,6 +10,7 @@
   "dependencies": {
     "@bit/a3revsoftware.blockpress.spacing": "^1.0.10",
     "cgb-scripts": "1.13.0",
+    "classnames": "^2.5.1",
     "shorthash": "0.0.2"
   },
   "devDependencies": {

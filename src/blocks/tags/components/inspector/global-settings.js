@@ -14,7 +14,7 @@ export default class InspectorGlobalSettings extends Component {
 		const tagList = [ ...JSON.parse( a3_portfolio_blocks_vars.tagList ) ];
 
 		return (
-			<PanelBody title={ __( 'Portfolio Categories' ) }>
+			<PanelBody title={ __( 'Portfolio Tags' ) }>
 				<SelectControl
 					multiple
 					label={ __( 'Select Portfolio Tags' ) }

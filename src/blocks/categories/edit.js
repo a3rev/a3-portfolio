@@ -1,23 +1,53 @@
 /**
+ * External dependencies
+ */
+import shorthash from 'shorthash';
+
+/**
  * Internal dependencies
  */
 
 import Inspector from './inspector';
 
+const { useBlockProps } = wp.blockEditor || wp.editor;
 const { __ } = wp.i18n;
-const { Component, Fragment } = wp.element;
+const { useEffect, Component, Fragment } = wp.element;
 const { Placeholder, Disabled } = wp.components;
 const { serverSideRender: ServerSideRender } = wp;
 
-export default class BlockEdit extends Component {
-	render() {
-		const { attributes, isSelected } = this.props;
+export default function BlockEdit( props ) {
+	const { clientId, attributes, setAttributes } = props;
 
-		const { catIDs } = attributes;
+	const { blockID, isPreview, catIDs } = attributes;
 
-		return (
-			<Fragment>
-				{ isSelected && <Inspector { ...this.props } /> }
+	useEffect( () => {
+		if ( ! blockID ) {
+			setAttributes( { blockID: shorthash.unique( clientId ) } );
+		}
+	}, [ blockID ] );
+
+	const blockProps = useBlockProps();
+
+	return attributes.isPreview ?
+	(
+		<Fragment>
+			<h3 style={ {
+				textAlign: 'center'
+			} }>{ __( 'a3 Portfolio Categories' ) }</h3>
+			<img
+				src={ a3_portfolio_blocks_vars.preview }
+				alt={ __( 'a3 Portfolio Categories Preview' ) }
+				style={ {
+					width: '100%',
+					height: 'auto',
+				} }
+			/>
+		</Fragment>
+	)
+	: (
+		<Fragment>
+			<Inspector { ...{ ...props } } />
+			<div { ...blockProps }>
 				{ catIDs && catIDs.length > 0 ? (
 					<Disabled>
 						<ServerSideRender block="a3-portfolio/categories" attributes={ attributes } />
@@ -27,7 +57,7 @@ export default class BlockEdit extends Component {
 						{ __( 'Please choose leatest a Portfolio Category' ) }
 					</Placeholder>
 				) }
-			</Fragment>
-		);
-	}
+			</div>
+		</Fragment>
+	);
 }

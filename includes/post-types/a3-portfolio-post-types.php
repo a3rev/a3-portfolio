@@ -58,6 +58,7 @@ class Post_Types
 						'with_front'   => false,
 						'hierarchical' => false
 					),
+				'show_in_rest' => true
 			) )
 		);
 
@@ -89,6 +90,7 @@ class Post_Types
 						'with_front'   => false,
 						'hierarchical' => false
 					),
+				'show_in_rest' => true
 	        ) )
 	    );
 
@@ -142,6 +144,7 @@ class Post_Types
 								'_builtin'        => false,
 								'supports'        => $supports_array,
 								'labels'          => $labels_array,
+								'show_in_rest'    => true,
 								'supports'        => array('title', 'editor', 'thumbnail', 'author', 'comments', 'date')
 								) ) );
 

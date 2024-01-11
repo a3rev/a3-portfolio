@@ -26,3 +26,4 @@ import './blocks/categories/block';
 import './blocks/tags/block';
 import './blocks/sticky/block';
 import './blocks/recent/block';
+import './blocks/item-tags/block';

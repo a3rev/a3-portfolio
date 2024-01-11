@@ -28,94 +28,15 @@ class Items {
 			return;
 		}
 
-		// Create Dynamic Block via PHP render callback
-		$block_args = array(
-			'attributes'      => array(
-				'blockID' => array(
-					'type' => 'string'
-				),
-				'itemIDs' => array(
-					'type'    => 'array',
-					'items'   => [
-						'type' => 'integer',
-					],
-				),
-				'align'	=> array(
-					'type'    => 'string',
-					'default' => 'none',
-				),
-				'alignWrap'	=> array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-				'enableCustomColumns'	=> array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-				'customColumns'	=> array(
-					'type'    => 'number',
-					'default' => a3_portfolio_get_col_per_row(),
-				),
-				'width'	=> array(
-					'type'    => 'number',
-					'default' => 600,
-				),
-				'widthUnit'	=> array(
-					'type'    => 'string',
-					'default' => 'px',
-				),
-				'paddingLeft' => array(
-					'type' => 'string'
-				),
-				'paddingTop' => array(
-					'type' => 'string'
-				),
-				'paddingRight' => array(
-					'type' => 'string'
-				),
-				'paddingBottom' => array(
-					'type' => 'string'
-				),
-				'paddingUnit' => array(
-					'type' => 'string',
-					'default' => 'px'
-				),
-				'paddingSync' => array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-				'marginLeft' => array(
-					'type' => 'string'
-				),
-				'marginTop' => array(
-					'type' => 'string'
-				),
-				'marginRight' => array(
-					'type' => 'string'
-				),
-				'marginBottom' => array(
-					'type' => 'string'
-				),
-				'marginUnit' => array(
-					'type' => 'string',
-					'default' => 'px'
-				),
-				'marginSync' => array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-				'isPreview'	=> array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-			),
-			'render_callback' 	=> array( $this, 'render' )
+		register_block_type(
+			__DIR__ . '/block.json',
+			array(
+				'render_callback' => array( $this, 'render' ),
+			)
 		);
-
-		register_block_type( 'a3-portfolio/items', $block_args );
 	}
 
-	public function render( $attributes ) {
+	public function render( $attributes, $content, $block ) {
 
 		extract( $attributes );
 
@@ -176,9 +97,21 @@ class Items {
 		}
 
 		ob_start();
-		echo a3_portfolio_get_item_ids_page( $itemIDs, $customColumns, $style );
+		$inline_css = a3_portfolio_generate_sticker_inline_css( $attributes );
+	    if (  ! empty( $inline_css ) ) {
+	        echo '<style>'. esc_html( $inline_css ).'</style>';
+	    }
+
+		echo a3_portfolio_get_item_ids_page( $itemIDs, $customColumns, $style, $attributes );
 		$output = ob_get_clean();
 
-		return $output;
+		$class_name = 'wp-block-a3-portfolios-'. ( $blockID ?? '' );
+		if ( isset( $attributes['className'] ) ) {
+			$class_name .= ' ' . $attributes['className'];
+		}
+
+		$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $class_name ) );
+
+		return sprintf( '<div %1$s>%2$s</div>', $wrapper_attributes, $output );
 	}
 }

@@ -127,6 +127,9 @@ class Portfolio {
 		// Gutenberg Blocks
 		new Portfolio\Blocks();
 
+		global $a3_portfolio_blocks_styles;
+		$a3_portfolio_blocks_styles = new Portfolio\Blocks\Styles();
+
 		do_action( 'a3_portfolios_after_include_files' );
 	}
 

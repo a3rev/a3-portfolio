@@ -557,6 +557,7 @@ jQuery(document).ready(function () {
 	jQuery(document).on("click tap", ".a3-portfolio-card-opens-expander", function(){
 		var thumb = jQuery(this).parents('.a3-portfolio-item');
 		var portfolio_container = jQuery(this).parents('.a3-portfolio-container');
+		var container_id = portfolio_container.data('container-id');
 		var portfolio_boxes = portfolio_container.find('.a3-portfolio-box-content');
 		// The CLicked Thumb
 		jQuery('body').find('.a3-portfolio-activate-up-arrow').remove();
@@ -629,10 +630,10 @@ jQuery(document).ready(function () {
 							queue: false
 						});
 						if (force_scrolltotop) {
-							a3_portfolio_openDetailView(active_larg_img, portfolio_boxes,thumb,fade);
+							a3_portfolio_openDetailView(container_id, active_larg_img, portfolio_boxes,thumb,fade);
 						} else {
 							setTimeout(function () {
-								a3_portfolio_openDetailView(active_larg_img, portfolio_boxes,thumb,fade);
+								a3_portfolio_openDetailView(container_id, active_larg_img, portfolio_boxes,thumb,fade);
 							},scrollspeed)
 						}
 
@@ -658,10 +659,10 @@ jQuery(document).ready(function () {
 						queue: false
 					});
 					if (force_scrolltotop) {
-						a3_portfolio_openDetailView(active_larg_img, portfolio_boxes,thumb);
+						a3_portfolio_openDetailView(container_id, active_larg_img, portfolio_boxes,thumb);
 					} else {
 						setTimeout(function () {
-							a3_portfolio_openDetailView(active_larg_img, portfolio_boxes,thumb);
+							a3_portfolio_openDetailView(container_id, active_larg_img, portfolio_boxes,thumb);
 						},scrollspeed)
 					}
 				}
@@ -792,7 +793,7 @@ jQuery(document).ready(function () {
 	}
 
 	// OPEN THE DETAILVEW AND CATCH THE THUMBS BEHIND THE CURRENT THUMB
-	function a3_portfolio_openDetailView(active_larg_img, portfolio_boxes,thumb) {
+	function a3_portfolio_openDetailView(container_id, active_larg_img, portfolio_boxes,thumb) {
 		jQuery('body').find('.a3-portfolio-activate-up-arrow').css({opacity:1});
 		// The Top Position of the Current Item.
 		currentTop= thumb.position().top;
@@ -823,6 +824,7 @@ jQuery(document).ready(function () {
 
 		// CATCH THE DETAIL VIEW AND CONTENT CONTAINER
 		var pdv = jQuery('body').find('.a3-portfolio-expander-popup');
+		pdv.attr('container-id',container_id);
 		pdv.css({maxWidth:(jQuery('body').innerWidth())});
 		var closeb = pdv.find('.closebutton');
 		var pdcc = pdv.find('.a3-portfolio-inner-wrap');

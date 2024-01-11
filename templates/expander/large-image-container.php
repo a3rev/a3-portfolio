@@ -18,6 +18,8 @@ if ( is_array( $gallery ) ) $the_caption = get_post_field( 'post_excerpt', $gall
 
 <div class="active item">
 
+	<?php do_action( 'a3_portfolio_expander_large_image_start', $portfolio_id, $enableSticker, $stickerPosition ); ?>
+
 	<div class="a3-portfolio-loading"></div>
 
 	<?php a3_portfolio_get_first_large_image( $gallery ); ?>
@@ -33,6 +35,8 @@ if ( is_array( $gallery ) ) $the_caption = get_post_field( 'post_excerpt', $gall
 	<?php endif; ?>
 
 	</div>
+
+	<?php do_action( 'a3_portfolio_expander_large_image_end', $portfolio_id, $enableSticker, $stickerPosition ); ?>
 
 	<div style="clear:both"></div>
 

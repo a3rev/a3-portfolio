@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php if ( have_posts() ) : ?>
 
-    <div class="a3-portfolio-container" data-column="<?php echo $number_columns; ?>" style="<?php echo $custom_style; ?>">
+    <div class="a3-portfolio-container" data-container-id="<?php echo esc_attr( $container_id ); ?>" data-column="<?php echo $number_columns; ?>" style="<?php echo $custom_style; ?>">
 
       <div style="clear:both"></div>
 
@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         while ( have_posts() ) : the_post();
 
-          a3_portfolio_get_template( 'content-portfolio.php' );
+          a3_portfolio_get_template( 'content-portfolio.php', $additional_params );
 
         endwhile;
 

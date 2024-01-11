@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<ul class="filter">
 
-		<li style="display: none">
+		<li>
 			<a data-filter=".a3-portfolio-item" href="#" class="active"><?php echo a3_portfolio_ei_ict_t__( 'All Filter', __( 'All', 'a3-portfolio' ) ); ?></a>
 		</li>
 
@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			foreach ( $menus as $menu_slug => $menu_name ):
 	?>
-		<li style="display: none" class="_<?php echo $menu_slug; ?>">
+		<li class="_<?php echo $menu_slug; ?>">
 			<a data-filter=".<?php echo $menu_slug; ?>" href="#"><?php echo $menu_name; ?></a>
 		</li>
 	<?php

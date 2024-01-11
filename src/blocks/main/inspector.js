@@ -2,6 +2,7 @@
  * Inspector Settings
  */
 import InspectorLayoutSettings from './../global-inspector/layout-settings';
+import InspectorStickerSettings from './../global-inspector/sticker-settings';
 
 const { Component } = wp.element;
 const { InspectorControls } = wp.blockEditor;
@@ -14,6 +15,7 @@ export default class Inspector extends Component {
 		return (
 			<InspectorControls>
 				<InspectorLayoutSettings { ...this.props } initialOpen={ true } />
+				<InspectorStickerSettings { ...this.props } />
 			</InspectorControls>
 		);
 	}

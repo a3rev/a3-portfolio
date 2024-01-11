@@ -687,6 +687,69 @@ div.single-a3-portfolio {
     }
 }
 
+.a3-portfolio-tags-sticker {
+    padding: 5px;
+
+    &.under-image {
+        background-color: #FFFFFF;
+    }
+    .a3-portfolio-tag-sticker {
+        margin: 5px;
+        padding: 5px 10px;
+        display: inline-block;
+        border: 1px solid transparent;
+        border-radius: 5px;
+    }
+    &:not(.under-image) {
+        position: absolute;
+        z-index: 101;
+    }
+    &.top-left {
+        top: 0;
+        left: 0;
+    }
+    &.top-right {
+        top: 0;
+        right: 0;
+    }
+    &.top-center {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+    &.center-left {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    &.center-right {
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+    &.center-center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+    &.bottom-left {
+        bottom: 0;
+        left: 0;
+    }
+    &.bottom-right {
+        bottom: 0;
+        right: 0;
+    }
+    &.bottom-center {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+}
+
 @media only screen and (min-width: 768px) {
     .a3-portfolio-expander-popup {
         .inner, .a3-portfolio-inner-container {

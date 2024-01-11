@@ -1,12 +1,12 @@
 /**
- * BLOCK: Portfolio Categories
+ * BLOCK: Portfolio Tags Meta
  *
  * Registering a basic block with Gutenberg.
  * Simple block, renders and saves the same content without any interactivity.
  */
 
 // icons
-import IconCategories from './../../assets/icons/categories.svg';
+import IconTags from './../../assets/icons/tags.svg';
 
 import edit from './edit';
 import metadata from './block.json';
@@ -26,18 +26,14 @@ const { name, attributes } = metadata;
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
+
 export const settings = {
 	icon: {
-		src: IconCategories,
+		src: IconTags,
 		foreground: '#24b6f1',
 	},
 
 	attributes,
-	example: {
-		attributes: {
-			isPreview: true,
-		},
-	},
 	edit,
 	save: () => {
 		return null;

@@ -1,0 +1,70 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "a3-portfolio/tags",
+	"title": "a3 Portfolio Tags",
+	"category": "a3rev-blocks",
+	"description": "Show the grid of Portfolio Items are assign to Portfolio Tags are selected",
+	"keywords": [ "a3 Portfolio", "a3 Portfolio Tags", "Portfolio Tags Items", "a3rev" ],
+	"version": "2.0",
+	"textdomain": "a3-portfolio",
+	"attributes":{
+		"blockID": {
+			"type": "string"
+		},
+		"tagIDs": {
+			"type": "array"
+		},
+		"enableCustomColumns": {
+			"type": "boolean",
+			"default": false
+		},
+		"customColumns": {
+			"type": "number",
+			"default": 4
+		},
+		"numberItems": {
+			"type": "string"
+		},
+		"showNavBar": {
+			"type": "boolean",
+			"default": false
+		},
+		"enableCardSticker": {
+			"type": "boolean",
+			"default": false
+		},
+		"cardStickerPosition": {
+			"type": "string",
+			"default": "under-image"
+		},
+		"enableDropDownSticker": {
+			"type": "boolean",
+			"default": false
+		},
+		"dropDownStickerPosition": {
+			"type": "string",
+			"default": "top-right"
+		},
+		"styleCardSticker": {
+			"type": "object",
+			"default": {}
+		},
+		"styleExSticker": {
+			"type": "object",
+			"default": {}
+		},
+		"isPreview": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"selectors": {
+        "root": ".wp-block-a3-portfolio-tags"
+    },
+	"supports": {
+		"html": false
+	},
+	"editorScript": "a3-portfolio-block-js",
+	"editorStyle": "a3-portfolio-block-editor-css"
+}

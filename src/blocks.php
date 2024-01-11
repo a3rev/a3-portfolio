@@ -28,6 +28,8 @@ class Blocks {
 		new Blocks\Sticky();
 		new Blocks\Recent();
 
+		require 'blocks/item-tags/block.php';
+
 		// Hook: Editor assets.
 		add_action( 'enqueue_block_editor_assets', array( $this, 'cgb_editor_assets' ) );
 	}

@@ -35,6 +35,7 @@ class ComposerStaticInite9349560c96c7642da0660d51e4bdd0f
         'A3Rev\\Portfolio\\BlockTemplateUtils' => __DIR__ . '/../..' . '/includes/BlockTemplateUtils.php',
         'A3Rev\\Portfolio\\BlockTemplatesController' => __DIR__ . '/../..' . '/includes/BlockTemplatesController.php',
         'A3Rev\\Portfolio\\Blocks' => __DIR__ . '/../..' . '/src/blocks.php',
+        'A3Rev\\Portfolio\\Blocks\\Styles' => __DIR__ . '/../..' . '/src/blocks-generate-styles.php',
         'A3Rev\\Portfolio\\Blocks\\Categories' => __DIR__ . '/../..' . '/src/blocks/categories/block.php',
         'A3Rev\\Portfolio\\Blocks\\Items' => __DIR__ . '/../..' . '/src/blocks/items/block.php',
         'A3Rev\\Portfolio\\Blocks\\Main' => __DIR__ . '/../..' . '/src/blocks/main/block.php',

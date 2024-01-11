@@ -95,6 +95,12 @@ add_action( 'a3_portfolio_main_after_item_expander_content', 'a3_portfolio_main_
 add_action( 'a3_portfolio_main_after_item_expander_content', 'a3_portfolio_get_expander_attribute_bottom_content', 30 );
 
 /**
+ * Start of Large Image Container
+ *
+ */
+add_action( 'a3_portfolio_expander_large_image_start', 'a3_portfolio_get_tags_sticker', 5, 3 );
+
+/**
  * After Single Large Image Container
  *
  */

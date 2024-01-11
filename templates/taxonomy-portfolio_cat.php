@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
   <div style="clear:both"></div>
 
-    <div class="a3-portfolio-container">
+    <div class="a3-portfolio-container" data-container-id="<?php echo esc_attr( $container_id ); ?>">
       <div style="clear:both"></div>
 
       <?php

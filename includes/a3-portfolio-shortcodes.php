@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param $column int
  * @return html of main portfolios page
  */
-function a3_portfolio_get_main_page( $type = 'none', $column = '', $number_items = -1, $show_navbar = true ) {
+function a3_portfolio_get_main_page( $type = 'none', $column = '', $number_items = -1, $show_navbar = true, $additional_params = array() ) {
 	global $wpdb, $wp_query, $portfolio_query, $portfolio_query_vars;
 
 	if ( $column < 1 || $column > 6 ) $column = a3_portfolio_get_col_per_row();
@@ -50,10 +50,12 @@ function a3_portfolio_get_main_page( $type = 'none', $column = '', $number_items
 	remove_action( 'a3_portfolio_after_main_loop', 'a3_portfolio_get_portfolios_uncategorized', 10 );
 
 	a3_portfolio_get_template( 'archive-portfolio.php', array(
-		'type'           => $type, // none | recent | sticky
-		'number_columns' => $column,
-		'number_items'   => $number_items,
-		'show_navbar'    => $show_navbar,
+		'container_id'		=> $additional_params['blockID'] ?? '',
+		'type'              => $type, // none | recent | sticky
+		'number_columns'    => $column,
+		'number_items'      => $number_items,
+		'show_navbar'       => $show_navbar,
+		'additional_params' => $additional_params
 	) ) ;
 
 	$ouput = ob_get_clean();
@@ -75,7 +77,7 @@ function a3_portfolio_get_main_page( $type = 'none', $column = '', $number_items
  * @param $custom_style string
  * @return html of list card items
  */
-function a3_portfolio_get_item_ids_page( $item_ids = -1, $column = '', $custom_style = '' ) {
+function a3_portfolio_get_item_ids_page( $item_ids = -1, $column = '', $custom_style = '', $additional_params = array() ) {
 	global $wpdb, $wp_query, $portfolio_query, $portfolio_query_vars;
 
 	if ( $column < 1 || $column > 6 ) $column = a3_portfolio_get_col_per_row();
@@ -98,7 +100,7 @@ function a3_portfolio_get_item_ids_page( $item_ids = -1, $column = '', $custom_s
 
 	// if don't parse any IDs then return main portfolios page
 	if ( ! is_array( $item_ids_get ) || count( $item_ids_get ) < 1 ) {
-		return a3_portfolio_get_main_page( 'none', $column );
+		return a3_portfolio_get_main_page( 'none', $column, -1, true, $additional_params );
 	}
 
 	$query_args = array(
@@ -120,9 +122,11 @@ function a3_portfolio_get_item_ids_page( $item_ids = -1, $column = '', $custom_s
 	remove_action( 'a3rev_loop_after', 'responsi_pagination', 10, 0 );
 
 	a3_portfolio_get_template( 'shortcodes/portfolio-item-cards.php', array(
-			'item_ids'       => $item_ids_get,
-			'number_columns' => $column,
-			'custom_style'   => $custom_style,
+			'container_id'		=> $additional_params['blockID'] ?? '',
+			'item_ids'          => $item_ids_get,
+			'number_columns'    => $column,
+			'custom_style'      => $custom_style,
+			'additional_params' => $additional_params
 		)
 	) ;
 
@@ -147,7 +151,7 @@ function a3_portfolio_get_item_ids_page( $item_ids = -1, $column = '', $custom_s
  * @param $column int
  * @return html of list card items
  */
-function a3_portfolio_get_categories_page( $cat_ids, $column = '', $number_items = -1, $show_navbar = true ) {
+function a3_portfolio_get_categories_page( $cat_ids, $column = '', $number_items = -1, $show_navbar = true, $additional_params = array() ) {
 	global $wpdb, $wp_query, $portfolio_query, $portfolio_query_vars;
 
 	if ( $column < 1 || $column > 6 ) $column = a3_portfolio_get_col_per_row();
@@ -166,7 +170,7 @@ function a3_portfolio_get_categories_page( $cat_ids, $column = '', $number_items
 		$cat_ids_get[] = (int) trim( $cat_ids );
 	}
 
-	if ( count( $cat_ids_get ) == 1 && in_array( 0, $cat_ids_get ) && is_taxonomy( 'portfolio_cat' ) ) {
+	if ( count( $cat_ids_get ) == 1 && in_array( 0, $cat_ids_get ) && taxonomy_exists( 'portfolio_cat' ) ) {
 		$cat_ids_get = array( get_queried_object_id() );
 	}
 
@@ -201,10 +205,12 @@ function a3_portfolio_get_categories_page( $cat_ids, $column = '', $number_items
 	}
 
 	a3_portfolio_get_template( 'shortcodes/portfolio-categories.php', array(
-		'cat_ids'        => $cat_ids_get,
-		'number_columns' => $column,
-		'number_items'   => $number_items,
-		'show_navbar'    => $show_navbar,
+		'container_id'		=> $additional_params['blockID'] ?? '',
+		'cat_ids'           => $cat_ids_get,
+		'number_columns'    => $column,
+		'number_items'      => $number_items,
+		'show_navbar'       => $show_navbar,
+		'additional_params' => $additional_params
 	) );
 
 	$ouput = ob_get_clean();
@@ -228,7 +234,7 @@ function a3_portfolio_get_categories_page( $cat_ids, $column = '', $number_items
  * @param $column int
  * @return html of list card items
  */
-function a3_portfolio_get_tags_page( $tag_ids, $column = '', $number_items = -1, $show_navbar = true ) {
+function a3_portfolio_get_tags_page( $tag_ids, $column = '', $number_items = -1, $show_navbar = true, $additional_params = array() ) {
 	global $wpdb, $wp_query, $portfolio_query, $portfolio_query_vars;
 
 	if ( $column < 1 || $column > 6 ) $column = a3_portfolio_get_col_per_row();
@@ -247,7 +253,7 @@ function a3_portfolio_get_tags_page( $tag_ids, $column = '', $number_items = -1,
 		$tag_ids_get[] = (int) trim( $tag_ids );
 	}
 
-	if ( count( $tag_ids_get ) == 1 && in_array( 0, $tag_ids_get ) && is_taxonomy( 'portfolio_tag' ) ) {
+	if ( count( $tag_ids_get ) == 1 && in_array( 0, $tag_ids_get ) && taxonomy_exists( 'portfolio_tag' ) ) {
 		$tag_ids_get = array( get_queried_object_id() );
 	}
 
@@ -282,10 +288,12 @@ function a3_portfolio_get_tags_page( $tag_ids, $column = '', $number_items = -1,
 	}
 
 	a3_portfolio_get_template( 'shortcodes/portfolio-tags.php', array(
-		'tag_ids'        => $tag_ids_get,
-		'number_columns' => $column,
-		'number_items'   => $number_items,
-		'show_navbar'    => $show_navbar,
+		'container_id'      => $additional_params['blockID'] ?? '',
+		'tag_ids'           => $tag_ids_get,
+		'number_columns'    => $column,
+		'number_items'      => $number_items,
+		'show_navbar'       => $show_navbar,
+		'additional_params' => $additional_params
 	) );
 
 	$ouput = ob_get_clean();

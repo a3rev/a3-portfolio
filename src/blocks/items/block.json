@@ -1,0 +1,119 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "a3-portfolio/items",
+	"title": "a3 Portfolio Items",
+	"category": "a3rev-blocks",
+	"description": "Show the grid of Portfolio Items are selected",
+	"keywords": [ "a3 Portfolio", "a3 Portfolio Items", "Portfolio Categories Items", "a3rev" ],
+	"version": "2.0",
+	"textdomain": "a3-portfolio",
+	"attributes":{
+		"blockID": {
+			"type": "string"
+		},
+		"itemIDs": {
+			"type": "array"
+		},
+		"align": {
+			"type": "string",
+			"default": "none"
+		},
+		"alignWrap": {
+			"type": "boolean",
+			"default": false
+		},
+		"enableCustomColumns": {
+			"type": "boolean",
+			"default": false
+		},
+		"customColumns": {
+			"type": "number",
+			"default": 4
+		},
+		"width": {
+			"type": "number",
+			"default": 600
+		},
+		"widthUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"paddingLeft": {
+			"type": "string"
+		},
+		"paddingTop": {
+			"type": "string"
+		},
+		"paddingRight": {
+			"type": "string"
+		},
+		"paddingBottom": {
+			"type": "string"
+		},
+		"paddingUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"paddingSync": {
+			"type": "boolean",
+			"default": false
+		},
+		"marginLeft": {
+			"type": "string"
+		},
+		"marginTop": {
+			"type": "string"
+		},
+		"marginRight": {
+			"type": "string"
+		},
+		"marginBottom": {
+			"type": "string"
+		},
+		"marginUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"marginSync": {
+			"type": "boolean",
+			"default": false
+		},
+		"enableCardSticker": {
+			"type": "boolean",
+			"default": false
+		},
+		"cardStickerPosition": {
+			"type": "string",
+			"default": "under-image"
+		},
+		"enableDropDownSticker": {
+			"type": "boolean",
+			"default": false
+		},
+		"dropDownStickerPosition": {
+			"type": "string",
+			"default": "top-right"
+		},
+		"styleCardSticker": {
+			"type": "object",
+			"default": {}
+		},
+		"styleExSticker": {
+			"type": "object",
+			"default": {}
+		},
+		"isPreview": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"selectors": {
+        "root": ".wp-block-a3-portfolio-items"
+    },
+	"supports": {
+		"html": false
+	},
+	"editorScript": "a3-portfolio-block-js",
+	"editorStyle": "a3-portfolio-block-editor-css"
+}

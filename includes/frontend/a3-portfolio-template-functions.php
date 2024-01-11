@@ -419,7 +419,7 @@ function a3_portfolio_get_image_blank() {
  *
  * @return void
  */
-function a3_portfolio_card_get_first_thumb_image( $portfolio_id = 0, $gallery = array(), $echo = true ) {
+function a3_portfolio_card_get_first_thumb_image( $portfolio_id = 0, $gallery = array(), $enableSticker = false, $stickerPosition = false, $echo = true ) {
 	global $a3_portfolio_item_cards_settings;
 
 	if ( $portfolio_id < 1 ) {
@@ -475,7 +475,13 @@ function a3_portfolio_card_get_first_thumb_image( $portfolio_id = 0, $gallery = 
 
 	$item_title = a3_portfolio_card_get_item_title_overlay( $portfolio_id, false );
 
-	$main_card_image = '<div class="a3-portfolio-card-image-container '.$image_container_class.'">' . $main_card_image . $item_title . '</div>';
+	$sticker_html = a3_portfolio_tags_sticker( $portfolio_id, $enableSticker, $stickerPosition, false );
+
+	if ( 'under-image' !== $stickerPosition ) {
+		$main_card_image = '<div class="a3-portfolio-card-image-container '.$image_container_class.'">' . $main_card_image . $item_title . $sticker_html . '</div>';
+	} else {
+		$main_card_image = '<div class="a3-portfolio-card-image-container '.$image_container_class.'">' . $main_card_image . $item_title . '</div>' . $sticker_html;
+	}
 
 	$main_card_image = apply_filters( 'a3_portfolio_card_get_first_thumb_image', $main_card_image, $portfolio_id );
 
@@ -590,6 +596,66 @@ function a3_portfolio_card_get_item_title_overlay( $portfolio_id = 0, $echo = tr
 	}
 }
 
+function a3_portfolio_get_tags_sticker( $portfolio_id = 0, $enableSticker = false, $position = 'top-right' ) {
+	if ( ! $enableSticker ) return;
+
+	// Don't show Tags meta inside the content
+	remove_action( 'a3_portfolio_main_after_item_expander_content', 'a3_portfolio_main_get_tags_meta', 10 );
+	remove_action( 'a3_portfolio_single_after_item_expander_content', 'a3_portfolio_single_get_tags_meta', 10 );
+
+	a3_portfolio_tags_sticker( $portfolio_id, $enableSticker, $position, true ); 
+}
+
+function a3_portfolio_tags_sticker( $portfolio_id = 0, $enableSticker = false, $position = 'top-right', $echo = true ) {
+	if ( ! $enableSticker ) return;
+
+	if ( $portfolio_id < 1 ) {
+		$portfolio_id = get_the_ID();
+	}
+
+	if ( empty( $portfolio_id ) ) {
+		return;
+	}
+	
+	$tags = get_the_terms( $portfolio_id, 'portfolio_tag' );
+	if ( ! $tags || is_wp_error( $tags ) || count( $tags ) < 1 ) {
+		return;
+	}
+
+	$tags_html = '';
+	foreach ( $tags as $term ) {
+		$text_color   = get_term_meta( $term->term_id, 'text-color', true );
+		$bg_color     = get_term_meta( $term->term_id, 'bg-color', true );
+		$border_color = get_term_meta( $term->term_id, 'border-color', true );
+
+		$tag_style = '';
+		if ( $text_color ) {
+			$tag_style .= 'color:' . $text_color . ';';
+		}
+		if ( $bg_color ) {
+			$tag_style .= 'background-color:' . $bg_color . ';';
+		}
+		if ( $border_color ) {
+			$tag_style .= 'border-color:' . $border_color . ';';
+		}
+
+		
+		$tags_html .= '<span class="a3-portfolio-tag-sticker" style="' . $tag_style. '">' . $term->name . '</span>';
+	}
+
+	$tags_html = apply_filters( 'a3_portfolio_tags_sticker', $tags_html, $portfolio_id );
+
+	if ( $tags_html ) {
+		$tags_html = '<div class="a3-portfolio-tags-sticker ' . $position . '">' . $tags_html . '</div>';
+	}
+
+	if ( $echo ) {
+		echo $tags_html;
+	} else {
+		return $tags_html;
+	}
+}
+
 function a3_portfolio_card_item_description( $portfolio_id = 0, $echo = true ) {
 	global $a3_portfolio_item_cards_settings;
 
@@ -659,12 +725,12 @@ function a3_portfolio_card_item_viewmore( $portfolio_id = 0, $echo = true ) {
  *
  * @return void
  */
-function a3_portfolio_get_large_image_container( $portfolio_id = 0, $gallery = '' ) {
+function a3_portfolio_get_large_image_container( $portfolio_id = 0, $gallery = '', $enableSticker = false, $stickerPosition = 'top-right' ) {
 	if ( $portfolio_id < 1 ) {
 		$portfolio_id = get_the_ID();
 	}
 
-	a3_portfolio_get_template( 'expander/large-image-container.php', array( 'portfolio_id' => $portfolio_id, 'gallery' => $gallery ) );
+	a3_portfolio_get_template( 'expander/large-image-container.php', array( 'portfolio_id' => $portfolio_id, 'gallery' => $gallery, 'enableSticker' => $enableSticker, 'stickerPosition' => $stickerPosition ) );
 }
 
 /**
@@ -1042,4 +1108,44 @@ function a3_portfolio_single_get_layout_column_class( $portfolio_id = 0 ) {
 	}
 
 	return apply_filters( 'a3_portfolio_single_get_layout_column_class', $a3_portfolio_single_column_class, $portfolio_id );
+}
+
+function a3_portfolio_generate_sticker_inline_css( $attributes ) {
+	global $a3_portfolio_blocks_styles;
+
+	$blockID           = $attributes['blockID'];
+	$enableCardSticker = $attributes['enableCardSticker'] ?? false;
+	$styleCardSticker  = $attributes['styleCardSticker'] ?? array();
+	$enableDropDownSticker = $attributes['enableDropDownSticker'] ?? false;
+	$styleExSticker  = $attributes['styleExSticker'] ?? array();
+
+    $stylecss = '';
+
+    if ( $enableCardSticker ) {
+        $stylecss .= '
+.wp-block-a3-portfolios-'.$blockID.':not(.a3-portfolio-expander-popup) .a3-portfolio-tags-sticker .a3-portfolio-tag-sticker {
+    '. ( isset( $styleCardSticker['padding'] ) ? $a3_portfolio_blocks_styles->spacingPresetCssVar( $styleCardSticker['padding'], 'padding' ) : '') .'
+    '. ( isset( $styleCardSticker['margin'] ) ? $a3_portfolio_blocks_styles->spacingPresetCssVar( $styleCardSticker['margin'], 'margin' ) : '') .'
+    '. ( isset( $styleCardSticker['border'] ) ? $a3_portfolio_blocks_styles->borderPresetCssVar( $styleCardSticker['border'] ) : '') .'
+    '. ( isset( $styleCardSticker['radius'] ) ? $a3_portfolio_blocks_styles->borderRadiusPresetCssVar( $styleCardSticker['radius'] . 'px' ) : '') .'
+    '. ( ! empty( $styleCardSticker ) ? $a3_portfolio_blocks_styles->typographyPresetCssVar( $styleCardSticker ) : '' ) .'
+}';
+    }
+
+    if ( $enableDropDownSticker ) {
+        $stylecss .= '
+.a3-portfolio-expander-popup[container-id="'.$blockID.'"] .a3-portfolio-tags-sticker .a3-portfolio-tag-sticker {
+    '. ( isset( $styleExSticker['padding'] ) ? $a3_portfolio_blocks_styles->spacingPresetCssVar( $styleExSticker['padding'], 'padding' ) : '') .'
+    '. ( isset( $styleExSticker['margin'] ) ? $a3_portfolio_blocks_styles->spacingPresetCssVar( $styleExSticker['margin'], 'margin' ) : '') .'
+    '. ( isset( $styleExSticker['border'] ) ? $a3_portfolio_blocks_styles->borderPresetCssVar( $styleExSticker['border'] ) : '') .'
+    '. ( isset( $styleExSticker['radius'] ) ? $a3_portfolio_blocks_styles->borderRadiusPresetCssVar( $styleExSticker['radius'] . 'px' ) : '') .'
+    '. ( ! empty( $styleExSticker ) ? $a3_portfolio_blocks_styles->typographyPresetCssVar( $styleExSticker ) : '' ) .'
+}';
+    }
+
+    if ( ! empty( $stylecss ) ) {
+		$stylecss = $a3_portfolio_blocks_styles->minimizeCSSsimple( $stylecss );
+	}
+
+    return $stylecss; /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */
 }

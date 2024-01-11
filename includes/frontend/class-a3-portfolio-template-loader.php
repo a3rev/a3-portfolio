@@ -25,7 +25,13 @@ class Template_Loader
 		// Stop filter by a3 Lazy Load plugin
 		add_filter( 'a3_lazy_load_run_filter', array( $this, 'stop_a3_lazyload_plugin' ) );
 
-		add_action( 'wp_head', array( $this, 'a3_portfolio_filter_template' ), 1000 );
+		if (( ! function_exists('wp_is_block_theme') || ! wp_is_block_theme() ) &&
+            ( ! function_exists('gutenberg_supports_block_templates') || ! gutenberg_supports_block_templates() )
+        ) {
+			add_action( 'wp_head', array( $this, 'a3_portfolio_filter_template' ), 1000 );
+		} else {
+			$this->a3_portfolio_filter_content_template();
+		}
 	}
 
 	public function stop_a3_lazyload_plugin( $run_filter ) {
@@ -358,11 +364,11 @@ class Template_Loader
 
 			remove_action( 'a3rev_loop_after', 'responsi_pagination', 10, 0 );
 			if ( isset( $wp_query->query_vars['taxonomy'] ) && 'portfolio_cat' == $wp_query->query_vars['taxonomy'] ) {
-				a3_portfolio_get_template( 'taxonomy-portfolio_cat.php', array( 'number_columns' => $number_columns ) ) ;
+				a3_portfolio_get_template( 'taxonomy-portfolio_cat.php', array( 'container_id' => '', 'number_columns' => $number_columns ) ) ;
 			} elseif ( isset( $wp_query->query_vars['taxonomy'] ) && 'portfolio_tag' == $wp_query->query_vars['taxonomy'] ) {
-				a3_portfolio_get_template( 'taxonomy-portfolio_tag.php', array( 'number_columns' => $number_columns ) ) ;
+				a3_portfolio_get_template( 'taxonomy-portfolio_tag.php', array( 'container_id' => '', 'number_columns' => $number_columns ) ) ;
 			} else {
-				a3_portfolio_get_template( 'archive-portfolio.php', array( 'number_columns' => $number_columns ) ) ;
+				a3_portfolio_get_template( 'archive-portfolio.php', array( 'container_id' => '', 'number_columns' => $number_columns ) ) ;
 			}
 
 			$is_single = false;
@@ -388,10 +394,14 @@ class Template_Loader
 		add_filter( 'the_title', array( $this, 'a3_portfolio_filter_content_template' ), 1000 );
 	}
 
-	public function a3_portfolio_filter_content_template( $title ) {
-		add_filter( 'the_content', array( $this, 'portfolio_category_template' ), 1 );
-		add_filter( 'the_content', array( $this, 'single_template' ), 9 );
+	public function a3_portfolio_title_filter_content_template( $title ) {
+		$this->a3_portfolio_filter_content_template();
 
 		return $title;
+	}
+
+	public function a3_portfolio_filter_content_template() {
+		add_filter( 'the_content', array( $this, 'portfolio_category_template' ), 1 );
+		add_filter( 'the_content', array( $this, 'single_template' ), 9 );
 	}
 }

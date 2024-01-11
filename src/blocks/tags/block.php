@@ -28,43 +28,12 @@ class Tags {
 			return;
 		}
 
-		// Create Dynamic Block via PHP render callback
-		$block_args = array(
-			'attributes'      => array(
-				'blockID' => array(
-					'type' => 'string'
-				),
-				'tagIDs' => array(
-					'type'    => 'array',
-					'items'   => [
-						'type' => 'integer',
-					],
-				),
-				'enableCustomColumns'	=> array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-				'customColumns'	=> array(
-					'type'    => 'number',
-					'default' => a3_portfolio_get_col_per_row(),
-				),
-				'numberItems'	=> array(
-					'type'    => 'string',
-					'default' => '',
-				),
-				'showNavBar'	=> array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-				'isPreview'	=> array(
-					'type'    => 'boolean',
-					'default' => false,
-				),
-			),
-			'render_callback' 	=> array( $this, 'render' )
+		register_block_type(
+			__DIR__ . '/block.json',
+			array(
+				'render_callback' => array( $this, 'render' ),
+			)
 		);
-
-		register_block_type( 'a3-portfolio/tags', $block_args );
 	}
 
 	public function render( $attributes ) {
@@ -80,9 +49,21 @@ class Tags {
 		}
 
 		ob_start();
-		echo a3_portfolio_get_tags_page( $tagIDs, $customColumns, $numberItems, $showNavBar );
+		$inline_css = a3_portfolio_generate_sticker_inline_css( $attributes );
+	    if (  ! empty( $inline_css ) ) {
+	        echo '<style>'. esc_html( $inline_css ).'</style>';
+	    }
+	    
+		echo a3_portfolio_get_tags_page( $tagIDs, $customColumns, $numberItems, $showNavBar, $attributes );
 		$output = ob_get_clean();
 
-		return $output;
+		$class_name = 'wp-block-a3-portfolios-'. ( $blockID ?? '' );
+		if ( isset( $attributes['className'] ) ) {
+			$class_name .= ' ' . $attributes['className'];
+		}
+
+		$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $class_name ) );
+
+		return sprintf( '<div %1$s>%2$s</div>', $wrapper_attributes, $output );
 	}
 }

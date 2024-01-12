@@ -229,3 +229,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#a3_portfolio_data_meta_box .forminp-switcher_checkbox .iPhoneCheckContainer { width: 140px !important; }
+#a3_portfolio_data_meta_box .forminp-switcher_checkbox .iPhoneCheckContainer .iPhoneCheckLabelOff { width: 130px !important; }
+#a3_portfolio_data_meta_box .forminp-onoff_checkbox .iPhoneCheckContainer { width: 85px !important; }
+#a3_portfolio_data_meta_box .forminp-onoff_checkbox .iPhoneCheckContainer .iPhoneCheckLabelOff { width: 65px !important; }
+#a3_portfolio_data_meta_box .chosen-container { min-width: 100px; }

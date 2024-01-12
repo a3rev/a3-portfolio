@@ -8,7 +8,10 @@ const { Component } = wp.element;
 const {
 	InspectorControls,
 	FontSizePicker,
-	__experimentalFontAppearanceControl: FontAppearanceControl
+	LineHeightControl,
+	__experimentalFontAppearanceControl: FontAppearanceControl,
+	__experimentalLetterSpacingControl: LetterSpacingControl,
+	__experimentalTextTransformControl: TextTransformControl,
 } = wp.blockEditor || wp.editor;
 const {
 	PanelBody,
@@ -84,12 +87,40 @@ export default class Inspector extends Component {
 							onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'fontSize', value ) } }
 							withReset={ true }
 						/>
+					</BaseControl>
+
+					<BaseControl
+						className={ 'components-custom-font-control' }
+					>
+						<LineHeightControl
+							value={ styleCardSticker.lineHeight }
+							onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'lineHeight', value ) } }
+							size="__unstable-large"
+							__unstableInputWidth="auto"
+						/>
+
 						<FontAppearanceControl
 							value={ {
 								fontStyle: fontStyleCard,
 								fontWeight: fontWeightCard,
 							} }
 							onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], false, value ) } }
+							size="__unstable-large"
+						/>
+
+						<LetterSpacingControl
+							value={ styleCardSticker.letterSpacing }
+							onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'letterSpacing', value ) } }
+							size="__unstable-large"
+							__unstableInputWidth="auto"
+						/>
+
+						<TextTransformControl
+							value={ styleCardSticker.textTransform }
+							onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'textTransform', value ) } }
+							showNone
+							isBlock
+							size="__unstable-large"
 						/>
 					</BaseControl>
 				</PanelBody>

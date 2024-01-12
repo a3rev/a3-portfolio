@@ -47,7 +47,7 @@ class Recent {
 		ob_start();
 		$inline_css = a3_portfolio_generate_sticker_inline_css( $attributes );
 	    if (  ! empty( $inline_css ) ) {
-	        echo '<style>'. esc_html( $inline_css ).'</style>';
+	        echo '<style>'. $inline_css .'</style>';
 	    }
 	    
 		echo a3_portfolio_get_main_page( 'recent', $customColumns, $numberItems, $showNavBar, $attributes );

@@ -21,20 +21,8 @@ $comma = '';
 	<div class="clear"></div>
 
 	<div class="portfolio_item_categories">
-
-		<span class="label"><?php echo a3_portfolio_ei_ict_t__( 'Categories field', __( 'Categories', 'a3-portfolio' ) ); ?> : </span>
-
-		<?php foreach ( $portfolio_categories as $term ) : ?>
-
-		<span class="item-block">
-			<?php echo $comma; ?>
-			<a href="<?php echo get_term_link( $term, $term->slug ); ?>"><?php echo $term->name; ?></a>
-		</span>
-
-		<?php $comma = ', '; ?>
-
-		<?php endforeach; ?>
-
+		<span class="label"><?php echo a3_portfolio_ei_ict_t__( 'Categories field', __( 'Categories', 'a3-portfolio' ) ); ?> : </span><?php foreach ( $portfolio_categories as $term ) : ?><span class="item-block"><?php echo $comma; ?><a href="<?php echo get_term_link( $term, $term->slug ); ?>"><?php echo $term->name; ?></a>
+		</span><?php $comma = ', '; ?><?php endforeach; ?>
 	</div>
 
 	<div class="clear"></div>

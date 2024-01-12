@@ -2,11 +2,11 @@
 /*
 Plugin Name: a3 Portfolio
 Description: Creates a beautiful fully mobile responsive, fully customizable, Google images style portfolio to showcase your work.
-Version: 3.1.2
+Version: 3.2.0
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Requires at least: 6.0
-Tested up to: 6.4.1
+Tested up to: 6.4.2
 Text Domain: a3-portfolio
 Domain Path: /languages
 License: GPLv2 or later
@@ -28,13 +28,14 @@ define('A3_PORTFOLIO_DIR', A3_PORTFOLIO_FILE_PATH . '/' );
 define('A3_PORTFOLIO_JS_URL', A3_PORTFOLIO_URL . '/assets/js');
 define('A3_PORTFOLIO_CSS_URL', A3_PORTFOLIO_URL . '/assets/css');
 define('A3_PORTFOLIO_IMAGES_URL', A3_PORTFOLIO_URL . '/assets/images');
+define('A3_PORTFOLIO_JS_IMAGES_URL', untrailingslashit(plugins_url('/', __FILE__)) . '/assets/images');
 define('A3_PORTFOLIO_TEMPLATE_PATH', A3_PORTFOLIO_FILE_PATH . '/templates');
 define('A3_PORTFOLIO_TEMPLATE_CSS_URL', A3_PORTFOLIO_URL . '/templates/css');
 define('A3_PORTFOLIO_TEMPLATE_IMAGES_URL', A3_PORTFOLIO_URL . '/templates/images');
 
 define( 'A3_PORTFOLIO_KEY', 'a3_portfolios' );
 define( 'A3_PORTFOLIO_PREFIX', 'a3_portfolio_' );
-define( 'A3_PORTFOLIO_VERSION', '3.1.2' );
+define( 'A3_PORTFOLIO_VERSION', '3.2.0' );
 define( 'A3_PORTFOLIO_G_FONTS', true );
 
 if ( version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {

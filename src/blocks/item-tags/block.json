@@ -19,6 +19,10 @@
 		"styleCardSticker": {
 			"type": "object",
 			"default": {}
+		},
+		"isPreview": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"supports": {

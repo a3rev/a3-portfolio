@@ -3,8 +3,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 6.0
-Tested up to: 6.4.1
-Stable tag: 3.1.2
+Tested up to: 6.4.2
+Stable tag: 3.2.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -166,6 +166,15 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 3.2.0 - 2024/01/12 =
+* This feature release adds Stickers for item cards and expander, a new Tags Meta Block and the Gutenberg editor to item posts.
+* Feature - new Portfolio Tags Meta block for use on Content or Single Portfolio Block Page
+* Feature - new Stickers for Item Card and Item Expander.
+* Feature - Portfolio Tags can be sued as to Create the Stickers. Add Sticker Colour on the tag edit page.
+* Feature - Add support for Gutenberg editor for content of Portfolio Edit page
+* Fix - make block Previews show
+* Fix - make Category meta and Tag meta show correct format on Portfolio Content.
 
 = 3.1.2 - 2023/11/23 =
 * This maintenance release has plugin framework updates for compatibility with PHP 8.1 onwards, plus compatibility with WordPress 6.4.1
@@ -776,6 +785,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 3.2.0 =
+This feature release adds Stickers for item cards and expander, a new Tags Meta Block and the Gutenberg editor to item posts.
 
 = 3.1.2 =
 This maintenance release has plugin framework updates for compatibility with PHP 8.1 onwards, plus compatibility with WordPress 6.4.1

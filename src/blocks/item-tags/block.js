@@ -34,6 +34,11 @@ export const settings = {
 	},
 
 	attributes,
+	example: {
+		attributes: {
+			isPreview: true,
+		},
+	},
 	edit,
 	save: () => {
 		return null;

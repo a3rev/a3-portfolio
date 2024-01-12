@@ -56,11 +56,13 @@ export default function ItemTermsEdit( props ) {
 		<Fragment>
 			<Inspector { ...{ ...props } } />
 			<div { ...blockProps }>
+				{ ! attributes.isPreview && (
 				<Disabled>
 					<ServerSideRender block="a3-portfolio/tags-meta" attributes={ attributes } />
 				</Disabled>
+				) }
 				{ ( ! itemID || "0" == itemID ) && (
-					<div className="a3-portfolio-tags-sticker">
+					<div className="a3-portfolio-tags-sticker under-image">
 						{ postTerms.map( ( postTerm ) => (
 								<span
 									key={ postTerm.id }

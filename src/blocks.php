@@ -128,7 +128,7 @@ class Blocks {
 			'catList'      => json_encode( $catList ), 
 			'tagList'      => json_encode( $tagList ), 
 			'globalColumn' => $global_column,
-			'preview'      => A3_PORTFOLIO_IMAGES_URL.  '/preview.jpg',
+			'preview'      => A3_PORTFOLIO_JS_IMAGES_URL.  '/preview.jpg',
 		) );
 	}
 

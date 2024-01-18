@@ -391,7 +391,7 @@ class Template_Loader
 	}
 
 	public function a3_portfolio_filter_template() {
-		add_filter( 'the_title', array( $this, 'a3_portfolio_filter_content_template' ), 1000 );
+		add_filter( 'the_title', array( $this, 'a3_portfolio_title_filter_content_template' ), 1000 );
 	}
 
 	public function a3_portfolio_title_filter_content_template( $title ) {

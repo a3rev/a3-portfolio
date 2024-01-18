@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 6.0
 Tested up to: 6.4.2
-Stable tag: 3.2.0
+Stable tag: 3.2.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -166,6 +166,10 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 3.2.1 - 2024/01/18 =
+* This release has a breaking bug fix that came out of the 3.2.0 major release.
+* Fix - Call to correct a3_portfolio_title_filter_content_template instead of a3_portfolio_filter_content_template for filter the title.
 
 = 3.2.0 - 2024/01/12 =
 * This feature release adds Stickers for item cards and expander, a new Tags Meta Block and the Gutenberg editor to item posts.
@@ -785,6 +789,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 3.2.1 =
+This release has a breaking bug fix that came out of the 3.2.0 major release.
 
 = 3.2.0 =
 This feature release adds Stickers for item cards and expander, a new Tags Meta Block and the Gutenberg editor to item posts.

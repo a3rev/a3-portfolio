@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 3.2.2 - 2024/07/15 =
+* This release has various tweaks for compatibility with WordPress 6.6
+* Tweak - Tested for compatibility with WordPress 6.6
+* Tweak - Validate and correct block.json based schema from WordPress Block
+
 = 3.2.1 - 2024/01/18 =
 * This release has a breaking bug fix that came out of the 3.2.0 major release.
 * Fix - Call to correct a3_portfolio_title_filter_content_template instead of a3_portfolio_filter_content_template for filter the title.

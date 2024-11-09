@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Recent {
 
 	public function __construct() {
-		add_action( 'init', array( $this, 'register_block' ) );	
+		add_action( 'init', array( $this, 'register_block' ) );
 	}
 
 	public function register_block() {
@@ -49,7 +49,11 @@ class Recent {
 	    if (  ! empty( $inline_css ) ) {
 	        echo '<style>'. $inline_css .'</style>';
 	    }
-	    
+
+		if ( ! isset( $numberItems ) ) {
+			$numberItems = -1;
+		}
+
 		echo a3_portfolio_get_main_page( 'recent', $customColumns, $numberItems, $showNavBar, $attributes );
 		$output = ob_get_clean();
 

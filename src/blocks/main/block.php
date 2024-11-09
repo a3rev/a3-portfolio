@@ -49,7 +49,11 @@ class Main {
 	    if (  ! empty( $inline_css ) ) {
 	        echo '<style>'. $inline_css .'</style>';
 	    }
-	    
+
+		if ( ! isset( $numberItems ) ) {
+			$numberItems = -1;
+		}
+
 		echo a3_portfolio_get_main_page( 'none', $customColumns, $numberItems, $showNavBar, $attributes );
 		$output = ob_get_clean();
 

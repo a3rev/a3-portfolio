@@ -3,8 +3,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 6.0
-Tested up to: 6.6
-Stable tag: 3.2.2
+Tested up to: 6.7
+Stable tag: 3.2.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -167,6 +167,16 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 == Changelog ==
 
+= 3.2.3 - 2024/11/09 =
+* This maintenance release contains a bug fix plus compatibility with WordPress major release version 6.7
+* Tweak - Tested for compatibility with WordPress major version 6.7
+* Fix - validate $numberItems is isset
+
+= 3.2.2 - 2024/07/15 =
+* This release has various tweaks for compatibility with WordPress 6.6
+* Tweak - Tested for compatibility with WordPress 6.6
+* Tweak - Validate and correct block.json based schema from WordPress Block
+
 = 3.2.1 - 2024/01/18 =
 * This release has a breaking bug fix that came out of the 3.2.0 major release.
 * Fix - Call to correct a3_portfolio_title_filter_content_template instead of a3_portfolio_filter_content_template for filter the title.
@@ -211,7 +221,7 @@ Automatic installation is the easiest option as WordPress handles the file trans
 * Fix - apply filters the_content into content-single-portfolio so all shortcode, embed media that can show on portfolio single detail page
 
 = 3.0.0 - 2022/05/24 =
-* This feature release has compatibility tweaks for WordPress major version 6.0 and includes various code tweaks for FSE compatibility and tweaks for hardening security. 
+* This feature release has compatibility tweaks for WordPress major version 6.0 and includes various code tweaks for FSE compatibility and tweaks for hardening security.
 * Feature - Add BlockTemplatesController for control block templates of Portfolio singular, category and tag
 * Feature - Define single-a3-portfolio.html block template with custom layout of portfolio item on FSE
 * Feature - Define taxonomy-portfolio_cat.html block template with custom layout from plugin on FSE
@@ -254,28 +264,28 @@ Automatic installation is the easiest option as WordPress handles the file trans
 = 2.9.9 - 2021/03/17 =
 * This maintenance release updates 23 deprecated jQuery functions for compatibility with the latest version of jQuery in WordPress 5.7
 * Tweak - Update JavaScript on plugin framework for compatibility with latest version of jQuery and resolve PHP warning event shorthand is deprecated.
-* Tweak - Replace deprecated .change( handler ) with .on( 'change', handler ) 
-* Tweak - Replace deprecated .change() with .trigger('change') 
+* Tweak - Replace deprecated .change( handler ) with .on( 'change', handler )
+* Tweak - Replace deprecated .change() with .trigger('change')
 * Tweak - Replace deprecated .focus( handler ) with .on( 'focus', handler )
 * Tweak - Replace deprecated .focus() with .trigger('focus')
 * Tweak - Replace deprecated .click( handler ) with .on( 'click', handler )
 * Tweak - Replace deprecated .click() with .trigger('click')
 * Tweak - Replace deprecated .select( handler ) with .on( 'select', handler )
-* Tweak - Replace deprecated .select() with .trigger('select') 
-* Tweak - Replace deprecated .blur( handler ) with .on( 'blur', handler ) 
-* Tweak - Replace deprecated .blur() with .trigger('blur') 
-* Tweak - Replace deprecated .resize( handler ) with .on( 'resize', handler ) 
-* Tweak - Replace deprecated .submit( handler ) with .on( 'submit', handler ) 
-* Tweak - Replace deprecated .scroll( handler ) with .on( 'scroll', handler ) 
-* Tweak - Replace deprecated .mousedown( handler ) with .on( 'mousedown', handler ) 
-* Tweak - Replace deprecated .mouseover( handler ) with .on( 'mouseover', handler ) 
+* Tweak - Replace deprecated .select() with .trigger('select')
+* Tweak - Replace deprecated .blur( handler ) with .on( 'blur', handler )
+* Tweak - Replace deprecated .blur() with .trigger('blur')
+* Tweak - Replace deprecated .resize( handler ) with .on( 'resize', handler )
+* Tweak - Replace deprecated .submit( handler ) with .on( 'submit', handler )
+* Tweak - Replace deprecated .scroll( handler ) with .on( 'scroll', handler )
+* Tweak - Replace deprecated .mousedown( handler ) with .on( 'mousedown', handler )
+* Tweak - Replace deprecated .mouseover( handler ) with .on( 'mouseover', handler )
 * Tweak - Replace deprecated .mouseout( handler ) with .on( 'mouseout', handler )
-* Tweak - Replace deprecated .keydown( handler ) with .on( 'keydown', handler ) 
-* Tweak - Replace deprecated .attr('disabled', 'disabled') with .prop('disabled', true) 
-* Tweak - Replace deprecated .removeAttr('disabled') with .prop('disabled', false) 
-* Tweak - Replace deprecated .attr('selected', 'selected') with .prop('selected', true) 
-* Tweak - Replace deprecated .removeAttr('selected') with .prop('selected', false) 
-* Tweak - Replace deprecated .attr('checked', 'checked') with .prop('checked', true) 
+* Tweak - Replace deprecated .keydown( handler ) with .on( 'keydown', handler )
+* Tweak - Replace deprecated .attr('disabled', 'disabled') with .prop('disabled', true)
+* Tweak - Replace deprecated .removeAttr('disabled') with .prop('disabled', false)
+* Tweak - Replace deprecated .attr('selected', 'selected') with .prop('selected', true)
+* Tweak - Replace deprecated .removeAttr('selected') with .prop('selected', false)
+* Tweak - Replace deprecated .attr('checked', 'checked') with .prop('checked', true)
 * Tweak - Replace deprecated .removeAttr('checked') with .prop('checked', false)
 
 = 2.9.8 - 2021/03/09 =
@@ -330,7 +340,7 @@ Automatic installation is the easiest option as WordPress handles the file trans
 * Tweak - Test for compatibility with Gutenberg 8.5.1
 
 = 2.9.2 - 2020/03/24 =
-* This maintenace release fixes a bug that creates an error with JSON loaded from AJAX 
+* This maintenace release fixes a bug that creates an error with JSON loaded from AJAX
 * Fix - Hook 'a3_portfolio_set_global_page' to action 'plugins_loaded' tag to stop warning that effect to JSON value from AJAX
 
 = 2.9.1 - 2020/03/21 =
@@ -342,7 +352,7 @@ Automatic installation is the easiest option as WordPress handles the file trans
 * Fix - Update global ${$this- to $GLOBALS[$this to resolve 7.0+ PHP warnings
 * Fix - Update global ${$option to $GLOBALS[$option to resolve 7.0+ PHP warnings
 * Fix - Update less PHP lib that use square brackets [] instead of curly braces {} for Array , depreciated in PHP 7.4
-* Fix - Validate for not use get_magic_quotes_gpc function for PHP 7.4 
+* Fix - Validate for not use get_magic_quotes_gpc function for PHP 7.4
 
 = 2.9.0 - 2019/11/28 =
 * This feature release has a lot including compatibility with WordPress 5.3 PHP upgrade to Composer PHP Dependency Manger, a full security review plus a bug fix.
@@ -358,9 +368,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 * Fix - Parse parameter to add_query_arg function
 
 = 2.8.0 - 2019/09/07 =
-* This feature upgrade adds a3Portfolio Gutenberg Block plus 5 filter blocks. Also includes inclusion of shortcodes into core for those still using the legacy editor. 
+* This feature upgrade adds a3Portfolio Gutenberg Block plus 5 filter blocks. Also includes inclusion of shortcodes into core for those still using the legacy editor.
 * Feature - a3 Portfolio Premium shortcodes plugin discontinued, shortcodes now included in the parent plugin.
-* Feature - Add a3 Portfolio Gutenberg block. 
+* Feature - Add a3 Portfolio Gutenberg block.
 * Feature - Add Portfolio Items Gutenberg block
 * Feature - Add Portfolio Categories Gutenberg block
 * Feature - Add Portfolio Tags Gutenberg block
@@ -370,7 +380,7 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 = 2.7.6 - 2019/09/03 =
 * This upgrade is for compatibility with Responsi Framework 7.6.0
-* Refactor - Rewrite frontend HTML, CSS, JS and Variables Class and ID names to the new framework 7.6.0 namespaces 
+* Refactor - Rewrite frontend HTML, CSS, JS and Variables Class and ID names to the new framework 7.6.0 namespaces
 * Refactor - Rewrite customizer HTML, CSS, JS and Variables Class and ID names to the new framework 7.6.0 namespaces
 * Refactor - HTML, CSS, JS and Variables Class and ID names called from the framework making plugin file sizes smaller and faster to load
 
@@ -435,7 +445,7 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 = 2.6.4 - 2018/06/19 =
 * Maintenance update has 1 bug fix and 1 tweak when adding shortcodes to posts to show in item expander.
-* Tweak - Change priority value from 12 to 2 for apply single Portfolio template so that shortcode content can work correctly 
+* Tweak - Change priority value from 12 to 2 for apply single Portfolio template so that shortcode content can work correctly
 * Framework - Fix for Framework Global Box open and close settings options
 * Framework - Update a3rev Plugin Framework to version 2.0.5
 * Fix - Called wpautop before do_shortcode for the content show on Expander so that it does not add more space to content loaded by shortcode
@@ -445,28 +455,28 @@ Automatic installation is the easiest option as WordPress handles the file trans
 * Fix - Add a3-notlazy class to Expander main gallery image to resolve conflict with a3 Lazy Load plugin
 
 = 2.6.2 - 2018/05/26 =
-* This maintenance update is for compatibility with WordPress 4.9.6 and the new GDPR compliance requirements for users in the EU 
+* This maintenance update is for compatibility with WordPress 4.9.6 and the new GDPR compliance requirements for users in the EU
 * Tweak - Test for compatibility with WordPress 4.9.6
 * Tweak - Check for any issues with GDPR compliance. None Found
 * Framework - Update a3rev Plugin Framework to version 2.0.3
 
 = 2.6.1 - 2018/03/07 =
-* This is a big Maintenance Update. IMPORTANT clear all caches after this update. 3 Bug Fixes plus 2 Mobile UI and UX tweaks. Big fix for conflict with themes that filter Content in wp head.  
+* This is a big Maintenance Update. IMPORTANT clear all caches after this update. 3 Bug Fixes plus 2 Mobile UI and UX tweaks. Big fix for conflict with themes that filter Content in wp head.
 * Tweak - Mobile break point to display items one column in portrait on new Apple and Android wider screen phones.
 * Tweak - Update script to remove auto close expander when scroll on mobile for improved UX
-* Fix - Changed from filtering the content at wp head to filter the title and call wp content from there to resolve issues with themes that filter the content at wp head. 
-* Fix - Item Cards alignment in PC and tablet for portfolio items without description. 
+* Fix - Changed from filtering the content at wp head to filter the title and call wp content from there to resolve issues with themes that filter the content at wp head.
+* Fix - Item Cards alignment in PC and tablet for portfolio items without description.
 * Fix - Image Scale and Crop options which had stopped working
 
 = 2.6.0 - 2018/03/05 =
-* Feature Upgrade. This version adds full compatibility with the popular Divi premium theme by adding Category and Tags templates when that theme is used. 
+* Feature Upgrade. This version adds full compatibility with the popular Divi premium theme by adding Category and Tags templates when that theme is used.
 * Feature -  Added taxonomy templates that are used when the Divi theme is activated.
 
 = 2.5.2 - 2018/02/14 =
 * Fix - Set correct name A3_PORTFOLIO_VERSION for update version
 
 = 2.5.1 - 2018/02/13 =
-* Maintenance Update. Under the bonnet tweaks to keep your plugin running smoothly and is the foundation for new features to be developed this year 
+* Maintenance Update. Under the bonnet tweaks to keep your plugin running smoothly and is the foundation for new features to be developed this year
 * Framework - Update a3rev Plugin Framework to version 2.0.2
 * Framework - Add Framework version for all style and script files
 * Tweak - Update for full compatibility with a3rev Dashboard plugin
@@ -487,7 +497,7 @@ Automatic installation is the easiest option as WordPress handles the file trans
 = 2.4.5 - 2017/03/31 =
 * Tweak - Changed facebook social share image size from thumbnail to medium size for better display when share from the Item Expander
 * Tweak - Tested for full compatibility with WordPress version 4.7.3
-* Fix - Update facebook social share parameters to rectify not being able to get the featured image in the facebook share pop up 
+* Fix - Update facebook social share parameters to rectify not being able to get the featured image in the facebook share pop up
 
 = 2.4.4 - 2017/02/09 =
 * Tweak - Change global $$variable to global ${$variable} for compatibility with PHP 7.0
@@ -522,7 +532,7 @@ Automatic installation is the easiest option as WordPress handles the file trans
 * Feature - Add Hard Crop option for Gallery images and Thumbnails
 * Feature - Add lightbox image pop up on Portfolio Item post gallery image option. Image shows in the pop up at full size
 * Tweak - Move 'Plugin Framework Global Settings' box from 'Item Cards' panel to 'Settings' panel.
-* Tweak - Changed all image size from default WP to custom image dimensions set from the plugin. 
+* Tweak - Changed all image size from default WP to custom image dimensions set from the plugin.
 * Tweak - Updated 'a3.portfolio.css' style file for support new features
 * Tweak - Updated 'a3.portfolio.single.js' script file for support new features
 * Tweak - Change thumbnail image show on frontend from hard code 80 x 80 px to Gallery Thumbnail Size set from plugin settings
@@ -533,7 +543,7 @@ Automatic installation is the easiest option as WordPress handles the file trans
 = 2.3.0 - 2016/05/04 =
 * Feature - Add new 'Image Links Opens' ITEM POST or ITEM EXPANDER option for when click on Card Image when Card Title is set Under Image
 * Feature - Add new 'Title Links Opens' ITEM POST or ITEM EXPANDER option for when click on Card Title
-* Feature - Add new 'View More Link Opens' ITEM POST or ITEM EXPANDER option for when click on View More button 
+* Feature - Add new 'View More Link Opens' ITEM POST or ITEM EXPANDER option for when click on View More button
 * Feature - Add new 'View More Button Text' option into Button tab of Portfolio Data box on individual Portfolio Item for support change the button text on each Portfolio item
 * Tweak - Make condition logic for show or hide options that have relationship
 * Tweak - Update 'a3.portfolio.css' and 'a3.portfolio.less' style file for support new features
@@ -558,12 +568,12 @@ Automatic installation is the easiest option as WordPress handles the file trans
 * Feature - Build new Portfolio Attribute feature as an upgrade of Feature Data
 * Feature - Create Portfolio Attribute page and Terms page as custom taxonomy
 * Feature - Portfolio Attribute with 2 types Select | Text .
-* Feature - Attribute with 'Select' type support terms and for using to make filter from widget. 
+* Feature - Attribute with 'Select' type support terms and for using to make filter from widget.
 * Feature - Attribute with 'Text' type to give the same feature as old Feature Data option
 * Feature - Create new Attribute menu on the Portfolio Item Data box on Portfolio Edit page.
-* Feature - Attribute meta box with select attributes and terms to apply to this item. 
+* Feature - Attribute meta box with select attributes and terms to apply to this item.
 * Feature - Attribute meta box with expand attribute and sort by drag and drop.
-* Feature - Define Portfolio Attribute Filter Widget. This new widget is used to filter multiple Attribute based terms.  
+* Feature - Define Portfolio Attribute Filter Widget. This new widget is used to filter multiple Attribute based terms.
 * Feature - Portfolio Attribute Filter Widget can add to Sidebar but just show on main Portfolio page or Portfolio Category page or Portfolio Tag page, don't show on another page.
 * Feature - Define new settings for select position to show Attribute Table on Expander and Item Post.
 * Feature - Upgrade all current icons to fontawesome icons
@@ -624,7 +634,7 @@ Automatic installation is the easiest option as WordPress handles the file trans
 * Feature - Add new Item Expander 'Post Meta Cats' display ON | OFF option
 * Feature - Add new Item Expander 'Post Meta Tags' display ON | OFF option
 * Feature - Post title under image on item card now links to the post instead of opening the item expander
-* Feature - Refactor item card CSS to support Image, Dynamic Title, Description and View More button layout 
+* Feature - Refactor item card CSS to support Image, Dynamic Title, Description and View More button layout
 * Tweak - Update a3 Portfolio styles and scripts for new behavior on open Expander
 * Tweak - Updated 'archive-portfolio.php' template file
 * Tweak - Updated 'content-portfolio.php' template file
@@ -790,6 +800,12 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 == Upgrade Notice ==
 
+= 3.2.3 =
+This maintenance release contains a bug fix plus compatibility with WordPress major release version 6.7
+
+= 3.2.2 =
+This release has various tweaks for compatibility with WordPress 6.6
+
 = 3.2.1 =
 This release has a breaking bug fix that came out of the 3.2.0 major release.
 
@@ -812,7 +828,7 @@ This maintenance release has a security vulnerability patch, plus compatibility 
 This maintenance release fixes a missing content filter on portfolio item pages
 
 = 3.0.0 =
- This feature release has compatibility tweaks for WordPress major version 6.0 and includes various code tweaks for FSE compatibility and tweaks for hardening security. 
+ This feature release has compatibility tweaks for WordPress major version 6.0 and includes various code tweaks for FSE compatibility and tweaks for hardening security.
 
 = 2.10 =
 This release has a new Google Fonts API Validation feature plus compatibility with WordPress major version 5.9
@@ -868,7 +884,7 @@ This upgrade is for compatibility with Responsi Framework 7.6.0. IMPORTANT! Be s
 = 2.7.5 =
 This maintenance upgrade is to fix a style conflict with fontawesome icons and a Categories layout style on Posts
 
-= 2.7.4 = 
+= 2.7.4 =
 This upgrade has some small tweaks for compatibility with Responsi Framework 7.5.0
 
 = 2.7.3 =

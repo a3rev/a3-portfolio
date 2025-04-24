@@ -141,7 +141,13 @@ class Template_Loader
 
 		if (  $is_404 || ( ( isset($portfolio_query->post_count) && $portfolio_query->post_count == 0 ) && isset($portfolio_query_vars['portfolio_cat'] ) ) ) {
 
-			$args = array_merge($portfolio_query->query, array('posts_per_page' => $number_portfolios, 'orderby' => 'post_date' ) );
+			$args = array(
+				'posts_per_page' => $number_portfolios,
+				'orderby'        => 'post_date',
+			);
+			if ( ! empty( $portfolio_query->query ) ) {
+				$args = array_merge( $portfolio_query->query, $args );
+			}
 
 			$wp_query = new \WP_Query($args);
 

@@ -3,8 +3,8 @@
 Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 6.0
-Tested up to: 6.7
-Stable tag: 3.2.3
+Tested up to: 6.8
+Stable tag: 3.2.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -166,6 +166,11 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 3.2.4 - 2025/04/24 =
+* This maintenance release has a bug fix plus tested for compatibility with WordPress 6.8
+* Fix - validate first argument is array for array_merge func
+* Tweak - Test for compatibility with WordPress 6.8
 
 = 3.2.3 - 2024/11/09 =
 * This maintenance release contains a bug fix plus compatibility with WordPress major release version 6.7
@@ -799,6 +804,9 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Upgrade Notice ==
+
+= 3.2.4 =
+This maintenance release has a bug fix plus tested for compatibility with WordPress 6.8
 
 = 3.2.3 =
 This maintenance release contains a bug fix plus compatibility with WordPress major release version 6.7

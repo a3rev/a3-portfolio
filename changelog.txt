@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 3.2.4 - 2025/04/24 =
+* This maintenance release has a bug fix plus tested for compatibility with WordPress 6.8
+* Fix - validate first argument is array for array_merge func
+* Tweak - Test for compatibility with WordPress 6.8
+
 = 3.2.3 - 2024/11/09 =
 * This maintenance release contains a bug fix plus compatibility with WordPress major release version 6.7
 * Tweak - Tested for compatibility with WordPress major version 6.7

@@ -51,18 +51,21 @@ export default class Inspector extends Component {
 				<InspectorGlobalSettings { ...this.props } initialOpen={ true } />
 				<PanelBody title={ __( 'Sticker Settings' ) }>
 					<BoxControl
+						__next40pxDefaultSize
 						label={ __( 'Padding' ) }
 						values={ styleCardSticker.padding }
 						onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'padding', value ) } }
 					/>
 
 					<BoxControl
+						__next40pxDefaultSize
 						label={ __( 'Margin' ) }
 						values={ styleCardSticker.margin }
 						onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'margin', value ) } }
 					/>
 
 					<BorderBoxControl
+						__next40pxDefaultSize
 						label={ __( 'Border' ) }
 						disableCustomColors={ true }
 						enableAlpha={ false }
@@ -71,6 +74,7 @@ export default class Inspector extends Component {
 					/>
 
 					<RangeControl
+						__next40pxDefaultSize
 						label={ __( 'Border Radius' ) }
 						value={ styleCardSticker.radius }
 						onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'radius', value ) } }

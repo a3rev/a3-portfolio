@@ -25,8 +25,9 @@ export default class InspectorLayoutSettings extends Component {
 				/>
 
 				{ enableCustomColumns ? (
-					<RangeControl
-						label={ __( 'Custom Columns' ) }
+				<RangeControl
+					__next40pxDefaultSize
+					label={ __( 'Custom Columns' ) }
 						value={ customColumns ? customColumns : parseInt( a3_portfolio_blocks_vars.globalColumn ) }
 						onChange={ value => setAttributes( { customColumns: value } ) }
 						min={ 1 }
@@ -35,8 +36,9 @@ export default class InspectorLayoutSettings extends Component {
 					/>
 				) : null }
 
-				<TextControl
-					label={ __( 'Number of Items' ) }
+			<TextControl
+				__next40pxDefaultSize
+				label={ __( 'Number of Items' ) }
 					help={ __( 'Leave empty for get all items.' ) }
 					value={ numberItems }
 					onChange={ value => setAttributes( { numberItems: value } ) }

@@ -7,7 +7,15 @@ import { PaddingControl, SpacingAttributes, IconBox } from '@bit/a3revsoftware.b
 
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { PanelBody, BaseControl, ToggleControl, ButtonGroup, Button, RangeControl } = wp.components;
+const {
+	PanelBody,
+	BaseControl,
+	ToggleControl,
+	Button,
+	RangeControl,
+	__experimentalToggleGroupControl: ToggleGroupControl,
+	__experimentalToggleGroupControlOption: ToggleGroupControlOption,
+} = wp.components;
 
 const fieldName = '';
 const cardSpacingAttributes = SpacingAttributes( fieldName );
@@ -50,36 +58,37 @@ export default class InspectorContainerStyle extends Component {
 					onChange={ () => setAttributes( { enableCustomColumns: ! enableCustomColumns } ) }
 				/>
 
-				{ enableCustomColumns ? (
-					<RangeControl
-						label={ __( 'Custom Columns' ) }
-						value={ customColumns ? customColumns : parseInt( a3_portfolio_blocks_vars.globalColumn ) }
-						onChange={ value => setAttributes( { customColumns: value } ) }
-						min={ 1 }
-						max={ 6 }
-						allowReset
-					/>
-				) : null }
-
-				<ButtonGroup
-					className="a3-blockpress-size-type-options"
-					aria-label={ __( 'Container Width Type' ) }
-				>
-					{ map( widthUnitList, ( { name, key } ) => (
-						<Button
-							key={ key }
-							className="size-type-btn"
-							isSmall
-							isPrimary={ widthUnit === key }
-							aria-pressed={ widthUnit === key }
-							onClick={ () => setAttributes( { widthUnit: key } ) }
-						>
-							{ name }
-						</Button>
-					) ) }
-				</ButtonGroup>
+			{ enableCustomColumns ? (
 				<RangeControl
-					label={ __( 'Container Width' ) }
+					__next40pxDefaultSize
+					label={ __( 'Custom Columns' ) }
+					value={ customColumns ? customColumns : parseInt( a3_portfolio_blocks_vars.globalColumn ) }
+					onChange={ value => setAttributes( { customColumns: value } ) }
+					min={ 1 }
+					max={ 6 }
+					allowReset
+				/>
+			) : null }
+
+			<ToggleGroupControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				label={ __( 'Container Width Type' ) }
+				value={ widthUnit }
+				onChange={ ( value ) => setAttributes( { widthUnit: value } ) }
+				isBlock
+			>
+				{ map( widthUnitList, ( { name, key } ) => (
+					<ToggleGroupControlOption
+						key={ key }
+						value={ key }
+						label={ name }
+					/>
+				) ) }
+			</ToggleGroupControl>
+			<RangeControl
+				__next40pxDefaultSize
+				label={ __( 'Container Width' ) }
 					value={ width ? width : 600 }
 					onChange={ value => setAttributes( { width: value } ) }
 					min={ 'px' === widthUnit ? 300 : 10 }

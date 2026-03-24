@@ -15,9 +15,10 @@ export default class InspectorGlobalSettings extends Component {
 
 		return (
 			<PanelBody title={ __( 'Portfolio Items' ) }>
-				<SelectControl
-					multiple
-					label={ __( 'Select Portfolio Items' ) }
+			<SelectControl
+				__next40pxDefaultSize
+				multiple
+				label={ __( 'Select Portfolio Items' ) }
 					value={ itemIDs }
 					onChange={ value => setAttributes( { itemIDs: value } ) }
 					options={ itemList }

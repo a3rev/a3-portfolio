@@ -15,9 +15,10 @@ export default class InspectorGlobalSettings extends Component {
 
 		return (
 			<PanelBody title={ __( 'Portfolio Categories' ) }>
-				<SelectControl
-					multiple
-					label={ __( 'Select Portfolio Categories' ) }
+			<SelectControl
+				__next40pxDefaultSize
+				multiple
+				label={ __( 'Select Portfolio Categories' ) }
 					help={ __( 'Portfolio Items from the selected categories will be gotten' ) }
 					value={ catIDs }
 					onChange={ value => setAttributes( { catIDs: value } ) }

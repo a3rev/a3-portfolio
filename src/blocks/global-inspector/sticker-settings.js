@@ -15,8 +15,10 @@ const {
 	SelectControl,
 	RangeControl,
 	__experimentalBorderBoxControl: BorderBoxControl,
-	__experimentalBoxControl: BoxControl
+	__experimentalBoxControl: BoxControl,
 } = wp.components;
+
+const nextSizeProps = { __next40pxDefaultSize: true };
 
 /**
  * Inspector controls
@@ -31,12 +33,12 @@ export default class InspectorStickerSettings extends Component {
 			enableDropDownSticker,
 			dropDownStickerPosition,
 			styleCardSticker,
-			styleExSticker
+			styleExSticker,
 		} = attributes;
 
 		const tabList = [
 			{ name: 'card', title: __( 'Card' ) },
-			{ name: 'dropdown', title: __( 'Expander' ) }
+			{ name: 'dropdown', title: __( 'Expander' ) },
 		];
 		const dropdownPosition = [
 			{ label: 'Top Left', value: 'top-left' },
@@ -47,19 +49,16 @@ export default class InspectorStickerSettings extends Component {
 			{ label: 'Center Right', value: 'center-right' },
 			{ label: 'Bottom Left', value: 'bottom-left' },
 			{ label: 'Bottom Center', value: 'bottom-center' },
-			{ label: 'Bottom Right', value: 'bottom-right' }
+			{ label: 'Bottom Right', value: 'bottom-right' },
 		];
-		const cardPosition = [
-			{ label: 'Under Image', value: 'under-image' },
-			...dropdownPosition
-		];
+		const cardPosition = [ { label: 'Under Image', value: 'under-image' }, ...dropdownPosition ];
 
 		const onChangeStyleSticker = ( option, key, value ) => {
 			if ( key === false ) {
-				const newUpdate = { ... attributes[ option ], ...value };
+				const newUpdate = { ...attributes[ option ], ...value };
 				setAttributes( { [ option ]: newUpdate } );
 			} else {
-				const newUpdate = { ... attributes[ option ] };
+				const newUpdate = { ...attributes[ option ] };
 				newUpdate[ key ] = value;
 				setAttributes( { [ option ]: newUpdate } );
 			}
@@ -73,9 +72,7 @@ export default class InspectorStickerSettings extends Component {
 
 		return (
 			<PanelBody title={ __( 'Sticker Settings' ) } initialOpen={ initialOpen }>
-				<TabPanel
-					tabs = { tabList }
-				>
+				<TabPanel tabs={ tabList }>
 					{ ( tab ) => {
 						if ( 'card' === tab.name ) {
 							return (
@@ -89,81 +86,100 @@ export default class InspectorStickerSettings extends Component {
 									{ enableCardSticker ? (
 										<Fragment>
 											<SelectControl
+												__next40pxDefaultSize
 												label={ __( 'Sticker Position' ) }
 												help={ __( 'Position of sticker on Card' ) }
 												value={ cardStickerPosition }
-												onChange={ value => setAttributes( { cardStickerPosition: value } ) }
+												onChange={ ( value ) => setAttributes( { cardStickerPosition: value } ) }
 												options={ cardPosition }
 											/>
 
 											<BoxControl
+												__next40pxDefaultSize
 												label={ __( 'Padding' ) }
 												values={ styleCardSticker.padding }
-												onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'padding', value ) } }
+												onChange={ ( value ) => {
+													onChangeStyleSticker( [ 'styleCardSticker' ], 'padding', value );
+												} }
 											/>
 
 											<BoxControl
+												__next40pxDefaultSize
 												label={ __( 'Margin' ) }
 												values={ styleCardSticker.margin }
-												onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'margin', value ) } }
+												onChange={ ( value ) => {
+													onChangeStyleSticker( [ 'styleCardSticker' ], 'margin', value );
+												} }
 											/>
 
 											<BorderBoxControl
+												__next40pxDefaultSize
 												label={ __( 'Border' ) }
 												disableCustomColors={ true }
 												enableAlpha={ false }
 												value={ styleCardSticker.border }
-												onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'border', value ) } }
+												onChange={ ( value ) => {
+													onChangeStyleSticker( [ 'styleCardSticker' ], 'border', value );
+												} }
 											/>
 
 											<RangeControl
+												__next40pxDefaultSize
 												label={ __( 'Border Radius' ) }
 												value={ styleCardSticker.radius }
-												onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'radius', value ) } }
+												onChange={ ( value ) => {
+													onChangeStyleSticker( [ 'styleCardSticker' ], 'radius', value );
+												} }
 												min={ 0 }
 												max={ 100 }
 											/>
 
-											<BaseControl
-												label={ __( 'Font' ) }
-											>
+											<BaseControl label={ __( 'Font' ) }>
 												<FontSizePicker
 													disableCustomFontSizes={ true }
 													value={ styleCardSticker.fontSize }
-													onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'fontSize', value ) } }
+													onChange={ ( value ) => {
+														onChangeStyleSticker( [ 'styleCardSticker' ], 'fontSize', value );
+													} }
 													withReset={ true }
 												/>
 											</BaseControl>
 
-											<BaseControl
-												className={ 'components-custom-font-control' }
-											>
+											<BaseControl className={ 'components-custom-font-control' }>
 												<LineHeightControl
 													value={ styleCardSticker.lineHeight }
-													onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'lineHeight', value ) } }
+													onChange={ ( value ) => {
+														onChangeStyleSticker( [ 'styleCardSticker' ], 'lineHeight', value );
+													} }
 													size="__unstable-large"
 													__unstableInputWidth="auto"
 												/>
-												
+
 												<FontAppearanceControl
 													value={ {
 														fontStyle: fontStyleCard,
 														fontWeight: fontWeightCard,
 													} }
-													onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], false, value ) } }
+													onChange={ ( value ) => {
+														onChangeStyleSticker( [ 'styleCardSticker' ], false, value );
+													} }
 													size="__unstable-large"
 												/>
 
 												<LetterSpacingControl
 													value={ styleCardSticker.letterSpacing }
-													onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'letterSpacing', value ) } }
+													onChange={ ( value ) => {
+														onChangeStyleSticker( [ 'styleCardSticker' ], 'letterSpacing', value );
+													} }
 													size="__unstable-large"
 													__unstableInputWidth="auto"
 												/>
 
 												<TextTransformControl
 													value={ styleCardSticker.textTransform }
-													onChange={ value => { onChangeStyleSticker( [ 'styleCardSticker' ], 'textTransform', value ) } }
+													onChange={ ( value ) => {
+														onChangeStyleSticker( [ 'styleCardSticker' ], 'textTransform', value );
+													} }
 													showNone
 													isBlock
 													size="__unstable-large"
@@ -173,95 +189,114 @@ export default class InspectorStickerSettings extends Component {
 									) : null }
 								</Fragment>
 							);
-						}
-
-						else if ( 'dropdown' === tab.name ) { 
+						} else if ( 'dropdown' === tab.name ) {
 							return (
 								<Fragment>
 									<ToggleControl
 										label={ __( 'Sticker on Expander' ) }
 										checked={ !! enableDropDownSticker }
-										onChange={ () => setAttributes( { enableDropDownSticker: ! enableDropDownSticker } ) }
+										onChange={ () =>
+											setAttributes( { enableDropDownSticker: ! enableDropDownSticker } )
+										}
 									/>
 
 									{ enableDropDownSticker ? (
 										<Fragment>
 											<SelectControl
+												__next40pxDefaultSize
 												label={ __( 'Sticker Position' ) }
 												help={ __( 'Position of sticker on Expander' ) }
 												value={ dropDownStickerPosition }
-												onChange={ value => setAttributes( { dropDownStickerPosition: value } ) }
+												onChange={ ( value ) => setAttributes( { dropDownStickerPosition: value } ) }
 												options={ dropdownPosition }
 											/>
 
 											<BoxControl
+												__next40pxDefaultSize
 												label={ __( 'Padding' ) }
 												values={ styleExSticker.padding }
-												onChange={ value => { onChangeStyleSticker( [ 'styleExSticker' ], 'padding', value ) } }
+												onChange={ ( value ) => {
+													onChangeStyleSticker( [ 'styleExSticker' ], 'padding', value );
+												} }
 											/>
 
 											<BoxControl
+												__next40pxDefaultSize
 												label={ __( 'Margin' ) }
 												values={ styleExSticker.margin }
-												onChange={ value => { onChangeStyleSticker( [ 'styleExSticker' ], 'margin', value ) } }
+												onChange={ ( value ) => {
+													onChangeStyleSticker( [ 'styleExSticker' ], 'margin', value );
+												} }
 											/>
 
 											<BorderBoxControl
+												__next40pxDefaultSize
 												label={ __( 'Border' ) }
 												disableCustomColors={ true }
 												enableAlpha={ false }
 												value={ styleExSticker.border }
-												onChange={ value => { onChangeStyleSticker( [ 'styleExSticker' ], 'border', value ) } }
+												onChange={ ( value ) => {
+													onChangeStyleSticker( [ 'styleExSticker' ], 'border', value );
+												} }
 											/>
 
 											<RangeControl
+												__next40pxDefaultSize
 												label={ __( 'Border Radius' ) }
 												value={ styleExSticker.radius }
-												onChange={ value => { onChangeStyleSticker( [ 'styleExSticker' ], 'radius', value ) } }
+												onChange={ ( value ) => {
+													onChangeStyleSticker( [ 'styleExSticker' ], 'radius', value );
+												} }
 												min={ 0 }
 												max={ 100 }
 											/>
 
-											<BaseControl
-												label={ __( 'Font' ) }
-											>
+											<BaseControl label={ __( 'Font' ) }>
 												<FontSizePicker
 													disableCustomFontSizes={ true }
 													value={ styleExSticker.fontSize }
-													onChange={ value => { onChangeStyleSticker( [ 'styleExSticker' ], 'fontSize', value ) } }
+													onChange={ ( value ) => {
+														onChangeStyleSticker( [ 'styleExSticker' ], 'fontSize', value );
+													} }
 													withReset={ true }
 												/>
 											</BaseControl>
 
-											<BaseControl
-												className={ 'components-custom-font-control' }
-											>
+											<BaseControl className={ 'components-custom-font-control' }>
 												<LineHeightControl
 													value={ styleExSticker.lineHeight }
-													onChange={ value => { onChangeStyleSticker( [ 'styleExSticker' ], 'lineHeight', value ) } }
+													onChange={ ( value ) => {
+														onChangeStyleSticker( [ 'styleExSticker' ], 'lineHeight', value );
+													} }
 													size="__unstable-large"
 													__unstableInputWidth="auto"
 												/>
-												
+
 												<FontAppearanceControl
 													value={ {
 														fontStyle: fontStyleEx,
 														fontWeight: fontWeightEx,
 													} }
-													onChange={ value => { onChangeStyleSticker( [ 'styleExSticker' ], false, value ) } }
+													onChange={ ( value ) => {
+														onChangeStyleSticker( [ 'styleExSticker' ], false, value );
+													} }
 													size="__unstable-large"
 												/>
 
 												<LetterSpacingControl
 													value={ styleExSticker.letterSpacing }
-													onChange={ value => { onChangeStyleSticker( [ 'styleExSticker' ], 'letterSpacing', value ) } }
+													onChange={ ( value ) => {
+														onChangeStyleSticker( [ 'styleExSticker' ], 'letterSpacing', value );
+													} }
 													size="__unstable-large"
 													__unstableInputWidth="auto"
 												/>
 
 												<TextTransformControl
 													value={ styleExSticker.textTransform }
-													onChange={ value => { onChangeStyleSticker( [ 'styleExSticker' ], 'textTransform', value ) } }
+													onChange={ ( value ) => {
+														onChangeStyleSticker( [ 'styleExSticker' ], 'textTransform', value );
+													} }
 													showNone
 													isBlock
 													size="__unstable-large"

@@ -54,8 +54,12 @@ class Category
 		if ( ! in_array( basename( $_SERVER['PHP_SELF'] ), array( 'edit-tags.php', 'term.php' ) ) ) return;
 		if ( ! isset( $_REQUEST['taxonomy'] ) || ! in_array( $_REQUEST['taxonomy'], array( 'portfolio_cat' ) ) ) return;
 
-		add_action( 'admin_footer', array( $GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface'], 'admin_script_load' ) );
-		add_action( 'admin_footer', array( $GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface'], 'admin_css_load' ) );
+		add_action( 'admin_footer', function() {
+			$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface']->admin_script_load();
+		} );
+		add_action( 'admin_footer', function() {
+			$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface']->admin_css_load();
+		} );
 		add_action( 'admin_footer', array( $this, 'include_style' ) );
 		add_action( 'admin_footer', array( $this, 'portfolio_term_ordering_validate_script' ), 11 );
 	}

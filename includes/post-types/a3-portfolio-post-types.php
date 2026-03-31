@@ -156,17 +156,21 @@ class Post_Types
 	public function register_image_sizes() {
 		global $a3_portfolio_global_settings;
 
+		if ( ! is_array( $a3_portfolio_global_settings ) ) {
+			$a3_portfolio_global_settings = get_option( 'a3_portfolio_global_settings', array() );
+		}
+
 		$item_card_image_width = 400;
 		$item_card_image_height = 400;
 		$item_card_image_crop = false;
 
-		if ( (int) trim( $a3_portfolio_global_settings['item_card_image_width'] ) > 0 ) {
+		if ( isset( $a3_portfolio_global_settings['item_card_image_width'] ) && (int) trim( $a3_portfolio_global_settings['item_card_image_width'] ) > 0 ) {
 			$item_card_image_width = (int) $a3_portfolio_global_settings['item_card_image_width'];
 		}
-		if ( (int) trim( $a3_portfolio_global_settings['item_card_image_height'] ) > 0 ) {
+		if ( isset( $a3_portfolio_global_settings['item_card_image_height'] ) && (int) trim( $a3_portfolio_global_settings['item_card_image_height'] ) > 0 ) {
 			$item_card_image_height = (int) $a3_portfolio_global_settings['item_card_image_height'];
 		}
-		if ( 'yes' == trim( $a3_portfolio_global_settings['item_card_image_crop'] ) ) {
+		if ( isset( $a3_portfolio_global_settings['item_card_image_crop'] ) && 'yes' == trim( $a3_portfolio_global_settings['item_card_image_crop'] ) ) {
 			$item_card_image_crop = true;
 		}
 
@@ -174,13 +178,13 @@ class Post_Types
 		$gallery_image_height = 600;
 		$gallery_image_crop = false;
 
-		if ( (int) trim( $a3_portfolio_global_settings['gallery_image_width'] ) > 0 ) {
+		if ( isset( $a3_portfolio_global_settings['gallery_image_width'] ) && (int) trim( $a3_portfolio_global_settings['gallery_image_width'] ) > 0 ) {
 			$gallery_image_width = (int) $a3_portfolio_global_settings['gallery_image_width'];
 		}
-		if ( (int) trim( $a3_portfolio_global_settings['gallery_image_height'] ) > 0 ) {
+		if ( isset( $a3_portfolio_global_settings['gallery_image_height'] ) && (int) trim( $a3_portfolio_global_settings['gallery_image_height'] ) > 0 ) {
 			$gallery_image_height = (int) $a3_portfolio_global_settings['gallery_image_height'];
 		}
-		if ( 'yes' == trim( $a3_portfolio_global_settings['gallery_image_crop'] ) ) {
+		if ( isset( $a3_portfolio_global_settings['gallery_image_crop'] ) && 'yes' == trim( $a3_portfolio_global_settings['gallery_image_crop'] ) ) {
 			$gallery_image_crop = true;
 		}
 
@@ -188,13 +192,13 @@ class Post_Types
 		$gallery_thumbnail_height = 75;
 		$gallery_thumbnail_crop = false;
 
-		if ( (int) trim( $a3_portfolio_global_settings['gallery_thumbnail_width'] ) > 0 ) {
+		if ( isset( $a3_portfolio_global_settings['gallery_thumbnail_width'] ) && (int) trim( $a3_portfolio_global_settings['gallery_thumbnail_width'] ) > 0 ) {
 			$gallery_thumbnail_width = (int) $a3_portfolio_global_settings['gallery_thumbnail_width'];
 		}
-		if ( (int) trim( $a3_portfolio_global_settings['gallery_thumbnail_height'] ) > 0 ) {
+		if ( isset( $a3_portfolio_global_settings['gallery_thumbnail_height'] ) && (int) trim( $a3_portfolio_global_settings['gallery_thumbnail_height'] ) > 0 ) {
 			$gallery_thumbnail_height = (int) $a3_portfolio_global_settings['gallery_thumbnail_height'];
 		}
-		if ( 'yes' == trim( $a3_portfolio_global_settings['gallery_thumbnail_crop'] ) ) {
+		if ( isset( $a3_portfolio_global_settings['gallery_thumbnail_crop'] ) && 'yes' == trim( $a3_portfolio_global_settings['gallery_thumbnail_crop'] ) ) {
 			$gallery_thumbnail_crop = true;
 		}
 

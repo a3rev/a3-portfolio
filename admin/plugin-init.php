@@ -8,21 +8,20 @@ class Portfolio {
 	* Default contructor
 	*/
 	public function __construct() {
-		
-		// Include a3 framework files
-		$this->includes_framework();
-		//add_action( 'plugins_loaded', array( $this, 'includes_framework' ), 1 );
 
 		// Include required files
 		$this->includes();
 
-		add_action( 'plugins_loaded', function() {
+		add_action( 'init', array( $this, 'plugin_init' ), 1 );
+
+		// Include a3 framework files after textdomain is loaded at init priority 8
+		add_action( 'init', array( $this, 'includes_framework' ), 2 );
+
+		add_action( 'init', function() {
 			if ( ! defined( 'A3_PORTFOLIO_TRAVIS' ) ) {
 				a3_portfolio_set_global_page();
 			}
-		} );
-
-		add_action( 'init', array( $this, 'plugin_init' ), 8 );
+		}, 9 );
 
 		// Register Widgets
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
@@ -51,6 +50,16 @@ class Portfolio {
 
 		$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_init']->init();
 
+		// Load all settings directly since plugins_loaded has already fired
+		$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_init']->get_all_settings();
+
+		if ( 'yes' === get_option( 'a3_portfolio_just_installed', 'no' ) ) {
+			$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_init']->set_default_settings();
+
+			delete_metadata( 'user', 0, $GLOBALS[A3_PORTFOLIO_PREFIX.'admin_init']->plugin_name . '-' . 'plugin_framework_global_box' . '-' . 'opened', '', true );
+
+			delete_option( 'a3_portfolio_just_installed' );
+		}
 	}
 
 	public function includes() {
@@ -158,15 +167,6 @@ class Portfolio {
 
 		// Register Post Type
 		$a3_portfolio_post_types->register_post_type();
-
-		if ( 'yes' === get_option( 'a3_portfolio_just_installed', 'no' ) ) {
-			// Set Settings Default from Admin Init
-			$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_init']->set_default_settings();
-
-			delete_metadata( 'user', 0, $GLOBALS[A3_PORTFOLIO_PREFIX.'admin_init']->plugin_name . '-' . 'plugin_framework_global_box' . '-' . 'opened', '', true );
-
-			delete_option( 'a3_portfolio_just_installed' );
-		}
 
 		a3_portfolio_plugin_textdomain();
 

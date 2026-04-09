@@ -1,5 +1,14 @@
 == Changelog ==
 
+= 3.3.0 - 2026/03/31 =
+* This maintenance release has bug fixes and compatibility with WordPress 7.0
+* Tweak - Tested for compatibility with WordPress 7.0
+* Tweak - Update Portfolio Blocks for compatibility with WordPress 7.0 Block Editor
+* Tweak - Improved plugin initialization sequence for better reliability
+* Fix - Resolved PHP warnings on image size registration when settings are not yet saved
+* Fix - Resolved admin interface loading issue on taxonomy edit pages
+* Framework - Updated LESS compiler for compatibility with PHP 8.2 onwards
+
 = 3.2.4 - 2025/04/24 =
 * This maintenance release has a bug fix plus tested for compatibility with WordPress 6.8
 * Fix - validate first argument is array for array_merge func

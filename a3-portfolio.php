@@ -2,11 +2,11 @@
 /*
 Plugin Name: a3 Portfolio
 Description: Creates a beautiful fully mobile responsive, fully customizable, Google images style portfolio to showcase your work.
-Version: 3.2.4
+Version: 3.3.0
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Requires at least: 6.0
-Tested up to: 6.8
+Tested up to: 7.0
 Text Domain: a3-portfolio
 Domain Path: /languages
 License: GPLv2 or later
@@ -35,7 +35,7 @@ define('A3_PORTFOLIO_TEMPLATE_IMAGES_URL', A3_PORTFOLIO_URL . '/templates/images
 
 define( 'A3_PORTFOLIO_KEY', 'a3_portfolios' );
 define( 'A3_PORTFOLIO_PREFIX', 'a3_portfolio_' );
-define( 'A3_PORTFOLIO_VERSION', '3.2.4' );
+define( 'A3_PORTFOLIO_VERSION', '3.3.0' );
 define( 'A3_PORTFOLIO_G_FONTS', true );
 
 if ( version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {

@@ -22,14 +22,18 @@ class Metabox
 
 	public function add_meta_box( $post_type ) {
     	$post_types = array('a3-portfolio');     //limit meta box to certain post types
-        if ( in_array( $post_type, $post_types )) {
+		if ( in_array( $post_type, $post_types )) {
 			add_meta_box(
-				'a3_portfolio_data_meta_box'
-				,__( 'Portfolio Item Meta', 'a3-portfolio' )
-				,array( $this, 'output' )
-				,$post_type
-				,'normal'
-				,'high'
+				'a3_portfolio_data_meta_box',
+				__( 'Portfolio Item Meta', 'a3-portfolio' ),
+				array( $this, 'output' ),
+				$post_type,
+				'normal',
+				'high',
+				array(
+					// Renders below the block editor in the main column (full width), not in the legacy sidebar strip.
+					'__block_editor_compatible_meta_box' => true,
+				)
 			);
 		}
 	}

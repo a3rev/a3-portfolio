@@ -66,10 +66,6 @@ class a3_lessc {
 	protected $formatter = null;
 
 	protected $allParsedFiles = array();
-
-	protected $env = null;
-	protected $scope = null;
-	protected $formatter = null;
 	protected $_parseFile = null;
 	protected $formatterName = null;
 

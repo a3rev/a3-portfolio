@@ -28,7 +28,7 @@ class Tag
 	}
 
 	public function enqueue_color_picker() {
-		if ( ! in_array( basename( $_SERVER['PHP_SELF'] ), array( 'edit-tags.php', 'term.php' ) ) ) return;
+		if ( ! in_array( $GLOBALS['pagenow'], array( 'edit-tags.php', 'term.php' ) ) ) return;
 		if ( ! isset( $_REQUEST['taxonomy'] ) || ! in_array( $_REQUEST['taxonomy'], array( 'portfolio_tag' ) ) ) return;
 
 		wp_enqueue_style( 'wp-color-picker' );

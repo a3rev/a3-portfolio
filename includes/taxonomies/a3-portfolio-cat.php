@@ -23,11 +23,9 @@ class Category
 		if ( is_admin() ) {
 			// Ajax Update Portfolio Item Meta Order
 			add_action( 'wp_ajax_portfolio_update_taxonomy_order', array( $this, 'portfolio_update_taxonomy_order' ) );
-			add_action( 'wp_ajax_nopriv_portfolio_update_taxonomy_order', array( $this, 'portfolio_update_taxonomy_order' ) );
 
 			// AJAX update taxonomy
 			add_action('wp_ajax_a3_portfolio_update_taxonomy_custom_meta', array( $this, 'a3_portfolio_update_taxonomy_custom_meta' ) );
-			add_action('wp_ajax_nopriv_a3_portfolio_update_taxonomy_custom_meta', array( $this, 'a3_portfolio_update_taxonomy_custom_meta' ) );
 		}
 	}
 
@@ -51,7 +49,7 @@ class Category
 	 * Include script and style to show plugin framework for Category page.
 	 */
 	public function include_script( ) {
-		if ( ! in_array( basename( $_SERVER['PHP_SELF'] ), array( 'edit-tags.php', 'term.php' ) ) ) return;
+		if ( ! in_array( $GLOBALS['pagenow'], array( 'edit-tags.php', 'term.php' ) ) ) return;
 		if ( ! isset( $_REQUEST['taxonomy'] ) || ! in_array( $_REQUEST['taxonomy'], array( 'portfolio_cat' ) ) ) return;
 
 		add_action( 'admin_footer', function() {
@@ -83,6 +81,10 @@ class Category
 
 		wp_register_script( 'a3-portfolio-term-validate-admin-script', A3_PORTFOLIO_JS_URL . '/a3.portfolio.term.validate.admin' . $suffix . '.js', array('jquery'), A3_PORTFOLIO_VERSION );
 		wp_enqueue_script( 'a3-portfolio-term-validate-admin-script' );
+
+		wp_localize_script( 'a3-portfolio-term-validate-admin-script', 'a3_portfolio_term_validate_admin_params', array(
+			'security' => wp_create_nonce( 'portfolio-taxonomy-custom-meta' ),
+		) );
 	}
 
 	public function portfolio_cat_description() {
@@ -127,7 +129,7 @@ class Category
 			return;
 
 		global $wpdb;
-		$wpdb->query( "DELETE FROM {$wpdb->a3_portfolio_categorymeta} WHERE `a3_portfolio_category_id` = " . $term_id );
+		$wpdb->query( $wpdb->prepare( "DELETE FROM {$wpdb->a3_portfolio_categorymeta} WHERE `a3_portfolio_category_id` = %d", $term_id ) );
 	}
 
 	// Addnew term page
@@ -143,7 +145,8 @@ class Category
 			$taxonomy = isset( $_GET['taxonomy'] ) ? sanitize_text_field( $_GET['taxonomy'] ) : '';
 
 			$portfolio_term_order_params = array(
-				'taxonomy' 			=>  $taxonomy
+				'taxonomy' 			=>  $taxonomy,
+				'security'			=>  $portfolio_taxonomy_order,
 			);
 
 			wp_localize_script( 'a3-portfolio-term-admin-script', 'a3_portfolio_term_admin_params', $portfolio_term_order_params );
@@ -218,6 +221,12 @@ class Category
 
 	// Save extra taxonomy fields callback function.
 	public function a3_portfolio_update_taxonomy_custom_meta() {
+		check_ajax_referer( 'portfolio-taxonomy-custom-meta', 'security' );
+
+		if ( ! current_user_can( 'manage_categories' ) ) {
+			wp_die( -1, 403 );
+		}
+
 		$this->update_a3_portfolio_category_meta( absint( $_POST['tax_id'] ), 'active_portfolio_taxonomy', sanitize_text_field( $_POST['pri_navbar'] ) );
 	}
 
@@ -289,6 +298,12 @@ class Category
 	}
 
 	public function portfolio_update_taxonomy_order(){
+		check_ajax_referer( 'portfolio-taxonomy-order', 'security' );
+
+		if ( ! current_user_can( 'manage_categories' ) ) {
+			wp_die( -1, 403 );
+		}
+
 		global $wpdb;
 		$id       = absint( $_POST['id'] );
 		$next_id  = isset( $_POST['nextid'] ) && (int) $_POST['nextid'] ? absint( $_POST['nextid'] ) : null;

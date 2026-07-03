@@ -65,6 +65,11 @@ class Duplicate
 		// Get the original page
 		$id = ( isset( $_GET['post'] ) ? absint( $_GET['post'] ) : absint( $_POST['post'] ) );
 		check_admin_referer( 'a3-duplicate-portfolio_' . $id );
+
+		if ( ! current_user_can( 'edit_post', $id ) ) {
+			wp_die( __( 'You do not have permission to duplicate this Portfolio.', 'a3-portfolio' ) );
+		}
+
 		$post = $this->get_item_to_duplicate( $id );
 
 		// Copy the page and insert it
@@ -88,12 +93,12 @@ class Duplicate
 	 */
 	public function get_item_to_duplicate( $id ) {
 		global $wpdb;
-		$post = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE ID=$id");
+		$post = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->posts} WHERE ID = %d", $id ) );
 		if ( isset( $post->post_type ) && $post->post_type == "revision" ){
 			$id = $post->post_parent;
-			$post = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE ID=$id");
+			$post = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->posts} WHERE ID = %d", $id ) );
 		}
-		return $post[0];
+		return $post;
 	}
 
 	/**
@@ -117,20 +122,40 @@ class Duplicate
 		}
 
 		$new_post_type 			= $post->post_type;
-		$post_content    		= str_replace("'", "''", $post->post_content);
-		$post_content_filtered 	= str_replace("'", "''", $post->post_content_filtered);
-		$post_excerpt    		= str_replace("'", "''", $post->post_excerpt);
-		$post_title      		= str_replace("'", "''", $post->post_title).$suffix;
-		$post_name       		= str_replace("'", "''", $post->post_name);
-		$comment_status  		= str_replace("'", "''", $post->comment_status);
-		$ping_status     		= str_replace("'", "''", $post->ping_status);
+		$post_content    		= $post->post_content;
+		$post_content_filtered 	= $post->post_content_filtered;
+		$post_excerpt    		= $post->post_excerpt;
+		$post_title      		= $post->post_title.$suffix;
+		$post_name       		= $post->post_name;
+		$comment_status  		= $post->comment_status;
+		$ping_status     		= $post->ping_status;
 
 		// Insert the new template in the post table
-		$wpdb->query(
-				"INSERT INTO $wpdb->posts
-				(post_author, post_date, post_date_gmt, post_content, post_content_filtered, post_title, post_excerpt,  post_status, post_type, comment_status, ping_status, post_password, to_ping, pinged, post_modified, post_modified_gmt, post_parent, menu_order, post_mime_type)
-				VALUES
-				('$new_post_author->ID', '$new_post_date', '$new_post_date_gmt', '$post_content', '$post_content_filtered', '$post_title', '$post_excerpt', '$post_status', '$new_post_type', '$comment_status', '$ping_status', '$post->post_password', '$post->to_ping', '$post->pinged', '$new_post_date', '$new_post_date_gmt', '$post_parent', '$post->menu_order', '$post->post_mime_type')");
+		$wpdb->insert(
+			$wpdb->posts,
+			array(
+				'post_author'           => $new_post_author->ID,
+				'post_date'             => $new_post_date,
+				'post_date_gmt'         => $new_post_date_gmt,
+				'post_content'          => $post_content,
+				'post_content_filtered' => $post_content_filtered,
+				'post_title'            => $post_title,
+				'post_excerpt'          => $post_excerpt,
+				'post_status'           => $post_status,
+				'post_type'             => $new_post_type,
+				'comment_status'        => $comment_status,
+				'ping_status'           => $ping_status,
+				'post_password'         => $post->post_password,
+				'to_ping'               => $post->to_ping,
+				'pinged'                => $post->pinged,
+				'post_modified'         => $new_post_date,
+				'post_modified_gmt'     => $new_post_date_gmt,
+				'post_parent'           => $post_parent,
+				'menu_order'            => $post->menu_order,
+				'post_mime_type'        => $post->post_mime_type,
+			),
+			array( '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%d', '%s' )
+		);
 
 		$new_post_id = $wpdb->insert_id;
 

@@ -107,8 +107,8 @@ class Uploader extends Admin_UI
 			$strip_methods = 1;
 		}
 
-		$output .= '<input type="hidden" name="'.$attachment_id_name_attribute.'" id="'.$id_attribute.'_attachment_id" value="'.$attachment_id.'" class=" a3_upload_attachment_id" />';
-		$output .= '<input type="hidden" name="'.$attachment_size_name_attribute.'" id="'.$id_attribute.'_attachment_size" value="'.$size.'" class=" a3_upload_attachment_size" />';
+		$output .= '<input type="hidden" name="'.esc_attr( $attachment_id_name_attribute ).'" id="'.esc_attr( $id_attribute ).'_attachment_id" value="'.esc_attr( $attachment_id ).'" class=" a3_upload_attachment_id" />';
+		$output .= '<input type="hidden" name="'.esc_attr( $attachment_size_name_attribute ).'" id="'.esc_attr( $id_attribute ).'_attachment_size" value="'.esc_attr( $size ).'" class=" a3_upload_attachment_size" />';
 		$output .= '<input data-strip-methods="'.$strip_methods.'" type="text" name="'.$name_attribute.'" id="'.$id_attribute.'" value="'.esc_attr( $value ).'" class="'.$id_attribute. ' ' .$class.' a3_upload" style="'.$css.'" rel="'.$field_name.'" /> ';
 		$output .= '<input id="upload_'.$id_attribute.'" class="a3rev-ui-upload-button a3_upload_button button" type="button" value="'.__( 'Upload', 'a3-portfolio' ).'" /> '.$description;
 		

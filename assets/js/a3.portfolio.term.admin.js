@@ -51,7 +51,7 @@ jQuery(function($) {
 			ui.item.find('.check-column input').hide().after('<img alt="processing" src="images/wpspin_light.gif" class="waiting" style="margin-left: 6px;" />');
 
 			// go do the sorting stuff via ajax
-			$.post( ajaxurl, { action: 'portfolio_update_taxonomy_order', id: termid, nextid: nexttermid, thetaxonomy: a3_portfolio_term_admin_params.taxonomy }, function(response){
+			$.post( ajaxurl, { action: 'portfolio_update_taxonomy_order', id: termid, nextid: nexttermid, thetaxonomy: a3_portfolio_term_admin_params.taxonomy, security: a3_portfolio_term_admin_params.security }, function(response){
 				if ( response == 'children' ) window.location.reload();
 				else {
 					ui.item.find('.check-column input').show().siblings('img').remove();

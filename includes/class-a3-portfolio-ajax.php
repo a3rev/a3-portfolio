@@ -161,9 +161,14 @@ class AJAX {
 
 		check_ajax_referer( 'save-attributes', 'security' );
 
-		// Get post data
-		parse_str( $_POST['data'], $data );
 		$post_id = absint( $_POST['post_id'] );
+
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			wp_die( -1, 403 );
+		}
+
+		// Get post data
+		parse_str( wp_unslash( $_POST['data'] ), $data );
 
 		// Save Attributes
 		$attributes = array();

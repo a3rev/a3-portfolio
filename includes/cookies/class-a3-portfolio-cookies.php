@@ -83,7 +83,7 @@ class Cookies
 	public function a3_portfolio_set_cookie() {
 		if ( isset( $_POST['portfolio_id'] ) ) {
 			$portfolio_id = absint( $_POST['portfolio_id'] );
-			$lang = sanitize_text_field( $_POST['lang'] );
+			$lang = isset( $_POST['lang'] ) ? sanitize_text_field( wp_unslash( $_POST['lang'] ) ) : '';
 			$this->portfolio_cookies( 'portfolio_recentviews' . $lang, $portfolio_id, 7);
 			echo 'true';
 		} else {
@@ -94,7 +94,7 @@ class Cookies
 
 
 	public function a3_portfolio_remove_all_cookie() {
-		$lang = sanitize_text_field( $_POST['lang'] );
+		$lang = isset( $_POST['lang'] ) ? sanitize_text_field( wp_unslash( $_POST['lang'] ) ) : '';
 		$this->remove_all_portfolio_cookies( 'portfolio_recentviews' . $lang );
 		echo 'true';
 		die();
@@ -103,7 +103,7 @@ class Cookies
 	public function a3_portfolio_remove_cookie() {
 		if ( isset( $_POST['portfolio_id'] ) ) {
 			$portfolio_id = absint( $_POST['portfolio_id'] );
-			$lang = sanitize_text_field( $_POST['lang'] );
+			$lang = isset( $_POST['lang'] ) ? sanitize_text_field( wp_unslash( $_POST['lang'] ) ) : '';
 			$this->remove_portfolio_cookies( 'portfolio_recentviews' . $lang, $portfolio_id );
 			echo $portfolio_id;
 		} else {

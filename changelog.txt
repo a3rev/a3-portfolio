@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 3.3.1 - 2026/07/03 =
+* Security - Hardening release: added capability checks to several admin AJAX handlers, removed an unused legacy compatibility routine, and tightened data sanitization/escaping in a few places.
+* Tweak - Minor code-quality cleanup.
+
 = 3.3.0 - 2026/04/09 =
 * This maintenance release has bug fixes and compatibility with WordPress 7.0
 * Tweak - Tested for compatibility with WordPress 7.0

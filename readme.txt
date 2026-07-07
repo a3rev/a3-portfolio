@@ -4,7 +4,7 @@ Contributors: a3rev, nguyencongtuan
 Tags: a3 Portfolio, Portfolio, Post Portfolio, Showcase, Image Showcase, Image Portfolio, Gallery, Photo Gallery, Image Gallery
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 3.3.0
+Stable tag: 3.3.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -166,6 +166,10 @@ Automatic installation is the easiest option as WordPress handles the file trans
 
 
 == Changelog ==
+
+= 3.3.1 - 2026/07/03 =
+* Security - Hardening release: added capability checks to several admin AJAX handlers, removed an unused legacy compatibility routine, and tightened data sanitization/escaping in a few places.
+* Tweak - Minor code-quality cleanup.
 
 = 3.3.0 - 2026/04/09 =
 * This maintenance release has bug fixes and compatibility with WordPress 7.0

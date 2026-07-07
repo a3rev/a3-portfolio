@@ -23,7 +23,6 @@ class Attribute_Taxonomies
 		if ( is_admin() ) {
 			// Ajax Update Portfolio Attribute Meta Order
 			add_action( 'wp_ajax_portfolio_update_taxonomy_order', array( $this, 'portfolio_update_taxonomy_order' ) );
-			add_action( 'wp_ajax_nopriv_portfolio_update_taxonomy_order', array( $this, 'portfolio_update_taxonomy_order' ) );
 		}
 	}
 
@@ -35,7 +34,7 @@ class Attribute_Taxonomies
 	 * Include script and style to show plugin framework for Category page.
 	 */
 	public function include_script( ) {
-		if ( ! in_array( basename( $_SERVER['PHP_SELF'] ), array( 'edit-tags.php', 'term.php' ) ) ) return;
+		if ( ! in_array( $GLOBALS['pagenow'], array( 'edit-tags.php', 'term.php' ) ) ) return;
 		if ( ! isset( $_REQUEST['taxonomy'] ) || ! taxonomy_is_portfolio_attribute( $_REQUEST['taxonomy'] ) ) return;
 
 		$suffix	= defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
@@ -45,7 +44,8 @@ class Attribute_Taxonomies
 		$taxonomy = isset( $_GET['taxonomy'] ) ? sanitize_text_field( $_GET['taxonomy'] ) : '';
 
 		$portfolio_term_order_params = array(
-			'taxonomy' 			=>  $taxonomy
+			'taxonomy' 			=>  $taxonomy,
+			'security'			=>  wp_create_nonce( 'portfolio-taxonomy-order' ),
 		);
 
 		wp_localize_script( 'a3-portfolio-term-admin-script', 'a3_portfolio_term_admin_params', $portfolio_term_order_params );
@@ -59,6 +59,12 @@ class Attribute_Taxonomies
 	}
 
 	public function portfolio_update_taxonomy_order(){
+		check_ajax_referer( 'portfolio-taxonomy-order', 'security' );
+
+		if ( ! current_user_can( 'manage_categories' ) ) {
+			wp_die( -1, 403 );
+		}
+
 		global $wpdb;
 		$id       = absint( $_POST['id'] );
 		$next_id  = isset( $_POST['nextid'] ) && (int) $_POST['nextid'] ? absint( $_POST['nextid'] ) : null;

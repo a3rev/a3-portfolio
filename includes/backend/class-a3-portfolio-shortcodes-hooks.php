@@ -68,14 +68,14 @@ class Hooks
 	}
 
 	public function add_shortcode_button() {
-		$is_post_edit_page = in_array( basename( $_SERVER['PHP_SELF'] ), array( 'post.php', 'page.php', 'page-new.php', 'post-new.php' ) );
+		$is_post_edit_page = in_array( $GLOBALS['pagenow'], array( 'post.php', 'page.php', 'page-new.php', 'post-new.php' ) );
         if ( ! $is_post_edit_page ) return;
 
 		echo '<a href="#TB_inline?width=640&height=500&inlineId=a3-portfolio-wrap" class="thickbox button a3-portfolio-add-shortcode" title="' . __( 'Insert shortcode', 'a3_portfolio_shortcodes' ) . '"><span class="a3-portfolio-add-shortcode_icon"></span>'.__( 'Portfolio', 'a3_portfolio_shortcodes' ).'</a>';
 	}
 
 	public function generator_popup() {
-		$is_post_edit_page = in_array( basename( $_SERVER['PHP_SELF'] ), array( 'post.php', 'page.php', 'page-new.php', 'post-new.php' ) );
+		$is_post_edit_page = in_array( $GLOBALS['pagenow'], array( 'post.php', 'page.php', 'page-new.php', 'post-new.php' ) );
         if ( ! $is_post_edit_page ) return;
 
 		$GLOBALS[A3_PORTFOLIO_PREFIX.'admin_interface']->admin_script_load();

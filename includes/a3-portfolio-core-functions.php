@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function a3_portfolio_create_page( $slug, $option, $page_title = '', $page_content = '', $post_parent = 0 ) {
 	global $wpdb;
 
-	$portfolio_page_name = $wpdb->get_var( "SELECT post_name FROM `" . $wpdb->posts . "` WHERE `post_content` LIKE '%{$page_content}%'  AND `post_type` = 'page' AND `post_status` = 'publish' LIMIT 1" );
+	$portfolio_page_name = $wpdb->get_var( $wpdb->prepare( "SELECT post_name FROM `{$wpdb->posts}` WHERE `post_content` LIKE %s AND `post_type` = 'page' AND `post_status` = 'publish' LIMIT 1", '%' . $wpdb->esc_like( $page_content ) . '%' ) );
 
 	if ( $portfolio_page_name != NULL )
 		return;
@@ -33,7 +33,7 @@ function a3_portfolio_create_page( $slug, $option, $page_title = '', $page_conte
 	if ( class_exists('SitePress') ) {
 		global $sitepress;
 		$source_lang_code = $sitepress->get_default_language();
-		$wpdb->query( "UPDATE ".$wpdb->prefix . "icl_translations SET trid=".$page_id." WHERE element_id=".$page_id." AND language_code='".$source_lang_code."' AND element_type='post_page' " );
+		$wpdb->query( $wpdb->prepare( "UPDATE {$wpdb->prefix}icl_translations SET trid = %d WHERE element_id = %d AND language_code = %s AND element_type = 'post_page'", $page_id, $page_id, $source_lang_code ) );
 	}
 
 	return $page_id;
@@ -42,7 +42,7 @@ function a3_portfolio_create_page( $slug, $option, $page_title = '', $page_conte
 function a3_portfolio_create_page_wpml( $trid, $lang_code, $source_lang_code, $slug, $page_title = '', $page_content = '' ) {
 	global $wpdb;
 
-	$element_id = $wpdb->get_var( "SELECT ID FROM " . $wpdb->posts . " AS p INNER JOIN " . $wpdb->prefix . "icl_translations AS ic ON p.ID = ic.element_id WHERE p.post_content LIKE '%$page_content%' AND p.post_type = 'page' AND p.post_status = 'publish' AND ic.trid=".$trid." AND ic.language_code = '".$lang_code."' AND ic.element_type = 'post_page' ORDER BY p.ID ASC LIMIT 1" );
+	$element_id = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} AS p INNER JOIN {$wpdb->prefix}icl_translations AS ic ON p.ID = ic.element_id WHERE p.post_content LIKE %s AND p.post_type = 'page' AND p.post_status = 'publish' AND ic.trid = %d AND ic.language_code = %s AND ic.element_type = 'post_page' ORDER BY p.ID ASC LIMIT 1", '%' . $wpdb->esc_like( $page_content ) . '%', $trid, $lang_code ) );
 
 	if ( $element_id != NULL ) :
 		return $element_id;

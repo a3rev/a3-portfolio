@@ -28,6 +28,7 @@ jQuery(function($) {
 			action: 'a3_portfolio_update_taxonomy_custom_meta',
 			tax_id: tax_id,
 			pri_navbar: pri_navbar,
+			security: a3_portfolio_term_validate_admin_params.security,
 		};
 		$.post(ajaxurl, data, function(response) {
 			if( response == true || response == 'true'){
